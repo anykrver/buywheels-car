@@ -1,0 +1,553 @@
+/* Custom styling for the Niaa Car Recommendation Chatbot */
+
+.niaa-chat-container {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.niaa-floating-btn {
+  background: linear-gradient(135deg, #FF6A00 0%, #FF8833 100%);
+  box-shadow: 0 8px 30px rgba(255, 106, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.niaa-floating-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(255, 106, 0, 0.5);
+}
+
+.niaa-chat-window {
+  width: 400px;
+  height: 600px;
+  max-height: 85vh;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 480px) {
+  .niaa-chat-window {
+    width: calc(100vw - 32px);
+    right: 16px;
+    bottom: 90px;
+    height: 75vh;
+  }
+}
+
+/* Chat Header */
+.chatHeader {
+  background: linear-gradient(135deg, #1A1A1A 0%, #333333 100%);
+  color: #ffffff;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chatHeader .rightContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chatHeader .img-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.chatHeader .img-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  background-color: #10B981;
+  border: 2px solid #1A1A1A;
+  border-radius: 50%;
+  animation: pulse-online 2s infinite;
+}
+
+@keyframes pulse-online {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.botIconWhite {
+  width: 24px;
+  height: 24px;
+  background-image: url('https://chatcdn.npfs.co/static/backend/img/niaa-signature-2.png?1710931144');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) invert(1);
+}
+
+.userDetails h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.userDetails p {
+  font-size: 11px;
+  color: #A3A3A3;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Chat Body */
+.chatBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  background-color: #F8F9FA;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Video Section */
+.videoIntro {
+  width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 8px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.videoCloseBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+  border: none;
+}
+
+.videoCloseBtn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Chat Bubbles */
+.fadeIn {
+  animation: bubbleFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes bubbleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.__npfchatmsg_left {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 85%;
+}
+
+.__npfchatmsg_right {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  max-width: 85%;
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.botIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6A00 0%, #FF8833 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(255, 106, 0, 0.2);
+}
+
+.botIcon::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-image: url('https://chatcdn.npfs.co/static/backend/img/niaa-signature-2.png?1710931144');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) invert(1);
+}
+
+.ac-container {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  border-top-left-radius: 4px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.__npfchatmsg_right .ac-container {
+  background: linear-gradient(135deg, #FF6A00 0%, #FF8833 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 16px;
+  border-top-right-radius: 4px;
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.25);
+}
+
+.ac-textBlock .name {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FF6A00;
+  margin-bottom: 4px;
+}
+
+.__npfchatmsg_right .ac-textBlock .name {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ac-textBlock .message {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
+  word-break: break-word;
+}
+
+.__npfchatmsg_right .ac-textBlock .message {
+  color: #FFFFFF;
+}
+
+/* Typing Loader */
+.chatLoader {
+  display: flex;
+  gap: 4px;
+  padding: 4px 0 0 0;
+  align-items: center;
+}
+
+.typing {
+  width: 6px;
+  height: 6px;
+  background-color: #FF6A00;
+  border-radius: 50%;
+  animation: typing-bounce 1s infinite ease-in-out;
+}
+
+.typing-2 {
+  animation-delay: 0.2s;
+}
+
+.typing-3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Options/Adapter Buttons */
+.niaa-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.niaa-option-btn {
+  background: #FFFFFF;
+  border: 1.5px solid #FF6A00;
+  color: #FF6A00;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.niaa-option-btn:hover {
+  background: #FFF3EB;
+  transform: translateX(4px);
+}
+
+/* Recommended Car Cards */
+.niaa-cars-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 0;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+}
+
+.niaa-cars-carousel::-webkit-scrollbar {
+  height: 4px;
+}
+
+.niaa-cars-carousel::-webkit-scrollbar-thumb {
+  background: #FF6A00;
+  border-radius: 2px;
+}
+
+.niaa-car-card {
+  flex: 0 0 240px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #E5E7EB;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  scroll-snap-align: start;
+  transition: transform 0.2s;
+}
+
+.niaa-car-card:hover {
+  transform: translateY(-2px);
+}
+
+.niaa-car-img-wrapper {
+  width: 100%;
+  height: 130px;
+  background: #F3F4F6;
+  position: relative;
+  overflow: hidden;
+}
+
+.niaa-car-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.niaa-car-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #10B981;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.niaa-car-category-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #22C55E;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.niaa-car-content {
+  padding: 12px;
+}
+
+.niaa-car-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 2px;
+}
+
+.niaa-car-brand {
+  font-size: 11px;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.niaa-car-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #FF6A00;
+  margin-bottom: 6px;
+}
+
+.niaa-car-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.niaa-car-tag {
+  background: #F3F4F6;
+  color: #4B5563;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.niaa-car-link {
+  display: block;
+  width: 100%;
+  background: #FF6A00;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.niaa-car-link:hover {
+  background: #CC5500;
+}
+
+/* Chat Input styling */
+.npfmessage-in {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border-top: 1px solid #E5E7EB;
+}
+
+.npfmessage-in .wrap {
+  display: flex;
+  align-items: center;
+  background: #F3F4F6;
+  border-radius: 12px;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.npfmessage-in .wrap:focus-within {
+  border-color: #FF6A00;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.1);
+}
+
+.npfmessage-in input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #374151;
+  padding: 8px 0;
+}
+
+.npfmessage-in input::placeholder {
+  color: #9CA3AF;
+}
+
+.btnSend {
+  display: flex;
+  align-items: center;
+}
+
+.btnSend button {
+  background: #FF6A00;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  color: white;
+}
+
+.btnSend button:hover {
+  background: #CC5500;
+}
+
+.btnSend button:active {
+  transform: scale(0.95);
+}
+
+.sendBtnClick {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='22' y1='2' x2='11' y2='13'%3E%3C/line%3E%3Cpolygon points='22 2 15 22 11 13 2 9 22 2'%3E%3C/polygon%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Copyright Footer */
+.ctCopyright {
+  background: #FFFFFF;
+  padding: 8px 16px 12px 16px;
+  text-align: center;
+  font-size: 10px;
+  color: #9CA3AF;
+  border-top: 1px solid #F3F4F6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ctCopyright a {
+  color: #FF6A00;
+  font-weight: 600;
+}
+
+.niaaSign img {
+  height: 16px;
+  object-fit: contain;
+}

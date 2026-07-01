@@ -1,0 +1,201 @@
+/* MyProfileStates Section Container - Compact Horizontal Scrolling Row */
+.MyProfileStates_myProfileStates__jyVyi {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 24px 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.MyProfileStates_myProfileStates__jyVyi::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+@media (min-width: 768px) {
+  .MyProfileStates_myProfileStates__jyVyi {
+    padding: 32px 24px;
+    gap: 20px;
+  }
+}
+
+/* Card Containers - Reduced Size & Horizontal Layout */
+.ExploreStateCard_cardContainer__ft6wA,
+.ServiceStateCard_cardContainer__G0sHV,
+.ValuationStateCard_cardContainer__d0b_H {
+  background-color: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 240px; /* Width fixed to 240px to line up side-by-side */
+  height: 160px; /* Reduced overall height */
+  scroll-snap-align: start;
+}
+
+.ExploreStateCard_cardContainer__ft6wA:hover,
+.ServiceStateCard_cardContainer__G0sHV:hover,
+.ValuationStateCard_cardContainer__d0b_H:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #D1D5DB;
+}
+
+/* Card Contents - Reduced Padding */
+.ExploreStateCard_cardContent__tO_XR,
+.ServiceStateCard_cardContent__Xgs2z,
+.ValuationStateCard_cardContent__hVLKX {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+/* Main Info Sections */
+.ExploreStateCard_mainInfo__HN6S6,
+.ServiceStateCard_mainInfo__coM5J,
+.ValuationStateCard_mainInfo__Fo4ON {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+/* Icon and Arrow Containers */
+.ExploreStateCard_IconWitharrow__H3FTw,
+.ServiceStateCard_IconWitharrow__2l_Dr,
+.ValuationStateCard_IconWitharrow__Hmo3T {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduced gap */
+  width: 100%;
+}
+
+/* Inner Title With Icon wrappers - Reduced Size */
+.ExploreStateCard_innerTitleWithIcon__gLAF4,
+.ServiceStateCard_innerTitleWithIcon__6rXOI,
+.ValuationStateCard_innerTitleWithIcon__FX5Z2 {
+  position: relative !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+}
+
+/* Main WebP Illustration Icons - Reduced Size */
+.ExploreStateCard_ctaSVG__PIaTh,
+.ServiceStateCard_ctaSVG__pFcGF,
+.ValuationStateCard_ctaSVG__0AXVQ {
+  position: relative !important;
+  width: 36px !important;
+  height: 36px !important;
+  inset: auto !important;
+  object-fit: contain;
+}
+
+/* Action Circle Buttons - Reduced Size & Dark Theme */
+.ExploreStateCard_ctaButton__IBFIn,
+.ServiceStateCard_ctaButton__ciRYp,
+.ValuationStateCard_ctaButton__ehrFJ {
+  position: relative !important;
+  width: 32px !important;
+  height: 32px !important;
+  inset: auto !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% !important;
+  background-color: #111111 !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+  cursor: pointer;
+}
+
+.ExploreStateCard_ctaButton__IBFIn:hover,
+.ServiceStateCard_ctaButton__ciRYp:hover,
+.ValuationStateCard_ctaButton__ehrFJ:hover {
+  background-color: #333333 !important;
+  transform: scale(1.05);
+}
+
+/* Arrow SVGs inside action buttons - White & Sliding Transition */
+.ExploreStateCard_ctaButton__IBFIn svg,
+.ServiceStateCard_ctaButton__ciRYp svg,
+.ValuationStateCard_ctaButton__ehrFJ svg {
+  color: #ffffff !important;
+  width: 16px !important;
+  height: 16px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.ExploreStateCard_ctaButton__IBFIn:hover svg,
+.ServiceStateCard_ctaButton__ciRYp:hover svg,
+.ValuationStateCard_ctaButton__ehrFJ:hover svg {
+  transform: translateX(3px) !important;
+}
+
+/* Title Eyebrows & Layout - Reduced Size */
+.ExploreStateCard_titleContainer__abc {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ExploreStateCard_eyebrow__def {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FF6A00;
+}
+
+/* Card Titles - Reduced Size */
+.ExploreStateCard_title__dwHfN,
+.ServiceStateCard_title__1L_8u,
+.ValuationStateCard_title__pqehT {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #111111;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.ExploreStateCard_IconWitharrow__H3FTw:hover .ExploreStateCard_title__dwHfN,
+.ServiceStateCard_IconWitharrow__2l_Dr:hover .ServiceStateCard_title__1L_8u,
+.ValuationStateCard_IconWitharrow__Hmo3T:hover .ValuationStateCard_title__pqehT {
+  color: #5900C9;
+}
+
+/* Card Subtext - Reduced Size */
+.ExploreStateCard_subText__eFrxO,
+.ServiceStateCard_subText__ge_2D,
+.ValuationStateCard_subText__QemRe {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #6B7280;
+  line-height: 1.4;
+  margin: 6px 0 0 0;
+}
+
+/* Purple Text Highlights */
+.ServiceStateCard_purple59__e4XMO.ServiceStateCard_subTextColored__nvyEM,
+.ValuationStateCard_purple59__531WQ.ValuationStateCard_subTextColored__lvvWO {
+  color: #5900C9;
+  font-weight: 600;
+}
