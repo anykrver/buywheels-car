@@ -114,31 +114,47 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Right Group: Search Button + Select City Dropdown */}
-            <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Right Group: Search Button + Wishlist + Select City Dropdown */}
+            <div className="flex items-center gap-1 sm:gap-2">
               {/* Search Button */}
               <button
                 onClick={() => setSearchOpen(true)}
-                className={`p-2 rounded-xl transition-colors ${
+                className={`p-1.5 sm:p-2 rounded-xl transition-colors ${
                   isHome && !scrolled ? 'text-white hover:bg-white/10' : 'text-dark-600 hover:bg-surface'
                 }`}
                 aria-label="Search"
               >
-                <Search size={20} />
+                <Search size={19} />
               </button>
+
+              {/* Wishlist Button */}
+              <Link
+                to="/wishlist"
+                className={`relative p-1.5 sm:p-2 rounded-xl transition-colors ${
+                  isHome && !scrolled ? 'text-white hover:bg-white/10' : 'text-dark-600 hover:bg-surface'
+                }`}
+                aria-label="Wishlist"
+              >
+                <Heart size={19} />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 bg-primary text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-scale-in">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
 
               {/* Select City Dropdown */}
               <div className="relative">
                 <button
                   onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
-                  className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition-all ${
+                  className={`flex items-center gap-1 px-2 py-1.5 rounded-xl text-xs font-bold border transition-all ${
                     isHome && !scrolled
                       ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
                       : 'bg-surface text-dark border-border hover:border-primary'
                   }`}
                 >
-                  <MapPin size={13} className="text-primary shrink-0" />
-                  <span className="truncate max-w-[65px] sm:max-w-[100px]">{selectedCity}</span>
+                  <MapPin size={12} className="text-primary shrink-0" />
+                  <span className="truncate max-w-[55px] sm:max-w-[90px]">{selectedCity}</span>
                   <ChevronDown size={11} className="text-muted shrink-0" />
                 </button>
 
