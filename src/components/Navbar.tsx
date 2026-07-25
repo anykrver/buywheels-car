@@ -64,9 +64,11 @@ export default function Navbar() {
     ? 'bg-transparent'
     : 'bg-white shadow-nav';
 
+  const headerBorder = isHome && !scrolled ? 'border-b border-white/10' : 'border-b border-border';
+
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${headerBorder}`}>
         {/* Top bar (Desktop) */}
         <div className={`hidden lg:block border-b transition-all duration-300 ${isHome && !scrolled ? 'border-white/10' : 'border-border'}`}>
           <div className="container-fluid flex items-center justify-between h-9">
@@ -87,32 +89,33 @@ export default function Navbar() {
         </div>
 
         {/* Main Header Bar */}
-        <div className="container-fluid flex items-center h-20 lg:h-24">
+        <div className="container-fluid flex items-center h-16 lg:h-20">
           
-          {/* MOBILE HEADER LAYOUT (lg:hidden): 3-Line Menu (Left) | Prominent Logo (Middle) | Search + Wishlist + Select City (Right) */}
-          <div className="lg:hidden flex items-center justify-between w-full relative">
+          {/* MOBILE HEADER LAYOUT (lg:hidden): 3-Line Menu + Logo (Left) | Search + Select City (Right) */}
+          <div className="lg:hidden flex items-center justify-between w-full">
             
-            {/* Left: 3-line Menu Button */}
-            <button
-              onClick={() => {
-                setMobileOpen(!mobileOpen);
-                setCityDropdownOpen(false);
-              }}
-              className={`p-2 rounded-xl transition-colors ${
-                isHome && !scrolled ? 'text-white hover:bg-white/10' : 'text-dark hover:bg-surface'
-              }`}
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X size={26} /> : <Menu size={26} />}
-            </button>
+            {/* Left Group: 3-line Menu Button + Logo shifted left for clean alignment */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => {
+                  setMobileOpen(!mobileOpen);
+                  setCityDropdownOpen(false);
+                }}
+                className={`p-1.5 rounded-xl transition-colors ${
+                  isHome && !scrolled ? 'text-white hover:bg-white/10' : 'text-dark hover:bg-surface'
+                }`}
+                aria-label="Toggle menu"
+              >
+                {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
 
-            {/* Middle: Centered Prominent Logo */}
-            <Link to="/" className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
-              <Logo className="h-16 sm:h-20 w-auto py-1 max-h-16" />
-            </Link>
+              <Link to="/" className="flex items-center justify-center pl-0.5">
+                <Logo className="h-11 sm:h-14 w-auto py-1" />
+              </Link>
+            </div>
 
-            {/* Right: Search + Wishlist + Select City Dropdown */}
-            <div className="flex items-center gap-1 sm:gap-2">
+            {/* Right Group: Search Button + Select City Dropdown */}
+            <div className="flex items-center gap-1.5 sm:gap-2">
               {/* Search Button */}
               <button
                 onClick={() => setSearchOpen(true)}
@@ -124,34 +127,18 @@ export default function Navbar() {
                 <Search size={20} />
               </button>
 
-              {/* Wishlist Button */}
-              <Link
-                to="/wishlist"
-                className={`relative p-2 rounded-xl transition-colors ${
-                  isHome && !scrolled ? 'text-white hover:bg-white/10' : 'text-dark-600 hover:bg-surface'
-                }`}
-                aria-label="Wishlist"
-              >
-                <Heart size={20} />
-                {wishlistCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 bg-primary text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-scale-in">
-                    {wishlistCount}
-                  </span>
-                )}
-              </Link>
-
               {/* Select City Dropdown */}
               <div className="relative">
                 <button
                   onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
-                  className={`flex items-center gap-1 px-2 py-1.5 rounded-xl text-xs font-bold border transition-all ${
+                  className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition-all ${
                     isHome && !scrolled
                       ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
                       : 'bg-surface text-dark border-border hover:border-primary'
                   }`}
                 >
                   <MapPin size={13} className="text-primary shrink-0" />
-                  <span className="truncate max-w-[60px] sm:max-w-[90px]">{selectedCity}</span>
+                  <span className="truncate max-w-[65px] sm:max-w-[100px]">{selectedCity}</span>
                   <ChevronDown size={11} className="text-muted shrink-0" />
                 </button>
 
