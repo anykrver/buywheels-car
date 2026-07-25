@@ -5,6 +5,7 @@ import {
   Car, Zap, GitCompare, Tag, Shield, Building2, BookOpen,
   Search, Heart, MapPin, ChevronDown, Menu, X, User, Phone, Check,
 } from 'lucide-react';
+import SearchSuggestions from './SearchSuggestions';
 
 const CITIES = ['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh', 'Deoghar'];
 
@@ -382,49 +383,56 @@ export default function Navbar() {
       {/* Search overlay */}
       {searchOpen && (
         <div
-          className="fixed inset-0 z-[60] bg-dark/60 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-[60] bg-dark/60 backdrop-blur-sm animate-fade-in flex items-start justify-center pt-16 px-4"
           onClick={() => setSearchOpen(false)}
         >
           <div
-            className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4"
+            className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden animate-scale-in border border-border"
             onClick={e => e.stopPropagation()}
           >
-            <div className="bg-white rounded-2xl shadow-card-hover overflow-hidden animate-scale-in">
-              <div className="flex items-center gap-3 p-4 border-b border-border">
-                <Search size={20} className="text-muted" />
-                <input
-                  autoFocus
-                  type="text"
-                  placeholder="Search for cars, brands..."
-                  value={searchQuery}
-                  onChange={e => setSearchQuery(e.target.value)}
-                  onKeyDown={e => {
-                    if (e.key === 'Enter') {
-                      handleSearchSubmit(searchQuery);
-                    }
-                  }}
-                  className="flex-1 text-lg outline-none text-dark placeholder-muted"
-                />
-                <button onClick={() => setSearchOpen(false)} className="p-1.5 rounded-lg hover:bg-surface transition-colors">
-                  <X size={20} className="text-muted" />
+            <div className="flex items-center gap-3 p-4 border-b border-border bg-surface/30">
+              <Search size={20} className="text-primary flex-shrink-0" />
+              <input
+                autoFocus
+                type="text"
+                placeholder="Search for cars, brands (e.g. Swift, Nexon, EV, Creta)..."
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter') {
+                    handleSearchSubmit(searchQuery);
+                  } else if (e.key === 'Escape') {
+                    setSearchOpen(false);
+                  }
+                }}
+                className="flex-1 text-base md:text-lg outline-none text-dark bg-transparent placeholder-muted font-medium"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="p-1 rounded-full hover:bg-border transition-colors mr-1"
+                >
+                  <X size={16} className="text-muted" />
                 </button>
-              </div>
-              <div className="p-4">
-                <p className="text-xs font-medium text-muted uppercase tracking-wider mb-3">Popular Searches</p>
-                <div className="flex flex-wrap gap-2">
-                  {['Maruti Swift', 'Hyundai Creta', 'Tata Nexon EV', 'Mahindra Scorpio-N', 'Tata Sierra', 'Skoda Kylaq'].map(q => (
-                    <button
-                      key={q}
-                      className="px-3 py-1.5 bg-surface text-dark-600 rounded-full text-sm hover:bg-primary-50 hover:text-primary transition-colors"
-                      onClick={() => {
-                        handleSearchSubmit(q);
-                      }}
-                    >
-                      {q}
-                    </button>
-                  ))}
-                </div>
-              </div>
+              )}
+              <button
+                onClick={() => setSearchOpen(false)}
+                className="p-2 rounded-xl hover:bg-surface text-muted hover:text-dark transition-colors border border-border"
+                title="Close"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="relative p-2">
+              <SearchSuggestions
+                query={searchQuery}
+                isOpen={true}
+                onClose={() => setSearchOpen(false)}
+                onSelect={q => setSearchQuery(q)}
+                className="relative top-0 mt-0 shadow-none border-none animate-none rounded-none"
+              />
             </div>
           </div>
         </div>

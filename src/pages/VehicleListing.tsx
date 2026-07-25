@@ -1,8 +1,9 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Search, LayoutGrid, List, SlidersHorizontal, X } from 'lucide-react';
 import VehicleCard from '../components/VehicleCard';
 import VehicleFilters, { Filters } from '../components/VehicleFilters';
+import SearchSuggestions from '../components/SearchSuggestions';
 import { getBodyType } from '../utils/data';
 import { fetchVehicles } from '../utils/supabaseService';
 import type { Vehicle, VehicleCategory } from '../types';
@@ -22,7 +23,19 @@ export default function VehicleListing({ category, title, subtitle }: VehicleLis
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
   const [compareList, setCompareList] = useState<Vehicle[]>([]);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
 
   const handleCompare = (vehicle: Vehicle) => {
     setCompareList(prev =>
@@ -267,20 +280,45 @@ export default function VehicleListing({ category, title, subtitle }: VehicleLis
 
         {/* Search & controls bar */}
         <div className="flex flex-col sm:flex-row gap-3 mb-8">
-          <div className="flex-1 relative">
-            <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted pointer-events-none" />
+          <div className="flex-1 relative" ref={searchRef}>
+            <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted pointer-events-none z-10" />
             <input
               type="text"
               placeholder={`Search ${title.toLowerCase()}...`}
               value={search}
-              onChange={e => handleSearchChange(e.target.value)}
-              className="w-full h-12 pl-11 pr-4 border border-border rounded-xl text-dark bg-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              onFocus={() => setShowSuggestions(true)}
+              onChange={e => {
+                handleSearchChange(e.target.value);
+                setShowSuggestions(true);
+              }}
+              onKeyDown={e => {
+                if (e.key === 'Escape') {
+                  setShowSuggestions(false);
+                }
+              }}
+              className="w-full h-12 pl-11 pr-10 border border-border rounded-xl text-dark bg-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
             {search && (
-              <button onClick={() => handleSearchChange('')} className="absolute right-3 top-1/2 -translate-y-1/2">
-                <X size={16} className="text-muted" />
+              <button
+                onClick={() => {
+                  handleSearchChange('');
+                  setShowSuggestions(false);
+                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-10"
+              >
+                <X size={16} className="text-muted hover:text-dark transition-colors" />
               </button>
             )}
+
+            <SearchSuggestions
+              query={search}
+              isOpen={showSuggestions}
+              onClose={() => setShowSuggestions(false)}
+              onSelect={val => {
+                handleSearchChange(val);
+                setShowSuggestions(false);
+              }}
+            />
           </div>
           <div className="flex gap-2">
             <button

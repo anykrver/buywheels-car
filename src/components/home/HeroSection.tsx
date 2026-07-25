@@ -11,6 +11,7 @@ import {
   Settings,
   X,
 } from 'lucide-react';
+import SearchSuggestions from '../SearchSuggestions';
 
 /* ── Data ─────────────────────────────────────────────── */
 
@@ -43,6 +44,7 @@ export default function HeroSection() {
 
   // Search state
   const [query, setQuery] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const isUsed = false;
   const [city, setCity] = useState('Select City');
   const [activeDropdown, setActiveDropdown] = useState<ActiveDropdown>(null);
@@ -56,6 +58,7 @@ export default function HeroSection() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const cityRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns on outside click or scroll
   useEffect(() => {
@@ -65,6 +68,9 @@ export default function HeroSection() {
       }
       if (cityRef.current && !cityRef.current.contains(e.target as Node)) {
         setShowCityDropdown(false);
+      }
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setShowSuggestions(false);
       }
     };
     const onScroll = () => {
@@ -258,26 +264,46 @@ export default function HeroSection() {
               </div>
 
               {/* Search box */}
-              <div className="flex-1 flex items-center bg-surface rounded-xl border border-border hover:border-primary transition-colors overflow-hidden">
-                <Search size={18} className="ml-4 text-muted flex-shrink-0" />
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={query}
-                  onChange={e => setQuery(e.target.value)}
-                  onKeyDown={e => e.key === 'Enter' && handleSearch()}
-                  placeholder={isUsed ? 'Type model name, e.g, Used Alto' : 'Type model name, e.g, Swift, Nexon…'}
-                  className="flex-1 h-12 px-3 bg-transparent text-dark text-sm outline-none placeholder-muted"
-                  id="hero-search-input"
+              <div className="flex-1 relative" ref={searchContainerRef}>
+                <div className="flex items-center bg-surface rounded-xl border border-border hover:border-primary transition-colors overflow-hidden">
+                  <Search size={18} className="ml-4 text-muted flex-shrink-0" />
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={query}
+                    onFocus={() => setShowSuggestions(true)}
+                    onChange={e => {
+                      setQuery(e.target.value);
+                      setShowSuggestions(true);
+                    }}
+                    onKeyDown={e => {
+                      if (e.key === 'Enter') {
+                        setShowSuggestions(false);
+                        handleSearch();
+                      } else if (e.key === 'Escape') {
+                        setShowSuggestions(false);
+                      }
+                    }}
+                    placeholder={isUsed ? 'Type model name, e.g, Used Alto' : 'Type model name, e.g, Swift, Nexon…'}
+                    className="flex-1 h-12 px-3 bg-transparent text-dark text-sm outline-none placeholder-muted"
+                    id="hero-search-input"
+                  />
+                  {query && (
+                    <button
+                      onClick={() => setQuery('')}
+                      className="mr-2 p-1 rounded-full hover:bg-border transition-colors"
+                    >
+                      <X size={14} className="text-muted" />
+                    </button>
+                  )}
+                </div>
+
+                <SearchSuggestions
+                  query={query}
+                  isOpen={showSuggestions}
+                  onClose={() => setShowSuggestions(false)}
+                  onSelect={selectedText => setQuery(selectedText)}
                 />
-                {query && (
-                  <button
-                    onClick={() => setQuery('')}
-                    className="mr-2 p-1 rounded-full hover:bg-border transition-colors"
-                  >
-                    <X size={14} className="text-muted" />
-                  </button>
-                )}
               </div>
 
               {/* Search CTA */}
