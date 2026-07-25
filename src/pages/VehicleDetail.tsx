@@ -10,6 +10,7 @@ import { fetchVehicles, fetchReviews } from '../utils/supabaseService';
 import type { Vehicle, Review } from '../types';
 import VehicleCard from '../components/VehicleCard';
 import VehicleDetailSEO from '../components/VehicleDetailSEO';
+import PersonalisedOffersModal from '../components/PersonalisedOffersModal';
 import { supabase } from '../utils/supabaseClient';
 import { vehicleColorsData } from '../utils/vehicleColors';
 
@@ -80,6 +81,8 @@ export default function VehicleDetail() {
   const { isWishlisted, toggleWishlist } = useWishlist();
   const wishlisted = vehicle ? isWishlisted(vehicle.id) : false;
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [offerModalOpen, setOfferModalOpen] = useState(false);
+  const [offerPurpose, setOfferPurpose] = useState('');
   const [localReviews, setLocalReviews] = useState<any[]>([]);
 
   useEffect(() => {
@@ -675,8 +678,8 @@ export default function VehicleDetail() {
                                     <button
                                       type="button"
                                       onClick={() => {
-                                        setBookingForm(prev => ({ ...prev, purpose: `View Offers for ${groupKey}` }));
-                                        setBookingOpen(true);
+                                        setOfferPurpose(`View Offers for ${groupKey}`);
+                                        setOfferModalOpen(true);
                                       }}
                                       className="hidden sm:block text-xs font-semibold bg-white border border-primary text-primary hover:bg-primary-50 px-3 py-2 rounded-lg transition-colors"
                                     >
@@ -753,8 +756,8 @@ export default function VehicleDetail() {
                                             <button
                                               type="button"
                                               onClick={() => {
-                                                setBookingForm(prev => ({ ...prev, purpose: `View Offers for ${v.name}` }));
-                                                setBookingOpen(true);
+                                                setOfferPurpose(`View Offers for ${v.name}`);
+                                                setOfferModalOpen(true);
                                               }}
                                               className="text-xs font-semibold text-primary underline decoration-dotted hover:text-primary/80"
                                             >
@@ -1555,26 +1558,7 @@ export default function VehicleDetail() {
       )}
 
       {/* Mobile Sticky Action Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-border px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] shadow-[0_-10px_30px_rgba(0,0,0,0.08)]">
-        {/* Price & Variant Info Row */}
-        <div className="flex items-center justify-between mb-3">
-          <div className="space-y-0.5">
-            <span className="text-[10px] font-bold text-primary bg-primary-50 px-2.5 py-0.5 rounded-lg uppercase tracking-wider">
-              {variant.name}
-            </span>
-            <div className="flex items-baseline gap-1 mt-1">
-              <span className="text-base font-heading font-extrabold text-dark">{formatPrice(variant.price)}</span>
-              <span className="text-[9px] text-muted uppercase tracking-wider font-semibold">Ex-Showroom</span>
-            </div>
-          </div>
-          <div className="text-right space-y-0.5">
-            <span className="text-[9px] text-muted uppercase tracking-wider font-semibold block">Est. EMI Starts From</span>
-            <span className="text-sm font-heading font-extrabold text-dark">
-              {formatPriceShort(Number(emi))}<span className="text-[10px] text-muted font-normal">/month</span>
-            </span>
-          </div>
-        </div>
-
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-t border-border px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] shadow-[0_-10px_30px_rgba(0,0,0,0.08)]">
         {/* Buttons Row */}
         <div className="flex gap-3">
           <button
@@ -1582,14 +1566,14 @@ export default function VehicleDetail() {
               setBookingForm(prev => ({ ...prev, purpose: 'Get Best Quote' }));
               setBookingOpen(true);
             }}
-            className="btn-primary flex-1 text-xs font-bold px-1 rounded-xl shadow-md"
+            className="btn-primary flex-1 text-xs sm:text-sm font-bold px-3 rounded-xl shadow-md flex items-center justify-center gap-1"
             style={{ height: '44px' }}
           >
-            Get Best Price
+            View July Offer <ChevronRight size={16} />
           </button>
           <Link
             to={`/test-drive?vehicle=${vehicle?.id}`}
-            className="btn-secondary flex-1 text-xs font-bold px-1 rounded-xl flex items-center justify-center"
+            className="btn-secondary px-4 shrink-0 text-xs font-bold rounded-xl flex items-center justify-center"
             style={{ height: '44px' }}
           >
             Test Drive
