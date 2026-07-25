@@ -11620,7 +11620,7 @@ export const offers: Offer[] = [
     "discount": "Up to ₹50,000",
     "validTill": "August 31, 2026",
     "category": "Cars",
-    "image": "https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "image": "/images/offer_o1_exchange.jpg",
     "type": "exchange"
   },
   {
@@ -11631,7 +11631,7 @@ export const offers: Offer[] = [
     "validTill": "July 31, 2026",
     "category": "Bank",
     "brand": "SBI",
-    "image": "https://images.pexels.com/photos/259200/pexels-photo-259200.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "image": "/images/offer_o2_sbi_cashback.jpg",
     "code": "SBICB5K",
     "type": "cashback"
   },
@@ -11642,7 +11642,7 @@ export const offers: Offer[] = [
     "discount": "Up to ₹30,000",
     "validTill": "December 31, 2026",
     "category": "All Vehicles",
-    "image": "https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "image": "/images/offer_o3_corporate.jpg",
     "type": "corporate"
   },
   {
@@ -11653,7 +11653,7 @@ export const offers: Offer[] = [
     "validTill": "July 31, 2026",
     "category": "Finance",
     "brand": "SBI",
-    "image": "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "image": "/images/offer_o4_bank_loan.jpg",
     "code": "SBIBW10K",
     "type": "bank"
   },
@@ -11664,7 +11664,7 @@ export const offers: Offer[] = [
     "discount": "₹25,000 Worth Free",
     "validTill": "August 31, 2026",
     "category": "EV",
-    "image": "https://images.pexels.com/photos/110844/pexels-photo-110844.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "image": "/images/offer_o5_ev_charger.jpg",
     "type": "festival"
   },
   {
@@ -11674,7 +11674,7 @@ export const offers: Offer[] = [
     "discount": "₹15,000 Cashback",
     "validTill": "September 30, 2026",
     "category": "EV",
-    "image": "https://images.pexels.com/photos/8825701/pexels-photo-8825701.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "image": "/images/offer_o6_ev_cashback.jpg",
     "code": "GOGREEN15",
     "type": "cashback"
   },
@@ -11685,7 +11685,7 @@ export const offers: Offer[] = [
     "discount": "7.99% Interest Rate",
     "validTill": "September 30, 2026",
     "category": "Finance",
-    "image": "https://images.pexels.com/photos/164501/pexels-photo-164501.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "image": "/images/offer_o7_low_emi.jpg",
     "code": "LOWEMI799",
     "type": "emi"
   },
@@ -11696,7 +11696,7 @@ export const offers: Offer[] = [
     "discount": "Zero Down Payment",
     "validTill": "October 31, 2026",
     "category": "Finance",
-    "image": "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "image": "/images/offer_o6_ev_cashback.jpg",
     "code": "FLEXIEMI",
     "type": "emi"
   }
