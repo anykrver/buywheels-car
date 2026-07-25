@@ -18,6 +18,19 @@ interface Message {
   cars?: Vehicle[];
 }
 
+const FOLLOW_UP_OPTIONS = [
+  { label: 'Start Search Over 🔄', value: 'Start search over', stepTarget: 'restart' },
+  { label: 'Compare Cars ⚖️', value: 'Compare selected cars', stepTarget: 'redirect-compare' },
+  { label: 'Book a Test Drive 🚗', value: 'Book a test drive', stepTarget: 'redirect-testdrive' },
+  { label: '5-Star Safety Cars 🛡️', value: 'Show me 5-star safety cars', stepTarget: 'query-safety' },
+  { label: 'Best Mileage Cars ⛽', value: 'Show high mileage cars', stepTarget: 'query-mileage' },
+  { label: 'EVs & Hybrids ⚡', value: 'Show electric & hybrid cars', stepTarget: 'query-ev' },
+  { label: 'Popular SUVs 🚘', value: 'Show popular SUVs', stepTarget: 'query-suv' },
+  { label: 'Best Sellers 🔥', value: 'Show best seller cars', stepTarget: 'query-bestseller' },
+  { label: 'Finance & Loans 💰', value: 'View loan & finance options', stepTarget: 'redirect-finance' },
+  { label: 'Dealers Nearby 📍', value: 'Find dealers near me', stepTarget: 'redirect-dealers' }
+];
+
 export default function ChatAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [showVideo, setShowVideo] = useState(true);
@@ -194,11 +207,7 @@ export default function ChatAssistant() {
           text: 'Would you like to search for other options, or ask me any questions directly? Feel free to type anything (e.g. "automatic creta" or "EVs under 20 lakhs")',
           timestamp: new Date(),
           type: 'options',
-          options: [
-            { label: 'Start Search Over 🔄', value: 'restart', stepTarget: 'restart' },
-            { label: 'Compare Cars ⚖️', value: 'compare', stepTarget: 'redirect-compare' },
-            { label: 'Book a Test Drive 🚗', value: 'test-drive', stepTarget: 'redirect-testdrive' }
-          ]
+          options: FOLLOW_UP_OPTIONS
         }
       ]);
       setIsTyping(false);
@@ -328,6 +337,14 @@ export default function ChatAssistant() {
             timestamp: new Date(),
             type: 'cars',
             cars: matchedBrandOrModel
+          },
+          {
+            id: `bot-res-next-${Date.now()}`,
+            sender: 'bot',
+            text: 'What would you like to do next?',
+            timestamp: new Date(),
+            type: 'options',
+            options: FOLLOW_UP_OPTIONS
           }
         ]);
         setIsTyping(false);
@@ -372,6 +389,15 @@ export default function ChatAssistant() {
       if (lower.includes('safety') || lower.includes('safe') || lower.includes('5 star')) {
         results = results.filter(v => v.safetyRating === 5);
       }
+      if (lower.includes('mileage') || lower.includes('efficient') || lower.includes('average')) {
+        results = results.filter(v => {
+          const mileageNum = parseFloat(v.mileage);
+          return mileageNum >= 18 || v.mileage.toLowerCase().includes('range') || v.isEV;
+        });
+      }
+      if (lower.includes('bestseller') || lower.includes('best seller') || lower.includes('popular')) {
+        results = results.filter(v => v.isBestSeller || v.rating >= 4.6);
+      }
 
       // Construct bot reply
       let replyText = '';
@@ -398,6 +424,14 @@ export default function ChatAssistant() {
           timestamp: new Date(),
           type: 'cars',
           cars: results
+        },
+        {
+          id: `bot-res-parse-next-${Date.now()}`,
+          sender: 'bot',
+          text: 'What would you like to do next?',
+          timestamp: new Date(),
+          type: 'options',
+          options: FOLLOW_UP_OPTIONS
         }
       ]);
       setIsTyping(false);
@@ -495,6 +529,20 @@ export default function ChatAssistant() {
       window.location.href = '/compare';
     } else if (stepTarget === 'redirect-testdrive') {
       window.location.href = '/test-drive';
+    } else if (stepTarget === 'redirect-finance') {
+      window.location.href = '/finance';
+    } else if (stepTarget === 'redirect-dealers') {
+      window.location.href = '/dealers';
+    } else if (stepTarget === 'query-safety') {
+      parseFreeformText('safety');
+    } else if (stepTarget === 'query-mileage') {
+      parseFreeformText('mileage');
+    } else if (stepTarget === 'query-ev') {
+      parseFreeformText('electric');
+    } else if (stepTarget === 'query-suv') {
+      parseFreeformText('suv');
+    } else if (stepTarget === 'query-bestseller') {
+      parseFreeformText('bestseller');
     }
   };
 
@@ -608,7 +656,7 @@ export default function ChatAssistant() {
 
                     {/* Options adapter */}
                     {msg.type === 'options' && msg.options && (
-                      <div className="niaa-options-container">
+                      <div className={msg.options.length > 4 ? "niaa-options-grid" : "niaa-options-container"}>
                         {msg.options.map((opt, idx) => (
                           <button
                             key={idx}
@@ -616,7 +664,7 @@ export default function ChatAssistant() {
                             onClick={() => handleOptionClick(opt.value, opt.stepTarget)}
                           >
                             <span className="flex-1">{opt.label}</span>
-                            <ChevronRight size={14} className="opacity-60" />
+                            {msg.options!.length <= 4 && <ChevronRight size={14} className="opacity-60" />}
                           </button>
                         ))}
                       </div>

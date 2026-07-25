@@ -37,13 +37,14 @@ function ScrollToTop() {
 function Layout({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();
   const hideFooter = pathname === '/login';
+  const showMobileNav = !pathname.startsWith('/vehicle/');
 
   return (
     <>
       <Navbar />
       {children}
       {!hideFooter && <Footer />}
-      <MobileNav />
+      {showMobileNav && <MobileNav />}
       <ChatAssistant />
     </>
   );

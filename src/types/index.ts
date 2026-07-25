@@ -34,6 +34,7 @@ export interface Vehicle {
   startingPrice: number;
   emiFrom: number;
   images: string[];
+  threeSixtyImages?: string[];
   thumbnailUrl: string;
   fuelTypes: FuelType[];
   transmissions: TransmissionType[];
@@ -54,6 +55,9 @@ export interface Vehicle {
   torqueNm?: number;
   safetyRating?: number;
   description?: string;
+  pros?: string[];
+  cons?: string[];
+  groundClearance?: number;
 }
 
 export interface Brand {

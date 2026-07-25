@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Plus, X, Check, Minus, ArrowRight } from 'lucide-react';
-import { vehicles, formatPriceShort } from '../utils/data';
+import { formatPriceShort } from '../utils/data';
+import { fetchVehicles } from '../utils/supabaseService';
 import type { Vehicle } from '../types';
 
 function VehicleSelector({
@@ -9,16 +10,18 @@ function VehicleSelector({
   onSelect,
   onRemove,
   usedIds,
+  vehiclesList,
 }: {
   selected: Vehicle | null;
   onSelect: (v: Vehicle) => void;
   onRemove: () => void;
   usedIds: string[];
+  vehiclesList: Vehicle[];
 }) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
 
-  const available = vehicles.filter(v =>
+  const available = vehiclesList.filter(v =>
     !usedIds.includes(v.id) &&
     `${v.brand} ${v.model}`.toLowerCase().includes(search.toLowerCase())
   );
@@ -54,7 +57,7 @@ function VehicleSelector({
   return (
     <div className="relative">
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => setOpen(!open)}
         className="w-full aspect-video border-2 border-dashed border-border rounded-xl flex flex-col items-center justify-center gap-2 hover:border-primary hover:bg-primary-50 transition-all group"
       >
         <div className="w-10 h-10 bg-surface rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -65,15 +68,23 @@ function VehicleSelector({
 
       {open && (
         <div className="absolute top-full left-0 right-0 z-20 mt-2 bg-white rounded-2xl border border-border shadow-card-hover overflow-hidden">
-          <div className="p-3 border-b border-border">
+          <div className="p-3 border-b border-border flex items-center gap-2">
             <input
               autoFocus
               type="text"
               placeholder="Search vehicle..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="input-field text-sm h-10"
+              className="input-field text-sm h-10 flex-1"
             />
+            <button
+              type="button"
+              onClick={() => { setOpen(false); setSearch(''); }}
+              className="p-1.5 rounded-lg hover:bg-surface text-muted hover:text-dark transition-colors"
+              title="Close"
+            >
+              <X size={16} />
+            </button>
           </div>
           <div className="max-h-64 overflow-y-auto">
             {available.map(v => (
@@ -129,28 +140,17 @@ const POPULAR_COMPARISONS_RAW = [
   { id: 'comp5', v1: 'c-brezza', v2: 'c-basalt', title: 'Brezza vs Basalt' }
 ];
 
-const POPULAR_COMPARISONS = POPULAR_COMPARISONS_RAW.map(comp => {
-  const car1 = vehicles.find(v => v.id === comp.v1);
-  const car2 = vehicles.find(v => v.id === comp.v2);
-  return {
-    ...comp,
-    car1: car1 ? {
-      brand: car1.brand,
-      model: car1.model,
-      price: formatPriceShort(car1.startingPrice),
-      image: car1.thumbnailUrl
-    } : null,
-    car2: car2 ? {
-      brand: car2.brand,
-      model: car2.model,
-      price: formatPriceShort(car2.startingPrice),
-      image: car2.thumbnailUrl
-    } : null
-  };
-}).filter(comp => comp.car1 && comp.car2) as any[];
-
 export default function Compare() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchVehicles().then(data => {
+      setVehiclesList(data);
+      setLoading(false);
+    });
+  }, []);
 
   const selected = useMemo(() => {
     const ids = searchParams.get('ids')?.split(',') || [];
@@ -158,14 +158,36 @@ export default function Compare() {
     let idx = 0;
     for (const id of ids) {
       if (idx >= 3) break;
-      const vehicle = vehicles.find(v => v.id === id);
+      const vehicle = vehiclesList.find(v => v.id === id);
       if (vehicle) {
         initialSelected[idx] = vehicle;
         idx++;
       }
     }
     return initialSelected;
-  }, [searchParams]);
+  }, [searchParams, vehiclesList]);
+
+  const popularComparisons = useMemo(() => {
+    return POPULAR_COMPARISONS_RAW.map(comp => {
+      const car1 = vehiclesList.find(v => v.id === comp.v1);
+      const car2 = vehiclesList.find(v => v.id === comp.v2);
+      return {
+        ...comp,
+        car1: car1 ? {
+          brand: car1.brand,
+          model: car1.model,
+          price: formatPriceShort(car1.startingPrice),
+          image: car1.thumbnailUrl
+        } : null,
+        car2: car2 ? {
+          brand: car2.brand,
+          model: car2.model,
+          price: formatPriceShort(car2.startingPrice),
+          image: car2.thumbnailUrl
+        } : null
+      };
+    }).filter(comp => comp.car1 && comp.car2) as any[];
+  }, [vehiclesList]);
 
   const activeCount = selected.filter(Boolean).length;
   const usedIds = selected.filter(Boolean).map(v => v!.id);
@@ -193,6 +215,17 @@ export default function Compare() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-24">
+        <div className="text-center text-muted">
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-4"></div>
+          Loading comparison data...
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-surface pt-24 pb-24 lg:pb-12">
       <div className="container-fluid">
@@ -212,6 +245,7 @@ export default function Compare() {
                 onSelect={v => handleSelect(i, v)}
                 onRemove={() => handleRemove(i)}
                 usedIds={usedIds}
+                vehiclesList={vehiclesList}
               />
             ))}
           </div>
@@ -307,7 +341,7 @@ export default function Compare() {
           
           <div className="relative" data-test-id="swiper-wrapper">
             <ul className="flex overflow-x-auto no-scrollbar scrollbar-hide list-none m-0 p-0 text-xl md:text-3xl gap-4 sm:gap-5 lg:gap-6 pr-4 sm:pr-5 lg:pr-0 pb-4" style={{ scrollbarWidth: 'none' }}>
-              {POPULAR_COMPARISONS.map((comp) => (
+              {popularComparisons.map((comp) => (
                 <li key={comp.id} className="flex-none">
                   <div
                     onClick={() => handleSelectComparison(comp.v1, comp.v2)}
@@ -405,7 +439,7 @@ export default function Compare() {
                     <div className="flex flex-col justify-center items-center p-4 pb-8 gap-4 w-40 h-[198px] flex-none order-1 self-stretch flex-grow z-50">
                       <div className="flex flex-row justify-center items-center p-3 gap-2 w-12 h-12 bg-[#F5F5F5] border-4 border-[#FFFFFF] rounded-full flex-none order-0 flex-grow-0">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:w-5 md:h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4"></path>
                         </svg>
                       </div>
                       <span className="w-[59px] h-4 font-medium text-[14px] leading-4 text-[#0F0F10] flex-none order-1 flex-grow-0">Add car</span>

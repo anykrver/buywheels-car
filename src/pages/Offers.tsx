@@ -1,11 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Tag, Clock, Copy, Check, ArrowRight, X, Sparkles, AlertCircle } from 'lucide-react';
-import { offers } from '../utils/data';
+import { fetchOffers } from '../utils/supabaseService';
 import type { Offer } from '../types';
 
 const filterTabs = ['All', 'Exchange', 'Cashback', 'EMI', 'Corporate', 'Bank', 'EV'];
 
 export default function Offers() {
+  const [offersList, setOffersList] = useState<Offer[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchOffers().then(data => {
+      setOffersList(data);
+      setLoading(false);
+    });
+  }, []);
+
   const [activeTab, setActiveTab] = useState('All');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
@@ -22,11 +32,11 @@ export default function Offers() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
 
-  const filtered = offers.filter(o => {
+  const filtered = offersList.filter(o => {
     if (activeTab === 'All') return true;
     const tabLower = activeTab.toLowerCase();
-    const typeLower = o.type.toLowerCase();
-    const catLower = o.category.toLowerCase();
+    const typeLower = o.type ? o.type.toLowerCase() : '';
+    const catLower = o.category ? o.category.toLowerCase() : '';
     
     if (tabLower === 'ev') {
       return typeLower === 'ev' || catLower === 'ev';
@@ -81,6 +91,17 @@ export default function Offers() {
       setIsSuccess(true);
     }, 1200);
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-24">
+        <div className="text-center text-muted">
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-4"></div>
+          Loading offers...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-surface pt-24 pb-24 lg:pb-12">

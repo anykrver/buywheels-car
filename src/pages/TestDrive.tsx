@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Calendar, Check, Car, MapPin, ArrowLeft } from 'lucide-react';
+import { supabase } from '../utils/supabaseClient';
 import { vehicles, formatPriceShort } from '../utils/data';
 
 export default function TestDrive() {
@@ -36,16 +37,34 @@ export default function TestDrive() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.date) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    
+    const leadPayload = {
+      name: formData.name,
+      email: formData.email || null,
+      phone: formData.phone,
+      source: 'Test Drive Request',
+      vehicle_interest: selectedVehicle ? `${selectedVehicle.brand} ${selectedVehicle.model}` : 'Unknown',
+      notes: `Preferred Date: ${formData.date}. Slot: ${formData.timeSlot}. Branch: ${formData.city}`,
+      stage: 'Test Drive',
+      dealer: formData.city + ' Authorized'
+    };
+
+    const { error } = await supabase
+      .from('leads')
+      .insert([leadPayload]);
+
+    setIsSubmitting(false);
+    if (!error) {
       setIsSuccess(true);
-    }, 1200);
+    } else {
+      console.error('Error booking test drive:', error);
+      alert('Failed to submit booking request. Please check your connection and try again.');
+    }
   };
 
   return (

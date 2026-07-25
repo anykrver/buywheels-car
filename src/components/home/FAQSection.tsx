@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Plus, Minus } from 'lucide-react';
-import { faqs } from '../../utils/data';
+import { fetchFAQs } from '../../utils/supabaseService';
+import type { FAQItem } from '../../types';
 
 export default function FAQSection() {
+  const [faqsList, setFaqsList] = useState<FAQItem[]>([]);
   const [openId, setOpenId] = useState<string | null>('faq1');
+
+  useEffect(() => {
+    fetchFAQs().then(setFaqsList);
+  }, []);
 
   return (
     <section id="faq" className="py-20 bg-white">
@@ -18,7 +24,7 @@ export default function FAQSection() {
           </div>
 
           <div className="space-y-3">
-            {faqs.map(faq => {
+            {faqsList.map(faq => {
               const isOpen = openId === faq.id;
               return (
                 <div

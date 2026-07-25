@@ -1,21 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import VehicleCard from '../VehicleCard';
-import { vehicles } from '../../utils/data';
+import { fetchVehicles } from '../../utils/supabaseService';
 import type { Vehicle } from '../../types';
 
 const tabs = ['All', 'Cars', 'Electric'];
 
 export default function FeaturedVehicles() {
+  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>([]);
+  
+  useEffect(() => {
+    fetchVehicles().then(setVehiclesList);
+  }, []);
+
   const [activeTab, setActiveTab] = useState('All');
   const [compareList, setCompareList] = useState<Vehicle[]>([]);
 
-  const filtered = vehicles.filter(v => {
-    if (activeTab === 'All') return v.isBestSeller || v.isNew;
-    if (activeTab === 'Electric') return v.isEV;
-    return v.category === activeTab.toLowerCase();
-  }).slice(0, 6);
+  const filtered = vehiclesList.filter(v => {
+    if (activeTab === 'Electric') return v.isEV || v.category?.toLowerCase() === 'ev';
+    if (activeTab === 'Cars') return v.category?.toLowerCase() === 'car' || (!v.isEV && v.category?.toLowerCase() !== 'ev');
+    return v.isBestSeller || v.isNew;
+  });
+  const displayVehicles = (filtered.length > 0 ? filtered : vehiclesList).slice(0, 6);
 
   const handleCompare = (vehicle: Vehicle) => {
     setCompareList(prev =>
@@ -58,7 +65,7 @@ export default function FeaturedVehicles() {
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map(vehicle => (
+          {displayVehicles.map(vehicle => (
             <VehicleCard
               key={vehicle.id}
               vehicle={vehicle}

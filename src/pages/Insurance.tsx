@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Shield, Check, Calculator, FileText } from 'lucide-react';
 import { vehicles, formatPriceShort } from '../utils/data';
+import { supabase } from '../utils/supabaseClient';
 
 export default function Insurance() {
   const [vehicleId, setVehicleId] = useState(vehicles[0]?.id || '');
@@ -48,15 +49,34 @@ export default function Insurance() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.phone) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    
+    const { error } = await supabase
+      .from('insurance_queries')
+      .insert([
+        {
+          vehicle_id: vehicleId,
+          registration_year: year,
+          claims_past_year: claims,
+          comprehensive_premium: comprehensive,
+          third_party_premium: thirdParty,
+          idv: idv,
+          name: formData.name,
+          phone: formData.phone
+        }
+      ]);
+
+    setIsSubmitting(false);
+    if (!error) {
       setIsSuccess(true);
-    }, 1200);
+    } else {
+      console.error('Error submitting insurance query:', error);
+      alert('Failed to submit quote request. Please check your connection and try again.');
+    }
   };
 
   return (

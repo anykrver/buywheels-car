@@ -1,8 +1,14 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import { reviews } from '../../utils/data';
+import { fetchReviews } from '../../utils/supabaseService';
+import type { Review } from '../../types';
 
 export default function ReviewsSection() {
+  const [reviewsList, setReviewsList] = useState<Review[]>([]);
+
+  useEffect(() => {
+    fetchReviews().then(setReviewsList);
+  }, []);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: 'left' | 'right') => {
@@ -69,7 +75,7 @@ export default function ReviewsSection() {
           {/* Leading spacer */}
           <div className="flex-shrink-0 pl-3 sm:pl-5 lg:pl-8 xl:pl-[calc((100vw-1280px)/2+32px)]" />
 
-          {reviews.map((review) => (
+          {reviewsList.map((review) => (
             <div
               key={review.id}
               className="relative flex-shrink-0 snap-center"
@@ -123,7 +129,7 @@ export default function ReviewsSection() {
 
       {/* Mobile scroll hint dots */}
       <div className="mt-5 flex justify-center gap-1.5 md:hidden">
-        {reviews.map((_, i) => (
+        {reviewsList.map((_, i) => (
           <span
             key={i}
             className={`h-1.5 rounded-full transition-all duration-300 ${i === 0 ? 'w-4 bg-primary' : 'w-1.5 bg-neutral-200'}`}

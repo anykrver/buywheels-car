@@ -1,7 +1,9 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Tag } from 'lucide-react';
-import { vehicles, formatPriceShort } from '../../utils/data';
+import { formatPriceShort } from '../../utils/data';
+import { fetchVehicles } from '../../utils/supabaseService';
+import type { Vehicle } from '../../types';
 
 const fallbackImg = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
 
@@ -26,10 +28,15 @@ function ArrowIcon({ className }: { className?: string }) {
 
 export default function RecentlyLaunchedSection() {
   const scrollRef = useRef<HTMLUListElement>(null);
-  
+  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>([]);
+
+  useEffect(() => {
+    fetchVehicles().then(setVehiclesList);
+  }, []);
+
   // Deduplicate and filter new vehicles
   const seen = new Set();
-  const recentlyLaunchedCars = vehicles.filter(v => {
+  const recentlyLaunchedCars = vehiclesList.filter(v => {
     if (seen.has(v.id)) return false;
     seen.add(v.id);
     return v.isNew;

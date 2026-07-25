@@ -3,7 +3,8 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { Search, LayoutGrid, List, SlidersHorizontal, X } from 'lucide-react';
 import VehicleCard from '../components/VehicleCard';
 import VehicleFilters, { Filters } from '../components/VehicleFilters';
-import { vehicles, getBodyType } from '../utils/data';
+import { getBodyType } from '../utils/data';
+import { fetchVehicles } from '../utils/supabaseService';
 import type { Vehicle, VehicleCategory } from '../types';
 
 interface VehicleListingProps {
@@ -13,6 +14,12 @@ interface VehicleListingProps {
 }
 
 export default function VehicleListing({ category, title, subtitle }: VehicleListingProps) {
+  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>([]);
+  
+  useEffect(() => {
+    fetchVehicles().then(setVehiclesList);
+  }, []);
+
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState('');
   const [compareList, setCompareList] = useState<Vehicle[]>([]);
@@ -40,10 +47,17 @@ export default function VehicleListing({ category, title, subtitle }: VehicleLis
     location: '',
   });
 
-  const categoryVehicles = useMemo(() =>
-    category === 'all' ? vehicles : vehicles.filter(v => v.category === category),
-    [category]
-  );
+  const categoryVehicles = useMemo(() => {
+    if (category === 'all') return vehiclesList;
+    const catLower = category.toLowerCase();
+    return vehiclesList.filter(v => {
+      const vCatLower = v.category ? v.category.toLowerCase() : '';
+      if (vCatLower === catLower) return true;
+      if (catLower === 'ev' && v.isEV) return true;
+      if (catLower === 'car' && (vCatLower === 'car' || !v.isEV)) return true;
+      return false;
+    });
+  }, [category, vehiclesList]);
 
   const availableBrands = useMemo(() => {
     // Deduplicate brands

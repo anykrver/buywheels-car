@@ -19,7 +19,7 @@ export default function VehicleCard({ vehicle, onCompare, compact }: VehicleCard
   const fallbackImg = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
 
   return (
-    <div className="group bg-white rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col">
+    <div className="group bg-white rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full">
       {/* Image */}
       <div className={`relative overflow-hidden bg-surface ${compact ? 'aspect-[16/9]' : 'aspect-[16/10]'}`}>
         <img

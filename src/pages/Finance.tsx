@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Calculator, Check, ArrowRight, Shield } from 'lucide-react';
 import { formatPriceShort } from '../utils/data';
+import { supabase } from '../utils/supabaseClient';
 
 const banks = [
   { name: 'State Bank of India', abbr: 'SBI', rate: '8.5%', tenure: '7 years', color: 'bg-blue-700', minLoan: '₹1 Lakh', maxLoan: '₹1 Crore', processing: '0.35%' },
@@ -58,7 +59,7 @@ export default function Finance() {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -77,10 +78,31 @@ export default function Finance() {
     }
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    
+    const { error: dbError } = await supabase
+      .from('loan_applications')
+      .insert([
+        {
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          phone: formData.phone,
+          email: formData.email || null,
+          employment: formData.employment,
+          monthly_income: Number(formData.income),
+          vehicle_type: formData.vehicleType,
+          preferred_bank: formData.preferredBank,
+          loan_amount: loan,
+          estimated_emi: Math.round(emi)
+        }
+      ]);
+
+    setIsSubmitting(false);
+    if (!dbError) {
       setIsSuccess(true);
-    }, 1200);
+    } else {
+      console.error('Error submitting loan application:', dbError);
+      setError('Failed to submit loan request. Please check your connection and try again.');
+    }
   };
 
   return (

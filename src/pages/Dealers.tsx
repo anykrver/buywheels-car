@@ -1,12 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MapPin, Phone, Star, Clock, Search, Building2, Check } from 'lucide-react';
-import { dealers } from '../utils/data';
+import { fetchDealers } from '../utils/supabaseService';
+import type { Dealer } from '../types';
 import Toast from '../components/Toast';
 
 const cities = ['All Cities', 'Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh'];
 const brandFilters = ['All Brands', 'Maruti Suzuki', 'Hyundai', 'Tata', 'Mahindra', 'Toyota', 'Honda', 'Royal Enfield'];
 
 export default function Dealers() {
+  const [dealersList, setDealersList] = useState<Dealer[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchDealers().then(data => {
+      setDealersList(data);
+      setLoading(false);
+    });
+  }, []);
+
   const [search, setSearch] = useState('');
   const [city, setCity] = useState('All Cities');
   const [brand, setBrand] = useState('All Brands');
@@ -18,7 +29,7 @@ export default function Dealers() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isPartnerSuccess, setIsPartnerSuccess] = useState(false);
 
-  const filtered = dealers.filter(d => {
+  const filtered = dealersList.filter(d => {
     if (search && !d.name.toLowerCase().includes(search.toLowerCase())) return false;
     if (city !== 'All Cities' && d.city !== city) return false;
     if (brand !== 'All Brands' && !d.brands.includes(brand)) return false;
@@ -50,6 +61,17 @@ export default function Dealers() {
       [e.target.name]: e.target.value,
     }));
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-24">
+        <div className="text-center text-muted">
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-4"></div>
+          Loading dealers list...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-surface pt-24 pb-24 lg:pb-12">

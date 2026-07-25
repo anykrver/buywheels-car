@@ -1,14 +1,38 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, Check } from 'lucide-react';
+import { supabase } from '../utils/supabaseClient';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    
+    const leadPayload = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      source: 'Contact Form',
+      notes: `Subject: ${form.subject}. Message: ${form.message}`,
+      stage: 'New'
+    };
+
+    const { error } = await supabase
+      .from('leads')
+      .insert([leadPayload]);
+      
+    setIsSubmitting(false);
+    if (!error) {
+      setSubmitted(true);
+    } else {
+      console.error('Error submitting contact form:', error);
+      alert('Failed to send message. Please check your connection and try again.');
+    }
   };
+
 
   const contactInfo = [
     { icon: Phone, label: 'Phone', value: '+91 92969 61232', href: 'tel:+919296961232' },
@@ -154,9 +178,19 @@ export default function Contact() {
                         className="input-field resize-none"
                       />
                     </div>
-                    <button type="submit" className="btn-primary w-full justify-center">
-                      <Send size={18} />
-                      Send Message
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="btn-primary w-full justify-center"
+                    >
+                      {isSubmitting ? (
+                        'Sending Message...'
+                      ) : (
+                        <>
+                          <Send size={18} />
+                          Send Message
+                        </>
+                      )}
                     </button>
                   </form>
                 </>

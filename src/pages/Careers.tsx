@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Briefcase, MapPin, Users, Heart, Award, ArrowRight, Check } from 'lucide-react';
+import { supabase } from '../utils/supabaseClient';
 
 const positions = [
   {
@@ -38,15 +39,31 @@ export default function Careers() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.phone) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    
+    const { error } = await supabase
+      .from('job_applications')
+      .insert([
+        {
+          position: selectedJob,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          note: formData.note || null
+        }
+      ]);
+
+    setIsSubmitting(false);
+    if (!error) {
       setIsSuccess(true);
-    }, 1200);
+    } else {
+      console.error('Error submitting job application:', error);
+      alert('Failed to submit application. Please check your connection and try again.');
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

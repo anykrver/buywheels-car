@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Clock, ArrowRight, Tag, ArrowLeft, Send, Check, MessageSquare, Heart, Share2 } from 'lucide-react';
-import { blogPosts } from '../utils/data';
+import { fetchBlogPosts } from '../utils/supabaseService';
+import type { BlogPost } from '../types';
 
 const categories = ['All', 'Buying Guide', 'EV', 'Comparison', 'News', 'Tips'];
-
-const allPosts = blogPosts;
 
 export default function Blog() {
   const { slug } = useParams<{ slug: string }>();
@@ -20,12 +19,22 @@ export default function Blog() {
   const [isLiked, setIsLiked] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
+  const [blogPostsList, setBlogPostsList] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchBlogPosts().then(data => {
+      setBlogPostsList(data);
+      setLoading(false);
+    });
+  }, []);
+
   // Scroll to top and update page metadata (SEO) when slug changes
   useEffect(() => {
     window.scrollTo({ top: 0 });
     
     if (slug) {
-      const post = blogPosts.find(p => p.slug === slug);
+      const post = blogPostsList.find(p => p.slug === slug);
       if (post) {
         document.title = post.metaTitle || `${post.title} | Buywheels`;
         
@@ -47,7 +56,7 @@ export default function Blog() {
         metaDescription.setAttribute('content', 'Expert advice, detailed vehicle comparisons, and the latest news to help you make smarter vehicle decisions in Jharkhand.');
       }
     }
-  }, [slug]);
+  }, [slug, blogPostsList]);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,7 +69,18 @@ export default function Blog() {
 
   // If slug is present, render the single blog post details
   if (slug) {
-    const post = allPosts.find(p => p.slug === slug);
+    if (loading) {
+      return (
+        <div className="min-h-screen flex items-center justify-center pt-24">
+          <div className="text-center text-muted">
+            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-4"></div>
+            Loading article...
+          </div>
+        </div>
+      );
+    }
+
+    const post = blogPostsList.find(p => p.slug === slug);
     
     if (!post) {
       return (
@@ -73,7 +93,7 @@ export default function Blog() {
       );
     }
 
-    const relatedPosts = allPosts.filter(p => p.slug !== slug && (p.category === post.category || p.category === 'Buying Guide')).slice(0, 3);
+    const relatedPosts = blogPostsList.filter(p => p.slug !== slug && (p.category === post.category || p.category === 'Buying Guide')).slice(0, 3);
 
     return (
       <div className="min-h-screen bg-surface pt-24 pb-24 lg:pb-12 animate-fade-in">
@@ -256,8 +276,19 @@ export default function Blog() {
     );
   }
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-24">
+        <div className="text-center text-muted">
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-4"></div>
+          Loading articles...
+        </div>
+      </div>
+    );
+  }
+
   // Filter logic for blog list
-  const filteredPosts = allPosts.filter(post => 
+  const filteredPosts = blogPostsList.filter(post => 
     activeCategory === 'All' ? true : post.category.toLowerCase() === activeCategory.toLowerCase()
   );
 
