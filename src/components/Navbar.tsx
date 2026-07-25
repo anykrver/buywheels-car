@@ -3,8 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
 import {
   Car, Zap, GitCompare, Tag, Shield, Building2, BookOpen,
-  Search, Heart, MapPin, ChevronDown, Menu, X, User, Phone,
+  Search, Heart, MapPin, ChevronDown, Menu, X, User, Phone, Check,
 } from 'lucide-react';
+
+const CITIES = ['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh', 'Deoghar'];
 
 const Logo = ({ className = '' }: { className?: string }) => (
   <img
@@ -30,6 +32,11 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [cityDropdownOpen, setCityDropdownOpen] = useState(false);
+  const [selectedCity, setSelectedCity] = useState<string>(() => {
+    return localStorage.getItem('userCity') || 'Ranchi';
+  });
+
   const location = useLocation();
   const navigate = useNavigate();
   const { wishlistCount } = useWishlist();
@@ -50,17 +57,17 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
+    setCityDropdownOpen(false);
   }, [location]);
 
   const navBg = isHome && !scrolled
     ? 'bg-transparent'
     : 'bg-white shadow-nav';
 
-
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
-        {/* Top bar */}
+        {/* Top bar (Desktop) */}
         <div className={`hidden lg:block border-b transition-all duration-300 ${isHome && !scrolled ? 'border-white/10' : 'border-border'}`}>
           <div className="container-fluid flex items-center justify-between h-9">
             <div className={`flex items-center gap-1 text-xs ${isHome && !scrolled ? 'text-white/70' : 'text-muted'}`}>
@@ -79,129 +86,219 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Main nav */}
-        <div className="container-fluid flex items-center gap-4 h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center flex-shrink-0">
-            <Logo className="h-20 w-auto py-2" />
-          </Link>
-
-          {/* Desktop nav links */}
-          <nav className="hidden xl:flex items-center gap-1 ml-6">
-            {navItems.map(({ label, path, icon: Icon }) => {
-              const active = location.pathname === path;
-              return (
-                <Link
-                  key={path}
-                  to={path}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    active
-                      ? 'text-primary bg-primary-50'
-                      : isHome && !scrolled
-                      ? 'text-white/90 hover:text-white hover:bg-white/10'
-                      : 'text-dark-600 hover:text-primary hover:bg-primary-50'
-                  }`}
-                >
-                  <Icon size={15} />
-                  {label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Large screen compact nav */}
-          <nav className="hidden lg:flex xl:hidden items-center gap-0.5 ml-4">
-            {navItems.slice(0, 5).map(({ label, path }) => {
-              const active = location.pathname === path;
-              return (
-                <Link
-                  key={path}
-                  to={path}
-                  className={`px-2.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    active
-                      ? 'text-primary bg-primary-50'
-                      : isHome && !scrolled
-                      ? 'text-white/90 hover:text-white hover:bg-white/10'
-                      : 'text-dark-600 hover:text-primary hover:bg-surface'
-                  }`}
-                >
-                  {label}
-                </Link>
-              );
-            })}
-            <button className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-all ${isHome && !scrolled ? 'text-white/90 hover:text-white hover:bg-white/10' : 'text-dark-600 hover:text-primary hover:bg-surface'}`}>
-              More <ChevronDown size={14} />
-            </button>
-          </nav>
-
-          <div className="flex-1" />
-
-          {/* Right side actions */}
-          <div className="flex items-center gap-2">
-            {/* Search */}
+        {/* Main Header Bar */}
+        <div className="container-fluid flex items-center h-16 lg:h-20">
+          
+          {/* MOBILE HEADER LAYOUT (lg:hidden): 3-Line Menu (Left) | Logo (Middle) | Select City (Right) */}
+          <div className="lg:hidden flex items-center justify-between w-full relative">
+            
+            {/* Left: 3-line Menu Button */}
             <button
-              onClick={() => setSearchOpen(true)}
-              className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${
-                isHome && !scrolled
-                  ? 'text-white/90 hover:text-white hover:bg-white/10'
-                  : 'text-dark-600 hover:text-primary hover:bg-surface'
-              }`}
-            >
-              <Search size={18} />
-              <span className="hidden lg:block text-sm font-medium">Search</span>
-            </button>
-
-            {/* Wishlist */}
-            <Link
-              to="/wishlist"
-              className={`relative p-2.5 rounded-xl transition-all duration-200 ${
-                isHome && !scrolled
-                  ? 'text-white/90 hover:text-white hover:bg-white/10'
-                  : 'text-dark-600 hover:text-primary hover:bg-surface'
-              }`}
-            >
-              <Heart size={18} />
-              {wishlistCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-scale-in">
-                  {wishlistCount}
-                </span>
-              )}
-            </Link>
-
-            {/* Login */}
-            <Link
-              to="/login"
-              className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-                isHome && !scrolled
-                  ? 'text-white/90 hover:text-white hover:bg-white/10 border border-white/20'
-                  : 'text-dark border border-border hover:border-primary hover:text-primary'
-              }`}
-            >
-              <User size={16} />
-              Login
-            </Link>
-
-            {/* Book Now CTA */}
-            <Link
-              to="/cars"
-              className="hidden lg:flex items-center gap-2 px-5 py-2 bg-primary text-white font-heading font-semibold rounded-xl text-sm hover:bg-primary-600 hover:shadow-primary transition-all duration-200 hover:-translate-y-0.5"
-            >
-              Book Now
-            </Link>
-
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className={`lg:hidden p-2.5 rounded-xl transition-colors ${
+              onClick={() => {
+                setMobileOpen(!mobileOpen);
+                setCityDropdownOpen(false);
+              }}
+              className={`p-2 rounded-xl transition-colors ${
                 isHome && !scrolled ? 'text-white hover:bg-white/10' : 'text-dark hover:bg-surface'
               }`}
+              aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
+
+            {/* Middle: Centered Logo */}
+            <Link to="/" className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
+              <Logo className="h-12 w-auto py-1" />
+            </Link>
+
+            {/* Right: Select City Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
+                className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition-all ${
+                  isHome && !scrolled
+                    ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
+                    : 'bg-surface text-dark border-border hover:border-primary'
+                }`}
+              >
+                <MapPin size={13} className="text-primary shrink-0" />
+                <span className="truncate max-w-[75px] sm:max-w-[100px]">{selectedCity}</span>
+                <ChevronDown size={12} className="text-muted shrink-0" />
+              </button>
+
+              {/* City Selection Dropdown */}
+              {cityDropdownOpen && (
+                <div className="absolute right-0 top-full mt-2 w-44 bg-white rounded-2xl shadow-card-hover border border-border py-2 z-50 animate-scale-in">
+                  <p className="px-3 py-1 text-[10px] font-bold text-muted uppercase tracking-wider">Select City</p>
+                  {CITIES.map(city => (
+                    <button
+                      key={city}
+                      onClick={() => {
+                        setSelectedCity(city);
+                        localStorage.setItem('userCity', city);
+                        setCityDropdownOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-1.5 text-xs font-semibold flex items-center justify-between hover:bg-primary-50 hover:text-primary transition-colors ${
+                        selectedCity === city ? 'text-primary font-bold bg-primary-50/50' : 'text-dark-600'
+                      }`}
+                    >
+                      <span>{city}</span>
+                      {selectedCity === city && <Check size={12} className="text-primary" />}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
+
+          {/* DESKTOP HEADER LAYOUT (hidden lg:flex) */}
+          <div className="hidden lg:flex items-center justify-between w-full">
+            {/* Logo */}
+            <Link to="/" className="flex items-center flex-shrink-0">
+              <Logo className="h-20 w-auto py-2" />
+            </Link>
+
+            {/* Desktop nav links */}
+            <nav className="hidden xl:flex items-center gap-1 ml-6">
+              {navItems.map(({ label, path, icon: Icon }) => {
+                const active = location.pathname === path;
+                return (
+                  <Link
+                    key={path}
+                    to={path}
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      active
+                        ? 'text-primary bg-primary-50'
+                        : isHome && !scrolled
+                        ? 'text-white/90 hover:text-white hover:bg-white/10'
+                        : 'text-dark-600 hover:text-primary hover:bg-primary-50'
+                    }`}
+                  >
+                    <Icon size={15} />
+                    {label}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            {/* Compact Desktop Nav */}
+            <nav className="hidden lg:flex xl:hidden items-center gap-0.5 ml-4">
+              {navItems.slice(0, 5).map(({ label, path }) => {
+                const active = location.pathname === path;
+                return (
+                  <Link
+                    key={path}
+                    to={path}
+                    className={`px-2.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      active
+                        ? 'text-primary bg-primary-50'
+                        : isHome && !scrolled
+                        ? 'text-white/90 hover:text-white hover:bg-white/10'
+                        : 'text-dark-600 hover:text-primary hover:bg-surface'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            {/* Desktop Right side actions */}
+            <div className="flex items-center gap-2">
+              {/* Select City Button (Desktop) */}
+              <div className="relative">
+                <button
+                  onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border transition-all ${
+                    isHome && !scrolled
+                      ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
+                      : 'bg-surface text-dark border-border hover:border-primary'
+                  }`}
+                >
+                  <MapPin size={14} className="text-primary" />
+                  <span>{selectedCity}</span>
+                  <ChevronDown size={12} className="text-muted" />
+                </button>
+
+                {cityDropdownOpen && (
+                  <div className="absolute right-0 top-full mt-2 w-44 bg-white rounded-2xl shadow-card-hover border border-border py-2 z-50 animate-scale-in">
+                    <p className="px-3 py-1 text-[10px] font-bold text-muted uppercase tracking-wider">Select City</p>
+                    {CITIES.map(city => (
+                      <button
+                        key={city}
+                        onClick={() => {
+                          setSelectedCity(city);
+                          localStorage.setItem('userCity', city);
+                          setCityDropdownOpen(false);
+                        }}
+                        className={`w-full text-left px-3 py-1.5 text-xs font-semibold flex items-center justify-between hover:bg-primary-50 hover:text-primary transition-colors ${
+                          selectedCity === city ? 'text-primary font-bold bg-primary-50/50' : 'text-dark-600'
+                        }`}
+                      >
+                        <span>{city}</span>
+                        {selectedCity === city && <Check size={12} className="text-primary" />}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Search */}
+              <button
+                onClick={() => setSearchOpen(true)}
+                className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-200 ${
+                  isHome && !scrolled
+                    ? 'text-white/90 hover:text-white hover:bg-white/10'
+                    : 'text-dark-600 hover:text-primary hover:bg-surface'
+                }`}
+              >
+                <Search size={18} />
+                <span className="hidden lg:block text-sm font-medium">Search</span>
+              </button>
+
+              {/* Wishlist */}
+              <Link
+                to="/wishlist"
+                className={`relative p-2.5 rounded-xl transition-all duration-200 ${
+                  isHome && !scrolled
+                    ? 'text-white/90 hover:text-white hover:bg-white/10'
+                    : 'text-dark-600 hover:text-primary hover:bg-surface'
+                }`}
+              >
+                <Heart size={18} />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-scale-in">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
+
+              {/* Login */}
+              <Link
+                to="/login"
+                className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  isHome && !scrolled
+                    ? 'text-white/90 hover:text-white hover:bg-white/10 border border-white/20'
+                    : 'text-dark border border-border hover:border-primary hover:text-primary'
+                }`}
+              >
+                <User size={16} />
+                Login
+              </Link>
+
+              {/* Book Now CTA */}
+              <Link
+                to="/cars"
+                className="hidden lg:flex items-center gap-2 px-5 py-2 bg-primary text-white font-heading font-semibold rounded-xl text-sm hover:bg-primary-600 hover:shadow-primary transition-all duration-200 hover:-translate-y-0.5"
+              >
+                Book Now
+              </Link>
+            </div>
+          </div>
+
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Slide-down Navigation Drawer */}
         {mobileOpen && (
           <div className="lg:hidden bg-white border-t border-border shadow-lg animate-slide-up">
             <nav className="container-fluid py-4 space-y-1">
