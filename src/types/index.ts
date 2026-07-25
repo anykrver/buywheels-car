@@ -13,6 +13,9 @@ export interface Variant {
   torqueNm?: number;
   mileageKmpl?: number;
   rangeKm?: number;
+  features?: string[];
+  mileage?: string;
+  additionalFeaturesOverBase?: string[];
 }
 
 export interface DealerPrice {

@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
 import {
   Star, Heart, GitCompare, Share2, MapPin, Fuel, Gauge, Users, Shield,
-  ChevronLeft, ChevronRight, Check, Info, Calculator, ArrowRight, Phone, Plus, MessageSquare, X
+  ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Check, Info, Calculator, ArrowRight, Phone, Plus, MessageSquare, X, Download, Minus
 } from 'lucide-react';
 import { formatPriceShort, formatPrice } from '../utils/data';
 import { fetchVehicles, fetchReviews } from '../utils/supabaseService';
@@ -175,6 +175,27 @@ export default function VehicleDetail() {
   const [selectedFuelFilter, setSelectedFuelFilter] = useState('All');
   const [selectedTransFilter, setSelectedTransFilter] = useState('All');
 
+  const [selectedCity] = useState({ name: 'New Delhi', multiplier: 1.14 });
+
+  const [selectedCompareVariantIds, setSelectedCompareVariantIds] = useState<string[]>([]);
+  const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
+  const [brochureDownloading, setBrochureDownloading] = useState(false);
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({});
+
+  const toggleCompareVariant = (id: string) => {
+    setSelectedCompareVariantIds(prev => {
+      if (prev.includes(id)) {
+        return prev.filter(x => x !== id);
+      } else {
+        if (prev.length >= 3) {
+          alert('You can compare up to 3 variants at a time.');
+          return prev;
+        }
+        return [...prev, id];
+      }
+    });
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center pt-24">
@@ -255,11 +276,61 @@ export default function VehicleDetail() {
   const availableFuels = ['All', ...Array.from(new Set(vehicle.variants.map(v => v.fuelType)))];
   const availableTransmissions = ['All', ...Array.from(new Set(vehicle.variants.map(v => v.transmission)))];
 
+  const fuelCounts = (() => {
+    const counts: Record<string, number> = { All: vehicle.variants.length };
+    vehicle.variants.forEach(v => {
+      counts[v.fuelType] = (counts[v.fuelType] || 0) + 1;
+    });
+    return counts;
+  })();
+
+  const transmissionCounts = (() => {
+    const counts: Record<string, number> = { All: vehicle.variants.length };
+    vehicle.variants.forEach(v => {
+      counts[v.transmission] = (counts[v.transmission] || 0) + 1;
+    });
+    return counts;
+  })();
+
   const filteredVariants = vehicle.variants.filter(v => {
     const fuelMatch = selectedFuelFilter === 'All' || v.fuelType === selectedFuelFilter;
     const transMatch = selectedTransFilter === 'All' || v.transmission === selectedTransFilter;
     return fuelMatch && transMatch;
   });
+
+  const groupedVariants = (() => {
+    const groups: Record<string, typeof filteredVariants> = {};
+    filteredVariants.forEach(v => {
+      const parts = v.name.split(' ');
+      let groupKey = parts[0];
+      if (parts[1] && (parts[1] === '(S)' || parts[1] === 'L' || parts[1] === 'T')) {
+        groupKey = `${parts[0]} ${parts[1]}`;
+      }
+      if (!groups[groupKey]) {
+        groups[groupKey] = [];
+      }
+      groups[groupKey].push(v);
+    });
+    return groups;
+  })();
+
+  const sortedGroupKeys = (() => {
+    return Object.keys(groupedVariants).sort((a, b) => {
+      const minA = Math.min(...groupedVariants[a].map(v => v.price));
+      const minB = Math.min(...groupedVariants[b].map(v => v.price));
+      return minA - minB;
+    });
+  })();
+
+  const absoluteMinPrice = (() => {
+    if (!vehicle.variants || vehicle.variants.length === 0) return 0;
+    return Math.min(...vehicle.variants.map(v => v.price));
+  })();
+
+  const absoluteMaxPrice = (() => {
+    if (!vehicle.variants || vehicle.variants.length === 0) return 0;
+    return Math.max(...vehicle.variants.map(v => v.price));
+  })();
 
   const handleVariantClick = (variantId: string) => {
     const origIdx = vehicle.variants.findIndex(v => v.id === variantId);
@@ -500,115 +571,202 @@ export default function VehicleDetail() {
 
                 {activeTab === 'variants' && (
                   <div className="space-y-4">
+                    {/* Filters block */}
                     <div className="p-4 bg-surface rounded-2xl border border-border space-y-3">
-                      {availableFuels.length > 2 && (
+                      <div className="flex flex-col gap-3">
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="text-xs font-semibold text-muted w-24">Fuel Option:</span>
-                          <div className="flex flex-wrap gap-1.5">
+                          <div className="flex flex-wrap gap-1.5 flex-1">
                             {availableFuels.map(fuel => (
                               <button
                                 key={fuel}
                                 type="button"
                                 onClick={() => setSelectedFuelFilter(fuel)}
-                                className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${
+                                className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
                                   selectedFuelFilter === fuel
-                                    ? 'bg-primary border-primary text-white'
+                                    ? 'bg-primary border-primary text-white shadow-sm'
                                     : 'bg-white border-border text-dark hover:border-primary/50'
                                 }`}
                               >
-                                {fuel}
+                                {fuel} {fuelCounts[fuel] !== undefined ? `(${fuelCounts[fuel]})` : ''}
                               </button>
                             ))}
                           </div>
                         </div>
-                      )}
 
-                      {availableTransmissions.length > 2 && (
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="text-xs font-semibold text-muted w-24">Transmission:</span>
-                          <div className="flex flex-wrap gap-1.5">
+                          <div className="flex flex-wrap gap-1.5 flex-1">
                             {availableTransmissions.map(trans => (
                               <button
                                 key={trans}
                                 type="button"
                                 onClick={() => setSelectedTransFilter(trans)}
-                                className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${
+                                className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
                                   selectedTransFilter === trans
-                                    ? 'bg-primary border-primary text-white'
+                                    ? 'bg-primary border-primary text-white shadow-sm'
                                     : 'bg-white border-border text-dark hover:border-primary/50'
                                 }`}
                               >
-                                {trans}
+                                {trans} {transmissionCounts[trans] !== undefined ? `(${transmissionCounts[trans]})` : ''}
                               </button>
                             ))}
                           </div>
                         </div>
-                      )}
+                      </div>
                     </div>
 
-                    <div className="space-y-3">
-                      {filteredVariants.length === 0 ? (
-                        <div className="text-center py-8 bg-surface rounded-xl text-muted text-sm border border-dashed border-border">
+                    {/* Accordion list */}
+                    <div className="space-y-4">
+                      {sortedGroupKeys.length === 0 ? (
+                        <div className="text-center py-12 bg-white rounded-2xl border border-dashed border-border text-muted text-sm">
                           No variants match your selected filter criteria.
                         </div>
                       ) : (
-                        filteredVariants.map(v => {
-                          const isSelected = vehicle.variants[activeVariant]?.id === v.id;
-                          const onRoadPrice = Math.round(v.price * 1.15);
+                        sortedGroupKeys.map(groupKey => {
+                          const groupVariants = groupedVariants[groupKey] || [];
+                          const minPrice = Math.min(...groupVariants.map(g => g.price));
+                          const maxPrice = Math.max(...groupVariants.map(g => g.price));
+                          const isExpanded = !!expandedGroups[groupKey];
+                          const groupFeatures = Array.from(new Set(groupVariants.flatMap(gv => gv.features || []))).slice(0, 4);
+
                           return (
-                            <div
-                              key={v.id}
-                              onClick={() => handleVariantClick(v.id)}
-                              className={`p-5 rounded-2xl border cursor-pointer transition-all ${
-                                isSelected
-                                  ? 'border-primary bg-primary-50/30 shadow-sm'
-                                  : 'border-border bg-white hover:border-primary/50 hover:shadow-sm'
-                              }`}
-                            >
-                              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+                            <div key={groupKey} className="border border-border rounded-xl overflow-hidden bg-white shadow-sm hover:border-dark-300 transition-all">
+                              <div
+                                onClick={() => setExpandedGroups(prev => ({ ...prev, [groupKey]: !prev[groupKey] }))}
+                                className="p-4 cursor-pointer hover:bg-surface/10 select-none flex flex-col md:flex-row md:items-center justify-between gap-4"
+                              >
                                 <div className="space-y-2 flex-1">
                                   <div className="flex items-center gap-2">
-                                    {isSelected && (
-                                      <span className="w-2.5 h-2.5 bg-primary rounded-full shrink-0" />
-                                    )}
-                                    <p className="font-semibold text-dark text-base sm:text-lg">{v.name}</p>
+                                    <h3 className="font-heading font-semibold text-dark text-base md:text-lg">
+                                      {vehicle.brand} {vehicle.model} {groupKey}
+                                    </h3>
                                   </div>
-                                  
-                                  <div className="flex flex-wrap gap-1.5">
-                                    <span className="bg-primary-50 text-primary text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider">
-                                      {v.fuelType}
-                                    </span>
-                                    <span className="bg-dark-50 text-dark text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider">
-                                      {v.transmission}
-                                    </span>
-                                    {v.engineCC && (
-                                      <span className="bg-surface text-dark-600 text-[10px] font-semibold px-2 py-1 rounded-lg border border-border/80">
-                                        {v.engineCC} cc
-                                      </span>
-                                    )}
-                                    {v.powerBHP && (
-                                      <span className="bg-surface text-dark-600 text-[10px] font-semibold px-2 py-1 rounded-lg border border-border/80">
-                                        {v.powerBHP} BHP
-                                      </span>
-                                    )}
-                                    {v.rangeKm && (
-                                      <span className="bg-success-50 text-success text-[10px] font-bold px-2 py-1 rounded-lg">
-                                        {v.rangeKm} km Range
-                                      </span>
-                                    )}
-                                  </div>
+                                  {groupFeatures.length > 0 && (
+                                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
+                                      {groupFeatures.map((feat, i) => (
+                                        <span key={i} className="flex items-center gap-1">
+                                          <span className="w-1.5 h-1.5 bg-success rounded-full"></span>
+                                          {feat}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  )}
                                 </div>
 
-                                <div className="text-left sm:text-right shrink-0">
-                                  <p className="text-xs text-muted">Ex-Showroom Price</p>
-                                  <p className="font-heading font-bold text-dark text-lg sm:text-2xl mt-0.5">
-                                    {formatPrice(v.price)}
-                                  </p>
-                                  <p className="text-xs text-success font-medium mt-1">
-                                    Est. On-Road: {formatPrice(onRoadPrice)}
-                                  </p>
+                                <div className="flex items-center justify-between md:justify-end gap-4 shrink-0">
+                                  <div className="text-left md:text-right">
+                                    <p className="text-[10px] text-muted uppercase tracking-wider font-semibold">Ex-Showroom Price</p>
+                                    <p className="font-heading font-bold text-dark text-base md:text-lg">
+                                      {minPrice === maxPrice
+                                        ? formatPrice(minPrice)
+                                        : `${formatPriceShort(minPrice)} - ${formatPriceShort(maxPrice)}`}
+                                    </p>
+                                  </div>
+                                  <div className="flex items-center gap-2" onClick={e => e.stopPropagation()}>
+                                    <button
+                                      type="button"
+                                      className="flex items-center gap-1 text-xs font-semibold text-primary px-3 py-2 rounded-lg bg-primary-50/50 hover:bg-primary-50 transition-colors"
+                                      onClick={() => setExpandedGroups(prev => ({ ...prev, [groupKey]: !prev[groupKey] }))}
+                                    >
+                                      <span>View {groupVariants.length} Variants</span>
+                                      {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={() => {
+                                        setBookingForm(prev => ({ ...prev, purpose: `View Offers for ${groupKey}` }));
+                                        setBookingOpen(true);
+                                      }}
+                                      className="hidden sm:block text-xs font-semibold bg-white border border-primary text-primary hover:bg-primary-50 px-3 py-2 rounded-lg transition-colors"
+                                    >
+                                      View Offers
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
+
+                              {isExpanded && (
+                                <div className="border-t border-border bg-surface/10 divide-y divide-border/60">
+                                  {groupVariants.map(v => {
+                                    const isSelected = vehicle.variants[activeVariant]?.id === v.id;
+                                    const onRoadPrice = Math.round(v.price * selectedCity.multiplier);
+                                    const isBase = v.price === absoluteMinPrice;
+                                    const isTop = v.price === absoluteMaxPrice;
+
+                                    return (
+                                      <div
+                                        key={v.id}
+                                        onClick={() => handleVariantClick(v.id)}
+                                        className={`p-4 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-surface/30 ${
+                                          isSelected ? 'bg-primary-50/20' : ''
+                                        }`}
+                                      >
+                                        <div className="space-y-2 flex-1">
+                                          <div className="flex flex-wrap items-center gap-2">
+                                            {isBase && (
+                                              <span className="text-[9px] font-bold bg-secondary text-dark px-2 py-0.5 rounded leading-snug">Base Variant</span>
+                                            )}
+                                            {isTop && (
+                                              <span className="text-[9px] font-bold bg-dark text-white px-2 py-0.5 rounded leading-snug">Top Variant</span>
+                                            )}
+                                            <span className="text-sm font-semibold text-dark hover:text-primary transition-colors underline decoration-dotted underline-offset-4">
+                                              {v.name}
+                                            </span>
+                                          </div>
+                                          <p className="text-xs text-muted">
+                                            {v.fuelType} · {v.transmission} {v.mileage ? `· ${v.mileage}` : ''}
+                                          </p>
+
+                                          {/* Additional features box */}
+                                          {v.additionalFeaturesOverBase && v.additionalFeaturesOverBase.length > 0 && (
+                                            <div className="mt-2 bg-white rounded-lg border border-border/80 p-2 text-[11px] text-muted flex items-start gap-1 max-w-xl">
+                                              <span className="text-success font-bold shrink-0">+</span>
+                                              <span>
+                                                <strong>Additional features over preceding variant:</strong> {v.additionalFeaturesOverBase.join(', ')}
+                                              </span>
+                                            </div>
+                                          )}
+                                        </div>
+
+                                        <div className="flex flex-wrap md:flex-nowrap items-center justify-between md:justify-end gap-6">
+                                          <div className="text-left md:text-right shrink-0">
+                                            <p className="text-[10px] text-muted">Ex-Showroom Price</p>
+                                            <p className="font-heading font-bold text-dark text-sm md:text-base mt-0.5">
+                                              {formatPrice(v.price)}
+                                            </p>
+                                            <p className="text-[10px] text-success font-medium">
+                                              Est. On-Road: {formatPrice(onRoadPrice)} in {selectedCity.name}
+                                            </p>
+                                          </div>
+
+                                          <div className="flex items-center gap-4 shrink-0" onClick={e => e.stopPropagation()}>
+                                            <label className="flex items-center gap-1.5 cursor-pointer select-none py-1">
+                                              <input
+                                                type="checkbox"
+                                                checked={selectedCompareVariantIds.includes(v.id)}
+                                                onChange={() => toggleCompareVariant(v.id)}
+                                                className="w-4 h-4 rounded text-primary focus:ring-primary border-border cursor-pointer animate-none"
+                                              />
+                                              <span className="text-xs text-muted font-medium">Compare</span>
+                                            </label>
+                                            <button
+                                              type="button"
+                                              onClick={() => {
+                                                setBookingForm(prev => ({ ...prev, purpose: `View Offers for ${v.name}` }));
+                                                setBookingOpen(true);
+                                              }}
+                                              className="text-xs font-semibold text-primary underline decoration-dotted hover:text-primary/80"
+                                            >
+                                              View Offers
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              )}
                             </div>
                           );
                         })
@@ -1019,7 +1177,11 @@ export default function VehicleDetail() {
                 <div className="mb-4">
                   <p className="text-xs text-muted">Ex-showroom Price</p>
                   <p className="font-heading font-bold text-dark text-2xl sm:text-3xl">{formatPrice(variant.price)}</p>
-                  <p className="text-sm text-muted mt-1">EMI from {formatPriceShort(Number(emi))}/month</p>
+                  <div className="mt-1 flex items-baseline justify-between">
+                    <p className="text-xs text-success font-semibold">Est. On-Road: {formatPrice(Math.round(variant.price * selectedCity.multiplier))}</p>
+                    <span className="text-[10px] bg-success-50 text-success px-1.5 py-0.5 rounded font-semibold capitalize">{selectedCity.name}</span>
+                  </div>
+                  <p className="text-xs text-muted mt-1">EMI from {formatPriceShort(Number(emi))}/month</p>
                 </div>
 
                 <div className="flex items-center gap-2 mb-5">
@@ -1066,6 +1228,43 @@ export default function VehicleDetail() {
                     <Share2 size={16} />
                   </button>
                 </div>
+              </div>
+
+              {/* Download Brochure Box */}
+              <div className="bg-white rounded-2xl border border-border p-4 sm:p-5 flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-primary-50 rounded-xl flex items-center justify-center text-primary">
+                    <Download size={18} />
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-dark text-sm">Official Brochure</h5>
+                    <p className="text-xs text-muted">Get all technical specifications</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBrochureDownloading(true);
+                    setTimeout(() => {
+                      setBrochureDownloading(false);
+                      alert('Brochure downloaded successfully!');
+                    }, 1000);
+                  }}
+                  disabled={brochureDownloading}
+                  className="w-full h-10 bg-primary hover:bg-primary/95 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5"
+                >
+                  {brochureDownloading ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>Downloading Brochure...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Download size={14} />
+                      <span>Download Brochure</span>
+                    </>
+                  )}
+                </button>
               </div>
 
               {/* Quick info */}
@@ -1397,6 +1596,271 @@ export default function VehicleDetail() {
           </Link>
         </div>
       </div>
+
+      {/* Floating Compare Tray */}
+      {selectedCompareVariantIds.length >= 2 && (
+        <div className="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-2xl bg-dark/95 backdrop-blur-md text-white rounded-2xl p-4 shadow-2xl flex items-center justify-between gap-4 border border-white/10 animate-fade-in">
+          <div className="flex items-center gap-4 overflow-x-auto no-scrollbar py-1">
+            <div className="hidden sm:flex flex-col">
+              <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Compare</span>
+              <span className="text-xs font-semibold text-white/80">{selectedCompareVariantIds.length} Selected</span>
+            </div>
+            <div className="flex gap-2">
+              {selectedCompareVariantIds.map(id => {
+                const v = vehicle.variants.find(x => x.id === id);
+                if (!v) return null;
+                return (
+                  <div key={id} className="relative bg-white/10 rounded-lg px-2.5 py-1.5 flex items-center gap-2 max-w-[150px] sm:max-w-[200px]">
+                    <div className="truncate">
+                      <p className="text-[10px] font-bold truncate">{v.name}</p>
+                      <p className="text-[9px] text-white/60 font-semibold">{formatPriceShort(v.price)}</p>
+                    </div>
+                    <button
+                      onClick={() => setSelectedCompareVariantIds(prev => prev.filter(x => x !== id))}
+                      className="text-white/60 hover:text-white"
+                    >
+                      <X size={12} />
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => setSelectedCompareVariantIds([])}
+              className="text-xs text-white/60 hover:text-white font-medium px-2 py-1"
+            >
+              Clear
+            </button>
+            <button
+              onClick={() => setIsCompareModalOpen(true)}
+              className="bg-primary hover:bg-primary/90 text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-md"
+            >
+              <GitCompare size={14} />
+              <span>Compare</span>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Side-by-Side Comparison Modal */}
+      {isCompareModalOpen && (
+        <div className="fixed inset-0 bg-dark/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
+          <div className="bg-white w-full max-w-5xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] border border-border">
+            {/* Modal Header */}
+            <div className="p-5 border-b border-border flex items-center justify-between bg-surface/30">
+              <div className="flex items-center gap-2.5">
+                <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                  <GitCompare size={20} />
+                </div>
+                <div>
+                  <h3 className="font-heading font-bold text-dark text-lg sm:text-xl">
+                    Variant Comparison
+                  </h3>
+                  <p className="text-xs text-muted">
+                    Comparing {selectedCompareVariantIds.length} variants of {vehicle.brand} {vehicle.model}
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsCompareModalOpen(false)}
+                className="w-10 h-10 bg-white border border-border rounded-xl flex items-center justify-center hover:bg-surface transition-colors"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-6 overflow-y-auto space-y-6">
+              <div className="overflow-x-auto rounded-xl border border-border bg-white">
+                <table className="w-full min-w-[600px] border-collapse text-left">
+                  <thead>
+                    <tr className="border-b border-border bg-surface/20">
+                      <th className="p-4 text-xs font-bold text-muted uppercase tracking-wider w-[20%]">Specification</th>
+                      {selectedCompareVariantIds.map(id => {
+                        const v = vehicle.variants.find(x => x.id === id);
+                        if (!v) return null;
+                        return (
+                          <th key={id} className="p-4 w-[26%]">
+                            <p className="text-[10px] font-bold text-primary uppercase tracking-wider">{vehicle.brand} {vehicle.model}</p>
+                            <p className="font-heading font-bold text-dark text-sm sm:text-base mt-0.5">{v.name.split(' ').slice(0, 3).join(' ')}</p>
+                            <p className="text-xs text-muted truncate mt-0.5" title={v.name}>{v.name}</p>
+                          </th>
+                        );
+                      })}
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border text-xs sm:text-sm">
+                    {/* Ex-showroom Price */}
+                    <tr className="hover:bg-surface/10">
+                      <td className="p-4 text-xs font-semibold text-muted">Ex-Showroom Price</td>
+                      {selectedCompareVariantIds.map(id => {
+                        const v = vehicle.variants.find(x => x.id === id);
+                        if (!v) return null;
+                        return (
+                          <td key={id} className="p-4 font-bold text-dark">
+                            {formatPrice(v.price)}
+                          </td>
+                        );
+                      })}
+                    </tr>
+
+                    {/* Est. On-Road Price */}
+                    <tr className="hover:bg-surface/10">
+                      <td className="p-4 text-xs font-semibold text-muted">Est. On-Road Price</td>
+                      {selectedCompareVariantIds.map(id => {
+                        const v = vehicle.variants.find(x => x.id === id);
+                        if (!v) return null;
+                        const onRoad = Math.round(v.price * selectedCity.multiplier);
+                        return (
+                          <td key={id} className="p-4 font-bold text-success">
+                            {formatPrice(onRoad)} <span className="text-[9px] text-muted font-normal block">in {selectedCity.name}</span>
+                          </td>
+                        );
+                      })}
+                    </tr>
+
+                    {/* Fuel Type */}
+                    <tr className="hover:bg-surface/10">
+                      <td className="p-4 text-xs font-semibold text-muted">Fuel Type</td>
+                      {selectedCompareVariantIds.map(id => {
+                        const v = vehicle.variants.find(x => x.id === id);
+                        if (!v) return null;
+                        return (
+                          <td key={id} className="p-4 font-medium text-dark">
+                            {v.fuelType}
+                          </td>
+                        );
+                      })}
+                    </tr>
+
+                    {/* Transmission */}
+                    <tr className="hover:bg-surface/10">
+                      <td className="p-4 text-xs font-semibold text-muted">Transmission</td>
+                      {selectedCompareVariantIds.map(id => {
+                        const v = vehicle.variants.find(x => x.id === id);
+                        if (!v) return null;
+                        return (
+                          <td key={id} className="p-4 font-medium text-dark">
+                            {v.transmission}
+                          </td>
+                        );
+                      })}
+                    </tr>
+
+                    {/* Engine CC */}
+                    <tr className="hover:bg-surface/10">
+                      <td className="p-4 text-xs font-semibold text-muted">Engine Displacement</td>
+                      {selectedCompareVariantIds.map(id => {
+                        const v = vehicle.variants.find(x => x.id === id);
+                        if (!v) return null;
+                        return (
+                          <td key={id} className="p-4 font-medium text-dark">
+                            {v.engineCC ? `${v.engineCC} cc` : 'N/A'}
+                          </td>
+                        );
+                      })}
+                    </tr>
+
+                    {/* Power */}
+                    <tr className="hover:bg-surface/10">
+                      <td className="p-4 text-xs font-semibold text-muted">Max Power</td>
+                      {selectedCompareVariantIds.map(id => {
+                        const v = vehicle.variants.find(x => x.id === id);
+                        if (!v) return null;
+                        return (
+                          <td key={id} className="p-4 font-medium text-dark">
+                            {v.powerBHP ? `${v.powerBHP} bhp` : 'N/A'}
+                          </td>
+                        );
+                      })}
+                    </tr>
+
+                    {/* Torque */}
+                    <tr className="hover:bg-surface/10">
+                      <td className="p-4 text-xs font-semibold text-muted">Max Torque</td>
+                      {selectedCompareVariantIds.map(id => {
+                        const v = vehicle.variants.find(x => x.id === id);
+                        if (!v) return null;
+                        return (
+                          <td key={id} className="p-4 font-medium text-dark">
+                            {v.torqueNm ? `${v.torqueNm} Nm` : 'N/A'}
+                          </td>
+                        );
+                      })}
+                    </tr>
+
+                    {/* Mileage */}
+                    <tr className="hover:bg-surface/10">
+                      <td className="p-4 text-xs font-semibold text-muted">Mileage</td>
+                      {selectedCompareVariantIds.map(id => {
+                        const v = vehicle.variants.find(x => x.id === id);
+                        if (!v) return null;
+                        return (
+                          <td key={id} className="p-4 font-medium text-dark">
+                            {v.mileage || (v.mileageKmpl ? `${v.mileageKmpl} kmpl` : 'N/A')}
+                          </td>
+                        );
+                      })}
+                    </tr>
+
+                    {/* Features Comparison Section */}
+                    <tr className="bg-surface/10">
+                      <td colSpan={1 + selectedCompareVariantIds.length} className="p-4 text-xs font-bold text-dark uppercase tracking-wider">
+                        Feature Details
+                      </td>
+                    </tr>
+
+                    {/* Features checklist compare */}
+                    {Array.from(
+                      new Set(
+                        vehicle.variants
+                          .filter(v => selectedCompareVariantIds.includes(v.id))
+                          .flatMap(v => v.features || [])
+                      )
+                    ).map(feature => (
+                      <tr key={feature} className="hover:bg-surface/10">
+                        <td className="p-4 text-xs font-semibold text-muted">{feature}</td>
+                        {selectedCompareVariantIds.map(id => {
+                          const v = vehicle.variants.find(x => x.id === id);
+                          if (!v) return null;
+                          const hasFeature = v.features?.includes(feature);
+                          return (
+                            <td key={id} className="p-4">
+                              {hasFeature ? (
+                                <span className="inline-flex items-center justify-center w-5 h-5 bg-success-50 text-success rounded-full">
+                                  <Check size={12} className="stroke-[3px]" />
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center justify-center w-5 h-5 bg-muted-50 text-muted/60 rounded-full">
+                                  <Minus size={12} className="stroke-[3px]" />
+                                </span>
+                              )}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-4 border-t border-border flex items-center justify-end gap-2 bg-surface/30">
+              <button
+                onClick={() => setIsCompareModalOpen(false)}
+                className="btn-secondary px-6"
+                style={{ height: '40px' }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

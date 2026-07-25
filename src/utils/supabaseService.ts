@@ -79,7 +79,10 @@ export async function fetchVehicles(): Promise<Vehicle[]> {
             powerBHP: Number(vr.power_bhp),
             torqueNm: Number(vr.torque_nm),
             mileageKmpl: Number(vr.mileage_kmpl),
-            rangeKm: Number(vr.range_km)
+            rangeKm: Number(vr.range_km),
+            features: vr.features,
+            mileage: vr.mileage,
+            additionalFeaturesOverBase: vr.additional_features_over_base
           }));
           return parsed.length > 0 ? parsed : (mock?.variants || [{
             id: `default-${v.id}`,
