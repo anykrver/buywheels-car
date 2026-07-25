@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
 import { Heart, GitCompare, Star, Fuel, Gauge, ArrowRight } from 'lucide-react';
 import type { Vehicle } from '../types';
@@ -12,16 +12,21 @@ interface VehicleCardProps {
 }
 
 export default function VehicleCard({ vehicle, onCompare, compact }: VehicleCardProps) {
+  const navigate = useNavigate();
   const { isWishlisted, toggleWishlist } = useWishlist();
   const wishlisted = isWishlisted(vehicle.id);
   const [imgError, setImgError] = useState(false);
 
   const fallbackImg = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
 
+  const handleCardClick = () => {
+    navigate(`/vehicle/${vehicle.slug}`);
+  };
+
   return (
-    <Link
-      to={`/vehicle/${vehicle.slug}`}
-      className="group bg-white rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full cursor-pointer decoration-none"
+    <div
+      onClick={handleCardClick}
+      className="group bg-white rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full cursor-pointer"
     >
       {/* Image */}
       <div className={`relative overflow-hidden bg-surface ${compact ? 'aspect-[16/9]' : 'aspect-[16/10]'}`}>
@@ -34,25 +39,24 @@ export default function VehicleCard({ vehicle, onCompare, compact }: VehicleCard
         />
 
         {/* Badges */}
-        <div className="absolute top-3 left-3 flex gap-2 z-10">
+        <div className="absolute top-3 left-3 flex gap-2 pointer-events-none">
           {vehicle.isNew && (
-            <span className="bg-primary text-white text-xs font-semibold px-2.5 py-1 rounded-full">New</span>
+            <span className="bg-primary text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-xs">New</span>
           )}
           {vehicle.isBestSeller && (
-            <span className="bg-dark text-white text-xs font-semibold px-2.5 py-1 rounded-full">Best Seller</span>
+            <span className="bg-dark text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-xs">Best Seller</span>
           )}
           {vehicle.isEV && (
-            <span className="bg-success text-white text-xs font-semibold px-2.5 py-1 rounded-full">EV</span>
+            <span className="bg-emerald-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-xs">EV</span>
           )}
         </div>
 
         {/* Wishlist + Compare */}
         <div className="absolute top-3 right-3 flex flex-col gap-2 z-10">
           <button
-            type="button"
             onClick={(e) => {
-              e.preventDefault();
               e.stopPropagation();
+              e.preventDefault();
               toggleWishlist(vehicle.id);
             }}
             className={`w-9 h-9 rounded-xl flex items-center justify-center shadow-card transition-all duration-200 ${
@@ -64,10 +68,9 @@ export default function VehicleCard({ vehicle, onCompare, compact }: VehicleCard
           </button>
           {onCompare && (
             <button
-              type="button"
               onClick={(e) => {
-                e.preventDefault();
                 e.stopPropagation();
+                e.preventDefault();
                 onCompare(vehicle);
               }}
               className="w-9 h-9 rounded-xl bg-white text-muted hover:text-primary flex items-center justify-center shadow-card transition-colors"
@@ -84,7 +87,7 @@ export default function VehicleCard({ vehicle, onCompare, compact }: VehicleCard
         {/* Brand & Model */}
         <div className="mb-3">
           <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-0.5">{vehicle.brand}</p>
-          <h3 className={`font-heading font-semibold text-dark group-hover:text-primary transition-colors leading-tight ${compact ? 'text-base' : 'text-lg'}`}>
+          <h3 className={`font-heading font-semibold text-dark leading-tight group-hover:text-primary transition-colors ${compact ? 'text-base' : 'text-lg'}`}>
             {vehicle.model}
           </h3>
         </div>
@@ -126,18 +129,22 @@ export default function VehicleCard({ vehicle, onCompare, compact }: VehicleCard
 
         {/* CTA buttons */}
         <div className="flex gap-2">
-          <span
-            className={`flex-1 flex items-center justify-center gap-1.5 bg-surface text-dark-600 font-medium text-sm rounded-xl group-hover:bg-primary-50 group-hover:text-primary transition-all duration-200 ${compact ? 'h-8 text-xs' : 'h-10'}`}
+          <Link
+            to={`/vehicle/${vehicle.slug}`}
+            onClick={(e) => e.stopPropagation()}
+            className={`flex-1 flex items-center justify-center gap-1.5 bg-surface text-dark-600 font-medium text-sm rounded-xl hover:bg-primary-50 hover:text-primary transition-all duration-200 ${compact ? 'h-8 text-xs' : 'h-10'}`}
           >
             Details <ArrowRight size={12} />
-          </span>
-          <span
-            className={`flex-1 flex items-center justify-center gap-1.5 bg-primary text-white font-semibold rounded-xl group-hover:bg-primary-600 transition-all duration-200 ${compact ? 'h-8 text-xs' : 'h-10 text-sm'}`}
+          </Link>
+          <Link
+            to={`/test-drive?vehicle=${vehicle.id}`}
+            onClick={(e) => e.stopPropagation()}
+            className={`flex-1 flex items-center justify-center gap-1.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-600 transition-all duration-200 ${compact ? 'h-8 text-xs' : 'h-10 text-sm'}`}
           >
             Book Now
-          </span>
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

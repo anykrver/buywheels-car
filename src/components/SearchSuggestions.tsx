@@ -117,7 +117,6 @@ export default function SearchSuggestions({
     <div
       className={`absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-card-hover border border-border overflow-hidden z-[100] animate-scale-in ${className}`}
       style={{ maxHeight: '480px', overflowY: 'auto' }}
-      onMouseDown={(e) => e.preventDefault()}
     >
       {!trimmedQuery ? (
         // Blank state: Trending Searches & Popular Categories
@@ -133,12 +132,8 @@ export default function SearchSuggestions({
                 <button
                   key={item.label}
                   type="button"
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    handleVehicleClick(item.slug, item.label);
-                  }}
                   onClick={() => handleVehicleClick(item.slug, item.label)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface hover:bg-primary-50 text-dark-600 hover:text-primary rounded-xl text-xs font-medium transition-all group border border-border/60 hover:border-primary/40 cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface hover:bg-primary-50 text-dark-600 hover:text-primary rounded-xl text-xs font-medium transition-all group border border-border/60 hover:border-primary/40"
                 >
                   <span>{item.label}</span>
                   <ArrowUpRight size={12} className="text-muted group-hover:text-primary transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -159,12 +154,8 @@ export default function SearchSuggestions({
                   <button
                     key={cat.label}
                     type="button"
-                    onMouseDown={(e) => {
-                      e.preventDefault();
-                      handleCategoryClick(cat.filter, cat.label);
-                    }}
                     onClick={() => handleCategoryClick(cat.filter, cat.label)}
-                    className="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface hover:bg-primary-50/70 text-left transition-colors border border-border/60 hover:border-primary/40 group cursor-pointer"
+                    className="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface hover:bg-primary-50/70 text-left transition-colors border border-border/60 hover:border-primary/40 group"
                   >
                     <div className="w-8 h-8 rounded-lg bg-primary-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors flex-shrink-0">
                       <Icon size={16} />
@@ -193,12 +184,8 @@ export default function SearchSuggestions({
                   <button
                     key={vehicle.id}
                     type="button"
-                    onMouseDown={(e) => {
-                      e.preventDefault();
-                      handleVehicleClick(vehicle.slug, `${vehicle.brand} ${vehicle.model}`);
-                    }}
                     onClick={() => handleVehicleClick(vehicle.slug, `${vehicle.brand} ${vehicle.model}`)}
-                    className="w-full flex items-center gap-3 p-2.5 rounded-xl hover:bg-primary-50/60 transition-all text-left group cursor-pointer"
+                    className="w-full flex items-center gap-3 p-2.5 rounded-xl hover:bg-primary-50/60 transition-all text-left group"
                   >
                     <div className="relative w-14 h-10 rounded-lg overflow-hidden bg-surface flex-shrink-0 border border-border/80">
                       <img
@@ -259,12 +246,8 @@ export default function SearchSuggestions({
                   <button
                     key={b}
                     type="button"
-                    onMouseDown={(e) => {
-                      e.preventDefault();
-                      handleBrandClick(b);
-                    }}
                     onClick={() => handleBrandClick(b)}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface hover:bg-primary-50 text-dark font-medium rounded-xl text-xs hover:text-primary transition-colors border border-border/60 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface hover:bg-primary-50 text-dark font-medium rounded-xl text-xs hover:text-primary transition-colors border border-border/60"
                   >
                     <Car size={13} className="text-primary" />
                     <span>View all {b} models</span>
@@ -278,12 +261,8 @@ export default function SearchSuggestions({
           <div className="p-2 bg-surface/50">
             <button
               type="button"
-              onMouseDown={(e) => {
-                e.preventDefault();
-                handleSearchSubmit(query);
-              }}
               onClick={() => handleSearchSubmit(query)}
-              className="w-full flex items-center justify-between p-2.5 rounded-xl bg-primary-50 hover:bg-primary text-primary hover:text-white transition-all text-left text-sm font-semibold group cursor-pointer"
+              className="w-full flex items-center justify-between p-2.5 rounded-xl bg-primary-50 hover:bg-primary text-primary hover:text-white transition-all text-left text-sm font-semibold group"
             >
               <div className="flex items-center gap-2">
                 <Search size={16} className="text-primary group-hover:text-white" />
@@ -300,12 +279,8 @@ export default function SearchSuggestions({
               <p className="text-xs text-muted mt-1">Try searching for brand names like Maruti, Tata, Mahindra, or Hyundai</p>
               <button
                 type="button"
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                  handleSearchSubmit(query);
-                }}
                 onClick={() => handleSearchSubmit(query)}
-                className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-xl hover:bg-primary-600 shadow-primary transition-all cursor-pointer"
+                className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-xl hover:bg-primary-600 shadow-primary transition-all"
               >
                 <Search size={14} />
                 <span>Search all inventory for &quot;{query}&quot;</span>
