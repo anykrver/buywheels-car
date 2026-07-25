@@ -87,9 +87,9 @@ export default function Navbar() {
         </div>
 
         {/* Main Header Bar */}
-        <div className="container-fluid flex items-center h-16 lg:h-20">
+        <div className="container-fluid flex items-center h-20 lg:h-24">
           
-          {/* MOBILE HEADER LAYOUT (lg:hidden): 3-Line Menu (Left) | Logo (Middle) | Select City (Right) */}
+          {/* MOBILE HEADER LAYOUT (lg:hidden): 3-Line Menu (Left) | Prominent Logo (Middle) | Search + Wishlist + Select City (Right) */}
           <div className="lg:hidden flex items-center justify-between w-full relative">
             
             {/* Left: 3-line Menu Button */}
@@ -103,51 +103,81 @@ export default function Navbar() {
               }`}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
 
-            {/* Middle: Centered Logo */}
+            {/* Middle: Centered Prominent Logo */}
             <Link to="/" className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
-              <Logo className="h-12 w-auto py-1" />
+              <Logo className="h-16 sm:h-20 w-auto py-1 max-h-16" />
             </Link>
 
-            {/* Right: Select City Dropdown */}
-            <div className="relative">
+            {/* Right: Search + Wishlist + Select City Dropdown */}
+            <div className="flex items-center gap-1 sm:gap-2">
+              {/* Search Button */}
               <button
-                onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
-                className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition-all ${
-                  isHome && !scrolled
-                    ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
-                    : 'bg-surface text-dark border-border hover:border-primary'
+                onClick={() => setSearchOpen(true)}
+                className={`p-2 rounded-xl transition-colors ${
+                  isHome && !scrolled ? 'text-white hover:bg-white/10' : 'text-dark-600 hover:bg-surface'
                 }`}
+                aria-label="Search"
               >
-                <MapPin size={13} className="text-primary shrink-0" />
-                <span className="truncate max-w-[75px] sm:max-w-[100px]">{selectedCity}</span>
-                <ChevronDown size={12} className="text-muted shrink-0" />
+                <Search size={20} />
               </button>
 
-              {/* City Selection Dropdown */}
-              {cityDropdownOpen && (
-                <div className="absolute right-0 top-full mt-2 w-44 bg-white rounded-2xl shadow-card-hover border border-border py-2 z-50 animate-scale-in">
-                  <p className="px-3 py-1 text-[10px] font-bold text-muted uppercase tracking-wider">Select City</p>
-                  {CITIES.map(city => (
-                    <button
-                      key={city}
-                      onClick={() => {
-                        setSelectedCity(city);
-                        localStorage.setItem('userCity', city);
-                        setCityDropdownOpen(false);
-                      }}
-                      className={`w-full text-left px-3 py-1.5 text-xs font-semibold flex items-center justify-between hover:bg-primary-50 hover:text-primary transition-colors ${
-                        selectedCity === city ? 'text-primary font-bold bg-primary-50/50' : 'text-dark-600'
-                      }`}
-                    >
-                      <span>{city}</span>
-                      {selectedCity === city && <Check size={12} className="text-primary" />}
-                    </button>
-                  ))}
-                </div>
-              )}
+              {/* Wishlist Button */}
+              <Link
+                to="/wishlist"
+                className={`relative p-2 rounded-xl transition-colors ${
+                  isHome && !scrolled ? 'text-white hover:bg-white/10' : 'text-dark-600 hover:bg-surface'
+                }`}
+                aria-label="Wishlist"
+              >
+                <Heart size={20} />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 bg-primary text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-scale-in">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
+
+              {/* Select City Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
+                  className={`flex items-center gap-1 px-2 py-1.5 rounded-xl text-xs font-bold border transition-all ${
+                    isHome && !scrolled
+                      ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
+                      : 'bg-surface text-dark border-border hover:border-primary'
+                  }`}
+                >
+                  <MapPin size={13} className="text-primary shrink-0" />
+                  <span className="truncate max-w-[60px] sm:max-w-[90px]">{selectedCity}</span>
+                  <ChevronDown size={11} className="text-muted shrink-0" />
+                </button>
+
+                {/* City Dropdown Menu */}
+                {cityDropdownOpen && (
+                  <div className="absolute right-0 top-full mt-2 w-44 bg-white rounded-2xl shadow-card-hover border border-border py-2 z-50 animate-scale-in">
+                    <p className="px-3 py-1 text-[10px] font-bold text-muted uppercase tracking-wider">Select City</p>
+                    {CITIES.map(city => (
+                      <button
+                        key={city}
+                        onClick={() => {
+                          setSelectedCity(city);
+                          localStorage.setItem('userCity', city);
+                          setCityDropdownOpen(false);
+                        }}
+                        className={`w-full text-left px-3 py-1.5 text-xs font-semibold flex items-center justify-between hover:bg-primary-50 hover:text-primary transition-colors ${
+                          selectedCity === city ? 'text-primary font-bold bg-primary-50/50' : 'text-dark-600'
+                        }`}
+                      >
+                        <span>{city}</span>
+                        {selectedCity === city && <Check size={12} className="text-primary" />}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
