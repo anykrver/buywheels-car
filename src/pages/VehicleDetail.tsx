@@ -13,6 +13,7 @@ import VehicleDetailSEO from '../components/VehicleDetailSEO';
 import PersonalisedOffersModal from '../components/PersonalisedOffersModal';
 import { supabase } from '../utils/supabaseClient';
 import { vehicleColorsData } from '../utils/vehicleColors';
+import { downloadVehicleBrochure } from '../utils/brochureService';
 
 export default function VehicleDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -1246,12 +1247,16 @@ export default function VehicleDetail() {
                 </div>
                 <button
                   type="button"
-                  onClick={() => {
+                  onClick={async () => {
+                    if (!vehicle) return;
                     setBrochureDownloading(true);
-                    setTimeout(() => {
+                    try {
+                      await downloadVehicleBrochure(vehicle);
+                    } catch (err) {
+                      console.error('Failed to download brochure:', err);
+                    } finally {
                       setBrochureDownloading(false);
-                      alert('Brochure downloaded successfully!');
-                    }, 1000);
+                    }
                   }}
                   disabled={brochureDownloading}
                   className="w-full h-10 bg-primary hover:bg-primary/95 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5"
