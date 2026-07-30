@@ -3,6 +3,23 @@
 -- ========================================================
 
 
+-- Drop existing tables if they were created with incompatible schemas (e.g. UUID instead of TEXT)
+DROP TABLE IF EXISTS public.vehicle_bookings CASCADE;
+DROP TABLE IF EXISTS public.insurance_queries CASCADE;
+DROP TABLE IF EXISTS public.job_applications CASCADE;
+DROP TABLE IF EXISTS public.loan_applications CASCADE;
+DROP TABLE IF EXISTS public.test_drive_bookings CASCADE;
+DROP TABLE IF EXISTS public.contact_submissions CASCADE;
+DROP TABLE IF EXISTS public.blog_posts CASCADE;
+DROP TABLE IF EXISTS public.faqs CASCADE;
+DROP TABLE IF EXISTS public.offers CASCADE;
+DROP TABLE IF EXISTS public.reviews CASCADE;
+DROP TABLE IF EXISTS public.dealer_prices CASCADE;
+DROP TABLE IF EXISTS public.dealers CASCADE;
+DROP TABLE IF EXISTS public.variants CASCADE;
+DROP TABLE IF EXISTS public.vehicles CASCADE;
+DROP TABLE IF EXISTS public.brands CASCADE;
+
 -- Create Brands Table
 CREATE TABLE IF NOT EXISTS public.brands (
     id TEXT PRIMARY KEY,
