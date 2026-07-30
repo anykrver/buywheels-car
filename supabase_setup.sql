@@ -783,3 +783,31 @@ CREATE POLICY "Allow anonymous inserts" ON public.job_applications FOR INSERT TO
 CREATE POLICY "Allow anonymous inserts" ON public.insurance_queries FOR INSERT TO anon WITH CHECK (true);
 CREATE POLICY "Allow anonymous inserts" ON public.vehicle_bookings FOR INSERT TO anon WITH CHECK (true);
 CREATE POLICY "Allow anonymous inserts" ON public.reviews FOR INSERT TO anon WITH CHECK (true);
+
+-- Enable RLS and allow full access on public catalog tables
+ALTER TABLE public.brands ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.vehicles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.variants ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.dealers ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.dealer_prices ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.offers ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.faqs ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.blog_posts ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Allow public full access" ON public.brands;
+DROP POLICY IF EXISTS "Allow public full access" ON public.vehicles;
+DROP POLICY IF EXISTS "Allow public full access" ON public.variants;
+DROP POLICY IF EXISTS "Allow public full access" ON public.dealers;
+DROP POLICY IF EXISTS "Allow public full access" ON public.dealer_prices;
+DROP POLICY IF EXISTS "Allow public full access" ON public.offers;
+DROP POLICY IF EXISTS "Allow public full access" ON public.faqs;
+DROP POLICY IF EXISTS "Allow public full access" ON public.blog_posts;
+
+CREATE POLICY "Allow public full access" ON public.brands FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow public full access" ON public.vehicles FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow public full access" ON public.variants FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow public full access" ON public.dealers FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow public full access" ON public.dealer_prices FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow public full access" ON public.offers FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow public full access" ON public.faqs FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow public full access" ON public.blog_posts FOR ALL USING (true) WITH CHECK (true);
