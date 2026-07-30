@@ -4,6 +4,7 @@ import {
   Heart, ChevronRight, ShieldCheck, Fuel, Zap, Users, Gauge, BadgePercent
 } from 'lucide-react';
 import { fetchOffers } from '../utils/supabaseService';
+import { supabase } from '../utils/supabaseClient';
 import type { Offer } from '../types';
 
 // AI-generated car images pool (cycles through for offer cards)
@@ -197,7 +198,12 @@ export default function Offers() {
   // Claim modal
   const [isClaimModalOpen, setIsClaimModalOpen] = useState(false);
   const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null);
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', city: 'Ranchi' });
+  const [formData, setFormData] = useState({
+    name: localStorage.getItem('niaa_user_name') || '',
+    phone: localStorage.getItem('niaa_user_phone') || '',
+    email: '',
+    city: 'Ranchi'
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
@@ -233,7 +239,12 @@ export default function Offers() {
 
   const handleClaimClick = (offer: Offer) => {
     setSelectedOffer(offer);
-    setFormData({ name: '', phone: '', email: '', city: 'Ranchi' });
+    setFormData({
+      name: localStorage.getItem('niaa_user_name') || '',
+      phone: localStorage.getItem('niaa_user_phone') || '',
+      email: '',
+      city: 'Ranchi'
+    });
     setFormError(null);
     setIsSuccess(false);
     setIsClaimModalOpen(true);
@@ -243,14 +254,33 @@ export default function Offers() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
     if (!formData.name.trim()) { setFormError('Please enter your full name'); return; }
     if (!formData.phone.trim()) { setFormError('Please enter your mobile number'); return; }
     if (!/^\d{10}$/.test(formData.phone.trim())) { setFormError('Please enter a valid 10-digit mobile number'); return; }
     setIsSubmitting(true);
-    setTimeout(() => { setIsSubmitting(false); setIsSuccess(true); }, 1200);
+    const { error } = await supabase
+      .from('offer_claims')
+      .insert([{
+        offer_id:    selectedOffer?.id   || null,
+        offer_title: selectedOffer?.title || null,
+        offer_code:  selectedOffer?.code  || null,
+        name:  formData.name.trim(),
+        phone: formData.phone.trim(),
+        email: formData.email.trim() || null,
+        city:  formData.city,
+      }]);
+    setIsSubmitting(false);
+    if (!error) {
+      localStorage.setItem('niaa_user_name', formData.name.trim());
+      localStorage.setItem('niaa_user_phone', formData.phone.trim());
+      setIsSuccess(true);
+    } else {
+      console.error('Error saving offer claim:', error);
+      setFormError('Something went wrong. Please try again.');
+    }
   };
 
   if (loading) {

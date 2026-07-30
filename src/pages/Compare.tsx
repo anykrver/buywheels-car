@@ -35,7 +35,7 @@ function VehicleSelector({
             alt={`${selected.brand} ${selected.model}`}
             className="w-full aspect-video object-cover rounded-xl"
             onError={(e) => {
-              e.currentTarget.src = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
+              e.currentTarget.src = 'https://imgd.aeplcdn.com/664x374/n/cw/ec/141879/nexon-ev-exterior-right-front-three-quarter-7.jpeg';
             }}
           />
           <button
@@ -98,7 +98,7 @@ function VehicleSelector({
                   alt={v.model}
                   className="w-12 h-8 object-cover rounded-lg"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
+                    e.currentTarget.src = 'https://imgd.aeplcdn.com/664x374/n/cw/ec/141879/nexon-ev-exterior-right-front-three-quarter-7.jpeg';
                   }}
                 />
                 <div>

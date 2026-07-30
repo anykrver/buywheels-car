@@ -1,25 +1,27 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
+import { useLocationContext } from '../context/LocationContext';
 import {
   Star, Heart, GitCompare, Share2, MapPin, Fuel, Gauge, Users, Shield,
-  ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Check, Info, Calculator, ArrowRight, Phone, Plus, MessageSquare, X, Download, Minus
+  ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Check, Info, Calculator, ArrowRight, Phone, Plus, MessageSquare, X, Download, Minus, Gift, User
 } from 'lucide-react';
 import { formatPriceShort, formatPrice } from '../utils/data';
-import { fetchVehicles, fetchReviews } from '../utils/supabaseService';
+import { fetchVehicles, fetchReviews, BRAND_LOGOS_OVERRIDE } from '../utils/supabaseService';
 import type { Vehicle, Review } from '../types';
 import VehicleCard from '../components/VehicleCard';
 import VehicleDetailSEO from '../components/VehicleDetailSEO';
-import PersonalisedOffersModal from '../components/PersonalisedOffersModal';
 import { supabase } from '../utils/supabaseClient';
 import { vehicleColorsData } from '../utils/vehicleColors';
 import { downloadVehicleBrochure } from '../utils/brochureService';
 
 export default function VehicleDetail() {
   const { slug } = useParams<{ slug: string }>();
+  const { selectedCity, selectedPincode, selectedArea, multiplier, openPincodeModal, pincodeModalOpen } = useLocationContext();
   const [vehiclesList, setVehiclesList] = useState<Vehicle[]>([]);
   const [reviewsList, setReviewsList] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
+  const [pendingOfferAfterPincode, setPendingOfferAfterPincode] = useState(false);
   const tabsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,12 +35,40 @@ export default function VehicleDetail() {
   const vehicle = vehiclesList.find(v => v.slug === slug);
 
   const [bookingForm, setBookingForm] = useState({
-    name: '',
-    phone: '',
+    name: localStorage.getItem('niaa_user_name') || '',
+    phone: localStorage.getItem('niaa_user_phone') || '',
     email: '',
-    city: '',
-    purpose: ''
+    city: selectedCity,
+    purpose: 'Get Best Quote'
   });
+
+  useEffect(() => {
+    setBookingForm(prev => ({
+      ...prev,
+      city: prev.city || selectedCity
+    }));
+  }, [selectedCity]);
+
+  const handleJulyOfferClick = () => {
+    const savedName = localStorage.getItem('niaa_user_name');
+    const savedPhone = localStorage.getItem('niaa_user_phone');
+    if (savedName || savedPhone) {
+      setBookingForm(prev => ({
+        ...prev,
+        name: savedName || prev.name,
+        phone: savedPhone || prev.phone
+      }));
+    }
+    setPendingOfferAfterPincode(true);
+    openPincodeModal();
+  };
+
+  useEffect(() => {
+    if (pendingOfferAfterPincode && !pincodeModalOpen) {
+      setPendingOfferAfterPincode(false);
+      setBookingOpen(true);
+    }
+  }, [pincodeModalOpen, pendingOfferAfterPincode]);
   const [isBookingSubmitting, setIsBookingSubmitting] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
 
@@ -68,6 +98,8 @@ export default function VehicleDetail() {
       ]);
     setIsBookingSubmitting(false);
     if (!error) {
+      localStorage.setItem('niaa_user_name', bookingForm.name);
+      localStorage.setItem('niaa_user_phone', bookingForm.phone);
       setBookingSuccess(true);
     } else {
       console.error('Error confirming booking:', error);
@@ -85,6 +117,7 @@ export default function VehicleDetail() {
   const [offerModalOpen, setOfferModalOpen] = useState(false);
   const [offerPurpose, setOfferPurpose] = useState('');
   const [localReviews, setLocalReviews] = useState<any[]>([]);
+  const [showVariantDropdown, setShowVariantDropdown] = useState(false);
 
   useEffect(() => {
     if (vehicle) {
@@ -179,8 +212,6 @@ export default function VehicleDetail() {
   const [selectedFuelFilter, setSelectedFuelFilter] = useState('All');
   const [selectedTransFilter, setSelectedTransFilter] = useState('All');
 
-  const [selectedCity] = useState({ name: 'New Delhi', multiplier: 1.14 });
-
   const [selectedCompareVariantIds, setSelectedCompareVariantIds] = useState<string[]>([]);
   const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
   const [brochureDownloading, setBrochureDownloading] = useState(false);
@@ -252,7 +283,7 @@ export default function VehicleDetail() {
     }
   }));
 
-  const tabs = ['overview', 'specs', 'variants', 'dealers', 'reviews'];
+  const tabs = ['overview', 'specs', 'variants', 'colors', 'dealers', 'reviews'];
 
   const getColorHex = (name: string): string => {
     const nameLower = name.toLowerCase();
@@ -360,7 +391,16 @@ export default function VehicleDetail() {
 
       <div className="md:hidden container-fluid mb-4">
         <div className="flex flex-col gap-1">
-          <p className="text-xs font-semibold text-primary uppercase tracking-wider">{vehicle.brand}</p>
+          <div className="flex items-center gap-2 mb-0.5">
+            {BRAND_LOGOS_OVERRIDE[vehicle.brand] && (
+              <img
+                src={BRAND_LOGOS_OVERRIDE[vehicle.brand]}
+                alt={vehicle.brand}
+                className="h-6 w-auto object-contain bg-white rounded-md p-0.5 border border-border shadow-2xs"
+              />
+            )}
+            <p className="text-xs font-bold text-primary uppercase tracking-wider">{vehicle.brand}</p>
+          </div>
           <h1 className="font-heading font-bold text-dark text-xl mb-1">{vehicle.model}</h1>
           <div className="flex items-center justify-between">
             <div className="flex items-baseline gap-1">
@@ -381,17 +421,17 @@ export default function VehicleDetail() {
         </div>
       </div>
 
-      <div className="container-fluid">
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="md:col-span-2">
-            <div className="bg-white rounded-2xl border border-border overflow-hidden mb-6">
-              <div className="relative aspect-[16/9] overflow-hidden">
+      <div className="container-fluid min-w-0 max-w-full">
+        <div className="grid md:grid-cols-3 gap-6 min-w-0">
+          <div className="md:col-span-2 min-w-0 max-w-full">
+            <div className="bg-gray-100 rounded-2xl border border-border overflow-hidden mb-6">
+              <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
                 <img
                   src={vehicle.images[activeImage] || vehicle.thumbnailUrl}
                   alt={`${vehicle.brand} ${vehicle.model}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-gray-100 scale-125 transition-transform duration-300"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
+                    e.currentTarget.src = vehicle.thumbnailUrl;
                   }}
                 />
                 {vehicle.images.length > 1 && (
@@ -431,7 +471,7 @@ export default function VehicleDetail() {
                         alt=""
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          e.currentTarget.src = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
+                          e.currentTarget.src = vehicle.thumbnailUrl;
                         }}
                       />
                     </button>
@@ -440,660 +480,365 @@ export default function VehicleDetail() {
               )}
             </div>
 
-
-
-            <div ref={tabsRef} className="bg-white rounded-2xl border border-border mb-6">
-              <div className="sticky top-20 lg:top-[116px] z-30 flex overflow-x-auto no-scrollbar border-b border-border bg-white rounded-t-2xl shadow-sm md:shadow-none">
+            {/* Sticky Navigation Bar */}
+            <div ref={tabsRef} className="sticky top-20 lg:top-[116px] z-30 mb-6 max-w-full">
+              <div className="flex overflow-x-auto scrollbar-none no-scrollbar whitespace-nowrap border border-border bg-white rounded-2xl shadow-md p-1.5 gap-1.5">
                 {tabs.map(tab => (
                   <button
                     key={tab}
                     onClick={() => {
                       setActiveTab(tab);
-                      if (tabsRef.current) {
-                        const navbarHeight = window.innerWidth >= 1024 ? 116 : 80;
-                        const yOffset = -navbarHeight - 16;
-                        const y = tabsRef.current.getBoundingClientRect().top + window.scrollY + yOffset;
+                      const targetId = `${tab}-section`;
+                      const targetEl = document.getElementById(targetId);
+                      if (targetEl) {
+                        const navbarHeight = window.innerWidth >= 1024 ? 130 : 90;
+                        const yOffset = -navbarHeight;
+                        const y = targetEl.getBoundingClientRect().top + window.scrollY + yOffset;
                         window.scrollTo({ top: y, behavior: 'smooth' });
                       }
                     }}
-                    className={`flex-shrink-0 px-3 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-semibold capitalize transition-all border-b-2 ${
+                    className={`shrink-0 whitespace-nowrap px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-bold capitalize transition-all rounded-xl ${
                       activeTab === tab
-                        ? 'text-primary border-primary'
-                        : 'text-muted border-transparent hover:text-dark'
+                        ? 'bg-primary text-white shadow-sm'
+                        : 'text-dark-600 hover:text-primary hover:bg-primary-50/50'
                     }`}
                   >
                     {tab}
                   </button>
                 ))}
               </div>
+            </div>
 
-              <div className="p-4 sm:p-6">
-                {activeTab === 'overview' && (
+            {/* Overview Section Card */}
+            <div id="overview-section" className="bg-white rounded-2xl border border-border p-4 sm:p-6 shadow-sm mb-6">
+              <h3 className="font-heading font-bold text-dark text-lg sm:text-xl mb-4">About the {vehicle.model}</h3>
+              <p className="text-dark-600 text-sm leading-relaxed mb-6">
+                {vehicle.description || `The ${vehicle.brand} ${vehicle.model} is a popular vehicle that combines performance, comfort, and value in the ${vehicle.category} segment.`}
+              </p>
+
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
+                {[
+                  { icon: Fuel, label: 'Fuel Type', value: vehicle.fuelTypes.join(' / ') },
+                  { icon: Gauge, label: 'Mileage', value: vehicle.mileage },
+                  ...(vehicle.seatingCapacity ? [{ icon: Users, label: 'Seating', value: `${vehicle.seatingCapacity} Seats` }] : []),
+                  ...(vehicle.engineCC ? [{ icon: Info, label: 'Engine', value: `${vehicle.engineCC} cc` }] : []),
+                  ...(vehicle.powerBHP ? [{ icon: Info, label: 'Power', value: `${vehicle.powerBHP} bhp` }] : []),
+                  ...(vehicle.safetyRating ? [{ icon: Shield, label: 'Safety Rating', value: `${vehicle.safetyRating}★ (GNCAP)` }] : []),
+                ].map(({ icon: Icon, label, value }) => (
+                  <div key={label} className="flex items-center gap-3 p-3 bg-surface rounded-xl">
+                    <div className="w-8 h-8 bg-primary-50 rounded-lg flex items-center justify-center">
+                      <Icon size={16} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted">{label}</p>
+                      <p className="text-sm font-semibold text-dark">{value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <h4 className="font-heading font-semibold text-dark mb-3">Key Features</h4>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
+                {vehicle.features.map(feat => (
+                  <div key={feat} className="flex items-start gap-2 text-xs sm:text-sm text-dark-600">
+                    <Check size={14} className="text-success flex-shrink-0 mt-0.5" />
+                    <span>{feat}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-5 mt-6">
+                <div className="bg-[#F1F9F1] p-5 rounded-2xl flex gap-2">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.2656 1.67822L10.3564 1.69775L10.4736 1.73584C10.6924 1.80617 10.856 1.96276 10.9326 2.15186L10.96 2.23486C11.06 2.6204 11.0886 3.02056 11.0449 3.41553L11.0215 3.58447L10.4854 6.85693C10.3584 7.63187 10.9558 8.3374 11.7422 8.3374H15.9346C16.3683 8.3374 16.7054 8.70482 16.6807 9.12842L16.6709 9.21436L16.0996 12.5151C15.6889 14.89 13.5479 16.6587 11.0068 16.6587H7.24512C6.90638 16.6586 6.61594 16.4312 6.52637 16.1147L6.50098 15.9741L5.84375 8.37354C5.82572 8.16356 5.89707 7.95754 6.03711 7.8042L6.10059 7.7417L7.26562 6.73877C7.74672 6.32419 8.25966 5.84062 8.64258 5.23584L8.79883 4.96826C8.98794 4.61419 9.14495 4.24426 9.26855 3.86279L9.38086 3.47803L9.76562 1.99365C9.78729 1.91036 9.83822 1.83239 9.91309 1.77393L9.99609 1.72217C10.0792 1.68213 10.1735 1.66711 10.2656 1.67822Z" fill="#41A248" stroke="#41A248" strokeWidth={1.2} />
+                  </svg>
                   <div>
-                    <h3 className="font-heading font-semibold text-dark text-lg mb-4">About the {vehicle.model}</h3>
-                    <p className="text-dark-600 text-sm leading-relaxed mb-6">
-                      {vehicle.description || `The ${vehicle.brand} ${vehicle.model} is a popular vehicle that combines performance, comfort, and value in the ${vehicle.category} segment.`}
-                    </p>
-
-                    <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
-                      {[
-                        { icon: Fuel, label: 'Fuel Type', value: vehicle.fuelTypes.join(' / ') },
-                        { icon: Gauge, label: 'Mileage', value: vehicle.mileage },
-                        ...(vehicle.seatingCapacity ? [{ icon: Users, label: 'Seating', value: `${vehicle.seatingCapacity} Seats` }] : []),
-                        ...(vehicle.engineCC ? [{ icon: Info, label: 'Engine', value: `${vehicle.engineCC} cc` }] : []),
-                        ...(vehicle.powerBHP ? [{ icon: Info, label: 'Power', value: `${vehicle.powerBHP} bhp` }] : []),
-                        ...(vehicle.safetyRating ? [{ icon: Shield, label: 'Safety Rating', value: `${vehicle.safetyRating}★ (GNCAP)` }] : []),
-                      ].map(({ icon: Icon, label, value }) => (
-                        <div key={label} className="flex items-center gap-3 p-3 bg-surface rounded-xl">
-                          <div className="w-8 h-8 bg-primary-50 rounded-lg flex items-center justify-center">
-                            <Icon size={16} className="text-primary" />
-                          </div>
-                          <div>
-                            <p className="text-xs text-muted">{label}</p>
-                            <p className="text-sm font-semibold text-dark">{value}</p>
-                          </div>
-                        </div>
+                    <p className="text-[#15803D] font-bold text-base mb-3">Pros</p>
+                    <ul className="space-y-2 list-none pl-0">
+                      {(vehicle.pros && vehicle.pros.length > 0 ? vehicle.pros : [
+                        'Advanced features and comfortable interior space.',
+                        'Refined engine performance and smooth power delivery.',
+                        'Excellent high-speed highway stability and ride comfort.',
+                        'Robust standard safety package and driver assistance tools.'
+                      ]).map((pro, index) => (
+                        <li key={index} className="flex gap-2 items-start">
+                          <span className="mt-1 w-2 h-2 rounded-full inline-block shrink-0 bg-[#15803D]"></span>
+                          <span className="text-[#1C1C1C] text-sm font-normal leading-relaxed">{pro}</span>
+                        </li>
                       ))}
-                    </div>
-
-                    <h4 className="font-heading font-semibold text-dark mb-3">Key Features</h4>
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
-                      {vehicle.features.map(feat => (
-                        <div key={feat} className="flex items-start gap-2 text-xs sm:text-sm text-dark-600">
-                          <Check size={14} className="text-success flex-shrink-0 mt-0.5" />
-                          <span>{feat}</span>
-                        </div>
+                    </ul>
+                  </div>
+                </div>
+                <div className="bg-[#FFF7F3] p-5 rounded-2xl flex gap-2">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.0508 16.6548L10.1367 16.6362L10.252 16.5991C10.4615 16.5317 10.6182 16.3822 10.6914 16.2017L10.7168 16.1226C10.814 15.748 10.8422 15.3588 10.7998 14.9751L10.7773 14.8101L10.2539 11.6157C10.1285 10.8505 10.7186 10.1538 11.4951 10.1538H15.5879C16.0031 10.1536 16.3258 9.80166 16.3018 9.396L16.292 9.31494L15.7344 6.09131C15.3345 3.78026 13.2503 2.05908 10.7764 2.05908H7.10449C6.78053 2.0591 6.50302 2.27604 6.41699 2.57861L6.3916 2.71338L5.75098 10.1333C5.73358 10.3345 5.80135 10.5323 5.93555 10.6792L5.99707 10.7388L7.13281 11.7183C7.60292 12.1234 8.10632 12.5962 8.48145 13.189L8.63379 13.4507C8.81875 13.797 8.97285 14.1586 9.09375 14.5317L9.20313 14.9087L9.5791 16.3569C9.59943 16.4353 9.64687 16.5097 9.71777 16.5649L9.79688 16.6128C9.87526 16.6505 9.96379 16.6652 10.0508 16.6548Z" fill="#F25900" stroke="#F25900" strokeWidth={1.2} />
+                  </svg>
+                  <div>
+                    <p className="text-[#EA580C] font-bold text-base mb-3">Cons</p>
+                    <ul className="space-y-2 list-none pl-0">
+                      {(vehicle.cons && vehicle.cons.length > 0 ? vehicle.cons : [
+                        'Lower-grade plastics used in lower cabin areas.',
+                        'Waiting period can be high for popular color/variant options.',
+                        'Touch controls on dashboard can be slightly tricky to use on the go.'
+                      ]).map((con, index) => (
+                        <li key={index} className="flex gap-2 items-start">
+                          <span className="mt-1 w-2 h-2 rounded-full inline-block shrink-0 bg-[#EA580C]"></span>
+                          <span className="text-[#1C1C1C] text-sm font-normal leading-relaxed">{con}</span>
+                        </li>
                       ))}
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-5 mt-6">
-                      <div className="bg-[#F1F9F1] p-5 rounded-2xl flex gap-2">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M10.2656 1.67822L10.3564 1.69775L10.4736 1.73584C10.6924 1.80617 10.856 1.96276 10.9326 2.15186L10.96 2.23486C11.06 2.6204 11.0886 3.02056 11.0449 3.41553L11.0215 3.58447L10.4854 6.85693C10.3584 7.63187 10.9558 8.3374 11.7422 8.3374H15.9346C16.3683 8.3374 16.7054 8.70482 16.6807 9.12842L16.6709 9.21436L16.0996 12.5151C15.6889 14.89 13.5479 16.6587 11.0068 16.6587H7.24512C6.90638 16.6586 6.61594 16.4312 6.52637 16.1147L6.50098 15.9741L5.84375 8.37354C5.82572 8.16356 5.89707 7.95754 6.03711 7.8042L6.10059 7.7417L7.26562 6.73877C7.74672 6.32419 8.25966 5.84062 8.64258 5.23584L8.79883 4.96826C8.98794 4.61419 9.14495 4.24426 9.26855 3.86279L9.38086 3.47803L9.76562 1.99365C9.78729 1.91036 9.83822 1.83239 9.91309 1.77393L9.99609 1.72217C10.0792 1.68213 10.1735 1.66711 10.2656 1.67822Z" fill="#41A248" stroke="#41A248" strokeWidth={1.2} />
-                        </svg>
-                        <div>
-                          <p className="text-[#15803D] font-bold text-base mb-3">Pros</p>
-                          <ul className="space-y-2 list-none pl-0">
-                            {(vehicle.pros && vehicle.pros.length > 0 ? vehicle.pros : [
-                              'Advanced features and comfortable interior space.',
-                              'Refined engine performance and smooth power delivery.',
-                              'Excellent high-speed highway stability and ride comfort.',
-                              'Robust standard safety package and driver assistance tools.'
-                            ]).map((pro, index) => (
-                              <li key={index} className="flex gap-2 items-start">
-                                <span className="mt-1 w-2 h-2 rounded-full inline-block shrink-0 bg-[#15803D]"></span>
-                                <span className="text-[#1C1C1C] text-sm font-normal leading-relaxed">{pro}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="bg-[#FFF7F3] p-5 rounded-2xl flex gap-2">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M10.0508 16.6548L10.1367 16.6362L10.252 16.5991C10.4615 16.5317 10.6182 16.3822 10.6914 16.2017L10.7168 16.1226C10.814 15.748 10.8422 15.3588 10.7998 14.9751L10.7773 14.8101L10.2539 11.6157C10.1285 10.8505 10.7186 10.1538 11.4951 10.1538H15.5879C16.0031 10.1536 16.3258 9.80166 16.3018 9.396L16.292 9.31494L15.7344 6.09131C15.3345 3.78026 13.2503 2.05908 10.7764 2.05908H7.10449C6.78053 2.0591 6.50302 2.27604 6.41699 2.57861L6.3916 2.71338L5.75098 10.1333C5.73358 10.3345 5.80135 10.5323 5.93555 10.6792L5.99707 10.7388L7.13281 11.7183C7.60292 12.1234 8.10632 12.5962 8.48145 13.189L8.63379 13.4507C8.81875 13.797 8.97285 14.1586 9.09375 14.5317L9.20313 14.9087L9.5791 16.3569C9.59943 16.4353 9.64687 16.5097 9.71777 16.5649L9.79688 16.6128C9.87526 16.6505 9.96379 16.6652 10.0508 16.6548Z" fill="#F25900" stroke="#F25900" strokeWidth={1.2} />
-                        </svg>
-                        <div>
-                          <p className="text-[#EA580C] font-bold text-base mb-3">Cons</p>
-                          <ul className="space-y-2 list-none pl-0">
-                            {(vehicle.cons && vehicle.cons.length > 0 ? vehicle.cons : [
-                              'Lower-grade plastics used in lower cabin areas.',
-                              'Waiting period can be high for popular color/variant options.',
-                              'Touch controls on dashboard can be slightly tricky to use on the go.'
-                            ]).map((con, index) => (
-                              <li key={index} className="flex gap-2 items-start">
-                                <span className="mt-1 w-2 h-2 rounded-full inline-block shrink-0 bg-[#EA580C]"></span>
-                                <span className="text-[#1C1C1C] text-sm font-normal leading-relaxed">{con}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    </ul>
                   </div>
-                )}
-
-                {activeTab === 'specs' && (
-                  <div className="space-y-0 divide-y divide-border">
-                    {[
-                      { label: 'Engine Displacement', value: vehicle.engineCC ? `${vehicle.engineCC} cc` : 'N/A' },
-                      { label: 'Max Power', value: vehicle.powerBHP ? `${vehicle.powerBHP} bhp` : 'N/A' },
-                      { label: 'Max Torque', value: vehicle.torqueNm ? `${vehicle.torqueNm} Nm` : 'N/A' },
-                      { label: 'Fuel Type', value: vehicle.fuelTypes.join(', ') },
-                      { label: 'Transmission', value: vehicle.transmissions.join(', ') },
-                      { label: 'Mileage', value: vehicle.mileage },
-                      ...(vehicle.seatingCapacity ? [{ label: 'Seating Capacity', value: `${vehicle.seatingCapacity} Persons` }] : []),
-                      ...(vehicle.bootSpaceL ? [{ label: 'Boot Space', value: `${vehicle.bootSpaceL} litres` }] : []),
-                      ...(vehicle.safetyRating ? [{ label: 'Safety Rating (GNCAP)', value: `${vehicle.safetyRating} Stars` }] : []),
-                    ].map(({ label, value }) => (
-                      <div key={label} className="flex justify-between py-3.5 text-sm">
-                        <span className="text-muted">{label}</span>
-                        <span className="font-medium text-dark">{value}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {activeTab === 'variants' && (
-                  <div className="space-y-4">
-                    {/* Filters block */}
-                    <div className="p-4 bg-surface rounded-2xl border border-border space-y-3">
-                      <div className="flex flex-col gap-3">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="text-xs font-semibold text-muted w-24">Fuel Option:</span>
-                          <div className="flex flex-wrap gap-1.5 flex-1">
-                            {availableFuels.map(fuel => (
-                              <button
-                                key={fuel}
-                                type="button"
-                                onClick={() => setSelectedFuelFilter(fuel)}
-                                className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
-                                  selectedFuelFilter === fuel
-                                    ? 'bg-primary border-primary text-white shadow-sm'
-                                    : 'bg-white border-border text-dark hover:border-primary/50'
-                                }`}
-                              >
-                                {fuel} {fuelCounts[fuel] !== undefined ? `(${fuelCounts[fuel]})` : ''}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="text-xs font-semibold text-muted w-24">Transmission:</span>
-                          <div className="flex flex-wrap gap-1.5 flex-1">
-                            {availableTransmissions.map(trans => (
-                              <button
-                                key={trans}
-                                type="button"
-                                onClick={() => setSelectedTransFilter(trans)}
-                                className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
-                                  selectedTransFilter === trans
-                                    ? 'bg-primary border-primary text-white shadow-sm'
-                                    : 'bg-white border-border text-dark hover:border-primary/50'
-                                }`}
-                              >
-                                {trans} {transmissionCounts[trans] !== undefined ? `(${transmissionCounts[trans]})` : ''}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Accordion list */}
-                    <div className="space-y-4">
-                      {sortedGroupKeys.length === 0 ? (
-                        <div className="text-center py-12 bg-white rounded-2xl border border-dashed border-border text-muted text-sm">
-                          No variants match your selected filter criteria.
-                        </div>
-                      ) : (
-                        sortedGroupKeys.map(groupKey => {
-                          const groupVariants = groupedVariants[groupKey] || [];
-                          const minPrice = Math.min(...groupVariants.map(g => g.price));
-                          const maxPrice = Math.max(...groupVariants.map(g => g.price));
-                          const isExpanded = !!expandedGroups[groupKey];
-                          const groupFeatures = Array.from(new Set(groupVariants.flatMap(gv => gv.features || []))).slice(0, 4);
-
-                          return (
-                            <div key={groupKey} className="border border-border rounded-xl overflow-hidden bg-white shadow-sm hover:border-dark-300 transition-all">
-                              <div
-                                onClick={() => setExpandedGroups(prev => ({ ...prev, [groupKey]: !prev[groupKey] }))}
-                                className="p-4 cursor-pointer hover:bg-surface/10 select-none flex flex-col md:flex-row md:items-center justify-between gap-4"
-                              >
-                                <div className="space-y-2 flex-1">
-                                  <div className="flex items-center gap-2">
-                                    <h3 className="font-heading font-semibold text-dark text-base md:text-lg">
-                                      {vehicle.brand} {vehicle.model} {groupKey}
-                                    </h3>
-                                  </div>
-                                  {groupFeatures.length > 0 && (
-                                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
-                                      {groupFeatures.map((feat, i) => (
-                                        <span key={i} className="flex items-center gap-1">
-                                          <span className="w-1.5 h-1.5 bg-success rounded-full"></span>
-                                          {feat}
-                                        </span>
-                                      ))}
-                                    </div>
-                                  )}
-                                </div>
-
-                                <div className="flex items-center justify-between md:justify-end gap-4 shrink-0">
-                                  <div className="text-left md:text-right">
-                                    <p className="text-[10px] text-muted uppercase tracking-wider font-semibold">Ex-Showroom Price</p>
-                                    <p className="font-heading font-bold text-dark text-base md:text-lg">
-                                      {minPrice === maxPrice
-                                        ? formatPrice(minPrice)
-                                        : `${formatPriceShort(minPrice)} - ${formatPriceShort(maxPrice)}`}
-                                    </p>
-                                  </div>
-                                  <div className="flex items-center gap-2" onClick={e => e.stopPropagation()}>
-                                    <button
-                                      type="button"
-                                      className="flex items-center gap-1 text-xs font-semibold text-primary px-3 py-2 rounded-lg bg-primary-50/50 hover:bg-primary-50 transition-colors"
-                                      onClick={() => setExpandedGroups(prev => ({ ...prev, [groupKey]: !prev[groupKey] }))}
-                                    >
-                                      <span>View {groupVariants.length} Variants</span>
-                                      {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-                                    </button>
-                                    <button
-                                      type="button"
-                                      onClick={() => {
-                                        setOfferPurpose(`View Offers for ${groupKey}`);
-                                        setOfferModalOpen(true);
-                                      }}
-                                      className="hidden sm:block text-xs font-semibold bg-white border border-primary text-primary hover:bg-primary-50 px-3 py-2 rounded-lg transition-colors"
-                                    >
-                                      View Offers
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-
-                              {isExpanded && (
-                                <div className="border-t border-border bg-surface/10 divide-y divide-border/60">
-                                  {groupVariants.map(v => {
-                                    const isSelected = vehicle.variants[activeVariant]?.id === v.id;
-                                    const onRoadPrice = Math.round(v.price * selectedCity.multiplier);
-                                    const isBase = v.price === absoluteMinPrice;
-                                    const isTop = v.price === absoluteMaxPrice;
-
-                                    return (
-                                      <div
-                                        key={v.id}
-                                        onClick={() => handleVariantClick(v.id)}
-                                        className={`p-4 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-surface/30 ${
-                                          isSelected ? 'bg-primary-50/20' : ''
-                                        }`}
-                                      >
-                                        <div className="space-y-2 flex-1">
-                                          <div className="flex flex-wrap items-center gap-2">
-                                            {isBase && (
-                                              <span className="text-[9px] font-bold bg-secondary text-dark px-2 py-0.5 rounded leading-snug">Base Variant</span>
-                                            )}
-                                            {isTop && (
-                                              <span className="text-[9px] font-bold bg-dark text-white px-2 py-0.5 rounded leading-snug">Top Variant</span>
-                                            )}
-                                            <span className="text-sm font-semibold text-dark hover:text-primary transition-colors underline decoration-dotted underline-offset-4">
-                                              {v.name}
-                                            </span>
-                                          </div>
-                                          <p className="text-xs text-muted">
-                                            {v.fuelType} · {v.transmission} {v.mileage ? `· ${v.mileage}` : ''}
-                                          </p>
-
-                                          {/* Additional features box */}
-                                          {v.additionalFeaturesOverBase && v.additionalFeaturesOverBase.length > 0 && (
-                                            <div className="mt-2 bg-white rounded-lg border border-border/80 p-2 text-[11px] text-muted flex items-start gap-1 max-w-xl">
-                                              <span className="text-success font-bold shrink-0">+</span>
-                                              <span>
-                                                <strong>Additional features over preceding variant:</strong> {v.additionalFeaturesOverBase.join(', ')}
-                                              </span>
-                                            </div>
-                                          )}
-                                        </div>
-
-                                        <div className="flex flex-wrap md:flex-nowrap items-center justify-between md:justify-end gap-6">
-                                          <div className="text-left md:text-right shrink-0">
-                                            <p className="text-[10px] text-muted">Ex-Showroom Price</p>
-                                            <p className="font-heading font-bold text-dark text-sm md:text-base mt-0.5">
-                                              {formatPrice(v.price)}
-                                            </p>
-                                            <p className="text-[10px] text-success font-medium">
-                                              Est. On-Road: {formatPrice(onRoadPrice)} in {selectedCity.name}
-                                            </p>
-                                          </div>
-
-                                          <div className="flex items-center gap-4 shrink-0" onClick={e => e.stopPropagation()}>
-                                            <label className="flex items-center gap-1.5 cursor-pointer select-none py-1">
-                                              <input
-                                                type="checkbox"
-                                                checked={selectedCompareVariantIds.includes(v.id)}
-                                                onChange={() => toggleCompareVariant(v.id)}
-                                                className="w-4 h-4 rounded text-primary focus:ring-primary border-border cursor-pointer animate-none"
-                                              />
-                                              <span className="text-xs text-muted font-medium">Compare</span>
-                                            </label>
-                                            <button
-                                              type="button"
-                                              onClick={() => {
-                                                setOfferPurpose(`View Offers for ${v.name}`);
-                                                setOfferModalOpen(true);
-                                              }}
-                                              className="text-xs font-semibold text-primary underline decoration-dotted hover:text-primary/80"
-                                            >
-                                              View Offers
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    );
-                                  })}
-                                </div>
-                              )}
-                            </div>
-                          );
-                        })
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {activeTab === 'dealers' && (
-                  <div className="space-y-4">
-                    <p className="text-sm text-muted mb-4">Comparing prices from authorized dealerships near you</p>
-                    {vehicle.dealerPrices.map((dp, i) => (
-                      <div
-                        key={dp.dealerId}
-                        className={`p-4 rounded-xl border ${i === 0 ? 'border-primary bg-primary-50' : 'border-border'}`}
-                      >
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <div className="flex items-center gap-2 mb-1">
-                              {i === 0 && <span className="bg-primary text-white text-xs font-bold px-2 py-0.5 rounded-full">BEST DEAL</span>}
-                              <p className="font-semibold text-dark">{dp.dealerName}</p>
-                            </div>
-                            <p className="text-sm text-muted flex items-center gap-1">
-                              <MapPin size={12} /> {dp.location}
-                              <Star size={12} className="ml-1 text-warning fill-warning" /> {dp.rating}
-                            </p>
-                          </div>
-                          <div className="text-right">
-                             <p className="font-heading font-bold text-base sm:text-xl text-dark">{formatPriceShort(dp.price)}</p>
-                            <p className="text-sm text-success font-medium">Save {formatPriceShort(dp.discount)}</p>
-                          </div>
-                        </div>
-                        <div className="mt-3 flex gap-2">
-                          <button
-                            onClick={() => {
-                              setBookingForm(prev => ({ ...prev, purpose: 'Get Best Quote' }));
-                              setBookingOpen(true);
-                            }}
-                            className="flex-1 h-9 bg-white border border-border rounded-lg text-sm font-medium text-dark hover:border-primary hover:text-primary transition-colors"
-                          >
-                            Get Best Quote
-                          </button>
-                          <Link
-                            to={`/test-drive?vehicle=${vehicle?.id}`}
-                            className="flex-1 h-9 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary-600 transition-colors flex items-center justify-center"
-                          >
-                            Book Test Drive
-                          </Link>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {activeTab === 'reviews' && (
-                  <div className="space-y-6">
-                    <div className="flex flex-col w-full items-start gap-4 mb-6">
-                      <h2 className="text-dark text-xl lg:text-2xl font-semibold">
-                        {vehicle?.brand} {vehicle?.model} Owner Reviews
-                      </h2>
-                      <div className="w-full">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 mb-4 p-4 lg:items-center bg-white rounded-2xl border border-border shadow-sm">
-                          <div className="flex items-center justify-start lg:col-span-3">
-                            <div className="space-y-1">
-                              <span className="text-3xl font-bold text-dark">{vehicle?.rating}</span>
-                              <div className="pb-1">
-                                <div className="flex items-center gap-1 leading-tight">
-                                  <div className="flex items-center gap-0.5 leading-tight">
-                                    {[0, 1, 2, 3, 4].map((index) => {
-                                      const diff = (vehicle?.rating || 0) - index;
-                                      let fillPercentage = 0;
-                                      if (diff >= 1) {
-                                        fillPercentage = 100;
-                                      } else if (diff > 0) {
-                                        fillPercentage = diff * 100;
-                                      }
-                                      return (
-                                        <div key={index} className="relative inline-block w-[18px] h-[18px] shrink-0">
-                                          <Star size={18} className="text-gray-300 fill-gray-300 leading-none shrink-0" />
-                                          <div className="absolute top-0 left-0 overflow-hidden h-full" style={{ width: `${fillPercentage}%` }}>
-                                            <Star size={18} className="text-primary fill-primary leading-none shrink-0" />
-                                          </div>
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="text-xs text-muted">
-                                Based on {vehicle?.reviewCount.toLocaleString()} Ratings, {localReviews.length} Reviews
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="flex flex-col gap-1.5 lg:col-span-3">
-                            {[5, 4, 3, 2, 1].map((ratingVal) => {
-                              const matchedReviews = localReviews.filter(r => Math.round(r.rating) === ratingVal);
-                              const pct = localReviews.length 
-                                ? (matchedReviews.length / localReviews.length) * 100 
-                                : (ratingVal === 5 ? 50 : ratingVal === 4 ? 12.5 : ratingVal === 3 ? 37.5 : 0);
-                              const countVal = localReviews.length
-                                ? matchedReviews.length
-                                : (ratingVal === 5 ? 4 : ratingVal === 4 ? 1 : ratingVal === 3 ? 3 : 0);
-
-                              return (
-                                <div key={ratingVal} className="flex items-center gap-2">
-                                  <div className="flex items-center justify-end gap-1 w-7 flex-shrink-0">
-                                    <span className="text-xs text-right text-dark font-medium">{ratingVal}</span>
-                                    <Star size={12} className="text-primary fill-primary leading-none shrink-0" />
-                                  </div>
-                                  <div className="flex-1 h-1 bg-primary/10 rounded-full overflow-hidden min-w-0">
-                                    <div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }}></div>
-                                  </div>
-                                  <span className="text-xs text-muted text-right w-8 flex-shrink-0">{countVal}</span>
-                                </div>
-                              );
-                            })}
-                          </div>
-
-                          <div className="overflow-hidden mb-0 col-span-1 md:grid-cols-2 lg:col-span-6 -mx-4 lg:mx-0 relative">
-                            <div 
-                              className="flex items-end gap-2 h-36" 
-                              style={{ 
-                                transform: `translateX(calc(50% - 48px - ${(6 + activeMetric) * 104}px))`, 
-                                transition: 'transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)' 
-                              }}
-                            >
-                              {(() => {
-                                const baseMetrics = [
-                                  { name: 'Comfort', val: Math.min(5.0, (vehicle?.rating || 0) + 0.3).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) + 0.3) * 20)) },
-                                  { name: 'Maintenance Cost', val: Math.min(5.0, (vehicle?.rating || 0) + 0.1).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) + 0.1) * 20)) },
-                                  { name: 'Design', val: Math.min(5.0, (vehicle?.rating || 0) + 0.1).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) + 0.1) * 20)) },
-                                  { name: 'Performance', val: (vehicle?.rating || 0).toFixed(1), pct: Math.round(Math.min(100, (vehicle?.rating || 0) * 20)) },
-                                  { name: 'Features', val: Math.max(1.0, (vehicle?.rating || 0) - 0.1).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) - 0.1) * 20)) },
-                                  { name: 'Safety', val: Math.max(1.0, (vehicle?.rating || 0) - 0.2).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) - 0.2) * 20)) },
-                                ];
-                                const repeatedMetrics = [...baseMetrics, ...baseMetrics, ...baseMetrics];
-
-                                return repeatedMetrics.map((metric, idx) => {
-                                  const targetK = 6 + activeMetric;
-                                  const distance = Math.abs(idx - targetK);
-                                  const opacity = distance === 0 ? 1 : distance === 1 ? 0.7 : 0.5;
-                                  return (
-                                    <div 
-                                      key={idx} 
-                                      className="flex flex-col items-center gap-2 w-24 flex-shrink-0 cursor-pointer"
-                                      onClick={() => setActiveMetric(idx % 6)}
-                                    >
-                                      <div className="w-full flex items-end h-32">
-                                        <div 
-                                          className="w-full bg-secondary/85 rounded-t-lg flex flex-col items-center justify-start pt-2 border-t-2 border-primary/20" 
-                                          style={{ 
-                                            height: `${metric.pct}%`, 
-                                            opacity: opacity, 
-                                            transition: 'all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)' 
-                                          }}
-                                        >
-                                          <div className="flex items-center gap-1">
-                                            <Star size={12} className="text-dark fill-dark leading-none shrink-0" />
-                                            <span className="text-xs font-semibold text-dark">{metric.val}</span>
-                                          </div>
-                                          <span className="text-[9px] font-medium text-dark mt-1 text-center px-1 leading-tight">
-                                            {metric.name}
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  );
-                                });
-                              })()}
-                            </div>
-                            <div className="hidden lg:block h-full w-10 absolute top-0 left-0 bg-gradient-to-r from-white to-white/0 pointer-events-none"></div>
-                            <div className="hidden lg:block h-full w-10 absolute top-0 right-0 bg-gradient-to-l from-white to-white/0 pointer-events-none"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between border-b border-border pb-4">
-                      <h4 className="font-heading font-semibold text-dark text-base flex items-center gap-2">
-                        <MessageSquare size={18} className="text-primary" />
-                        Reviews ({localReviews.length})
-                      </h4>
-                      <button
-                        onClick={() => setShowAddForm(prev => !prev)}
-                        className="btn-secondary h-10 px-4 text-sm flex items-center gap-1.5"
-                      >
-                        <Plus size={16} />
-                        Write a Review
-                      </button>
-                    </div>
-
-                    {showAddForm && (
-                      <form onSubmit={handleAddReview} className="p-5 bg-surface rounded-2xl border border-primary/20 space-y-4 animate-scale-in">
-                        <h4 className="font-heading font-semibold text-dark text-sm">Share your experience with {vehicle.brand} {vehicle.model}</h4>
-                        
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm text-muted">Your Rating:</span>
-                          <div className="flex gap-1">
-                            {[1, 2, 3, 4, 5].map(s => (
-                              <button
-                                type="button"
-                                key={s}
-                                onClick={() => setNewReviewRating(s)}
-                                className="focus:outline-none hover:scale-110 transition-transform"
-                              >
-                                <Star
-                                  size={24}
-                                  className={s <= newReviewRating ? 'text-warning fill-warning' : 'text-border'}
-                                />
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-xs font-semibold text-dark mb-1">Your Name</label>
-                            <input
-                              type="text"
-                              required
-                              value={newReviewName}
-                              onChange={e => setNewReviewName(e.target.value)}
-                              placeholder="e.g. Rajesh Kumar"
-                              className="input-field h-10 text-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-xs font-semibold text-dark mb-1">Location</label>
-                            <input
-                              type="text"
-                              value={newReviewLocation}
-                              onChange={e => setNewReviewLocation(e.target.value)}
-                              placeholder="e.g. Ranchi"
-                              className="input-field h-10 text-sm"
-                            />
-                          </div>
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-semibold text-dark mb-1">Review Comments</label>
-                          <textarea
-                            required
-                            rows={3}
-                            value={newReviewComment}
-                            onChange={e => setNewReviewComment(e.target.value)}
-                            placeholder="Share detailed feedback about performance, comfort, and service..."
-                            className="input-field text-sm p-3 resize-none"
-                          />
-                        </div>
-
-                        <div className="flex justify-between items-center pt-2">
-                          {reviewSubmitted ? (
-                            <span className="text-success text-sm font-semibold flex items-center gap-1">
-                              ✓ Review submitted successfully!
-                            </span>
-                          ) : (
-                            <span className="text-xs text-muted">Your review will be published instantly.</span>
-                          )}
-                          <div className="flex gap-2">
-                            <button
-                              type="button"
-                              onClick={() => setShowAddForm(false)}
-                              className="h-10 px-4 bg-white border border-border rounded-lg text-sm text-dark hover:bg-surface"
-                            >
-                              Cancel
-                            </button>
-                            <button
-                              type="submit"
-                              className="btn-primary h-10 px-5 text-sm"
-                            >
-                              Submit Review
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-                    )}
-
-                    <div className="space-y-4">
-                      {localReviews.length === 0 ? (
-                        <div className="text-center py-8 bg-surface rounded-xl text-muted text-sm">
-                          No reviews found for this vehicle. Be the first to add one!
-                        </div>
-                      ) : (
-                        localReviews.map(r => (
-                          <div key={r.id} className="p-5 bg-white border border-border rounded-2xl shadow-sm space-y-3">
-                            <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center text-sm font-semibold">
-                                {r.avatar || 'U'}
-                              </div>
-                              <div className="flex-1">
-                                <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                                  <p className="font-semibold text-dark text-sm">{r.name}</p>
-                                  {r.verified && (
-                                    <span className="inline-flex items-center gap-0.5 bg-success/10 text-success text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                                      ✓ Verified Owner
-                                    </span>
-                                  )}
-                                </div>
-                                <p className="text-xs text-muted">{r.date} · {r.location}</p>
-                              </div>
-                              <div className="flex items-center gap-1 px-2.5 py-1 bg-warning-50 text-warning rounded-lg border border-warning/10 font-bold text-sm shrink-0">
-                                <Star size={14} className="fill-warning" />
-                                {r.rating}
-                              </div>
-                            </div>
-
-                            <p className="text-dark-600 text-sm leading-relaxed italic">
-                              "{r.comment}"
-                            </p>
-                          </div>
-                        ))
-                      )}
-                    </div>
-                  </div>
-                )}
+                </div>
               </div>
             </div>
 
-            {/* Colors Section */}
+            {/* Specs Section Card */}
+            <div id="specs-section" className="bg-white rounded-2xl border border-border p-4 sm:p-6 shadow-sm mb-6">
+              <h3 className="font-heading font-bold text-dark text-lg sm:text-xl mb-4">{vehicle.brand} {vehicle.model} Key Specs</h3>
+              <div className="space-y-0 divide-y divide-border">
+                {[
+                  { label: 'Engine Displacement', value: vehicle.engineCC ? `${vehicle.engineCC} cc` : 'N/A' },
+                  { label: 'Max Power', value: vehicle.powerBHP ? `${vehicle.powerBHP} bhp` : 'N/A' },
+                  { label: 'Max Torque', value: vehicle.torqueNm ? `${vehicle.torqueNm} Nm` : 'N/A' },
+                  { label: 'Fuel Type', value: vehicle.fuelTypes.join(', ') },
+                  { label: 'Transmission', value: vehicle.transmissions.join(', ') },
+                  { label: 'Mileage', value: vehicle.mileage },
+                  ...(vehicle.seatingCapacity ? [{ label: 'Seating Capacity', value: `${vehicle.seatingCapacity} Persons` }] : []),
+                  ...(vehicle.bootSpaceL ? [{ label: 'Boot Space', value: `${vehicle.bootSpaceL} litres` }] : []),
+                  ...(vehicle.safetyRating ? [{ label: 'Safety Rating (GNCAP)', value: `${vehicle.safetyRating} Stars` }] : []),
+                ].map(({ label, value }) => (
+                  <div key={label} className="flex justify-between py-3.5 text-sm">
+                    <span className="text-muted">{label}</span>
+                    <span className="font-medium text-dark">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Standalone Variants Section */}
+            <div id="variants-section" className="flex flex-col w-full items-start py-6 px-4 sm:px-6 bg-white border border-border shadow-sm rounded-2xl mb-6 mt-6 max-w-full overflow-hidden">
+              <h2 className="text-dark text-xl lg:text-2xl font-bold mb-4">
+                {vehicle.brand} {vehicle.model} Variants
+              </h2>
+              <div className="w-full space-y-4">
+                {/* Filters block */}
+                <div className="p-4 bg-surface rounded-2xl border border-border space-y-3">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-xs font-semibold text-muted w-24">Fuel Option:</span>
+                      <div className="flex flex-wrap gap-1.5 flex-1">
+                        {availableFuels.map(fuel => (
+                          <button
+                            key={fuel}
+                            type="button"
+                            onClick={() => setSelectedFuelFilter(fuel)}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
+                              selectedFuelFilter === fuel
+                                ? 'bg-primary border-primary text-white shadow-sm'
+                                : 'bg-white border-border text-dark hover:border-primary/50'
+                            }`}
+                          >
+                            {fuel} {fuelCounts[fuel] !== undefined ? `(${fuelCounts[fuel]})` : ''}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-xs font-semibold text-muted w-24">Transmission:</span>
+                      <div className="flex flex-wrap gap-1.5 flex-1">
+                        {availableTransmissions.map(trans => (
+                          <button
+                            key={trans}
+                            type="button"
+                            onClick={() => setSelectedTransFilter(trans)}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
+                              selectedTransFilter === trans
+                                ? 'bg-primary border-primary text-white shadow-sm'
+                                : 'bg-white border-border text-dark hover:border-primary/50'
+                            }`}
+                          >
+                            {trans} {transmissionCounts[trans] !== undefined ? `(${transmissionCounts[trans]})` : ''}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Accordion list */}
+                <div className="space-y-4">
+                  {sortedGroupKeys.length === 0 ? (
+                    <div className="text-center py-12 bg-white rounded-2xl border border-dashed border-border text-muted text-sm">
+                      No variants match your selected filter criteria.
+                    </div>
+                  ) : (
+                    sortedGroupKeys.map(groupKey => {
+                      const groupVariants = groupedVariants[groupKey] || [];
+                      const minPrice = Math.min(...groupVariants.map(g => g.price));
+                      const maxPrice = Math.max(...groupVariants.map(g => g.price));
+                      const isExpanded = !!expandedGroups[groupKey];
+                      const groupFeatures = Array.from(new Set(groupVariants.flatMap(gv => gv.features || []))).slice(0, 4);
+
+                      return (
+                        <div key={groupKey} className="border border-border rounded-xl overflow-hidden bg-white shadow-sm hover:border-dark-300 transition-all">
+                          <div
+                            onClick={() => setExpandedGroups(prev => ({ ...prev, [groupKey]: !prev[groupKey] }))}
+                            className="p-4 cursor-pointer hover:bg-surface/10 select-none flex flex-col md:flex-row md:items-center justify-between gap-4"
+                          >
+                            <div className="space-y-2 flex-1">
+                              <div className="flex items-center gap-2">
+                                <h3 className="font-heading font-semibold text-dark text-base md:text-lg">
+                                  {vehicle.brand} {vehicle.model} {groupKey}
+                                </h3>
+                              </div>
+                              {groupFeatures.length > 0 && (
+                                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
+                                  {groupFeatures.map((feat, i) => (
+                                    <span key={i} className="flex items-center gap-1">
+                                      <span className="w-1.5 h-1.5 bg-success rounded-full"></span>
+                                      {feat}
+                                    </span>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+
+                            <div className="flex items-center justify-between md:justify-end gap-4 shrink-0">
+                              <div className="text-left md:text-right">
+                                <p className="text-[10px] text-muted uppercase tracking-wider font-semibold">Ex-Showroom Price</p>
+                                <p className="font-heading font-bold text-dark text-base md:text-lg">
+                                  {minPrice === maxPrice
+                                    ? formatPrice(minPrice)
+                                    : `${formatPriceShort(minPrice)} - ${formatPriceShort(maxPrice)}`}
+                                </p>
+                              </div>
+                              <div className="flex items-center gap-2" onClick={e => e.stopPropagation()}>
+                                <button
+                                  type="button"
+                                  className="flex items-center gap-1 text-xs font-semibold text-primary px-3 py-2 rounded-lg bg-primary-50/50 hover:bg-primary-50 transition-colors"
+                                  onClick={() => setExpandedGroups(prev => ({ ...prev, [groupKey]: !prev[groupKey] }))}
+                                >
+                                  <span>View {groupVariants.length} Variants</span>
+                                  {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setOfferPurpose(`View Offers for ${groupKey}`);
+                                    setOfferModalOpen(true);
+                                  }}
+                                  className="hidden sm:block text-xs font-semibold bg-white border border-primary text-primary hover:bg-primary-50 px-3 py-2 rounded-lg transition-colors"
+                                >
+                                  View Offers
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+
+                          {isExpanded && (
+                            <div className="border-t border-border bg-surface/10 divide-y divide-border/60">
+                              {groupVariants.map(v => {
+                                const isSelected = vehicle.variants[activeVariant]?.id === v.id;
+                                const onRoadPrice = Math.round(v.price * multiplier);
+                                const isBase = v.price === absoluteMinPrice;
+                                const isTop = v.price === absoluteMaxPrice;
+
+                                return (
+                                  <div
+                                    key={v.id}
+                                    onClick={() => handleVariantClick(v.id)}
+                                    className={`p-4 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-surface/30 ${
+                                      isSelected ? 'bg-primary-50/20' : ''
+                                    }`}
+                                  >
+                                    <div className="space-y-2 flex-1">
+                                      <div className="flex flex-wrap items-center gap-2">
+                                        {isBase && (
+                                          <span className="text-[9px] font-bold bg-secondary text-dark px-2 py-0.5 rounded leading-snug">Base Variant</span>
+                                        )}
+                                        {isTop && (
+                                          <span className="text-[9px] font-bold bg-dark text-white px-2 py-0.5 rounded leading-snug">Top Variant</span>
+                                        )}
+                                        <span className="text-sm font-semibold text-dark hover:text-primary transition-colors underline decoration-dotted underline-offset-4">
+                                          {v.name}
+                                        </span>
+                                      </div>
+                                      <p className="text-xs text-muted">
+                                        {v.fuelType} · {v.transmission} {v.mileage ? `· ${v.mileage}` : ''}
+                                      </p>
+
+                                      {/* Additional features box */}
+                                      {v.additionalFeaturesOverBase && v.additionalFeaturesOverBase.length > 0 && (
+                                        <div className="mt-2 bg-white rounded-lg border border-border/80 p-2 text-[11px] text-muted flex items-start gap-1 max-w-xl">
+                                          <span className="text-success font-bold shrink-0">+</span>
+                                          <span>
+                                            <strong>Additional features over preceding variant:</strong> {v.additionalFeaturesOverBase.join(', ')}
+                                          </span>
+                                        </div>
+                                      )}
+                                    </div>
+
+                                    <div className="flex flex-wrap md:flex-nowrap items-center justify-between md:justify-end gap-6">
+                                      <div className="text-left md:text-right shrink-0">
+                                        <p className="text-[10px] text-muted">Ex-Showroom Price</p>
+                                        <p className="font-heading font-bold text-dark text-sm md:text-base mt-0.5">
+                                          {formatPrice(v.price)}
+                                        </p>
+                                        <p className="text-[10px] text-success font-medium">
+                                          Est. On-Road: {formatPrice(onRoadPrice)} in{' '}
+                                          <button
+                                            type="button"
+                                            onClick={e => {
+                                              e.stopPropagation();
+                                              openPincodeModal();
+                                            }}
+                                            className="underline hover:text-primary font-semibold"
+                                          >
+                                            {selectedCity}
+                                          </button>
+                                        </p>
+                                      </div>
+
+                                      <div className="flex items-center gap-4 shrink-0" onClick={e => e.stopPropagation()}>
+                                        <label className="flex items-center gap-1.5 cursor-pointer select-none py-1">
+                                          <input
+                                            type="checkbox"
+                                            checked={selectedCompareVariantIds.includes(v.id)}
+                                            onChange={() => toggleCompareVariant(v.id)}
+                                            className="w-4 h-4 rounded text-primary focus:ring-primary border-border cursor-pointer animate-none"
+                                          />
+                                          <span className="text-xs text-muted font-medium">Compare</span>
+                                        </label>
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            setOfferPurpose(`View Offers for ${v.name}`);
+                                            setOfferModalOpen(true);
+                                          }}
+                                          className="text-xs font-semibold text-primary underline decoration-dotted hover:text-primary/80"
+                                        >
+                                          View Offers
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Standalone Colors Section */}
             {vehicleColors.length > 0 && (
-              <div className="flex flex-col w-full items-start py-8 bg-white lg:mb-4 lg:px-8 lg:rounded-2xl gap-4 lg:gap-3 border border-border shadow-sm rounded-2xl mb-6 mt-6">
-                <h2 className="text-dark text-xl lg:text-2xl font-bold px-4">
+              <div id="colors-section" className="flex flex-col w-full items-start py-6 px-4 sm:px-6 bg-white border border-border shadow-sm rounded-2xl mb-6 mt-6 max-w-full overflow-hidden">
+                <h2 className="text-dark text-xl lg:text-2xl font-bold mb-4">
                   {vehicle.brand} {vehicle.model} Colors
                 </h2>
                 <div className="relative w-full max-w-full">
@@ -1115,11 +860,11 @@ export default function VehicleDetail() {
                         style={{ transform: `translateX(-${selectedColorIdx * 100}%)` }}
                       >
                         {vehicleColors.map((color, idx) => (
-                          <div key={idx} className="w-full h-full flex-shrink-0 flex items-center justify-center p-2 sm:p-4 bg-slate-50/50">
+                          <div key={idx} className="w-full h-full flex-shrink-0 flex items-center justify-center p-2 sm:p-4 bg-gray-100">
                             <img 
                               src={color.image} 
                               alt={`${vehicle.brand} ${vehicle.model} in ${color.name}`}
-                              className="pointer-events-none select-none max-w-full max-h-full object-contain transition-opacity duration-300"
+                              className="pointer-events-none select-none max-w-full max-h-full object-contain scale-125 transition-transform duration-300"
                               onError={(e) => {
                                 e.currentTarget.src = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
                               }}
@@ -1165,16 +910,372 @@ export default function VehicleDetail() {
                     </div>
                   </div>
                 </div>
-
-
               </div>
             )}
+
+            {/* Standalone Dealers Section */}
+            <div id="dealers-section" className="bg-white rounded-2xl border border-border p-4 sm:p-6 shadow-sm mb-6 mt-6">
+              <h2 className="text-dark text-xl lg:text-2xl font-bold mb-2">
+                {vehicle.brand} {vehicle.model} Authorized Dealers
+              </h2>
+              <p className="text-sm text-muted mb-4">Comparing prices from authorized dealerships near you</p>
+              <div className="space-y-4">
+                {vehicle.dealerPrices.map((dp, i) => (
+                  <div
+                    key={dp.dealerId}
+                    className={`p-4 rounded-xl border ${i === 0 ? 'border-primary bg-primary-50' : 'border-border'}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          {i === 0 && <span className="bg-primary text-white text-xs font-bold px-2 py-0.5 rounded-full">BEST DEAL</span>}
+                          <p className="font-semibold text-dark">{dp.dealerName}</p>
+                        </div>
+                        <p className="text-sm text-muted flex items-center gap-1">
+                          <MapPin size={12} /> {dp.location}
+                          <Star size={12} className="ml-1 text-warning fill-warning" /> {dp.rating}
+                        </p>
+                      </div>
+                      <div className="text-right">
+                         <p className="font-heading font-bold text-base sm:text-xl text-dark">{formatPriceShort(dp.price)}</p>
+                        <p className="text-sm text-success font-medium">Save {formatPriceShort(dp.discount)}</p>
+                      </div>
+                    </div>
+                    <div className="mt-3 flex gap-2">
+                      <button
+                        onClick={handleJulyOfferClick}
+                        className="flex-1 h-9 bg-white border border-border rounded-lg text-sm font-medium text-dark hover:border-primary hover:text-primary transition-colors"
+                      >
+                        Get Best Quote
+                      </button>
+                      <Link
+                        to={`/test-drive?vehicle=${vehicle?.id}`}
+                        className="flex-1 h-9 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary-600 transition-colors flex items-center justify-center"
+                      >
+                        Book Test Drive
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Standalone Reviews Section */}
+            <div id="reviews-section" className="bg-white rounded-2xl border border-border p-4 sm:p-6 shadow-sm mb-6 mt-6">
+              <div className="flex flex-col w-full items-start gap-4 mb-6">
+                <h2 className="text-dark text-xl lg:text-2xl font-bold">
+                  {vehicle?.brand} {vehicle?.model} Owner Reviews
+                </h2>
+                <div className="w-full">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 mb-4 p-4 lg:items-center bg-white rounded-2xl border border-border shadow-sm">
+                    <div className="flex items-center justify-start lg:col-span-3">
+                      <div className="space-y-1">
+                        <span className="text-3xl font-bold text-dark">{vehicle?.rating}</span>
+                        <div className="pb-1">
+                          <div className="flex items-center gap-1 leading-tight">
+                            <div className="flex items-center gap-0.5 leading-tight">
+                              {[0, 1, 2, 3, 4].map((index) => {
+                                const diff = (vehicle?.rating || 0) - index;
+                                let fillPercentage = 0;
+                                if (diff >= 1) {
+                                  fillPercentage = 100;
+                                } else if (diff > 0) {
+                                  fillPercentage = diff * 100;
+                                }
+                                return (
+                                  <div key={index} className="relative inline-block w-[18px] h-[18px] shrink-0">
+                                    <Star size={18} className="text-gray-300 fill-gray-300 leading-none shrink-0" />
+                                    <div className="absolute top-0 left-0 overflow-hidden h-full" style={{ width: `${fillPercentage}%` }}>
+                                      <Star size={18} className="text-primary fill-primary leading-none shrink-0" />
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-xs text-muted">
+                          Based on {vehicle?.reviewCount.toLocaleString()} Ratings, {localReviews.length} Reviews
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-1.5 lg:col-span-3">
+                      {[5, 4, 3, 2, 1].map((ratingVal) => {
+                        const matchedReviews = localReviews.filter(r => Math.round(r.rating) === ratingVal);
+                        const pct = localReviews.length 
+                          ? (matchedReviews.length / localReviews.length) * 100 
+                          : (ratingVal === 5 ? 50 : ratingVal === 4 ? 12.5 : ratingVal === 3 ? 37.5 : 0);
+                        const countVal = localReviews.length
+                          ? matchedReviews.length
+                          : (ratingVal === 5 ? 4 : ratingVal === 4 ? 1 : ratingVal === 3 ? 3 : 0);
+
+                        return (
+                          <div key={ratingVal} className="flex items-center gap-2">
+                            <div className="flex items-center justify-end gap-1 w-7 flex-shrink-0">
+                              <span className="text-xs text-right text-dark font-medium">{ratingVal}</span>
+                              <Star size={12} className="text-primary fill-primary leading-none shrink-0" />
+                            </div>
+                            <div className="flex-1 h-1 bg-primary/10 rounded-full overflow-hidden min-w-0">
+                              <div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }}></div>
+                            </div>
+                            <span className="text-xs text-muted text-right w-8 flex-shrink-0">{countVal}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="overflow-hidden mb-0 col-span-1 md:grid-cols-2 lg:col-span-6 w-full max-w-full relative">
+                      <div 
+                        className="flex items-end gap-2 h-36" 
+                        style={{ 
+                          transform: `translateX(calc(50% - 48px - ${(6 + activeMetric) * 104}px))`, 
+                          transition: 'transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)' 
+                        }}
+                      >
+                        {(() => {
+                          const baseMetrics = [
+                            { name: 'Comfort', val: Math.min(5.0, (vehicle?.rating || 0) + 0.3).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) + 0.3) * 20)) },
+                            { name: 'Maintenance Cost', val: Math.min(5.0, (vehicle?.rating || 0) + 0.1).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) + 0.1) * 20)) },
+                            { name: 'Design', val: Math.min(5.0, (vehicle?.rating || 0) + 0.1).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) + 0.1) * 20)) },
+                            { name: 'Performance', val: (vehicle?.rating || 0).toFixed(1), pct: Math.round(Math.min(100, (vehicle?.rating || 0) * 20)) },
+                            { name: 'Features', val: Math.max(1.0, (vehicle?.rating || 0) - 0.1).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) - 0.1) * 20)) },
+                            { name: 'Safety', val: Math.max(1.0, (vehicle?.rating || 0) - 0.2).toFixed(1), pct: Math.round(Math.min(100, ((vehicle?.rating || 0) - 0.2) * 20)) },
+                          ];
+                          const repeatedMetrics = [...baseMetrics, ...baseMetrics, ...baseMetrics];
+
+                          return repeatedMetrics.map((metric, idx) => {
+                            const targetK = 6 + activeMetric;
+                            const distance = Math.abs(idx - targetK);
+                            const opacity = distance === 0 ? 1 : distance === 1 ? 0.7 : 0.5;
+                            return (
+                              <div 
+                                key={idx} 
+                                className="flex flex-col items-center gap-2 w-24 flex-shrink-0 cursor-pointer"
+                                onClick={() => setActiveMetric(idx % 6)}
+                              >
+                                <div className="w-full flex items-end h-32">
+                                  <div 
+                                    className="w-full bg-secondary/85 rounded-t-lg flex flex-col items-center justify-start pt-2 border-t-2 border-primary/20" 
+                                    style={{ 
+                                      height: `${metric.pct}%`, 
+                                      opacity: opacity, 
+                                      transition: 'all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)' 
+                                    }}
+                                  >
+                                    <div className="flex items-center gap-1">
+                                      <Star size={12} className="text-dark fill-dark leading-none shrink-0" />
+                                      <span className="text-xs font-semibold text-dark">{metric.val}</span>
+                                    </div>
+                                    <span className="text-[9px] font-medium text-dark mt-1 text-center px-1 leading-tight">
+                                      {metric.name}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          });
+                        })()}
+                      </div>
+                      <div className="hidden lg:block h-full w-10 absolute top-0 left-0 bg-gradient-to-r from-white to-white/0 pointer-events-none"></div>
+                      <div className="hidden lg:block h-full w-10 absolute top-0 right-0 bg-gradient-to-l from-white to-white/0 pointer-events-none"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between border-b border-border pb-4">
+                <h4 className="font-heading font-semibold text-dark text-base flex items-center gap-2">
+                  <MessageSquare size={18} className="text-primary" />
+                  Reviews ({localReviews.length})
+                </h4>
+                <button
+                  onClick={() => setShowAddForm(prev => !prev)}
+                  className="btn-secondary h-10 px-4 text-sm flex items-center gap-1.5"
+                >
+                  <Plus size={16} />
+                  Write a Review
+                </button>
+              </div>
+
+              {showAddForm && (
+                <form onSubmit={handleAddReview} className="p-5 bg-surface rounded-2xl border border-primary/20 space-y-4 animate-scale-in">
+                  <h4 className="font-heading font-semibold text-dark text-sm">Share your experience with {vehicle.brand} {vehicle.model}</h4>
+                  
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-muted">Your Rating:</span>
+                    <div className="flex gap-1">
+                      {[1, 2, 3, 4, 5].map(s => (
+                        <button
+                          type="button"
+                          key={s}
+                          onClick={() => setNewReviewRating(s)}
+                          className="focus:outline-none hover:scale-110 transition-transform"
+                        >
+                          <Star
+                            size={24}
+                            className={s <= newReviewRating ? 'text-warning fill-warning' : 'text-border'}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-dark mb-1">Your Name</label>
+                      <input
+                        type="text"
+                        required
+                        value={newReviewName}
+                        onChange={e => setNewReviewName(e.target.value)}
+                        placeholder="e.g. Rajesh Kumar"
+                        className="input-field h-10 text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-dark mb-1">Location</label>
+                      <input
+                        type="text"
+                        value={newReviewLocation}
+                        onChange={e => setNewReviewLocation(e.target.value)}
+                        placeholder="e.g. Ranchi"
+                        className="input-field h-10 text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-dark mb-1">Review Comments</label>
+                    <textarea
+                      required
+                      rows={3}
+                      value={newReviewComment}
+                      onChange={e => setNewReviewComment(e.target.value)}
+                      placeholder="Share detailed feedback about performance, comfort, and service..."
+                      className="input-field text-sm p-3 resize-none"
+                    />
+                  </div>
+
+                  <div className="flex justify-between items-center pt-2">
+                    {reviewSubmitted ? (
+                      <span className="text-success text-sm font-semibold flex items-center gap-1">
+                        ✓ Review submitted successfully!
+                      </span>
+                    ) : (
+                      <span className="text-xs text-muted">Your review will be published instantly.</span>
+                    )}
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setShowAddForm(false)}
+                        className="h-10 px-4 bg-white border border-border rounded-lg text-sm text-dark hover:bg-surface"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        className="btn-primary h-10 px-5 text-sm"
+                      >
+                        Submit Review
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              )}
+
+              <div className="space-y-4">
+                {localReviews.length === 0 ? (
+                  <div className="text-center py-8 bg-surface rounded-xl text-muted text-sm">
+                    No reviews found for this vehicle. Be the first to add one!
+                  </div>
+                ) : (
+                  localReviews.map(r => (
+                    <div key={r.id} className="p-5 bg-white border border-border rounded-2xl shadow-sm space-y-3">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center text-sm font-semibold">
+                          {r.avatar || 'U'}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                            <p className="font-semibold text-dark text-sm">{r.name}</p>
+                            {r.verified && (
+                              <span className="inline-flex items-center gap-0.5 bg-success/10 text-success text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                                ✓ Verified Owner
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs text-muted">{r.date} · {r.location}</p>
+                        </div>
+                        <div className="flex items-center gap-1 px-2.5 py-1 bg-warning-50 text-warning rounded-lg border border-warning/10 font-bold text-sm shrink-0">
+                          <Star size={14} className="fill-warning" />
+                          {r.rating}
+                        </div>
+                      </div>
+
+                      <p className="text-dark-600 text-sm leading-relaxed italic">
+                        "{r.comment}"
+                      </p>
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+            {/* Official Brochure Section */}
+            <div className="bg-white rounded-2xl border border-border p-5 sm:p-6 mb-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3.5">
+                <div className="w-12 h-12 rounded-2xl bg-primary-50 text-primary flex items-center justify-center shrink-0">
+                  <Download size={22} />
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-dark text-base sm:text-lg">Official {vehicle.brand} {vehicle.model} Brochure</h4>
+                  <p className="text-xs sm:text-sm text-muted">Download full technical specifications & feature brochure PDF</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={async () => {
+                  if (!vehicle) return;
+                  setBrochureDownloading(true);
+                  try {
+                    await downloadVehicleBrochure(vehicle);
+                  } catch (err) {
+                    console.error('Failed to download brochure:', err);
+                  } finally {
+                    setBrochureDownloading(false);
+                  }
+                }}
+                disabled={brochureDownloading}
+                className="btn-primary shrink-0 px-6 py-3 text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-primary transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+              >
+                {brochureDownloading ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <span>Downloading PDF...</span>
+                  </>
+                ) : (
+                  <>
+                    <Download size={16} />
+                    <span>Download Brochure</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
 
           <div className="md:col-span-1">
             <div className="sticky top-28 space-y-4 flex flex-col">
               <div className="bg-white rounded-2xl border border-border shadow-card p-4 sm:p-6">
-                <p className="text-xs text-muted mb-1">{vehicle.brand}</p>
+                <div className="flex items-center gap-2 mb-1.5">
+                  {BRAND_LOGOS_OVERRIDE[vehicle.brand] && (
+                    <img
+                      src={BRAND_LOGOS_OVERRIDE[vehicle.brand]}
+                      alt={vehicle.brand}
+                      className="h-7 w-auto object-contain bg-surface rounded-md p-1 border border-border"
+                    />
+                  )}
+                  <p className="text-xs font-bold text-muted uppercase tracking-wider">{vehicle.brand}</p>
+                </div>
                 <h2 className="font-heading font-bold text-dark text-xl sm:text-2xl mb-1">{vehicle.model}</h2>
                 <p className="text-sm text-muted mb-4">{variant.name} · {variant.fuelType} · {variant.transmission}</p>
 
@@ -1182,8 +1283,15 @@ export default function VehicleDetail() {
                   <p className="text-xs text-muted">Ex-showroom Price</p>
                   <p className="font-heading font-bold text-dark text-2xl sm:text-3xl">{formatPrice(variant.price)}</p>
                   <div className="mt-1 flex items-baseline justify-between">
-                    <p className="text-xs text-success font-semibold">Est. On-Road: {formatPrice(Math.round(variant.price * selectedCity.multiplier))}</p>
-                    <span className="text-[10px] bg-success-50 text-success px-1.5 py-0.5 rounded font-semibold capitalize">{selectedCity.name}</span>
+                    <p className="text-xs text-success font-semibold">Est. On-Road: {formatPrice(Math.round(variant.price * multiplier))}</p>
+                    <button
+                      type="button"
+                      onClick={openPincodeModal}
+                      className="text-[10px] bg-success-50 text-success px-1.5 py-0.5 rounded font-semibold capitalize hover:bg-primary/10 hover:text-primary transition-colors cursor-pointer"
+                      title="Change Location"
+                    >
+                      {selectedCity}
+                    </button>
                   </div>
                   <p className="text-xs text-muted mt-1">EMI from {formatPriceShort(Number(emi))}/month</p>
                 </div>
@@ -1196,7 +1304,7 @@ export default function VehicleDetail() {
 
                 <div className="space-y-3">
                   <button
-                    onClick={() => setBookingOpen(true)}
+                    onClick={handleJulyOfferClick}
                     className="btn-primary w-full justify-center text-base h-13"
                     style={{ height: '52px' }}
                   >
@@ -1431,10 +1539,10 @@ export default function VehicleDetail() {
       {/* Dynamic CarWale SEO & FAQ Section */}
       <VehicleDetailSEO vehicle={vehicle} />
 
-      {/* Booking modal */}
+      {/* July Offer Lead Modal - Styled like Pincode Modal */}
       {bookingOpen && (
         <div
-          className="fixed inset-0 z-50 bg-dark/60 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-end md:items-center justify-center animate-fade-in"
           onClick={() => {
             if (!isBookingSubmitting) {
               setBookingOpen(false);
@@ -1443,121 +1551,125 @@ export default function VehicleDetail() {
           }}
         >
           <div
-            className="bg-white rounded-2xl shadow-card-hover max-w-md w-full p-6 relative animate-scale-in"
+            className="w-full max-w-lg bg-white rounded-t-3xl md:rounded-3xl shadow-2xl overflow-hidden animate-scale-in border border-border relative max-h-[90vh] flex flex-col"
             onClick={e => e.stopPropagation()}
           >
-            <button
-              onClick={() => {
-                if (!isBookingSubmitting) {
-                  setBookingOpen(false);
-                  setBookingSuccess(false);
-                }
-              }}
-              className="absolute top-4 right-4 p-1.5 rounded-xl hover:bg-surface text-muted hover:text-dark transition-colors"
-              title="Close"
-            >
-              <X size={20} />
-            </button>
-            {bookingSuccess ? (
-              <div className="text-center py-6">
-                <div className="w-12 h-12 bg-success/10 text-success rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Check size={24} strokeWidth={2.5} />
+            {/* Header */}
+            <div className="px-5 pt-5 pb-4 flex items-center justify-between border-b border-gray-100 bg-surface/50">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+                  <Gift size={20} />
                 </div>
-                <h4 className="font-heading font-bold text-dark text-lg mb-1">Booking Request Received!</h4>
-                <p className="text-muted text-sm mb-6">
-                  Thanks <span className="font-semibold">{bookingForm.name}</span>! Your booking request for the <span className="font-semibold">{vehicle?.brand} {vehicle?.model}</span> has been saved. An advisor will contact you on <span className="font-semibold">+91 {bookingForm.phone}</span> within 2 hours.
-                </p>
-                <button
-                  onClick={() => {
-                    setBookingSuccess(false);
+                <div>
+                  <h3 className="font-heading font-bold text-dark text-lg leading-tight">
+                    Get July Offer & Best Quote
+                  </h3>
+                  <p className="text-xs text-muted">
+                    {vehicle?.brand} {vehicle?.model}
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  if (!isBookingSubmitting) {
                     setBookingOpen(false);
-                    setBookingForm({ name: '', phone: '', email: '', city: '', purpose: '' });
+                    setBookingSuccess(false);
+                  }
+                }}
+                className="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-dark transition-colors outline-none"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Body */}
+            <div className="p-5 overflow-y-auto flex-1">
+              {/* Selected Area / Pincode pill */}
+              <div className="mb-4 p-3 bg-primary-50/70 border border-primary-100 rounded-xl flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs font-semibold text-dark">
+                  <MapPin size={16} className="text-primary shrink-0" />
+                  <span>
+                    {selectedCity} ({selectedPincode})
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBookingOpen(false);
+                    setPendingOfferAfterPincode(true);
+                    openPincodeModal();
                   }}
-                  className="btn-primary w-full justify-center"
+                  className="text-[11px] font-bold text-primary hover:underline"
                 >
-                  Close
+                  Change Pincode
                 </button>
               </div>
-            ) : (
-              <form onSubmit={handleConfirmBooking}>
-                <h3 className="font-heading font-bold text-dark text-xl mb-1">Book {vehicle?.brand} {vehicle?.model}</h3>
-                <p className="text-muted text-sm mb-6">Our team will contact you within 2 hours with the best available price.</p>
 
-                <div className="space-y-4">
+              {bookingSuccess ? (
+                <div className="text-center py-6">
+                  <div className="w-14 h-14 bg-success/10 text-success rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Check size={28} strokeWidth={2.5} />
+                  </div>
+                  <h4 className="font-heading font-bold text-dark text-xl mb-1">
+                    July Offer Request Confirmed! 🎉
+                  </h4>
+                  <p className="text-muted text-xs sm:text-sm mb-6 leading-relaxed">
+                    Thank you <span className="font-semibold text-dark">{bookingForm.name}</span>! Your offer request for <span className="font-semibold text-dark">{vehicle?.brand} {vehicle?.model}</span> in <span className="font-semibold text-dark">{selectedCity}</span> has been received. An advisor will call you on <span className="font-semibold text-dark">+91 {bookingForm.phone}</span> within 2 hours with exclusive discounts.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setBookingSuccess(false);
+                      setBookingOpen(false);
+                    }}
+                    className="btn-primary w-full justify-center py-3 rounded-xl font-bold"
+                  >
+                    Close
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleConfirmBooking} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-dark mb-1">Full Name *</label>
+                    <label className="block text-xs font-bold text-dark mb-1 flex items-center gap-1">
+                      <User size={14} className="text-primary" /> Full Name *
+                    </label>
                     <input
                       type="text"
                       required
                       value={bookingForm.name}
                       onChange={e => setBookingForm({ ...bookingForm, name: e.target.value })}
                       placeholder="e.g. Rahul Kumar"
-                      className="input-field"
+                      className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-border bg-white outline-none focus:border-primary text-dark"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-xs font-semibold text-dark mb-1">Mobile Number *</label>
+                    <label className="block text-xs font-bold text-dark mb-1 flex items-center gap-1">
+                      <Phone size={14} className="text-primary" /> Mobile Number *
+                    </label>
                     <input
                       type="tel"
                       required
+                      maxLength={10}
                       value={bookingForm.phone}
-                      onChange={e => setBookingForm({ ...bookingForm, phone: e.target.value })}
-                      placeholder="10-digit number"
-                      className="input-field"
+                      onChange={e => setBookingForm({ ...bookingForm, phone: e.target.value.replace(/\D/g, '') })}
+                      placeholder="10-digit mobile number"
+                      className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-border bg-white outline-none focus:border-primary text-dark"
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-dark mb-1">Email Address (Optional)</label>
-                    <input
-                      type="email"
-                      value={bookingForm.email}
-                      onChange={e => setBookingForm({ ...bookingForm, email: e.target.value })}
-                      placeholder="your@email.com"
-                      className="input-field"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-dark mb-1">City *</label>
-                    <select
-                      required
-                      value={bookingForm.city}
-                      onChange={e => setBookingForm({ ...bookingForm, city: e.target.value })}
-                      className="select-field"
-                    >
-                      <option value="">Select City in Jharkhand</option>
-                      {['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh', 'Deoghar'].map(c => (
-                        <option key={c} value={c}>{c}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-dark mb-1">Purpose (Optional)</label>
-                    <select
-                      value={bookingForm.purpose}
-                      onChange={e => setBookingForm({ ...bookingForm, purpose: e.target.value })}
-                      className="select-field"
-                    >
-                      <option value="">Select Purpose</option>
-                      <option value="Personal Use">Personal Use</option>
-                      <option value="Commercial Use">Commercial Use</option>
-                      <option value="Test Drive">Test Drive</option>
-                      <option value="Get Best Quote">Get Best Quote</option>
-                    </select>
-                  </div>
-                </div>
 
-                <button
-                  type="submit"
-                  disabled={isBookingSubmitting}
-                  className="btn-primary w-full justify-center mt-6"
-                >
-                  {isBookingSubmitting ? 'Confirming Request...' : 'Confirm Booking Request'}
-                </button>
-                <p className="text-xs text-muted text-center mt-3">
-                  By submitting, you agree to our terms. We'll never share your data.
-                </p>
-              </form>
-            )}
+                  <button
+                    type="submit"
+                    disabled={isBookingSubmitting || !bookingForm.name.trim() || bookingForm.phone.length !== 10}
+                    className="btn-primary w-full justify-center py-3 rounded-xl text-sm font-bold shadow-md hover:shadow-primary transition-all disabled:opacity-50 mt-2"
+                  >
+                    {isBookingSubmitting ? 'Unlocking Best July Offer...' : 'Get Exclusive July Offer 🚀'}
+                  </button>
+                  <p className="text-[11px] text-muted text-center">
+                    🔒 100% Privacy Guaranteed · Official Dealer Offers in {selectedCity}
+                  </p>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -1567,10 +1679,7 @@ export default function VehicleDetail() {
         {/* Buttons Row */}
         <div className="flex gap-3">
           <button
-            onClick={() => {
-              setBookingForm(prev => ({ ...prev, purpose: 'Get Best Quote' }));
-              setBookingOpen(true);
-            }}
+            onClick={handleJulyOfferClick}
             className="btn-primary flex-1 text-xs sm:text-sm font-bold px-3 rounded-xl shadow-md flex items-center justify-center gap-1"
             style={{ height: '44px' }}
           >
@@ -1588,7 +1697,7 @@ export default function VehicleDetail() {
 
       {/* Floating Compare Tray */}
       {selectedCompareVariantIds.length >= 2 && (
-        <div className="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-2xl bg-dark/95 backdrop-blur-md text-white rounded-2xl p-4 shadow-2xl flex items-center justify-between gap-4 border border-white/10 animate-fade-in">
+        <div data-compare-bar="true" className="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-2xl bg-dark/95 backdrop-blur-md text-white rounded-2xl p-4 shadow-2xl flex items-center justify-between gap-4 border border-white/10 animate-fade-in">
           <div className="flex items-center gap-4 overflow-x-auto no-scrollbar py-1">
             <div className="hidden sm:flex flex-col">
               <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Compare</span>
@@ -1702,10 +1811,10 @@ export default function VehicleDetail() {
                       {selectedCompareVariantIds.map(id => {
                         const v = vehicle.variants.find(x => x.id === id);
                         if (!v) return null;
-                        const onRoad = Math.round(v.price * selectedCity.multiplier);
+                        const onRoad = Math.round(v.price * (multiplier || 1.08));
                         return (
                           <td key={id} className="p-4 font-bold text-success">
-                            {formatPrice(onRoad)} <span className="text-[9px] text-muted font-normal block">in {selectedCity.name}</span>
+                            {formatPrice(onRoad)} <span className="text-[9px] text-muted font-normal block">in {selectedCity}</span>
                           </td>
                         );
                       })}

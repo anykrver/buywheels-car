@@ -5,7 +5,7 @@ import { formatPriceShort } from '../../utils/data';
 import { fetchVehicles } from '../../utils/supabaseService';
 import type { Vehicle } from '../../types';
 
-const fallbackImg = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
+const fallbackImg = 'https://imgd.aeplcdn.com/664x374/n/cw/ec/141879/nexon-ev-exterior-right-front-three-quarter-7.jpeg';
 
 // Arrow SVG matching the original design
 function ArrowIcon({ className }: { className?: string }) {

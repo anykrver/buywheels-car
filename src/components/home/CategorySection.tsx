@@ -1,6 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { vehicles, getBodyType } from '../../utils/data';
+import { vehicles as mockVehicles, getBodyType } from '../../utils/data';
+import { fetchVehicles } from '../../utils/supabaseService';
+import type { Vehicle } from '../../types';
 
 type BrowseTabId = 'engine' | 'price' | 'body' | 'fuel' | 'seating';
 
@@ -21,11 +23,18 @@ interface BrowseGroup {
 
 export default function CategorySection() {
   const [activeTab, setActiveTab] = useState<BrowseTabId>('price');
+  const [vehicleList, setVehicleList] = useState<Vehicle[]>(mockVehicles);
+
+  useEffect(() => {
+    fetchVehicles().then(data => {
+      if (data && data.length > 0) setVehicleList(data);
+    });
+  }, []);
 
   const browseGroups = useMemo((): BrowseGroup[] => {
     // Unique list of vehicles
     const seen = new Set();
-    const uniqueVehicles = vehicles.filter(v => {
+    const uniqueVehicles = vehicleList.filter(v => {
       if (seen.has(v.id)) return false;
       seen.add(v.id);
       return true;

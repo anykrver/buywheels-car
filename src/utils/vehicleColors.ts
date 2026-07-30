@@ -6,3475 +6,14193 @@ export interface VehicleColor {
 }
 
 export const vehicleColorsData: Record<string, VehicleColor[]> = {
+  "tata-tigor-ev": [
+    {
+        "name": "Signature Teal Blue",
+        "hex": "#006666",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_EV_SignatureTealBlue1672223195.jpg"
+    },
+    {
+        "name": "Daytona Grey",
+        "hex": "#4A525A",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_EV_DaytonaGrey1672223195.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#F5F5F5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_EV_PristineWhite1672223195.jpg"
+    }
+],
+  "tata-tigor-ev-2026": [
+    {
+        "name": "Signature Teal Blue",
+        "hex": "#006666",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_EV_SignatureTealBlue1672223195.jpg"
+    },
+    {
+        "name": "Daytona Grey",
+        "hex": "#4A525A",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_EV_DaytonaGrey1672223195.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#F5F5F5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_EV_PristineWhite1672223195.jpg"
+    }
+],
+  "mahindra-xuv400-ev": [
+    {
+        "name": "Arctic Blue",
+        "hex": "#1E3A5F",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_ArcticBlue1672223195.jpg"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_EverestWhite1672223195.jpg"
+    },
+    {
+        "name": "Galaxy Grey",
+        "hex": "#4B5563",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_GalaxyGrey1672223195.jpg"
+    },
+    {
+        "name": "Napoli Black",
+        "hex": "#111827",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_NapoliBlack1672223195.jpg"
+    },
+    {
+        "name": "Infinity Blue",
+        "hex": "#1E40AF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_InfinityBlue1672223195.jpg"
+    }
+],
+  "mahindra-xuv400-ev-2026": [
+    {
+        "name": "Arctic Blue",
+        "hex": "#1E3A5F",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_ArcticBlue1672223195.jpg"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_EverestWhite1672223195.jpg"
+    },
+    {
+        "name": "Galaxy Grey",
+        "hex": "#4B5563",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_GalaxyGrey1672223195.jpg"
+    },
+    {
+        "name": "Napoli Black",
+        "hex": "#111827",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_NapoliBlack1672223195.jpg"
+    },
+    {
+        "name": "Infinity Blue",
+        "hex": "#1E40AF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV400_InfinityBlue1672223195.jpg"
+    }
+],
+  "mahindra-ekuv100": [
+    {
+        "name": "Fiery Black",
+        "hex": "#111111",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eKUV100_FieryBlack.jpg"
+    },
+    {
+        "name": "Pearl White",
+        "hex": "#F5F5F5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eKUV100_PearlWhite.jpg"
+    },
+    {
+        "name": "Silver Rush",
+        "hex": "#9CA3AF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eKUV100_SilverRush.jpg"
+    }
+],
+  "mahindra-ekuv100-2026": [
+    {
+        "name": "Fiery Black",
+        "hex": "#111111",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eKUV100_FieryBlack.jpg"
+    },
+    {
+        "name": "Pearl White",
+        "hex": "#F5F5F5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eKUV100_PearlWhite.jpg"
+    },
+    {
+        "name": "Silver Rush",
+        "hex": "#9CA3AF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eKUV100_SilverRush.jpg"
+    }
+],
+  "mini-cooper-s-2026": [
+    {
+        "name": "Blazing Blue",
+        "hex": "#0000FF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_BlazingBlue1721819643.jpg"
+    },
+    {
+        "name": "British Racing Green",
+        "hex": "#003c17",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_BritishRacingGreen1721819689.jpg"
+    },
+    {
+        "name": "Chilli Red II",
+        "hex": "#b61a1a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_ChilliRedII1721819752.jpg"
+    },
+    {
+        "name": "Ocean Wave Green",
+        "hex": "#86b9aa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_OceanWaveGreen1721819831.jpg"
+    },
+    {
+        "name": "Sunny Side Yellow",
+        "hex": "#f5e317",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_SunnySideYellow1721819878.jpg"
+    }
+],
+  "force-gurkha-5-door-2026": [
+    {
+        "name": "Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gurkha_5_Door_Black1714654966.jpg"
+    },
+    {
+        "name": "Green",
+        "hex": "#00FF00",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gurkha_5_Door_Green1714655074.jpg"
+    },
+    {
+        "name": "Red",
+        "hex": "#FF0000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gurkha_5_Door_Red1714655147.jpg"
+    },
+    {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gurkha_5_Door_White1714655179.jpg"
+    }
+],
+  "renault-kiger-2026": [
+    {
+        "name": "Caspian Blue",
+        "hex": "#0588c5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_CaspianBlue1756105621.jpg"
+    },
+    {
+        "name": "Shadow Grey",
+        "hex": "#656565",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_ShadowGrey1756105739.jpg"
+    },
+    {
+        "name": "Moonlight Silver",
+        "hex": "#c5c3c3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_MoonlightSilver1756105784.jpg"
+    },
+    {
+        "name": "Oasis Yellow",
+        "hex": "#fff67d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_OasisYellow1756105831.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#010101",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_StealthBlack1756105911.jpg"
+    },
+    {
+        "name": "Ice Cool White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_IceCoolWhite1756105974.jpg"
+    },
+    {
+        "name": "Oasis Yellow With Mystery Black Roof",
+        "hex": "#fff27f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_OasisYellowWithMysteryBlackRoof1756106032.jpg"
+    },
+    {
+        "name": "Shadow Grey Mystery Black Roof",
+        "hex": "#adadad",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_ShadowGreyMysteryBlackRoof1756106085.jpg"
+    },
+    {
+        "name": "Radiant Red With Mystery Black Roof",
+        "hex": "#c90010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_RadiantRedWithMysteryBlackRoof1756106170.jpg"
+    },
+    {
+        "name": "Ice Cool White With Mystery Black Roof",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_IceCoolWhiteWithMysteryBlackRoof1756106224.jpg"
+    }
+],
+  "renault-kiger": [
+    {
+        "name": "Caspian Blue",
+        "hex": "#0588c5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_CaspianBlue1756105621.jpg"
+    },
+    {
+        "name": "Shadow Grey",
+        "hex": "#656565",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_ShadowGrey1756105739.jpg"
+    },
+    {
+        "name": "Moonlight Silver",
+        "hex": "#c5c3c3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_MoonlightSilver1756105784.jpg"
+    },
+    {
+        "name": "Oasis Yellow",
+        "hex": "#fff67d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_OasisYellow1756105831.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#010101",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_StealthBlack1756105911.jpg"
+    },
+    {
+        "name": "Ice Cool White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_IceCoolWhite1756105974.jpg"
+    },
+    {
+        "name": "Oasis Yellow With Mystery Black Roof",
+        "hex": "#fff27f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_OasisYellowWithMysteryBlackRoof1756106032.jpg"
+    },
+    {
+        "name": "Shadow Grey Mystery Black Roof",
+        "hex": "#adadad",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_ShadowGreyMysteryBlackRoof1756106085.jpg"
+    },
+    {
+        "name": "Radiant Red With Mystery Black Roof",
+        "hex": "#c90010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_RadiantRedWithMysteryBlackRoof1756106170.jpg"
+    },
+    {
+        "name": "Ice Cool White With Mystery Black Roof",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_IceCoolWhiteWithMysteryBlackRoof1756106224.jpg"
+    }
+],
+  "nissan-magnite-2026": [
+    {
+        "name": "Vivid Blue",
+        "hex": "#4293e9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_VividBlue1728102042.jpg"
+    },
+    {
+        "name": "Storm White",
+        "hex": "#eef0f3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_StormWhite1728102162.jpg"
+    },
+    {
+        "name": "Blade Silver",
+        "hex": "#a7acb4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_BladeSilver1728102215.jpg"
+    },
+    {
+        "name": "Onyx Black",
+        "hex": "#363839",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg"
+    },
+    {
+        "name": "Pear White",
+        "hex": "#cfd5e3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_PearWhite1728102470.jpg"
+    },
+    {
+        "name": "Flare Garnet Red",
+        "hex": "#9a0000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_FlareGarnetRed1728103117.jpg"
+    },
+    {
+        "name": "Blade Silver with Onyx Black",
+        "hex": "#666567",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_BladeSilverwithOnyxBlack1728103328.jpg"
+    },
+    {
+        "name": "Flare Garnet Red with Onyx Black",
+        "hex": "#971c1e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_FlareGarnetRedwithOnyxBlack1728103396.jpg"
+    },
+    {
+        "name": "Pearl White with Onyx Black",
+        "hex": "#d0d1d3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_PearlWhitewithOnyxBlack1778844086.jpg"
+    },
+    {
+        "name": "Sunrise Copper Orange with Onyx Black",
+        "hex": "#f79152",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_SunriseCopperOrangewithOnyxBlack1778843896.jpg"
+    },
+    {
+        "name": "Sunrise Copper Orange",
+        "hex": "#da6e3e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_SunriseCopperOrange1778843851.jpg"
+    }
+],
+  "nissan-magnite": [
+    {
+        "name": "Vivid Blue",
+        "hex": "#4293e9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_VividBlue1728102042.jpg"
+    },
+    {
+        "name": "Storm White",
+        "hex": "#eef0f3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_StormWhite1728102162.jpg"
+    },
+    {
+        "name": "Blade Silver",
+        "hex": "#a7acb4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_BladeSilver1728102215.jpg"
+    },
+    {
+        "name": "Onyx Black",
+        "hex": "#363839",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg"
+    },
+    {
+        "name": "Pear White",
+        "hex": "#cfd5e3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_PearWhite1728102470.jpg"
+    },
+    {
+        "name": "Flare Garnet Red",
+        "hex": "#9a0000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_FlareGarnetRed1728103117.jpg"
+    },
+    {
+        "name": "Blade Silver with Onyx Black",
+        "hex": "#666567",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_BladeSilverwithOnyxBlack1728103328.jpg"
+    },
+    {
+        "name": "Flare Garnet Red with Onyx Black",
+        "hex": "#971c1e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_FlareGarnetRedwithOnyxBlack1728103396.jpg"
+    },
+    {
+        "name": "Pearl White with Onyx Black",
+        "hex": "#d0d1d3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_PearlWhitewithOnyxBlack1778844086.jpg"
+    },
+    {
+        "name": "Sunrise Copper Orange with Onyx Black",
+        "hex": "#f79152",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_SunriseCopperOrangewithOnyxBlack1778843896.jpg"
+    },
+    {
+        "name": "Sunrise Copper Orange",
+        "hex": "#da6e3e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_SunriseCopperOrange1778843851.jpg"
+    }
+],
+  "mg-comet-ev-2026": [
+    {
+        "name": "APPLE GREEN &amp; STARRY BLACK",
+        "hex": "#b9e170",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_APPLEGREENSTARRYBLACK1682493977.jpg"
+    },
+    {
+        "name": "AURORA SILVER",
+        "hex": "#d1d1db",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_AURORASILVER1765342932.jpg"
+    },
+    {
+        "name": "CANDY WHITE &amp; STARRY BLACK",
+        "hex": "#eae9e8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_CANDYWHITESTARRYBLACK1682493978.jpg"
+    },
+    {
+        "name": "CANDY WHITE",
+        "hex": "#f5f1f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_CANDYWHITE1682493978.jpg"
+    },
+    {
+        "name": "STARRY BLACK",
+        "hex": "#242020",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_STARRYBLACK1682493978.jpg"
+    }
+],
+  "mg-comet-ev": [
+    {
+        "name": "APPLE GREEN &amp; STARRY BLACK",
+        "hex": "#b9e170",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_APPLEGREENSTARRYBLACK1682493977.jpg"
+    },
+    {
+        "name": "AURORA SILVER",
+        "hex": "#d1d1db",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_AURORASILVER1765342932.jpg"
+    },
+    {
+        "name": "CANDY WHITE &amp; STARRY BLACK",
+        "hex": "#eae9e8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_CANDYWHITESTARRYBLACK1682493978.jpg"
+    },
+    {
+        "name": "CANDY WHITE",
+        "hex": "#f5f1f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_CANDYWHITE1682493978.jpg"
+    },
+    {
+        "name": "STARRY BLACK",
+        "hex": "#242020",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_STARRYBLACK1682493978.jpg"
+    }
+],
+  "mg-windsor-ev-2026": [
+    {
+        "name": "Pearl White",
+        "hex": "#eaeaea",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_PearlWhite1726047313.jpg"
+    },
+    {
+        "name": "Clay Beige",
+        "hex": "#eee6e0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_CLAYBEIGE1726047650.jpg"
+    },
+    {
+        "name": "Starburst Black",
+        "hex": "#1d1d1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_StarburstBlack1726047677.jpg"
+    },
+    {
+        "name": "Torquoise Green",
+        "hex": "#7d97a3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_TorquoiseGreen1726047837.jpg"
+    },
+    {
+        "name": "Celadon Blue",
+        "hex": "#303f51",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_CeladonBlue1752146201.jpg"
+    },
+    {
+        "name": "Aurora Silver",
+        "hex": "#595b6a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_AuroraSilver1752146766.jpg"
+    },
+    {
+        "name": "Glaze Red",
+        "hex": "#df1a2f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_GlazeRed1752146967.jpg"
+    }
+],
+  "mg-windsor-ev": [
+    {
+        "name": "Pearl White",
+        "hex": "#eaeaea",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_PearlWhite1726047313.jpg"
+    },
+    {
+        "name": "Clay Beige",
+        "hex": "#eee6e0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_CLAYBEIGE1726047650.jpg"
+    },
+    {
+        "name": "Starburst Black",
+        "hex": "#1d1d1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_StarburstBlack1726047677.jpg"
+    },
+    {
+        "name": "Torquoise Green",
+        "hex": "#7d97a3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_TorquoiseGreen1726047837.jpg"
+    },
+    {
+        "name": "Celadon Blue",
+        "hex": "#303f51",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_CeladonBlue1752146201.jpg"
+    },
+    {
+        "name": "Aurora Silver",
+        "hex": "#595b6a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_AuroraSilver1752146766.jpg"
+    },
+    {
+        "name": "Glaze Red",
+        "hex": "#df1a2f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_GlazeRed1752146967.jpg"
+    }
+],
+  "honda-elevate-2026": [
+    {
+        "name": "Golden Brown Metallic",
+        "hex": "#6b534e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_GoldenBrownMetallic1735636537.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic",
+        "hex": "#b4b6b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallic1735636695.jpg"
+    },
+    {
+        "name": "Meteoroid Gray Metallic",
+        "hex": "#46454c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_MeteoroidGrayMetallic1735636815.jpg"
+    },
+    {
+        "name": "Obsidian Blue Pearl",
+        "hex": "#294381",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_ObsidianBluePearl1735636863.jpg"
+    },
+    {
+        "name": "Platinum White Pearl with Crystal Black Pearl Roof",
+        "hex": "#edeef7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_PlatinumWhitePearlwithCrystalBlackPearlRoof1735637103.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#f1f1fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_PlatinumWhitePearl1735637152.jpg"
+    },
+    {
+        "name": "Radiant Red Metallic with Crystal Black Pearl Roof",
+        "hex": "#d44551",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_RadiantRedMetallicwithCrystalBlackPearlRoof1735637222.jpg"
+    },
+    {
+        "name": "Radiant Red Metallic",
+        "hex": "#b0282f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_RadiantRedMetallic1735637272.jpg"
+    },
+    {
+        "name": "Crystal Black Pearl",
+        "hex": "#161819",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_CrystalBlackPearl1739797588.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic - ADV",
+        "hex": "#abadae",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallic-ADV1762172472.jpg"
+    },
+    {
+        "name": "Meteoroid Grey Metallic - ADV",
+        "hex": "#3c3e40",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_MeteoroidGreyMetallic-ADV1762172558.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic with Crystal Black Pearl Roof - ADV",
+        "hex": "#8e9091",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallicwithCrystalBlackPearlRoof-ADV1762172643.jpg"
+    },
+    {
+        "name": "Meteoroid Grey Metallic with Crystal Black Pearl Roof - ADV",
+        "hex": "#393a40",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_MeteoroidGreyMetallicwithCrystalBlackPearlRoof-ADV1762172784.jpg"
+    }
+],
+  "honda-elevate": [
+    {
+        "name": "Golden Brown Metallic",
+        "hex": "#6b534e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_GoldenBrownMetallic1735636537.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic",
+        "hex": "#b4b6b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallic1735636695.jpg"
+    },
+    {
+        "name": "Meteoroid Gray Metallic",
+        "hex": "#46454c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_MeteoroidGrayMetallic1735636815.jpg"
+    },
+    {
+        "name": "Obsidian Blue Pearl",
+        "hex": "#294381",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_ObsidianBluePearl1735636863.jpg"
+    },
+    {
+        "name": "Platinum White Pearl with Crystal Black Pearl Roof",
+        "hex": "#edeef7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_PlatinumWhitePearlwithCrystalBlackPearlRoof1735637103.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#f1f1fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_PlatinumWhitePearl1735637152.jpg"
+    },
+    {
+        "name": "Radiant Red Metallic with Crystal Black Pearl Roof",
+        "hex": "#d44551",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_RadiantRedMetallicwithCrystalBlackPearlRoof1735637222.jpg"
+    },
+    {
+        "name": "Radiant Red Metallic",
+        "hex": "#b0282f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_RadiantRedMetallic1735637272.jpg"
+    },
+    {
+        "name": "Crystal Black Pearl",
+        "hex": "#161819",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_CrystalBlackPearl1739797588.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic - ADV",
+        "hex": "#abadae",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallic-ADV1762172472.jpg"
+    },
+    {
+        "name": "Meteoroid Grey Metallic - ADV",
+        "hex": "#3c3e40",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_MeteoroidGreyMetallic-ADV1762172558.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic with Crystal Black Pearl Roof - ADV",
+        "hex": "#8e9091",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallicwithCrystalBlackPearlRoof-ADV1762172643.jpg"
+    },
+    {
+        "name": "Meteoroid Grey Metallic with Crystal Black Pearl Roof - ADV",
+        "hex": "#393a40",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_MeteoroidGreyMetallicwithCrystalBlackPearlRoof-ADV1762172784.jpg"
+    }
+],
+  "volkswagen-tiguan-2026": [
+    {
+        "name": "Kings Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_KingsRed1656152456.jpg"
+    },
+    {
+        "name": "Oryx White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_OryxWhite1656152456.jpg"
+    },
+    {
+        "name": "Nightshade Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_NightshadeBlue1656152456.jpg"
+    },
+    {
+        "name": "Dolphin Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_DolphinGrey1656152457.jpg"
+    },
+    {
+        "name": "Reflex Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_ReflexSilver1656152457.jpg"
+    },
+    {
+        "name": "Deep Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_DeepBlack1656152457.jpg"
+    },
+    {
+        "name": "Pure White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_PureWhite1656152457.jpg"
+    }
+],
+  "volkswagen-tiguan": [
+    {
+        "name": "Kings Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_KingsRed1656152456.jpg"
+    },
+    {
+        "name": "Oryx White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_OryxWhite1656152456.jpg"
+    },
+    {
+        "name": "Nightshade Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_NightshadeBlue1656152456.jpg"
+    },
+    {
+        "name": "Dolphin Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_DolphinGrey1656152457.jpg"
+    },
+    {
+        "name": "Reflex Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_ReflexSilver1656152457.jpg"
+    },
+    {
+        "name": "Deep Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_DeepBlack1656152457.jpg"
+    },
+    {
+        "name": "Pure White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiguan_PureWhite1656152457.jpg"
+    }
+],
+  "volkswagen-taigun-2026": [
+    {
+        "name": "Avocado Pearl Effect",
+        "hex": "#343d3e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_AvocadoPearlEffect1775722099.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#8e999e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CandyWhite1775722176.jpg"
+    },
+    {
+        "name": "Carbon Steel Grey Metallic",
+        "hex": "#3b4657",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CarbonSteelGreyMetallic1775722238.jpg"
+    },
+    {
+        "name": "Lava Blue Metallic",
+        "hex": "#192a3c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_LavaBlueMetallic1775722296.jpg"
+    },
+    {
+        "name": "Reflex Silver Metallic",
+        "hex": "#6c7c90",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_ReflexSilverMetallic1775722360.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#3a4352",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_SteelGrey1775722418.jpg"
+    },
+    {
+        "name": "Wild Cherry Red Metallic",
+        "hex": "#380e18",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_WildCherryRedMetallic1775722482.jpg"
+    },
+    {
+        "name": "Carbon Steel Grey Matte",
+        "hex": "#222a33",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CarbonSteelGreyMatte1775733565.jpg"
+    },
+    {
+        "name": "Deep Black Pearl Effect",
+        "hex": "#07090a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_DeepBlackPearlEffect1775733650.jpg"
+    }
+],
+  "volkswagen-taigun": [
+    {
+        "name": "Avocado Pearl Effect",
+        "hex": "#343d3e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_AvocadoPearlEffect1775722099.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#8e999e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CandyWhite1775722176.jpg"
+    },
+    {
+        "name": "Carbon Steel Grey Metallic",
+        "hex": "#3b4657",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CarbonSteelGreyMetallic1775722238.jpg"
+    },
+    {
+        "name": "Lava Blue Metallic",
+        "hex": "#192a3c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_LavaBlueMetallic1775722296.jpg"
+    },
+    {
+        "name": "Reflex Silver Metallic",
+        "hex": "#6c7c90",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_ReflexSilverMetallic1775722360.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#3a4352",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_SteelGrey1775722418.jpg"
+    },
+    {
+        "name": "Wild Cherry Red Metallic",
+        "hex": "#380e18",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_WildCherryRedMetallic1775722482.jpg"
+    },
+    {
+        "name": "Carbon Steel Grey Matte",
+        "hex": "#222a33",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CarbonSteelGreyMatte1775733565.jpg"
+    },
+    {
+        "name": "Deep Black Pearl Effect",
+        "hex": "#07090a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_DeepBlackPearlEffect1775733650.jpg"
+    }
+],
+  "skoda-kylaq-2026": [
+    {
+        "name": "Cherry Red",
+        "hex": "#a11b20",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CherryRed1775205215.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#4d596f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_LavaBlue1775205167.jpg"
+    },
+    {
+        "name": "Carbon Steel",
+        "hex": "#2c2930",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CarbonSteel1775205144.jpg"
+    },
+    {
+        "name": "Brilliant Silver",
+        "hex": "#757b91",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_BrilliantSilver1775205123.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#e0f2ff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CandyWhite1775205113.jpg"
+    },
+    {
+        "name": "Deep Black",
+        "hex": "#101010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_DeepBlack1775205096.jpg"
+    }
+],
+  "skoda-kylaq": [
+    {
+        "name": "Cherry Red",
+        "hex": "#a11b20",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CherryRed1775205215.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#4d596f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_LavaBlue1775205167.jpg"
+    },
+    {
+        "name": "Carbon Steel",
+        "hex": "#2c2930",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CarbonSteel1775205144.jpg"
+    },
+    {
+        "name": "Brilliant Silver",
+        "hex": "#757b91",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_BrilliantSilver1775205123.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#e0f2ff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CandyWhite1775205113.jpg"
+    },
+    {
+        "name": "Deep Black",
+        "hex": "#101010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_DeepBlack1775205096.jpg"
+    }
+],
+  "skoda-kushaq-2026": [
+    {
+        "name": "Brilliant Silver",
+        "hex": "#C0C0C0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_BrilliantSilver1774093463.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CandyWhite1774093479.jpg"
+    },
+    {
+        "name": "Carbon Steel",
+        "hex": "#585E5E",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CarbonSteel1774093499.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#0000FF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_LavaBlue1774093515.jpg"
+    },
+    {
+        "name": "Deep Black",
+        "hex": "#16151b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_DeepBlack1774093542.jpg"
+    },
+    {
+        "name": "Cherry Red",
+        "hex": "#521224",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CherryRed1774093620.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#3b3f41",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_SteelGrey1774093698.jpg"
+    },
+    {
+        "name": "Shimla Green",
+        "hex": "#3d4639",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_ShimlaGreen1774093740.jpg"
+    }
+],
+  "skoda-kushaq": [
+    {
+        "name": "Brilliant Silver",
+        "hex": "#C0C0C0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_BrilliantSilver1774093463.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CandyWhite1774093479.jpg"
+    },
+    {
+        "name": "Carbon Steel",
+        "hex": "#585E5E",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CarbonSteel1774093499.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#0000FF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_LavaBlue1774093515.jpg"
+    },
+    {
+        "name": "Deep Black",
+        "hex": "#16151b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_DeepBlack1774093542.jpg"
+    },
+    {
+        "name": "Cherry Red",
+        "hex": "#521224",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CherryRed1774093620.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#3b3f41",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_SteelGrey1774093698.jpg"
+    },
+    {
+        "name": "Shimla Green",
+        "hex": "#3d4639",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_ShimlaGreen1774093740.jpg"
+    }
+],
+  "toyota-urban-cruiser-taisor-2026": [
+    {
+        "name": "Cafe White Midnight Black",
+        "hex": "#b2ada9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_CafeWhiteMidnightBlack1755059526.jpg"
+    },
+    {
+        "name": "Cafe White",
+        "hex": "#cac6c2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_CafeWhite1755059493.jpg"
+    },
+    {
+        "name": "Enticing Silver x Midnight Black",
+        "hex": "#bdc0c3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_EnticingSilverxMidnightBlack1755059433.jpg"
+    },
+    {
+        "name": "Enticing Silver",
+        "hex": "#c1c0c1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_EnticingSilver1755059408.jpg"
+    },
+    {
+        "name": "Gaming Grey",
+        "hex": "#858180",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_GamingGrey1755059374.jpg"
+    },
+    {
+        "name": "Lucent Orange",
+        "hex": "#db5032",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_LucentOrange1755059333.jpg"
+    },
+    {
+        "name": "Sportin Red Midnight Black",
+        "hex": "#9e3b4f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_SportinRedMidnightBlack1755059309.jpg"
+    },
+    {
+        "name": "Sportin Red",
+        "hex": "#a43f53",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_SportinRed1755059257.jpg"
+    },
+    {
+        "name": "Bulish Black",
+        "hex": "#3c4555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_BulishBlack1755059626.jpg"
+    }
+],
+  "toyota-urban-cruiser-taisor": [
+    {
+        "name": "Cafe White Midnight Black",
+        "hex": "#b2ada9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_CafeWhiteMidnightBlack1755059526.jpg"
+    },
+    {
+        "name": "Cafe White",
+        "hex": "#cac6c2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_CafeWhite1755059493.jpg"
+    },
+    {
+        "name": "Enticing Silver x Midnight Black",
+        "hex": "#bdc0c3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_EnticingSilverxMidnightBlack1755059433.jpg"
+    },
+    {
+        "name": "Enticing Silver",
+        "hex": "#c1c0c1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_EnticingSilver1755059408.jpg"
+    },
+    {
+        "name": "Gaming Grey",
+        "hex": "#858180",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_GamingGrey1755059374.jpg"
+    },
+    {
+        "name": "Lucent Orange",
+        "hex": "#db5032",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_LucentOrange1755059333.jpg"
+    },
+    {
+        "name": "Sportin Red Midnight Black",
+        "hex": "#9e3b4f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_SportinRedMidnightBlack1755059309.jpg"
+    },
+    {
+        "name": "Sportin Red",
+        "hex": "#a43f53",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_SportinRed1755059257.jpg"
+    },
+    {
+        "name": "Bulish Black",
+        "hex": "#3c4555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Taisor_BulishBlack1755059626.jpg"
+    }
+],
+  "maruti-brezza-2026": [
+    {
+        "name": "Pearl Arctic White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_PearlArcticWhite1657974811.JPG"
+    },
+    {
+        "name": "Exuberant Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_EsxuberantBlue1657974811.JPG"
+    },
+    {
+        "name": "Brave Khaki",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_BraveKhaki1657974811.JPG"
+    },
+    {
+        "name": "Brave Khaki With Pearl Arctic roof",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_BraveKhakiWithPearlArcticWhite1657974811.JPG"
+    },
+    {
+        "name": "Magma Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_MagmaGrey1657974811.JPG"
+    },
+    {
+        "name": "Sizzling Red With Midnight Black Roof",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SizzlingRedWithMidnightBlackRoof1657974811.JPG"
+    },
+    {
+        "name": "Sizzling Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SizzlingRed1657974811.JPG"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SplendidSilver1657974811.JPG"
+    },
+    {
+        "name": "Splendid Silver with Midnight Black Roof",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SplendidSilverwithMidnightBlackRoof1657974811.JPG"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_BluishBlack1754737934.jpg"
+    }
+],
+  "maruti-suzuki-brezza": [
+    {
+        "name": "Pearl Arctic White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_PearlArcticWhite1657974811.JPG"
+    },
+    {
+        "name": "Exuberant Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_EsxuberantBlue1657974811.JPG"
+    },
+    {
+        "name": "Brave Khaki",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_BraveKhaki1657974811.JPG"
+    },
+    {
+        "name": "Brave Khaki With Pearl Arctic roof",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_BraveKhakiWithPearlArcticWhite1657974811.JPG"
+    },
+    {
+        "name": "Magma Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_MagmaGrey1657974811.JPG"
+    },
+    {
+        "name": "Sizzling Red With Midnight Black Roof",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SizzlingRedWithMidnightBlackRoof1657974811.JPG"
+    },
+    {
+        "name": "Sizzling Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SizzlingRed1657974811.JPG"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SplendidSilver1657974811.JPG"
+    },
+    {
+        "name": "Splendid Silver with Midnight Black Roof",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SplendidSilverwithMidnightBlackRoof1657974811.JPG"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_BluishBlack1754737934.jpg"
+    }
+],
+  "mahindra-scorpio-n-2026": [
+    {
+        "name": "DEEP FOREST",
+        "hex": "#2e3725",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_DEEPFOREST1763957770.jpg"
+    },
+    {
+        "name": "EVEREST WHITE",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_EVERESTWHITE1763957823.jpg"
+    },
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#0c0c0c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_STEALTHBLACK1763957858.jpg"
+    },
+    {
+        "name": "VALYRIAN SILVER",
+        "hex": "#a3a4aa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_VALYRIANSILVER1763957930.jpg"
+    },
+    {
+        "name": "MIDNIGHT BLACK",
+        "hex": "#04070d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_MIDNIGHTBLACK1763958079.jpg"
+    }
+],
+  "mahindra-scorpio-n": [
+    {
+        "name": "DEEP FOREST",
+        "hex": "#2e3725",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_DEEPFOREST1763957770.jpg"
+    },
+    {
+        "name": "EVEREST WHITE",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_EVERESTWHITE1763957823.jpg"
+    },
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#0c0c0c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_STEALTHBLACK1763957858.jpg"
+    },
+    {
+        "name": "VALYRIAN SILVER",
+        "hex": "#a3a4aa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_VALYRIANSILVER1763957930.jpg"
+    },
+    {
+        "name": "MIDNIGHT BLACK",
+        "hex": "#04070d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_MIDNIGHTBLACK1763958079.jpg"
+    }
+],
+  "kia-clavis-2026": [
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_AuroraBlackPearl1764938451.png"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#b8b8b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_GlacierWhitePearl1746699357.jpg"
+    },
+    {
+        "name": "Gravity Grey",
+        "hex": "#282d31",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_GravityGrey1746699475.jpg"
+    },
+    {
+        "name": "Imperial Blue",
+        "hex": "#070a1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_ImperialBlue1746699616.jpg"
+    },
+    {
+        "name": "Ivory Silver Gloss",
+        "hex": "#969591",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_IvorySilverGloss1746699681.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#252d20",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_PewterOlive1746699781.jpg"
+    },
+    {
+        "name": "Dark Gun Metal",
+        "hex": "#3d3d3d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_DarkGunMetal1776231537.jpg"
+    }
+],
+  "kia-clavis": [
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_AuroraBlackPearl1764938451.png"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#b8b8b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_GlacierWhitePearl1746699357.jpg"
+    },
+    {
+        "name": "Gravity Grey",
+        "hex": "#282d31",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_GravityGrey1746699475.jpg"
+    },
+    {
+        "name": "Imperial Blue",
+        "hex": "#070a1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_ImperialBlue1746699616.jpg"
+    },
+    {
+        "name": "Ivory Silver Gloss",
+        "hex": "#969591",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_IvorySilverGloss1746699681.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#252d20",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_PewterOlive1746699781.jpg"
+    },
+    {
+        "name": "Dark Gun Metal",
+        "hex": "#3d3d3d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_Clavis_DarkGunMetal1776231537.jpg"
+    }
+],
+  "kia-ev9-2026": [
+    {
+        "name": "Ocean Blue Pearl",
+        "hex": "#2672bc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_OceanBluePearl1727940520.jpg"
+    },
+    {
+        "name": "Snow White Pearl",
+        "hex": "#e4e8e5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_SnowWhitePearl1727940615.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#242527",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_AuroraBlackPearl1727940671.jpg"
+    },
+    {
+        "name": "Panthera Metal",
+        "hex": "#575c62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_PantheraMetal1727940738.jpg"
+    },
+    {
+        "name": "Pebble Gray",
+        "hex": "#6d7076",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_PebbleGray1727940803.jpg"
+    }
+],
+  "kia-ev9": [
+    {
+        "name": "Ocean Blue Pearl",
+        "hex": "#2672bc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_OceanBluePearl1727940520.jpg"
+    },
+    {
+        "name": "Snow White Pearl",
+        "hex": "#e4e8e5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_SnowWhitePearl1727940615.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#242527",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_AuroraBlackPearl1727940671.jpg"
+    },
+    {
+        "name": "Panthera Metal",
+        "hex": "#575c62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_PantheraMetal1727940738.jpg"
+    },
+    {
+        "name": "Pebble Gray",
+        "hex": "#6d7076",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV9_PebbleGray1727940803.jpg"
+    }
+],
+  "toyota-camry-2026": [
+    {
+        "name": "Precious Metal",
+        "hex": "#696e71",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_PreciousMetal1755065695.jpg"
+    },
+    {
+        "name": "Platium White",
+        "hex": "#e0e0e0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_PlatiumWhite1755065661.jpg"
+    },
+    {
+        "name": "Emotional Red",
+        "hex": "#a86162",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_EmotionalRed1755065635.jpg"
+    },
+    {
+        "name": "Dark Blue",
+        "hex": "#2d3b65",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_DarkBlue1755065606.jpg"
+    },
+    {
+        "name": "Cement Grey",
+        "hex": "#898d8e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_CementGrey1755065557.jpg"
+    },
+    {
+        "name": "Attitude Black",
+        "hex": "#040404",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_AttitudeBlack1755065535.jpg"
+    }
+],
+  "toyota-camry": [
+    {
+        "name": "Precious Metal",
+        "hex": "#696e71",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_PreciousMetal1755065695.jpg"
+    },
+    {
+        "name": "Platium White",
+        "hex": "#e0e0e0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_PlatiumWhite1755065661.jpg"
+    },
+    {
+        "name": "Emotional Red",
+        "hex": "#a86162",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_EmotionalRed1755065635.jpg"
+    },
+    {
+        "name": "Dark Blue",
+        "hex": "#2d3b65",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_DarkBlue1755065606.jpg"
+    },
+    {
+        "name": "Cement Grey",
+        "hex": "#898d8e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_CementGrey1755065557.jpg"
+    },
+    {
+        "name": "Attitude Black",
+        "hex": "#040404",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_AttitudeBlack1755065535.jpg"
+    }
+],
+  "toyota-hilux-2026": [
+    {
+        "name": "White Pearl Crystal Shine",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_PearlWhiteCrystalShine1677926438.jpg"
+    },
+    {
+        "name": "Grey Metallic",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_GreyMetallic1677926438.jpg"
+    },
+    {
+        "name": "Super White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_SuperWhite1677926438.jpg"
+    },
+    {
+        "name": "Emotional Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_EmotionalRed1677926438.jpg"
+    },
+    {
+        "name": "Attiude Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_AttiudeBlack1755063136.jpg"
+    }
+],
+  "toyota-hilux": [
+    {
+        "name": "White Pearl Crystal Shine",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_PearlWhiteCrystalShine1677926438.jpg"
+    },
+    {
+        "name": "Grey Metallic",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_GreyMetallic1677926438.jpg"
+    },
+    {
+        "name": "Super White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_SuperWhite1677926438.jpg"
+    },
+    {
+        "name": "Emotional Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_EmotionalRed1677926438.jpg"
+    },
+    {
+        "name": "Attiude Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_AttiudeBlack1755063136.jpg"
+    }
+],
+  "toyota-glanza-2026": [
+    {
+        "name": "Insta Blue",
+        "hex": "#405DE6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_InstaBlue1653371260.jpg"
+    },
+    {
+        "name": "Gaming Grey",
+        "hex": "#a9a9a9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_GamingGrey1653371260.jpg"
+    },
+    {
+        "name": "Enticing Silver",
+        "hex": "#C0C0C0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_EnticingSilver1653371260.jpg"
+    },
+    {
+        "name": "Sportin Red",
+        "hex": "#8f1622",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_SportinRed1653371261.jpg"
+    },
+    {
+        "name": "Cafe White",
+        "hex": "#e6e0d4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_CafeWhite1653371261.jpg"
+    }
+],
+  "toyota-glanza": [
+    {
+        "name": "Insta Blue",
+        "hex": "#405DE6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_InstaBlue1653371260.jpg"
+    },
+    {
+        "name": "Gaming Grey",
+        "hex": "#a9a9a9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_GamingGrey1653371260.jpg"
+    },
+    {
+        "name": "Enticing Silver",
+        "hex": "#C0C0C0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_EnticingSilver1653371260.jpg"
+    },
+    {
+        "name": "Sportin Red",
+        "hex": "#8f1622",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_SportinRed1653371261.jpg"
+    },
+    {
+        "name": "Cafe White",
+        "hex": "#e6e0d4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_CafeWhite1653371261.jpg"
+    }
+],
+  "toyota-rumion-2026": [
+    {
+        "name": "Spunky Blue",
+        "hex": "#1464a3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_SpunkyBlue1701065189.jpg"
+    },
+    {
+        "name": "Rustic Brown",
+        "hex": "#6d2829",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_RusticBrown1693209241.jpg"
+    },
+    {
+        "name": "Iconic Grey",
+        "hex": "#2d2d30",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_IconicGrey1693209288.jpg"
+    },
+    {
+        "name": "Cafe White",
+        "hex": "#cbc9c6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_CafeWhite1693209408.jpg"
+    },
+    {
+        "name": "Enticing Silver",
+        "hex": "#646569",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_EnticingSilver1693209445.jpg"
+    }
+],
+  "toyota-rumion": [
+    {
+        "name": "Spunky Blue",
+        "hex": "#1464a3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_SpunkyBlue1701065189.jpg"
+    },
+    {
+        "name": "Rustic Brown",
+        "hex": "#6d2829",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_RusticBrown1693209241.jpg"
+    },
+    {
+        "name": "Iconic Grey",
+        "hex": "#2d2d30",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_IconicGrey1693209288.jpg"
+    },
+    {
+        "name": "Cafe White",
+        "hex": "#cbc9c6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_CafeWhite1693209408.jpg"
+    },
+    {
+        "name": "Enticing Silver",
+        "hex": "#646569",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Rumion_EnticingSilver1693209445.jpg"
+    }
+],
+  "mahindra-marazzo-2026": [
+    {
+        "name": "Everest White",
+        "hex": "#e7e7e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Marazzo_IcebergWhite1640777658.png"
+    }
+],
+  "mahindra-marazzo": [
+    {
+        "name": "Everest White",
+        "hex": "#e7e7e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Marazzo_IcebergWhite1640777658.png"
+    }
+],
+  "mahindra-bolero-neo-plus-2026": [
+    {
+        "name": "Diamond White",
+        "hex": "#d5d7d8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_DiamondWhite1763889600.jpg"
+    },
+    {
+        "name": "Rocky Beige",
+        "hex": "#565e4c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_RockyBeige1763889515.jpg"
+    },
+    {
+        "name": "PEARL WHITE",
+        "hex": "#f9f9fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITE1763889372.jpg"
+    },
+    {
+        "name": "CONCRETE GREY DT",
+        "hex": "#314147",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREYDT1763889740.jpg"
+    },
+    {
+        "name": "CONCRETE GREY",
+        "hex": "#2f3f45",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREY1763889867.jpg"
+    },
+    {
+        "name": "JEANS BLUE DT",
+        "hex": "#15273a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUEDT1763889969.jpg"
+    },
+    {
+        "name": "JEANS BLUE",
+        "hex": "#2b4156",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUE1763890042.jpg"
+    },
+    {
+        "name": "PEARL WHITE DT",
+        "hex": "#dddedf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITEDT1763890118.jpg"
+    },
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#0b0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_STEALTHBLACK1763890197.jpg"
+    }
+],
+  "mahindra-bolero-neo-plus": [
+    {
+        "name": "Diamond White",
+        "hex": "#d5d7d8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_DiamondWhite1763889600.jpg"
+    },
+    {
+        "name": "Rocky Beige",
+        "hex": "#565e4c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_RockyBeige1763889515.jpg"
+    },
+    {
+        "name": "PEARL WHITE",
+        "hex": "#f9f9fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITE1763889372.jpg"
+    },
+    {
+        "name": "CONCRETE GREY DT",
+        "hex": "#314147",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREYDT1763889740.jpg"
+    },
+    {
+        "name": "CONCRETE GREY",
+        "hex": "#2f3f45",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREY1763889867.jpg"
+    },
+    {
+        "name": "JEANS BLUE DT",
+        "hex": "#15273a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUEDT1763889969.jpg"
+    },
+    {
+        "name": "JEANS BLUE",
+        "hex": "#2b4156",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUE1763890042.jpg"
+    },
+    {
+        "name": "PEARL WHITE DT",
+        "hex": "#dddedf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITEDT1763890118.jpg"
+    },
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#0b0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_STEALTHBLACK1763890197.jpg"
+    }
+],
+  "mahindra-bolero-2026": [
+    {
+        "name": "DIAMOND WHITE",
+        "hex": "#f7f2eb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_DIAMONDWHITE1763886605.jpg"
+    },
+    {
+        "name": "ROCKEY BEIGE",
+        "hex": "#2c3a12",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_ROCKEYBEIGE1763886450.jpg"
+    },
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#323132",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_STEALTHBLACK1763886451.jpg"
+    },
+    {
+        "name": "DSAT SILVER",
+        "hex": "#8c8889",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_DSATSILVER1763886452.jpg"
+    }
+],
+  "mahindra-bolero": [
+    {
+        "name": "DIAMOND WHITE",
+        "hex": "#f7f2eb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_DIAMONDWHITE1763886605.jpg"
+    },
+    {
+        "name": "ROCKEY BEIGE",
+        "hex": "#2c3a12",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_ROCKEYBEIGE1763886450.jpg"
+    },
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#323132",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_STEALTHBLACK1763886451.jpg"
+    },
+    {
+        "name": "DSAT SILVER",
+        "hex": "#8c8889",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_DSATSILVER1763886452.jpg"
+    }
+],
+  "hyundai-venue-n-line-2026": [
+    {
+        "name": "Atlas white with Titanium black roof",
+        "hex": "#f6f3f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Abyssblack1762246868.jpg"
+    },
+    {
+        "name": "Atlas white",
+        "hex": "#bbbbbb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Atlaswhite1762246442.jpg"
+    },
+    {
+        "name": "Dragon red",
+        "hex": "#430e0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Dragonred1762246503.jpg"
+    },
+    {
+        "name": "Hazel blue",
+        "hex": "#47515d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Hazelblue1762246571.jpg"
+    },
+    {
+        "name": "Titan grey",
+        "hex": "#313234",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Titangrey1762246610.jpg"
+    },
+    {
+        "name": "Titanium Black",
+        "hex": "#b8b8b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Atlaswhitewithabyssblackroof1762246830.jpg"
+    },
+    {
+        "name": "Hazel blue with Titanium  black roof",
+        "hex": "#3e4653",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Hazelbluewithabyssblackroof1762246922.jpg"
+    },
+    {
+        "name": "Dragon red with Titanium  black roof",
+        "hex": "#511213",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Dragonredwithabyssblackroof1762246976.jpg"
+    }
+],
+  "hyundai-venue-n-line": [
+    {
+        "name": "Atlas white with Titanium black roof",
+        "hex": "#f6f3f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Abyssblack1762246868.jpg"
+    },
+    {
+        "name": "Atlas white",
+        "hex": "#bbbbbb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Atlaswhite1762246442.jpg"
+    },
+    {
+        "name": "Dragon red",
+        "hex": "#430e0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Dragonred1762246503.jpg"
+    },
+    {
+        "name": "Hazel blue",
+        "hex": "#47515d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Hazelblue1762246571.jpg"
+    },
+    {
+        "name": "Titan grey",
+        "hex": "#313234",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Titangrey1762246610.jpg"
+    },
+    {
+        "name": "Titanium Black",
+        "hex": "#b8b8b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Atlaswhitewithabyssblackroof1762246830.jpg"
+    },
+    {
+        "name": "Hazel blue with Titanium  black roof",
+        "hex": "#3e4653",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Hazelbluewithabyssblackroof1762246922.jpg"
+    },
+    {
+        "name": "Dragon red with Titanium  black roof",
+        "hex": "#511213",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_N_Line_Dragonredwithabyssblackroof1762246976.jpg"
+    }
+],
+  "hyundai-creta-n-line-2026": [
+    {
+        "name": "Abyss Black",
+        "hex": "#161616",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_AbyssBlack1764050035.jpg"
+    },
+    {
+        "name": "Atlas White with Abyss Black",
+        "hex": "#c7c7c7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_AtlasWhitewithAbyssBlack1764050092.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#cccccc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_AtlasWhite1764050130.jpg"
+    },
+    {
+        "name": "Titan Grey Matt",
+        "hex": "#979797",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_TitanGreyMatt1764050216.jpg"
+    },
+    {
+        "name": "Thunder Blue with abyss black sun roof",
+        "hex": "#3256aa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_ThunderBluewithabyssblacksunroof1764050247.jpg"
+    },
+    {
+        "name": "Shadow grey with abyss black roof",
+        "hex": "#3e3e3e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_Shadowgreywithabyssblackroof1764050277.jpg"
+    }
+],
+  "hyundai-creta-n-line": [
+    {
+        "name": "Abyss Black",
+        "hex": "#161616",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_AbyssBlack1764050035.jpg"
+    },
+    {
+        "name": "Atlas White with Abyss Black",
+        "hex": "#c7c7c7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_AtlasWhitewithAbyssBlack1764050092.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#cccccc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_AtlasWhite1764050130.jpg"
+    },
+    {
+        "name": "Titan Grey Matt",
+        "hex": "#979797",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_TitanGreyMatt1764050216.jpg"
+    },
+    {
+        "name": "Thunder Blue with abyss black sun roof",
+        "hex": "#3256aa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_ThunderBluewithabyssblacksunroof1764050247.jpg"
+    },
+    {
+        "name": "Shadow grey with abyss black roof",
+        "hex": "#3e3e3e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_N_Line_Shadowgreywithabyssblackroof1764050277.jpg"
+    }
+],
+  "hyundai-ioniq-5-2026": [
+    {
+        "name": "Titan Grey",
+        "hex": "#6b6b6b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_TitanGrey1777375827.jpg"
+    },
+    {
+        "name": "Optic White",
+        "hex": "#f0f0f7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_OpticWhite1777375894.jpg"
+    },
+    {
+        "name": "Midnight Black Pearl",
+        "hex": "#1c1c1c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_MidnightBlackPearl1777376014.jpg"
+    },
+    {
+        "name": "Gravity Gold Matte",
+        "hex": "#b0aba7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_GravityGoldMatte1777376105.jpg"
+    }
+],
+  "hyundai-ioniq-5": [
+    {
+        "name": "Titan Grey",
+        "hex": "#6b6b6b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_TitanGrey1777375827.jpg"
+    },
+    {
+        "name": "Optic White",
+        "hex": "#f0f0f7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_OpticWhite1777375894.jpg"
+    },
+    {
+        "name": "Midnight Black Pearl",
+        "hex": "#1c1c1c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_MidnightBlackPearl1777376014.jpg"
+    },
+    {
+        "name": "Gravity Gold Matte",
+        "hex": "#b0aba7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_GravityGoldMatte1777376105.jpg"
+    }
+],
+  "hyundai-exter-2026": [
+    {
+        "name": "Golden Bronze",
+        "hex": "#726b63",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_GoldenBronze1774070294.jpg"
+    },
+    {
+        "name": "Titan Grey",
+        "hex": "#414143",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitanGrey1774070344.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#041121",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_StarryNight1774070441.jpg"
+    },
+    {
+        "name": "Titanium Black",
+        "hex": "#151515",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitaniumBlack1774070498.jpg"
+    },
+    {
+        "name": "Titanium Black Matte",
+        "hex": "#141414",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitaniumBlackMatte1774070556.jpg"
+    },
+    {
+        "name": "Ranger Khaki",
+        "hex": "#596456",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_RangerKhaki1774070635.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#9d9d9d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_AtlasWhite1774070693.jpg"
+    },
+    {
+        "name": "Ranger Khaki with black roof",
+        "hex": "#535d52",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_RangerKhakiwithblackroof1774070740.jpg"
+    }
+],
+  "hyundai-exter": [
+    {
+        "name": "Golden Bronze",
+        "hex": "#726b63",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_GoldenBronze1774070294.jpg"
+    },
+    {
+        "name": "Titan Grey",
+        "hex": "#414143",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitanGrey1774070344.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#041121",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_StarryNight1774070441.jpg"
+    },
+    {
+        "name": "Titanium Black",
+        "hex": "#151515",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitaniumBlack1774070498.jpg"
+    },
+    {
+        "name": "Titanium Black Matte",
+        "hex": "#141414",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitaniumBlackMatte1774070556.jpg"
+    },
+    {
+        "name": "Ranger Khaki",
+        "hex": "#596456",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_RangerKhaki1774070635.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#9d9d9d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_AtlasWhite1774070693.jpg"
+    },
+    {
+        "name": "Ranger Khaki with black roof",
+        "hex": "#535d52",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_RangerKhakiwithblackroof1774070740.jpg"
+    }
+],
+  "hyundai-grand-i10-nios-2026": [
+    {
+        "name": "Fiery red",
+        "hex": "#9e1414",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Fieryred1775822630.jpg"
+    },
+    {
+        "name": "Aqua teal",
+        "hex": "#153854",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Aquateal1775822641.jpg"
+    },
+    {
+        "name": "Titan Grey Matte",
+        "hex": "#28272e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_TitanGreyMatte1775822864.jpg"
+    },
+    {
+        "name": "Titan Grey",
+        "hex": "#50555b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_TitanGrey1775822659.jpg"
+    },
+    {
+        "name": "Typhoon silver",
+        "hex": "#e1e2e5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Typhoonsilver1775822673.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#eff3f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_AtlasWhite1775822684.jpg"
+    }
+],
+  "hyundai-grand-i10-nios": [
+    {
+        "name": "Fiery red",
+        "hex": "#9e1414",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Fieryred1775822630.jpg"
+    },
+    {
+        "name": "Aqua teal",
+        "hex": "#153854",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Aquateal1775822641.jpg"
+    },
+    {
+        "name": "Titan Grey Matte",
+        "hex": "#28272e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_TitanGreyMatte1775822864.jpg"
+    },
+    {
+        "name": "Titan Grey",
+        "hex": "#50555b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_TitanGrey1775822659.jpg"
+    },
+    {
+        "name": "Typhoon silver",
+        "hex": "#e1e2e5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Typhoonsilver1775822673.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#eff3f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_AtlasWhite1775822684.jpg"
+    }
+],
+  "hyundai-aura-2026": [
+    {
+        "name": "Titan Grey",
+        "hex": "#50555b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_TitanGrey1687165487.jpg"
+    },
+    {
+        "name": "Typhoon Silver",
+        "hex": "#e0e4e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_TyphoonSilver1687165568.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#2c2e43",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_StarryNight1687165698.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#eff3f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_AtlasWhite1687165762.jpg"
+    }
+],
+  "hyundai-aura": [
+    {
+        "name": "Titan Grey",
+        "hex": "#50555b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_TitanGrey1687165487.jpg"
+    },
+    {
+        "name": "Typhoon Silver",
+        "hex": "#e0e4e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_TyphoonSilver1687165568.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#2c2e43",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_StarryNight1687165698.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#eff3f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_AtlasWhite1687165762.jpg"
+    }
+],
+  "hyundai-i20-n-line-2026": [
+    {
+        "name": "Titan Grey",
+        "hex": "#60636a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_TitanGrey1720086895.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#1b2438",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_StarryNight1720086952.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#f1f4fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_AtlasWhite1720087005.jpg"
+    },
+    {
+        "name": "Titanium Black",
+        "hex": "#41454b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_AbyssBlack1720087046.jpg"
+    },
+    {
+        "name": "Atlas White with Titanium Black",
+        "hex": "#f1f4fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_AtlsWhitewithAbyssBlackroof1720087204.jpg"
+    },
+    {
+        "name": "Thunder Blue with Titanium Black Roof",
+        "hex": "#3c3c99",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_ThunderBluewithAbyssBlackroof1720087284.jpg"
+    }
+],
+  "hyundai-i20-n-line": [
+    {
+        "name": "Titan Grey",
+        "hex": "#60636a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_TitanGrey1720086895.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#1b2438",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_StarryNight1720086952.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#f1f4fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_AtlasWhite1720087005.jpg"
+    },
+    {
+        "name": "Titanium Black",
+        "hex": "#41454b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_AbyssBlack1720087046.jpg"
+    },
+    {
+        "name": "Atlas White with Titanium Black",
+        "hex": "#f1f4fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_AtlsWhitewithAbyssBlackroof1720087204.jpg"
+    },
+    {
+        "name": "Thunder Blue with Titanium Black Roof",
+        "hex": "#3c3c99",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_N_Line_ThunderBluewithAbyssBlackroof1720087284.jpg"
+    }
+],
+  "hyundai-i20-2026": [
+    {
+        "name": "Titan Grey",
+        "hex": "#2c2d31",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_TitanGrey1694159659.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#242736",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_StarryNight1694159633.jpg"
+    },
+    {
+        "name": "Abyss Black - Knight",
+        "hex": "#2b2b2b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AbyssBlack-Knight1764050959.jpg"
+    },
+    {
+        "name": "Atlas White with Abyss Black",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AtlasWhitewithAbyssBlack1694159581.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#eef3f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AtlasWhite1694159410.jpg"
+    },
+    {
+        "name": "Fiery Red with Abyss Black",
+        "hex": "#941b0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_FieryRedwithAbyssBlack1694159374.jpg"
+    },
+    {
+        "name": "Fiery Red",
+        "hex": "#941b0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_FieryRed1694159351.jpg"
+    },
+    {
+        "name": "Amazon Grey",
+        "hex": "#555953",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AmazonGrey1694159322.jpg"
+    }
+],
+  "hyundai-i20": [
+    {
+        "name": "Titan Grey",
+        "hex": "#2c2d31",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_TitanGrey1694159659.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#242736",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_StarryNight1694159633.jpg"
+    },
+    {
+        "name": "Abyss Black - Knight",
+        "hex": "#2b2b2b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AbyssBlack-Knight1764050959.jpg"
+    },
+    {
+        "name": "Atlas White with Abyss Black",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AtlasWhitewithAbyssBlack1694159581.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#eef3f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AtlasWhite1694159410.jpg"
+    },
+    {
+        "name": "Fiery Red with Abyss Black",
+        "hex": "#941b0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_FieryRedwithAbyssBlack1694159374.jpg"
+    },
+    {
+        "name": "Fiery Red",
+        "hex": "#941b0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_FieryRed1694159351.jpg"
+    },
+    {
+        "name": "Amazon Grey",
+        "hex": "#555953",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AmazonGrey1694159322.jpg"
+    }
+],
+  "hyundai-tucson-2026": [
+    {
+        "name": "Polar White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_PolarWhite1661948822.JPG"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_StarryNight1661948823.JPG"
+    },
+    {
+        "name": "Abyss Black Pearl",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_PhantomBlack1661948823.JPG"
+    },
+    {
+        "name": "Amazon Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_AmazonGrey1661948823.JPG"
+    },
+    {
+        "name": "Fiery Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_FieryRed1661948823.JPG"
+    },
+    {
+        "name": "Polar White Dual Tone",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_PolarWhiteDualTone1661948823.JPG"
+    },
+    {
+        "name": "Fiery Red Dual Tone",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_FieryRedDualTone1661948823.JPG"
+    }
+],
+  "hyundai-tucson": [
+    {
+        "name": "Polar White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_PolarWhite1661948822.JPG"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_StarryNight1661948823.JPG"
+    },
+    {
+        "name": "Abyss Black Pearl",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_PhantomBlack1661948823.JPG"
+    },
+    {
+        "name": "Amazon Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_AmazonGrey1661948823.JPG"
+    },
+    {
+        "name": "Fiery Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_FieryRed1661948823.JPG"
+    },
+    {
+        "name": "Polar White Dual Tone",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_PolarWhiteDualTone1661948823.JPG"
+    },
+    {
+        "name": "Fiery Red Dual Tone",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tucson_FieryRedDualTone1661948823.JPG"
+    }
+],
+  "hyundai-alcazar-2026": [
+    {
+        "name": "Titanium Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlack1725948802.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#f1f4fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AtlasWhite1725948833.jpg"
+    },
+    {
+        "name": "Titanium Black Matte - Knight",
+        "hex": "#000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlackMatte-Knight1763390486.jpg"
+    },
+    {
+        "name": "Atlas White with Titanium Black",
+        "hex": "#f1f4fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AtlasWhiteWithAbyssBlack1725948750.jpg"
+    },
+    {
+        "name": "Robust Emerald Pearl",
+        "hex": "#314136",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_RobustEmeraldPearl1725949242.jpg"
+    },
+    {
+        "name": "Robust Emerald Matte",
+        "hex": "#354238",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_RobustEmeraldMatte1725949296.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#344b69",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_StarryNightTurbo1725949338.jpg"
+    }
+],
+  "hyundai-alcazar": [
+    {
+        "name": "Titanium Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlack1725948802.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#f1f4fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AtlasWhite1725948833.jpg"
+    },
+    {
+        "name": "Titanium Black Matte - Knight",
+        "hex": "#000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlackMatte-Knight1763390486.jpg"
+    },
+    {
+        "name": "Atlas White with Titanium Black",
+        "hex": "#f1f4fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AtlasWhiteWithAbyssBlack1725948750.jpg"
+    },
+    {
+        "name": "Robust Emerald Pearl",
+        "hex": "#314136",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_RobustEmeraldPearl1725949242.jpg"
+    },
+    {
+        "name": "Robust Emerald Matte",
+        "hex": "#354238",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_RobustEmeraldMatte1725949296.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#344b69",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_StarryNightTurbo1725949338.jpg"
+    }
+],
+  "tata-xpres-t-ev-2026": [
+    {
+        "name": "Pearlescent White",
+        "hex": "#edeef1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Xpres-T_EV_PearlescentWhite1770288708.jpg"
+    }
+],
+  "tata-xpres-t-ev": [
+    {
+        "name": "Pearlescent White",
+        "hex": "#edeef1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Xpres-T_EV_PearlescentWhite1770288708.jpg"
+    }
+],
+  "tata-harrier-ev-2026": [
+    {
+        "name": "Nainital Nocturne",
+        "hex": "#12151f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_EV_NainitalNocturne1749011839.jpg"
+    },
+    {
+        "name": "Empowered Oxide",
+        "hex": "#909288",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_EV_EmpoweredOxide1749012470.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#5c5c5c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_EV_PureGrey1749012204.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#fefefe",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_EV_PristineWhite1749013057.jpg"
+    }
+],
+  "tata-harrier-ev": [
+    {
+        "name": "Nainital Nocturne",
+        "hex": "#12151f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_EV_NainitalNocturne1749011839.jpg"
+    },
+    {
+        "name": "Empowered Oxide",
+        "hex": "#909288",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_EV_EmpoweredOxide1749012470.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#5c5c5c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_EV_PureGrey1749012204.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#fefefe",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_EV_PristineWhite1749013057.jpg"
+    }
+],
+  "tata-tigor-2026": [
+    {
+        "name": "Arizona Blue",
+        "hex": "#043465",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_ArizonaBlue1770360367.jpg"
+    },
+    {
+        "name": "Daytona Grey",
+        "hex": "#43494a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_DaytonaGrey1770360345.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#d9d9d9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_PristineWhite1770360329.jpg"
+    },
+    {
+        "name": "Supernova Copper",
+        "hex": "#432622",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_SupernovaCopper1770360302.jpg"
+    },
+    {
+        "name": "Meteor Bronze",
+        "hex": "#43331b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_MeteorBronze1770360266.jpg"
+    }
+],
+  "tata-tigor": [
+    {
+        "name": "Arizona Blue",
+        "hex": "#043465",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_ArizonaBlue1770360367.jpg"
+    },
+    {
+        "name": "Daytona Grey",
+        "hex": "#43494a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_DaytonaGrey1770360345.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#d9d9d9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_PristineWhite1770360329.jpg"
+    },
+    {
+        "name": "Supernova Copper",
+        "hex": "#432622",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_SupernovaCopper1770360302.jpg"
+    },
+    {
+        "name": "Meteor Bronze",
+        "hex": "#43331b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_MeteorBronze1770360266.jpg"
+    }
+],
+  "tata-tiago-ev-2026": [
+    {
+        "name": "Dehradun Dew with Dual Tone",
+        "hex": "#bacaa5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_Facelift_DehradunDewwithDualTone1779971169.jpg"
+    },
+    {
+        "name": "Sobo Surge with Dual Tone",
+        "hex": "#ab9a91",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_Facelift_SoboSurgewithDualTone1779971259.jpg"
+    },
+    {
+        "name": "Pangong Pulse with Dual Tone",
+        "hex": "#8ca8b4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PangongPulsewithDualTone1779971379.jpg"
+    },
+    {
+        "name": "Pure Grey with Dual Tone",
+        "hex": "#808484",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PureGreywithDualTone1779971495.jpg"
+    },
+    {
+        "name": "Daytona Grey with Dual Tone",
+        "hex": "#38393b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_DaytonaGreywithDualTone1779971707.jpg"
+    },
+    {
+        "name": "Pristine White with Dual Tone",
+        "hex": "#dcdddf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PristineWhitewithDualTone1779971911.jpg"
+    }
+],
+  "tata-tiago-ev": [
+    {
+        "name": "Dehradun Dew with Dual Tone",
+        "hex": "#bacaa5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_Facelift_DehradunDewwithDualTone1779971169.jpg"
+    },
+    {
+        "name": "Sobo Surge with Dual Tone",
+        "hex": "#ab9a91",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_Facelift_SoboSurgewithDualTone1779971259.jpg"
+    },
+    {
+        "name": "Pangong Pulse with Dual Tone",
+        "hex": "#8ca8b4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PangongPulsewithDualTone1779971379.jpg"
+    },
+    {
+        "name": "Pure Grey with Dual Tone",
+        "hex": "#808484",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PureGreywithDualTone1779971495.jpg"
+    },
+    {
+        "name": "Daytona Grey with Dual Tone",
+        "hex": "#38393b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_DaytonaGreywithDualTone1779971707.jpg"
+    },
+    {
+        "name": "Pristine White with Dual Tone",
+        "hex": "#dcdddf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PristineWhitewithDualTone1779971911.jpg"
+    }
+],
+  "tata-curvv-ev-2026": [
+    {
+        "name": "Flame Red",
+        "hex": "#9a1213",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_FlameRed1723037286.jpg"
+    },
+    {
+        "name": "Virtual Sunrise",
+        "hex": "#353857",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_VirtualSunrise1723037401.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#b8b7b7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PristineWhite1723037473.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#54565d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PureGrey1723037532.jpg"
+    },
+    {
+        "name": "Empowered Oxide",
+        "hex": "#b0b0a6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_EmpoweredOxide1723037634.jpg"
+    },
+    {
+        "name": "Virtual Sunrise With Dual Tone",
+        "hex": "#686e9a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_VirtualSunriseWithDualTone1727591491.jpg"
+    },
+    {
+        "name": "Flame Red With Dual Tone",
+        "hex": "#aa1d1f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_FlameRedWithDualTone1727591888.jpg"
+    },
+    {
+        "name": "Pristine White With Dual Tone",
+        "hex": "#d6d6d6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PristineWhiteWithDualTone1727592227.jpg"
+    },
+    {
+        "name": "Pure Grey With Dual Tone",
+        "hex": "#97989c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PureGreyWithDualTone1727592611.jpg"
+    },
+    {
+        "name": "Empowered Oxide With Dual Tone",
+        "hex": "#acaea4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_EmpoweredOxideWithDualTone1727593072.jpg"
+    }
+],
+  "tata-curvv-ev": [
+    {
+        "name": "Flame Red",
+        "hex": "#9a1213",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_FlameRed1723037286.jpg"
+    },
+    {
+        "name": "Virtual Sunrise",
+        "hex": "#353857",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_VirtualSunrise1723037401.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#b8b7b7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PristineWhite1723037473.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#54565d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PureGrey1723037532.jpg"
+    },
+    {
+        "name": "Empowered Oxide",
+        "hex": "#b0b0a6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_EmpoweredOxide1723037634.jpg"
+    },
+    {
+        "name": "Virtual Sunrise With Dual Tone",
+        "hex": "#686e9a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_VirtualSunriseWithDualTone1727591491.jpg"
+    },
+    {
+        "name": "Flame Red With Dual Tone",
+        "hex": "#aa1d1f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_FlameRedWithDualTone1727591888.jpg"
+    },
+    {
+        "name": "Pristine White With Dual Tone",
+        "hex": "#d6d6d6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PristineWhiteWithDualTone1727592227.jpg"
+    },
+    {
+        "name": "Pure Grey With Dual Tone",
+        "hex": "#97989c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PureGreyWithDualTone1727592611.jpg"
+    },
+    {
+        "name": "Empowered Oxide With Dual Tone",
+        "hex": "#acaea4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_EmpoweredOxideWithDualTone1727593072.jpg"
+    }
+],
+  "tata-nexon-ev-2026": [
+    {
+        "name": "Daytona Grey with Black Roof",
+        "hex": "#313131",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_DaytonaGreywithBlackRoof1769142404.jpg"
+    },
+    {
+        "name": "Pure Grey with Black Roof",
+        "hex": "#999999",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PureGreywithBlackRoof1769142298.jpg"
+    },
+    {
+        "name": "Oxide with DT",
+        "hex": "#c5c6be",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_OxidewithDT1769142216.jpg"
+    },
+    {
+        "name": "Ocean Blue with Black Roof",
+        "hex": "#78a3ad",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_OceanBluewithBlackRoof1769142175.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#d6d6d6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PristineWhiteDT1769142119.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#d5d5d5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PristineWhite1770352090.jpg"
+    },
+    {
+        "name": "Carbon Black",
+        "hex": "#020202",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_CarbonBlack1770352184.jpg"
+    }
+],
+  "tata-nexon-ev": [
+    {
+        "name": "Daytona Grey with Black Roof",
+        "hex": "#313131",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_DaytonaGreywithBlackRoof1769142404.jpg"
+    },
+    {
+        "name": "Pure Grey with Black Roof",
+        "hex": "#999999",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PureGreywithBlackRoof1769142298.jpg"
+    },
+    {
+        "name": "Oxide with DT",
+        "hex": "#c5c6be",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_OxidewithDT1769142216.jpg"
+    },
+    {
+        "name": "Ocean Blue with Black Roof",
+        "hex": "#78a3ad",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_OceanBluewithBlackRoof1769142175.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#d6d6d6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PristineWhiteDT1769142119.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#d5d5d5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PristineWhite1770352090.jpg"
+    },
+    {
+        "name": "Carbon Black",
+        "hex": "#020202",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_CarbonBlack1770352184.jpg"
+    }
+],
+  "tata-punch-ev-2026": [
+    {
+        "name": "Bengal Rouge DT",
+        "hex": "#570005",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_BengalRouge1771583456.jpg"
+    },
+    {
+        "name": "Caramel DT",
+        "hex": "#7b3602",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Caramel1771583527.jpg"
+    },
+    {
+        "name": "Fearless Yellow DT",
+        "hex": "#a29301",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_FearlessYellow1771583578.jpg"
+    },
+    {
+        "name": "Oxide DT",
+        "hex": "#acafa7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Oxide1771583633.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#f7f8f8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PristineWhite1771583696.jpg"
+    },
+    {
+        "name": "Pure Grey DT",
+        "hex": "#5f6165",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PureGrey1771583741.jpg"
+    },
+    {
+        "name": "Supernova Copper DT",
+        "hex": "#350805",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_SupernovaCopper1771583798.jpg"
+    },
+    {
+        "name": "Bengal Rogue",
+        "hex": "#80101a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_BengalRogue1771828646.jpg"
+    },
+    {
+        "name": "Caramel",
+        "hex": "#855a1b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Caramel1771828659.jpg"
+    },
+    {
+        "name": "Presitne white",
+        "hex": "#c4c4c4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Presitnewhite1771828672.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#888888",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PureGrey1771828686.jpg"
+    },
+    {
+        "name": "Supernova copper",
+        "hex": "#3d1f17",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Supernovacopper1771828700.jpg"
+    }
+],
+  "tata-punch-ev": [
+    {
+        "name": "Bengal Rouge DT",
+        "hex": "#570005",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_BengalRouge1771583456.jpg"
+    },
+    {
+        "name": "Caramel DT",
+        "hex": "#7b3602",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Caramel1771583527.jpg"
+    },
+    {
+        "name": "Fearless Yellow DT",
+        "hex": "#a29301",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_FearlessYellow1771583578.jpg"
+    },
+    {
+        "name": "Oxide DT",
+        "hex": "#acafa7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Oxide1771583633.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#f7f8f8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PristineWhite1771583696.jpg"
+    },
+    {
+        "name": "Pure Grey DT",
+        "hex": "#5f6165",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PureGrey1771583741.jpg"
+    },
+    {
+        "name": "Supernova Copper DT",
+        "hex": "#350805",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_SupernovaCopper1771583798.jpg"
+    },
+    {
+        "name": "Bengal Rogue",
+        "hex": "#80101a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_BengalRogue1771828646.jpg"
+    },
+    {
+        "name": "Caramel",
+        "hex": "#855a1b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Caramel1771828659.jpg"
+    },
+    {
+        "name": "Presitne white",
+        "hex": "#c4c4c4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Presitnewhite1771828672.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#888888",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PureGrey1771828686.jpg"
+    },
+    {
+        "name": "Supernova copper",
+        "hex": "#3d1f17",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Supernovacopper1771828700.jpg"
+    }
+],
+  "maruti-eeco-2026": [
+    {
+        "name": "Metalic Brisk BLue",
+        "hex": "#0077b5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_CeruleanBlue1631515669.jpg"
+    },
+    {
+        "name": "Metallic Glistening Grey",
+        "hex": "#525354",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_MetallicGlisteningGrey1631515669.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#262b2e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_PearlMidnightBlack1631515669.jpg"
+    },
+    {
+        "name": "Solid White",
+        "hex": "#eff0f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_SolidWhite1631515669.jpg"
+    },
+    {
+        "name": "Metallic Silky Silver",
+        "hex": "#d2cfd0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_MetallicSilkySilver1631515670.jpg"
+    }
+],
+  "maruti-eeco": [
+    {
+        "name": "Metalic Brisk BLue",
+        "hex": "#0077b5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_CeruleanBlue1631515669.jpg"
+    },
+    {
+        "name": "Metallic Glistening Grey",
+        "hex": "#525354",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_MetallicGlisteningGrey1631515669.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#262b2e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_PearlMidnightBlack1631515669.jpg"
+    },
+    {
+        "name": "Solid White",
+        "hex": "#eff0f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_SolidWhite1631515669.jpg"
+    },
+    {
+        "name": "Metallic Silky Silver",
+        "hex": "#d2cfd0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_MetallicSilkySilver1631515670.jpg"
+    }
+],
+  "maruti-invicto-2026": [
+    {
+        "name": "Nexa Blue (Celestial)",
+        "hex": "#303e67",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_NexaBlue1688556064.jpg"
+    },
+    {
+        "name": "Stellar Bronze",
+        "hex": "#56584d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_StellarBronze1688556097.jpg"
+    },
+    {
+        "name": "Majestic Silver",
+        "hex": "#565f64",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MajesticSilver1688556119.jpg"
+    },
+    {
+        "name": "Mystic White",
+        "hex": "#f1f1f1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MysticWhite1688556143.jpg"
+    },
+    {
+        "name": "Magnificent Black",
+        "hex": "#0f1012",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MagnificentBlack1727685712.jpg"
+    }
+],
+  "maruti-invicto": [
+    {
+        "name": "Nexa Blue (Celestial)",
+        "hex": "#303e67",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_NexaBlue1688556064.jpg"
+    },
+    {
+        "name": "Stellar Bronze",
+        "hex": "#56584d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_StellarBronze1688556097.jpg"
+    },
+    {
+        "name": "Majestic Silver",
+        "hex": "#565f64",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MajesticSilver1688556119.jpg"
+    },
+    {
+        "name": "Mystic White",
+        "hex": "#f1f1f1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MysticWhite1688556143.jpg"
+    },
+    {
+        "name": "Magnificent Black",
+        "hex": "#0f1012",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MagnificentBlack1727685712.jpg"
+    }
+],
+  "maruti-jimny-2026": [
+    {
+        "name": "Bluish Black",
+        "hex": "#5a5f6b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_BluishBlack1680159906.jpg"
+    },
+    {
+        "name": "Granite Grey",
+        "hex": "#404040",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_GraniteGrey1680159906.jpg"
+    },
+    {
+        "name": "Kinetic Yellow with Bluish Black Roof",
+        "hex": "#dbee62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_KineticYellowwithBluishBlackRoof1680159906.jpg"
+    },
+    {
+        "name": "Nexa Blue",
+        "hex": "#2f4371",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_NexaBlue1680159907.jpg"
+    },
+    {
+        "name": "Pearl Artic White",
+        "hex": "#a8a8a6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_PearlArticWhite1680159907.jpg"
+    },
+    {
+        "name": "Sizzling Red with Bluish Black Roof",
+        "hex": "#b81b14",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_SizzlingRedwithBluishBlackRoof1680159907.jpg"
+    },
+    {
+        "name": "Sizzling Red",
+        "hex": "#ae361f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_SizzlingRed1680159907.jpg"
+    }
+],
+  "maruti-jimny": [
+    {
+        "name": "Bluish Black",
+        "hex": "#5a5f6b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_BluishBlack1680159906.jpg"
+    },
+    {
+        "name": "Granite Grey",
+        "hex": "#404040",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_GraniteGrey1680159906.jpg"
+    },
+    {
+        "name": "Kinetic Yellow with Bluish Black Roof",
+        "hex": "#dbee62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_KineticYellowwithBluishBlackRoof1680159906.jpg"
+    },
+    {
+        "name": "Nexa Blue",
+        "hex": "#2f4371",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_NexaBlue1680159907.jpg"
+    },
+    {
+        "name": "Pearl Artic White",
+        "hex": "#a8a8a6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_PearlArticWhite1680159907.jpg"
+    },
+    {
+        "name": "Sizzling Red with Bluish Black Roof",
+        "hex": "#b81b14",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_SizzlingRedwithBluishBlackRoof1680159907.jpg"
+    },
+    {
+        "name": "Sizzling Red",
+        "hex": "#ae361f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_SizzlingRed1680159907.jpg"
+    }
+],
+  "maruti-xl6-2026": [
+    {
+        "name": "Arctic White",
+        "hex": "#eeeff0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_ArcticWhite1763988311.jpg"
+    },
+    {
+        "name": "Brave Khaki",
+        "hex": "#60480c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BraveKhaki1763988286.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#49423a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_GrandeurGrey1763988268.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#afb3b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_SplendidSilver1763988252.jpg"
+    },
+    {
+        "name": "Nexa Blue",
+        "hex": "#163f64",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_NexaBlue1763988235.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#a81926",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_OpulentRed1763988201.jpg"
+    },
+    {
+        "name": "Opulent Red With Midnight Black Roof",
+        "hex": "#b11710",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_OpulentRedWithMidnightBlackRoof1763988177.jpg"
+    },
+    {
+        "name": "Splendid Silver With Midnight Black Roof",
+        "hex": "#c5c3cf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_SplendidSilverWithMidnightBlackRoof1763988150.jpg"
+    },
+    {
+        "name": "Brave Khaki With Midnight Black Roof",
+        "hex": "#574914",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BraveKhakiWithMidnightBlackRoof1763988112.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#3e3f43",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BluishBlack1763988090.jpg"
+    }
+],
+  "maruti-xl6": [
+    {
+        "name": "Arctic White",
+        "hex": "#eeeff0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_ArcticWhite1763988311.jpg"
+    },
+    {
+        "name": "Brave Khaki",
+        "hex": "#60480c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BraveKhaki1763988286.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#49423a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_GrandeurGrey1763988268.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#afb3b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_SplendidSilver1763988252.jpg"
+    },
+    {
+        "name": "Nexa Blue",
+        "hex": "#163f64",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_NexaBlue1763988235.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#a81926",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_OpulentRed1763988201.jpg"
+    },
+    {
+        "name": "Opulent Red With Midnight Black Roof",
+        "hex": "#b11710",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_OpulentRedWithMidnightBlackRoof1763988177.jpg"
+    },
+    {
+        "name": "Splendid Silver With Midnight Black Roof",
+        "hex": "#c5c3cf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_SplendidSilverWithMidnightBlackRoof1763988150.jpg"
+    },
+    {
+        "name": "Brave Khaki With Midnight Black Roof",
+        "hex": "#574914",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BraveKhakiWithMidnightBlackRoof1763988112.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#3e3f43",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BluishBlack1763988090.jpg"
+    }
+],
+  "maruti-ignis-2026": [
+    {
+        "name": "SILKY SILVER",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_SILKYSILVER1719819760.jpg"
+    },
+    {
+        "name": "BLUISH BLACK",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_PEARLMIDNIGHTBLACK1719819706.jpg"
+    },
+    {
+        "name": "PEARL ARCTIC WHITE",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_PEARLARCTICWHITE1719819666.jpg"
+    },
+    {
+        "name": "NEXA BLUE",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_NEXABLUE1719819586.jpg"
+    },
+    {
+        "name": "NEXA BLUE WITH SILVER ROOF",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_NEXABLUEWITHSILVERROOF1719819548.jpg"
+    },
+    {
+        "name": "NEXA BLUE WITH BLACK ROOF",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_NEXABLUEWITHBLACKROOF1719819519.jpg"
+    },
+    {
+        "name": "LUCENT ORANGE",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_LUCENTORANGE1719819481.jpg"
+    },
+    {
+        "name": "LUCENT ORANGE WITH BLACK ROOF",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_LUCENTORANGEWITHBLACKROOF1719819457.jpg"
+    },
+    {
+        "name": "GLISTENING GREY",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_GLISTENINGGREY1719819425.jpg"
+    },
+    {
+        "name": "TURQUOISE BLUE",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_TURQUOISEBLUE1719819865.jpg"
+    }
+],
+  "maruti-ignis": [
+    {
+        "name": "SILKY SILVER",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_SILKYSILVER1719819760.jpg"
+    },
+    {
+        "name": "BLUISH BLACK",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_PEARLMIDNIGHTBLACK1719819706.jpg"
+    },
+    {
+        "name": "PEARL ARCTIC WHITE",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_PEARLARCTICWHITE1719819666.jpg"
+    },
+    {
+        "name": "NEXA BLUE",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_NEXABLUE1719819586.jpg"
+    },
+    {
+        "name": "NEXA BLUE WITH SILVER ROOF",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_NEXABLUEWITHSILVERROOF1719819548.jpg"
+    },
+    {
+        "name": "NEXA BLUE WITH BLACK ROOF",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_NEXABLUEWITHBLACKROOF1719819519.jpg"
+    },
+    {
+        "name": "LUCENT ORANGE",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_LUCENTORANGE1719819481.jpg"
+    },
+    {
+        "name": "LUCENT ORANGE WITH BLACK ROOF",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_LUCENTORANGEWITHBLACKROOF1719819457.jpg"
+    },
+    {
+        "name": "GLISTENING GREY",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_GLISTENINGGREY1719819425.jpg"
+    },
+    {
+        "name": "TURQUOISE BLUE",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ignis_TURQUOISEBLUE1719819865.jpg"
+    }
+],
+  "maruti-celerio-2026": [
+    {
+        "name": "Metallic Silky silver",
+        "hex": "#efefef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_Silkysilver1661949550.JPG"
+    },
+    {
+        "name": "Metallic Speedy Blue",
+        "hex": "#0000ff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_SpeedyBlue1661949551.JPG"
+    },
+    {
+        "name": "Pearl Arctic white",
+        "hex": "#fff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_White1661949551.JPG"
+    },
+    {
+        "name": "Pearl Caffeine Brown",
+        "hex": "#80402c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_CaffeineBrown1661949551.JPG"
+    },
+    {
+        "name": "Meatallic Glistering Grey",
+        "hex": "#595959",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_GlisteringGrey1661949551.JPG"
+    },
+    {
+        "name": "solid Fire Red",
+        "hex": "#e62a21",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_FireRed1661949551.JPG"
+    },
+    {
+        "name": "Pearl Bluish Black",
+        "hex": "#151515",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_PearlMidnightBlack1687156845.jpg"
+    }
+],
+  "maruti-celerio": [
+    {
+        "name": "Metallic Silky silver",
+        "hex": "#efefef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_Silkysilver1661949550.JPG"
+    },
+    {
+        "name": "Metallic Speedy Blue",
+        "hex": "#0000ff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_SpeedyBlue1661949551.JPG"
+    },
+    {
+        "name": "Pearl Arctic white",
+        "hex": "#fff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_White1661949551.JPG"
+    },
+    {
+        "name": "Pearl Caffeine Brown",
+        "hex": "#80402c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_CaffeineBrown1661949551.JPG"
+    },
+    {
+        "name": "Meatallic Glistering Grey",
+        "hex": "#595959",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_GlisteringGrey1661949551.JPG"
+    },
+    {
+        "name": "solid Fire Red",
+        "hex": "#e62a21",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_FireRed1661949551.JPG"
+    },
+    {
+        "name": "Pearl Bluish Black",
+        "hex": "#151515",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_PearlMidnightBlack1687156845.jpg"
+    }
+],
+  "maruti-alto-k10-2026": [
+    {
+        "name": "Metallic Sizzling Red",
+        "hex": "#e62924",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicSizzlingRed1661947948.JPG"
+    },
+    {
+        "name": "Metallic silky silver",
+        "hex": "#d2cfd0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_Metallicsilkysilver1661947948.JPG"
+    },
+    {
+        "name": "Premium Earth Gold",
+        "hex": "#7e5f2f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_PremiumEarthGold1661947948.JPG"
+    },
+    {
+        "name": "Solid White",
+        "hex": "#efefef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_SolidWhite1661947948.JPG"
+    },
+    {
+        "name": "Metallic Granite Grey",
+        "hex": "#313037",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicGraniteGrey1661947948.JPG"
+    },
+    {
+        "name": "Metallic Speedy Blue",
+        "hex": "#0358e2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicSpeedyBlue1661947948.JPG"
+    },
+    {
+        "name": "Pearl  Bluish Black",
+        "hex": "#151718",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_PearlMidnightBlack1687150234.png"
+    }
+],
+  "maruti-alto-k10": [
+    {
+        "name": "Metallic Sizzling Red",
+        "hex": "#e62924",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicSizzlingRed1661947948.JPG"
+    },
+    {
+        "name": "Metallic silky silver",
+        "hex": "#d2cfd0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_Metallicsilkysilver1661947948.JPG"
+    },
+    {
+        "name": "Premium Earth Gold",
+        "hex": "#7e5f2f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_PremiumEarthGold1661947948.JPG"
+    },
+    {
+        "name": "Solid White",
+        "hex": "#efefef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_SolidWhite1661947948.JPG"
+    },
+    {
+        "name": "Metallic Granite Grey",
+        "hex": "#313037",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicGraniteGrey1661947948.JPG"
+    },
+    {
+        "name": "Metallic Speedy Blue",
+        "hex": "#0358e2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicSpeedyBlue1661947948.JPG"
+    },
+    {
+        "name": "Pearl  Bluish Black",
+        "hex": "#151718",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_PearlMidnightBlack1687150234.png"
+    }
+],
+  "maruti-wagonr-2026": [
+    {
+        "name": "Peral Bluish Black Metalic With Black Roof",
+        "hex": "#656563",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_MetMagmaGreyPlusBlack1646048557.jpg"
+    },
+    {
+        "name": "Gallant Red With Black Roof",
+        "hex": "#a40c10",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PRIME-GALLANT-RED1646048557.jpg"
+    },
+    {
+        "name": "Solid White",
+        "hex": "#e2e4e8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_SolidWhite1646048557.jpg"
+    },
+    {
+        "name": "Metalic Magma Grey",
+        "hex": "#656563",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_MagmaGrey1646048557.jpg"
+    },
+    {
+        "name": "PERAL METALIC NUTMEG BROWN",
+        "hex": "#322419",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_NUTMEGBROWN1646048557.jpg"
+    },
+    {
+        "name": "Metalic Silky Silver",
+        "hex": "#b3b5b0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_SilkySilver1646048557.jpg"
+    },
+    {
+        "name": "Peral Metalic Gallent Red",
+        "hex": "#a40c10",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PRime-GallantRedPlusBlack1646048557.jpg"
+    },
+    {
+        "name": "PEARL METALIC POOLSIDE BLUE",
+        "hex": "#16367d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_POOLSIDEBLUE1646048557.jpg"
+    },
+    {
+        "name": "Pearl Bluish Black",
+        "hex": "#07082c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PearlBluishBlack1727679099.jpg"
+    }
+],
+  "maruti-wagon-r": [
+    {
+        "name": "Peral Bluish Black Metalic With Black Roof",
+        "hex": "#656563",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_MetMagmaGreyPlusBlack1646048557.jpg"
+    },
+    {
+        "name": "Gallant Red With Black Roof",
+        "hex": "#a40c10",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PRIME-GALLANT-RED1646048557.jpg"
+    },
+    {
+        "name": "Solid White",
+        "hex": "#e2e4e8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_SolidWhite1646048557.jpg"
+    },
+    {
+        "name": "Metalic Magma Grey",
+        "hex": "#656563",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_MagmaGrey1646048557.jpg"
+    },
+    {
+        "name": "PERAL METALIC NUTMEG BROWN",
+        "hex": "#322419",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_NUTMEGBROWN1646048557.jpg"
+    },
+    {
+        "name": "Metalic Silky Silver",
+        "hex": "#b3b5b0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_SilkySilver1646048557.jpg"
+    },
+    {
+        "name": "Peral Metalic Gallent Red",
+        "hex": "#a40c10",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PRime-GallantRedPlusBlack1646048557.jpg"
+    },
+    {
+        "name": "PEARL METALIC POOLSIDE BLUE",
+        "hex": "#16367d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_POOLSIDEBLUE1646048557.jpg"
+    },
+    {
+        "name": "Pearl Bluish Black",
+        "hex": "#07082c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PearlBluishBlack1727679099.jpg"
+    }
+],
+  "maruti-dzire-2026": [
+    {
+        "name": "Magma Grey",
+        "hex": "#242424",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_MagmaGrey1731312160.jpg"
+    },
+    {
+        "name": "Gallant Red",
+        "hex": "#872223",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_GallantRed1731311795.jpg"
+    },
+    {
+        "name": "Alluring Blue",
+        "hex": "#294659",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_AlluringBlue1731311897.jpg"
+    },
+    {
+        "name": "Pearl Arctic White",
+        "hex": "#c9c9c7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_PearlArcticWhite1731312024.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#1f1f1f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_BluishBlack1731312088.jpg"
+    },
+    {
+        "name": "Nutemg Brown",
+        "hex": "#3c3227",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_NutemgBrown1731312236.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#868e91",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_SlendidSilver1731312309.jpg"
+    }
+],
+  "maruti-dzire": [
+    {
+        "name": "Magma Grey",
+        "hex": "#242424",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_MagmaGrey1731312160.jpg"
+    },
+    {
+        "name": "Gallant Red",
+        "hex": "#872223",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_GallantRed1731311795.jpg"
+    },
+    {
+        "name": "Alluring Blue",
+        "hex": "#294659",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_AlluringBlue1731311897.jpg"
+    },
+    {
+        "name": "Pearl Arctic White",
+        "hex": "#c9c9c7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_PearlArcticWhite1731312024.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#1f1f1f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_BluishBlack1731312088.jpg"
+    },
+    {
+        "name": "Nutemg Brown",
+        "hex": "#3c3227",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_NutemgBrown1731312236.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#868e91",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_SlendidSilver1731312309.jpg"
+    }
+],
+  "maruti-baleno-2026": [
+    {
+        "name": "Nexa Blue",
+        "hex": "#4169e1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_NexaBlue1687249238.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#c1c1c1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_SplendidSilver1687249228.jpg"
+    },
+    {
+        "name": "Luxe Beige",
+        "hex": "#705145",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_LuxeBeige1687249216.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#484546",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_GrandeurGrey1687249205.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#8e1c26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_OpulentRed1687249191.jpg"
+    },
+    {
+        "name": "Arctic White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_ArcticWhite1687249178.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#231f20",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_PearlMidnightBlack1688728954.jpg"
+    }
+],
+  "maruti-baleno": [
+    {
+        "name": "Nexa Blue",
+        "hex": "#4169e1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_NexaBlue1687249238.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#c1c1c1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_SplendidSilver1687249228.jpg"
+    },
+    {
+        "name": "Luxe Beige",
+        "hex": "#705145",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_LuxeBeige1687249216.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#484546",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_GrandeurGrey1687249205.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#8e1c26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_OpulentRed1687249191.jpg"
+    },
+    {
+        "name": "Arctic White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_ArcticWhite1687249178.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#231f20",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_PearlMidnightBlack1688728954.jpg"
+    }
+],
+  "mg-hector-2026": [
+    {
+        "name": "Aurora Silver",
+        "hex": "#b6b6c1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_AuroraSilver1765788997.jpg"
+    },
+    {
+        "name": "Celadon Blue",
+        "hex": "#1c293e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_CeladonBlue1765789061.jpg"
+    },
+    {
+        "name": "Glaze Red",
+        "hex": "#f14256",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_GlazeRed1765789149.jpg"
+    },
+    {
+        "name": "Pearl White",
+        "hex": "#e7e7e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_PearlWhite1765789206.jpg"
+    },
+    {
+        "name": "Starry Black",
+        "hex": "#181818",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_StarryBlack1765789258.jpg"
+    }
+],
+  "mg-hector": [
+    {
+        "name": "Aurora Silver",
+        "hex": "#b6b6c1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_AuroraSilver1765788997.jpg"
+    },
+    {
+        "name": "Celadon Blue",
+        "hex": "#1c293e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_CeladonBlue1765789061.jpg"
+    },
+    {
+        "name": "Glaze Red",
+        "hex": "#f14256",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_GlazeRed1765789149.jpg"
+    },
+    {
+        "name": "Pearl White",
+        "hex": "#e7e7e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_PearlWhite1765789206.jpg"
+    },
+    {
+        "name": "Starry Black",
+        "hex": "#181818",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_StarryBlack1765789258.jpg"
+    }
+],
+  "honda-city-2026": [
+    {
+        "name": "Radiant Red Metallic",
+        "hex": "#ad0b10",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_RadiantRedMetallic1779451977.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_PlatinumWhitePearl1779452049.jpg"
+    },
+    {
+        "name": "Obsidian Blue Pearl",
+        "hex": "#10152c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_ObsidianBluePearl1779452108.jpg"
+    },
+    {
+        "name": "Meteoroid Gray Metallic",
+        "hex": "#434b52",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_MeteoroidGrayMetallic1779452199.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic",
+        "hex": "#696b6b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_LunarSilverMetallic1779452260.jpg"
+    },
+    {
+        "name": "Crystal Black Pearl",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_CrystalBlackPearl1779452327.jpg"
+    }
+],
+  "honda-city": [
+    {
+        "name": "Radiant Red Metallic",
+        "hex": "#ad0b10",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_RadiantRedMetallic1779451977.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_PlatinumWhitePearl1779452049.jpg"
+    },
+    {
+        "name": "Obsidian Blue Pearl",
+        "hex": "#10152c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_ObsidianBluePearl1779452108.jpg"
+    },
+    {
+        "name": "Meteoroid Gray Metallic",
+        "hex": "#434b52",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_MeteoroidGrayMetallic1779452199.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic",
+        "hex": "#696b6b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_LunarSilverMetallic1779452260.jpg"
+    },
+    {
+        "name": "Crystal Black Pearl",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_CrystalBlackPearl1779452327.jpg"
+    }
+],
+  "volkswagen-virtus-2026": [
+    {
+        "name": "Rising Blue Metallic",
+        "hex": "#3972a9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_RisingBlueMetallic1709618764.jpg"
+    },
+    {
+        "name": "Carbon Steel Grey",
+        "hex": "#465054",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CarbonSteelGrey1709618737.jpg"
+    },
+    {
+        "name": "Reflex Silver",
+        "hex": "#a5a9ac",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_ReflexSilver1709618725.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CandyWhite1709618713.jpg"
+    },
+    {
+        "name": "Wild Cherry Red",
+        "hex": "#852125",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_WildCherryRed1709618686.jpg"
+    },
+    {
+        "name": "Carbon Steel Matte Grey",
+        "hex": "#8a878b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CarbonSteelMatteGrey1709618845.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#4892d9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_LavaBlue1744694651.jpg"
+    },
+    {
+        "name": "Deep Black Pearl",
+        "hex": "#3a3b36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_DeepBlackPearl1768818016.jpg"
+    }
+],
+  "volkswagen-virtus": [
+    {
+        "name": "Rising Blue Metallic",
+        "hex": "#3972a9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_RisingBlueMetallic1709618764.jpg"
+    },
+    {
+        "name": "Carbon Steel Grey",
+        "hex": "#465054",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CarbonSteelGrey1709618737.jpg"
+    },
+    {
+        "name": "Reflex Silver",
+        "hex": "#a5a9ac",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_ReflexSilver1709618725.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CandyWhite1709618713.jpg"
+    },
+    {
+        "name": "Wild Cherry Red",
+        "hex": "#852125",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_WildCherryRed1709618686.jpg"
+    },
+    {
+        "name": "Carbon Steel Matte Grey",
+        "hex": "#8a878b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CarbonSteelMatteGrey1709618845.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#4892d9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_LavaBlue1744694651.jpg"
+    },
+    {
+        "name": "Deep Black Pearl",
+        "hex": "#3a3b36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_DeepBlackPearl1768818016.jpg"
+    }
+],
+  "skoda-slavia-2026": [
+    {
+        "name": "Brilliant Silver",
+        "hex": "#b8bdb4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_BrilliantSilver1779453928.jpg"
+    },
+    {
+        "name": "Carbon Steel",
+        "hex": "#af1d22",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CarbonSteel1779454113.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#eae8e3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CandyWhite1779453844.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#124d6a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_LavaBlue1779454186.jpg"
+    },
+    {
+        "name": "Deep Black",
+        "hex": "#131313",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_DeepBlack1779454236.jpg"
+    },
+    {
+        "name": "Candy White Dual Tone",
+        "hex": "#d4d4d4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CandyWhiteDualTone1765954487.jpg"
+    },
+    {
+        "name": "Lava Blue Dual Tone",
+        "hex": "#143a4f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_LavaBlueDualTone1765954552.jpg"
+    },
+    {
+        "name": "Brilliant Silver Dual Tone",
+        "hex": "#cbd7e3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_BrilliantSilverDualTone1765954639.jpg"
+    },
+    {
+        "name": "Carbon Steel Matte",
+        "hex": "#474c52",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CarbonSteelMatte1765954696.jpg"
+    },
+    {
+        "name": "Cherry Red",
+        "hex": "#af1d22",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CherryRed1779454031.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#6f7477",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_SteelGrey1784703669.jpeg"
+    },
+    {
+        "name": "Shimla Green",
+        "hex": "#6c7261",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_ShimlaGreen1784703772.jpeg"
+    }
+],
+  "skoda-slavia": [
+    {
+        "name": "Brilliant Silver",
+        "hex": "#b8bdb4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_BrilliantSilver1779453928.jpg"
+    },
+    {
+        "name": "Carbon Steel",
+        "hex": "#af1d22",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CarbonSteel1779454113.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#eae8e3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CandyWhite1779453844.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#124d6a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_LavaBlue1779454186.jpg"
+    },
+    {
+        "name": "Deep Black",
+        "hex": "#131313",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_DeepBlack1779454236.jpg"
+    },
+    {
+        "name": "Candy White Dual Tone",
+        "hex": "#d4d4d4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CandyWhiteDualTone1765954487.jpg"
+    },
+    {
+        "name": "Lava Blue Dual Tone",
+        "hex": "#143a4f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_LavaBlueDualTone1765954552.jpg"
+    },
+    {
+        "name": "Brilliant Silver Dual Tone",
+        "hex": "#cbd7e3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_BrilliantSilverDualTone1765954639.jpg"
+    },
+    {
+        "name": "Carbon Steel Matte",
+        "hex": "#474c52",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CarbonSteelMatte1765954696.jpg"
+    },
+    {
+        "name": "Cherry Red",
+        "hex": "#af1d22",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CherryRed1779454031.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#6f7477",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_SteelGrey1784703669.jpeg"
+    },
+    {
+        "name": "Shimla Green",
+        "hex": "#6c7261",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_ShimlaGreen1784703772.jpeg"
+    }
+],
+  "maruti-ertiga-2026": [
+    {
+        "name": "Splendid Silver",
+        "hex": "#a9acb1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_SplendidSilver1755515314.jpg"
+    },
+    {
+        "name": "Magma Grey",
+        "hex": "#5b5e65",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_MagmaGrey1755515285.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#282d43",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_BluishBlack1755515250.jpg"
+    },
+    {
+        "name": "Auburn Red",
+        "hex": "#852e36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_AuburnRed1755515209.jpg"
+    },
+    {
+        "name": "Pearl Metallic Dignity Brown",
+        "hex": "#513d39",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_PearlMetallicDignityBrown1755515164.jpg"
+    },
+    {
+        "name": "Prime Oxford Blue",
+        "hex": "#333b6c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_PrimeOxfordBlue1755515120.jpg"
+    },
+    {
+        "name": "Arctic White",
+        "hex": "#c0c3c8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_ArcticWhite1755515087.jpg"
+    }
+],
+  "maruti-suzuki-ertiga": [
+    {
+        "name": "Splendid Silver",
+        "hex": "#a9acb1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_SplendidSilver1755515314.jpg"
+    },
+    {
+        "name": "Magma Grey",
+        "hex": "#5b5e65",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_MagmaGrey1755515285.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#282d43",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_BluishBlack1755515250.jpg"
+    },
+    {
+        "name": "Auburn Red",
+        "hex": "#852e36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_AuburnRed1755515209.jpg"
+    },
+    {
+        "name": "Pearl Metallic Dignity Brown",
+        "hex": "#513d39",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_PearlMetallicDignityBrown1755515164.jpg"
+    },
+    {
+        "name": "Prime Oxford Blue",
+        "hex": "#333b6c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_PrimeOxfordBlue1755515120.jpg"
+    },
+    {
+        "name": "Arctic White",
+        "hex": "#c0c3c8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_ArcticWhite1755515087.jpg"
+    }
+],
+  "maruti-fronx-2026": [
+    {
+        "name": "Arctic White",
+        "hex": "#f9f9f9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_ArcticWhite1686999724.jpg"
+    },
+    {
+        "name": "Earthen Brown with Bluish Black Roof",
+        "hex": "#93897d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrownwithBluishBlackRoof1687001705.jpg"
+    },
+    {
+        "name": "Earthen Brown",
+        "hex": "#5a4841",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrown1687000118.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#414c5e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_GrandeurGrey1686999944.jpg"
+    },
+    {
+        "name": "NEXA Blue (Celestial)",
+        "hex": "#18346f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_NEXABlue(Celestial)1686999665.jpg"
+    },
+    {
+        "name": "Opulent Red + Black",
+        "hex": "#ab1611",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_OpulentRedBlack1687001822.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#b11710",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_OpulentRed1687000302.jpg"
+    },
+    {
+        "name": "Splendid Silver with Bluish Black Roof",
+        "hex": "#b5babd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_SplendidSilverwithBluishBlackRoof1687001776.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#b6babd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_SplendidSilver1686999837.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#171717",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_BluishBlack1687000353.jpg"
+    }
+],
+  "maruti-suzuki-fronx": [
+    {
+        "name": "Arctic White",
+        "hex": "#f9f9f9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_ArcticWhite1686999724.jpg"
+    },
+    {
+        "name": "Earthen Brown with Bluish Black Roof",
+        "hex": "#93897d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrownwithBluishBlackRoof1687001705.jpg"
+    },
+    {
+        "name": "Earthen Brown",
+        "hex": "#5a4841",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrown1687000118.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#414c5e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_GrandeurGrey1686999944.jpg"
+    },
+    {
+        "name": "NEXA Blue (Celestial)",
+        "hex": "#18346f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_NEXABlue(Celestial)1686999665.jpg"
+    },
+    {
+        "name": "Opulent Red + Black",
+        "hex": "#ab1611",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_OpulentRedBlack1687001822.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#b11710",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_OpulentRed1687000302.jpg"
+    },
+    {
+        "name": "Splendid Silver with Bluish Black Roof",
+        "hex": "#b5babd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_SplendidSilverwithBluishBlackRoof1687001776.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#b6babd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_SplendidSilver1686999837.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#171717",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_BluishBlack1687000353.jpg"
+    }
+],
+  "hyundai-venue-2026": [
+    {
+        "name": "Mystic Sapphire",
+        "hex": "#12172b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_MysticSapphire1762248430.jpg"
+    },
+    {
+        "name": "Titanium Black",
+        "hex": "#0c0c0c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_AbyssBlack1762248482.jpg"
+    },
+    {
+        "name": "Atlas white",
+        "hex": "#a2a2a2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Atlaswhite1762248530.jpg"
+    },
+    {
+        "name": "Dragon Red",
+        "hex": "#c72329",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_DragonRed1762248579.jpg"
+    },
+    {
+        "name": "Hazel Blue",
+        "hex": "#373b46",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_HazelBlue1762248624.jpg"
+    },
+    {
+        "name": "Titan grey",
+        "hex": "#595a5e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Titangrey1762248755.jpg"
+    },
+    {
+        "name": "Atlas white with abyss black roof",
+        "hex": "#e9e9e9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Atlaswhitewithabyssblackroof1762248808.jpg"
+    },
+    {
+        "name": "Hazel Blue with abyss black roof",
+        "hex": "#454952",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_HazelBluewithabyssblackroof1762248870.jpg"
+    }
+],
+  "hyundai-venue": [
+    {
+        "name": "Mystic Sapphire",
+        "hex": "#12172b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_MysticSapphire1762248430.jpg"
+    },
+    {
+        "name": "Titanium Black",
+        "hex": "#0c0c0c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_AbyssBlack1762248482.jpg"
+    },
+    {
+        "name": "Atlas white",
+        "hex": "#a2a2a2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Atlaswhite1762248530.jpg"
+    },
+    {
+        "name": "Dragon Red",
+        "hex": "#c72329",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_DragonRed1762248579.jpg"
+    },
+    {
+        "name": "Hazel Blue",
+        "hex": "#373b46",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_HazelBlue1762248624.jpg"
+    },
+    {
+        "name": "Titan grey",
+        "hex": "#595a5e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Titangrey1762248755.jpg"
+    },
+    {
+        "name": "Atlas white with abyss black roof",
+        "hex": "#e9e9e9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Atlaswhitewithabyssblackroof1762248808.jpg"
+    },
+    {
+        "name": "Hazel Blue with abyss black roof",
+        "hex": "#454952",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_HazelBluewithabyssblackroof1762248870.jpg"
+    }
+],
+  "hyundai-verna-2026": [
+    {
+        "name": "Titanium Black",
+        "hex": "#131514",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitaniumBlack1773059753.jpg"
+    },
+    {
+        "name": "Atlas White with Black Roof",
+        "hex": "#dce4e9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_AtlasWhitewithBlackRoof1773059878.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#0f1a2b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_StarryNight1773059501.jpg"
+    },
+    {
+        "name": "Titan Grey",
+        "hex": "#5e5f62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitanGrey1773059370.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#e4eaee",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_AtlasWhite1773059284.jpg"
+    },
+    {
+        "name": "Classy Blue",
+        "hex": "#141e36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_ClassyBlue1773059997.jpg"
+    },
+    {
+        "name": "Titan Grey Matte",
+        "hex": "#454948",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitanGreyMatte1773060142.jpg"
+    }
+],
+  "hyundai-verna": [
+    {
+        "name": "Titanium Black",
+        "hex": "#131514",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitaniumBlack1773059753.jpg"
+    },
+    {
+        "name": "Atlas White with Black Roof",
+        "hex": "#dce4e9",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_AtlasWhitewithBlackRoof1773059878.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#0f1a2b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_StarryNight1773059501.jpg"
+    },
+    {
+        "name": "Titan Grey",
+        "hex": "#5e5f62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitanGrey1773059370.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#e4eaee",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_AtlasWhite1773059284.jpg"
+    },
+    {
+        "name": "Classy Blue",
+        "hex": "#141e36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_ClassyBlue1773059997.jpg"
+    },
+    {
+        "name": "Titan Grey Matte",
+        "hex": "#454948",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitanGreyMatte1773060142.jpg"
+    }
+],
+  "toyota-innova-hycross-2026": [
+    {
+        "name": "Attitude Black Mica",
+        "hex": "#0b0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_AttitudeBlackMica1672223195.jpg"
+    },
+    {
+        "name": "Avant Garde Bronze Metalic",
+        "hex": "#807c77",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_AvantGardeBronze1672223196.jpg"
+    },
+    {
+        "name": "Blackish Ageha Glass Flake",
+        "hex": "#30404e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_BlackishAgehaGlassFlake1672223196.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#e7e7e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_PLATINUMWHITEPEARL1672223196.jpg"
+    },
+    {
+        "name": "Silver Metallic",
+        "hex": "#d6d6d6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_SilverMetallic1672223196.jpg"
+    },
+    {
+        "name": "Super White",
+        "hex": "#e7e6eb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_SuperWhite1672223196.jpg"
+    }
+],
+  "toyota-innova-hycross": [
+    {
+        "name": "Attitude Black Mica",
+        "hex": "#0b0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_AttitudeBlackMica1672223195.jpg"
+    },
+    {
+        "name": "Avant Garde Bronze Metalic",
+        "hex": "#807c77",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_AvantGardeBronze1672223196.jpg"
+    },
+    {
+        "name": "Blackish Ageha Glass Flake",
+        "hex": "#30404e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_BlackishAgehaGlassFlake1672223196.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#e7e7e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_PLATINUMWHITEPEARL1672223196.jpg"
+    },
+    {
+        "name": "Silver Metallic",
+        "hex": "#d6d6d6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_SilverMetallic1672223196.jpg"
+    },
+    {
+        "name": "Super White",
+        "hex": "#e7e6eb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_SuperWhite1672223196.jpg"
+    }
+],
+  "toyota-fortuner-2026": [
+    {
+        "name": "Attitude Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_AttitudeBlack1677846030.jpg"
+    },
+    {
+        "name": "Avant-Garde Bronze",
+        "hex": "#c0b3a8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_Avant-GardeBronze1677846030.jpg"
+    },
+    {
+        "name": "Silver Metallic",
+        "hex": "#868890",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_GreyMetallic1677846030.jpg"
+    },
+    {
+        "name": "Phantom Brown",
+        "hex": "#191512",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_PhantomBrown1677846030.jpg"
+    },
+    {
+        "name": "Sparkling Black Cystal Shine",
+        "hex": "#202022",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_SparklingBlackCystalShine1677846030.jpg"
+    },
+    {
+        "name": "Super White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_SuperWhite1677846030.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#e0e0da",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_WhitePearlCrystalShine1677846030.jpg"
+    }
+],
+  "toyota-fortuner": [
+    {
+        "name": "Attitude Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_AttitudeBlack1677846030.jpg"
+    },
+    {
+        "name": "Avant-Garde Bronze",
+        "hex": "#c0b3a8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_Avant-GardeBronze1677846030.jpg"
+    },
+    {
+        "name": "Silver Metallic",
+        "hex": "#868890",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_GreyMetallic1677846030.jpg"
+    },
+    {
+        "name": "Phantom Brown",
+        "hex": "#191512",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_PhantomBrown1677846030.jpg"
+    },
+    {
+        "name": "Sparkling Black Cystal Shine",
+        "hex": "#202022",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_SparklingBlackCystalShine1677846030.jpg"
+    },
+    {
+        "name": "Super White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_SuperWhite1677846030.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#e0e0da",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_WhitePearlCrystalShine1677846030.jpg"
+    }
+],
+  "maruti-grand-vitara-2026": [
+    {
+        "name": "Arctic White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ArcticWhite1664195307.jpg"
+    },
+    {
+        "name": "Arctic White+ Black",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ArcticWhiteMidnightBlack1664195307.jpg"
+    },
+    {
+        "name": "Nexa Blue",
+        "hex": "#012573",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_CelestialBlue1664195307.jpg"
+    },
+    {
+        "name": "Chestnut Brown",
+        "hex": "#5e391e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ChestnutBrown1664195307.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#58585c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_GrandeurGrey1664195307.jpg"
+    },
+    {
+        "name": "Oppulent Red",
+        "hex": "#8e1c26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_OppulentRed1664195307.jpg"
+    },
+    {
+        "name": "Oppulent Red + Black",
+        "hex": "#8e1c26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_OppulentRedMidnightBlack1664195307.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#808696",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_SplendidSilver1664195307.jpg"
+    },
+    {
+        "name": "Splendid Silver+ Black",
+        "hex": "#808696",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_SplendidSilverMidnightBlack1664195307.jpg"
+    },
+    {
+        "name": "Midnight Black",
+        "hex": "#393b41",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_MidnightBlack1688726385.jpg"
+    },
+    {
+        "name": "Phantom Blaq Edition",
+        "hex": "#282828",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_PhantomBlaqEdition1754890086.jpg"
+    }
+],
+  "maruti-suzuki-grand-vitara": [
+    {
+        "name": "Arctic White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ArcticWhite1664195307.jpg"
+    },
+    {
+        "name": "Arctic White+ Black",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ArcticWhiteMidnightBlack1664195307.jpg"
+    },
+    {
+        "name": "Nexa Blue",
+        "hex": "#012573",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_CelestialBlue1664195307.jpg"
+    },
+    {
+        "name": "Chestnut Brown",
+        "hex": "#5e391e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ChestnutBrown1664195307.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#58585c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_GrandeurGrey1664195307.jpg"
+    },
+    {
+        "name": "Oppulent Red",
+        "hex": "#8e1c26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_OppulentRed1664195307.jpg"
+    },
+    {
+        "name": "Oppulent Red + Black",
+        "hex": "#8e1c26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_OppulentRedMidnightBlack1664195307.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#808696",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_SplendidSilver1664195307.jpg"
+    },
+    {
+        "name": "Splendid Silver+ Black",
+        "hex": "#808696",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_SplendidSilverMidnightBlack1664195307.jpg"
+    },
+    {
+        "name": "Midnight Black",
+        "hex": "#393b41",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_MidnightBlack1688726385.jpg"
+    },
+    {
+        "name": "Phantom Blaq Edition",
+        "hex": "#282828",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_PhantomBlaqEdition1754890086.jpg"
+    }
+],
+  "mahindra-scorpio-classic-2026": [
+    {
+        "name": "Stealth Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_NapoliBlack1662187449.JPG"
+    },
+    {
+        "name": "Diamond White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_DiamondWhite1763898447.jpg"
+    },
+    {
+        "name": "Molten Red Rage",
+        "hex": "#b60100",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_RedRage1662187449.JPG"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#fefefe",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_PearlWhite1662187449.JPG"
+    },
+    {
+        "name": "Galaxy Grey",
+        "hex": "#b2b2ab",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_GalaxyGrey1662187449.JPG"
+    }
+],
+  "mahindra-scorpio-classic": [
+    {
+        "name": "Stealth Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_NapoliBlack1662187449.JPG"
+    },
+    {
+        "name": "Diamond White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_DiamondWhite1763898447.jpg"
+    },
+    {
+        "name": "Molten Red Rage",
+        "hex": "#b60100",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_RedRage1662187449.JPG"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#fefefe",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_PearlWhite1662187449.JPG"
+    },
+    {
+        "name": "Galaxy Grey",
+        "hex": "#b2b2ab",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_GalaxyGrey1662187449.JPG"
+    }
+],
+  "mahindra-bolero-neo-2026": [
+    {
+        "name": "Diamond White",
+        "hex": "#d5d7d8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_DiamondWhite1763889600.jpg"
+    },
+    {
+        "name": "Rocky Beige",
+        "hex": "#565e4c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_RockyBeige1763889515.jpg"
+    },
+    {
+        "name": "PEARL WHITE",
+        "hex": "#f9f9fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITE1763889372.jpg"
+    },
+    {
+        "name": "CONCRETE GREY DT",
+        "hex": "#314147",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREYDT1763889740.jpg"
+    },
+    {
+        "name": "CONCRETE GREY",
+        "hex": "#2f3f45",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREY1763889867.jpg"
+    },
+    {
+        "name": "JEANS BLUE DT",
+        "hex": "#15273a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUEDT1763889969.jpg"
+    },
+    {
+        "name": "JEANS BLUE",
+        "hex": "#2b4156",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUE1763890042.jpg"
+    },
+    {
+        "name": "PEARL WHITE DT",
+        "hex": "#dddedf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITEDT1763890118.jpg"
+    },
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#0b0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_STEALTHBLACK1763890197.jpg"
+    }
+],
+  "mahindra-bolero-neo": [
+    {
+        "name": "Diamond White",
+        "hex": "#d5d7d8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_DiamondWhite1763889600.jpg"
+    },
+    {
+        "name": "Rocky Beige",
+        "hex": "#565e4c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_RockyBeige1763889515.jpg"
+    },
+    {
+        "name": "PEARL WHITE",
+        "hex": "#f9f9fa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITE1763889372.jpg"
+    },
+    {
+        "name": "CONCRETE GREY DT",
+        "hex": "#314147",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREYDT1763889740.jpg"
+    },
+    {
+        "name": "CONCRETE GREY",
+        "hex": "#2f3f45",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREY1763889867.jpg"
+    },
+    {
+        "name": "JEANS BLUE DT",
+        "hex": "#15273a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUEDT1763889969.jpg"
+    },
+    {
+        "name": "JEANS BLUE",
+        "hex": "#2b4156",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUE1763890042.jpg"
+    },
+    {
+        "name": "PEARL WHITE DT",
+        "hex": "#dddedf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITEDT1763890118.jpg"
+    },
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#0b0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_STEALTHBLACK1763890197.jpg"
+    }
+],
+  "mahindra-xuv-3xo-2026": [
+    {
+        "name": "Citrine Yellow Black",
+        "hex": "#6a5c11",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_CitrineYellowStealthBlack1714452885.jpg"
+    },
+    {
+        "name": "Citrine Yellow",
+        "hex": "#baa21b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_CitrineYellow1714452942.jpg"
+    },
+    {
+        "name": "Deep Forest  Grey",
+        "hex": "#3f423a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DeepForestGalvanoGrey1714452995.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#282d22",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DeepForest1714453060.jpg"
+    },
+    {
+        "name": "Dune Beige Black",
+        "hex": "#362e25",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DuneBeigeStealthBlack1714453111.jpg"
+    },
+    {
+        "name": "Dune Beige",
+        "hex": "#907b61",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DuneBeige1714453161.jpg"
+    },
+    {
+        "name": "Everest White  Black",
+        "hex": "#9c9b9b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_EverestWhiteStealthBlack1714453234.jpg"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#cfcdcd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_EverestWhite1714453277.jpg"
+    },
+    {
+        "name": "Galaxy Grey Black",
+        "hex": "#38393f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_GalaxyGreyStealthBlack1714453382.jpg"
+    },
+    {
+        "name": "Galaxy Grey",
+        "hex": "#575a63",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_GalaxyGrey1714453433.jpg"
+    },
+    {
+        "name": "Nebula Blue Grey",
+        "hex": "#2b3341",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_NebulaBlueGalvanoGrey1714453514.jpg"
+    },
+    {
+        "name": "Nebula Blue",
+        "hex": "#07132a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_NebulaBlue1714453569.jpg"
+    },
+    {
+        "name": "Stealth Black Grey",
+        "hex": "#232322",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_StealthBlackGalvanoGrey1714453675.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#060505",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_StealthBlack1714453730.jpg"
+    },
+    {
+        "name": "Tango Red  Black",
+        "hex": "#57030c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_TangoRedStealthBlack1714453793.jpg"
+    },
+    {
+        "name": "Tango Red",
+        "hex": "#970211",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_TangoRed1714453882.jpg"
+    }
+],
+  "mahindra-xuv-3xo": [
+    {
+        "name": "Citrine Yellow Black",
+        "hex": "#6a5c11",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_CitrineYellowStealthBlack1714452885.jpg"
+    },
+    {
+        "name": "Citrine Yellow",
+        "hex": "#baa21b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_CitrineYellow1714452942.jpg"
+    },
+    {
+        "name": "Deep Forest  Grey",
+        "hex": "#3f423a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DeepForestGalvanoGrey1714452995.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#282d22",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DeepForest1714453060.jpg"
+    },
+    {
+        "name": "Dune Beige Black",
+        "hex": "#362e25",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DuneBeigeStealthBlack1714453111.jpg"
+    },
+    {
+        "name": "Dune Beige",
+        "hex": "#907b61",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DuneBeige1714453161.jpg"
+    },
+    {
+        "name": "Everest White  Black",
+        "hex": "#9c9b9b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_EverestWhiteStealthBlack1714453234.jpg"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#cfcdcd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_EverestWhite1714453277.jpg"
+    },
+    {
+        "name": "Galaxy Grey Black",
+        "hex": "#38393f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_GalaxyGreyStealthBlack1714453382.jpg"
+    },
+    {
+        "name": "Galaxy Grey",
+        "hex": "#575a63",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_GalaxyGrey1714453433.jpg"
+    },
+    {
+        "name": "Nebula Blue Grey",
+        "hex": "#2b3341",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_NebulaBlueGalvanoGrey1714453514.jpg"
+    },
+    {
+        "name": "Nebula Blue",
+        "hex": "#07132a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_NebulaBlue1714453569.jpg"
+    },
+    {
+        "name": "Stealth Black Grey",
+        "hex": "#232322",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_StealthBlackGalvanoGrey1714453675.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#060505",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_StealthBlack1714453730.jpg"
+    },
+    {
+        "name": "Tango Red  Black",
+        "hex": "#57030c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_TangoRedStealthBlack1714453793.jpg"
+    },
+    {
+        "name": "Tango Red",
+        "hex": "#970211",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_TangoRed1714453882.jpg"
+    }
+],
+  "mahindra-thar-roxx-2026": [
+    {
+        "name": "Everest White",
+        "hex": "#eeeff0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_EverestWhite1723706934.jpg"
+    },
+    {
+        "name": "Battleship Grey",
+        "hex": "#858f9b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_BattleshipGrey1723706994.jpg"
+    },
+    {
+        "name": "Tango Red",
+        "hex": "#970b1c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_TangoRed1723707044.jpg"
+    },
+    {
+        "name": "Nebula Blue",
+        "hex": "#143449",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_NebulaBlue1723707139.jpg"
+    },
+    {
+        "name": "Burnt Sienna",
+        "hex": "#3d1d0c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_BurntSienna1723707262.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#151411",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_StealthBlack1723707406.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#2f322c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_DeepForest1723707576.jpg"
+    }
+],
+  "mahindra-thar-roxx": [
+    {
+        "name": "Everest White",
+        "hex": "#eeeff0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_EverestWhite1723706934.jpg"
+    },
+    {
+        "name": "Battleship Grey",
+        "hex": "#858f9b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_BattleshipGrey1723706994.jpg"
+    },
+    {
+        "name": "Tango Red",
+        "hex": "#970b1c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_TangoRed1723707044.jpg"
+    },
+    {
+        "name": "Nebula Blue",
+        "hex": "#143449",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_NebulaBlue1723707139.jpg"
+    },
+    {
+        "name": "Burnt Sienna",
+        "hex": "#3d1d0c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_BurntSienna1723707262.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#151411",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_StealthBlack1723707406.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#2f322c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_DeepForest1723707576.jpg"
+    }
+],
+  "tata-curvv-2026": [
+    {
+        "name": "Daytona Grey",
+        "hex": "#38393b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_DaytonaGrey1723099443.jpg"
+    },
+    {
+        "name": "Flame Red",
+        "hex": "#a01c1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_FlameRed1723099478.jpg"
+    },
+    {
+        "name": "Opera Blue",
+        "hex": "#313a72",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_OperaBlue1723099517.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#ecedef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PristineWhite1723099553.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#aaabb0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PureGrey1723099624.jpg"
+    },
+    {
+        "name": "Gold Essence",
+        "hex": "#b9a593",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_GoldEssence1723102481.jpg"
+    },
+    {
+        "name": "Gold Essence with Dual Tone",
+        "hex": "#cabcaf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_GoldEssencewithDualTone1727508262.jpg"
+    },
+    {
+        "name": "Daytona Grey With Dual Tone",
+        "hex": "#9b9b9b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_DaytonaWithDualTone1727511288.jpg"
+    },
+    {
+        "name": "Pristine White With Dual Tone",
+        "hex": "#e6e6e6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PristineWhiteWithDualTone1727514955.jpg"
+    },
+    {
+        "name": "Pure Grey With Dual Tone",
+        "hex": "#bababa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PureGreyWithDualTone1727516250.jpg"
+    },
+    {
+        "name": "Opera Blue With Dual Tone",
+        "hex": "#2c326b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_OperaBlueWithDualTone1727517116.jpg"
+    },
+    {
+        "name": "Flame Red With Dual Tone",
+        "hex": "#bb2322",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_FlameRedWithDualTone1727517715.jpg"
+    },
+    {
+        "name": "Nitro Crimson With Dual Tone",
+        "hex": "#840a33",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_NitroCrimsonWithDualTone1739866872.jpg"
+    },
+    {
+        "name": "Carbon Black Dark Edition",
+        "hex": "#0b0b0b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_CarbonBlackDarkEdition1744453306.jpg"
+    },
+    {
+        "name": "Nitro Crimson",
+        "hex": "#840a33",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_NitroCrimson1764846270.png"
+    }
+],
+  "tata-curvv": [
+    {
+        "name": "Daytona Grey",
+        "hex": "#38393b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_DaytonaGrey1723099443.jpg"
+    },
+    {
+        "name": "Flame Red",
+        "hex": "#a01c1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_FlameRed1723099478.jpg"
+    },
+    {
+        "name": "Opera Blue",
+        "hex": "#313a72",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_OperaBlue1723099517.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#ecedef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PristineWhite1723099553.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#aaabb0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PureGrey1723099624.jpg"
+    },
+    {
+        "name": "Gold Essence",
+        "hex": "#b9a593",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_GoldEssence1723102481.jpg"
+    },
+    {
+        "name": "Gold Essence with Dual Tone",
+        "hex": "#cabcaf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_GoldEssencewithDualTone1727508262.jpg"
+    },
+    {
+        "name": "Daytona Grey With Dual Tone",
+        "hex": "#9b9b9b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_DaytonaWithDualTone1727511288.jpg"
+    },
+    {
+        "name": "Pristine White With Dual Tone",
+        "hex": "#e6e6e6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PristineWhiteWithDualTone1727514955.jpg"
+    },
+    {
+        "name": "Pure Grey With Dual Tone",
+        "hex": "#bababa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PureGreyWithDualTone1727516250.jpg"
+    },
+    {
+        "name": "Opera Blue With Dual Tone",
+        "hex": "#2c326b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_OperaBlueWithDualTone1727517116.jpg"
+    },
+    {
+        "name": "Flame Red With Dual Tone",
+        "hex": "#bb2322",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_FlameRedWithDualTone1727517715.jpg"
+    },
+    {
+        "name": "Nitro Crimson With Dual Tone",
+        "hex": "#840a33",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_NitroCrimsonWithDualTone1739866872.jpg"
+    },
+    {
+        "name": "Carbon Black Dark Edition",
+        "hex": "#0b0b0b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_CarbonBlackDarkEdition1744453306.jpg"
+    },
+    {
+        "name": "Nitro Crimson",
+        "hex": "#840a33",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_NitroCrimson1764846270.png"
+    }
+],
+  "tata-tiago-2026": [
+    {
+        "name": "Varanasi Vibrance with Dual Tone",
+        "hex": "#d75f4f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_VaranasiVibrancewithDualTone1779968608.jpg"
+    },
+    {
+        "name": "Pangong Pulse with Dual Tone",
+        "hex": "#8ca8b4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PangongPulsewithDualTone1779969132.jpg"
+    },
+    {
+        "name": "Sobo Surge with Dual Tone",
+        "hex": "#ab9a91",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_SoboSurgewithDualTone1779969239.jpg"
+    },
+    {
+        "name": "Pure Grey with Dual Tone",
+        "hex": "#808484",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PureGreywithDualTone1779969362.jpg"
+    },
+    {
+        "name": "Daytona Grey with Dual Tone",
+        "hex": "#38393b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_DaytonaGreywithDualTone1779969513.jpg"
+    },
+    {
+        "name": "Pristine White with Dual Tone",
+        "hex": "#dcdddf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PristineWhitewithDualTone1779969638.jpg"
+    }
+],
+  "tata-tiago": [
+    {
+        "name": "Varanasi Vibrance with Dual Tone",
+        "hex": "#d75f4f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_VaranasiVibrancewithDualTone1779968608.jpg"
+    },
+    {
+        "name": "Pangong Pulse with Dual Tone",
+        "hex": "#8ca8b4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PangongPulsewithDualTone1779969132.jpg"
+    },
+    {
+        "name": "Sobo Surge with Dual Tone",
+        "hex": "#ab9a91",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_SoboSurgewithDualTone1779969239.jpg"
+    },
+    {
+        "name": "Pure Grey with Dual Tone",
+        "hex": "#808484",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PureGreywithDualTone1779969362.jpg"
+    },
+    {
+        "name": "Daytona Grey with Dual Tone",
+        "hex": "#38393b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_DaytonaGreywithDualTone1779969513.jpg"
+    },
+    {
+        "name": "Pristine White with Dual Tone",
+        "hex": "#dcdddf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PristineWhitewithDualTone1779969638.jpg"
+    }
+],
+  "tata-altroz-2026": [
+    {
+        "name": "Dune Glow DT",
+        "hex": "#ccc6ba",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_DuneGlow1747061161.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#e7e7e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PristineWhite1747061269.jpg"
+    },
+    {
+        "name": "Royal Blue DT",
+        "hex": "#2d2f68",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_RoyalBlue1747061524.jpg"
+    },
+    {
+        "name": "Ember Glow DT",
+        "hex": "#e72200",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_EmberGlow1747062155.jpg"
+    },
+    {
+        "name": "Pure Grey DT",
+        "hex": "#868485",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PureGrey1747143670.jpg"
+    },
+    {
+        "name": "Dune Glow",
+        "hex": "#aea191",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_DuneGlow1770353002.jpg"
+    },
+    {
+        "name": "Ember Glow",
+        "hex": "#b32c0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_EmberGlow1770353045.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#e2e2e2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_PristineWhite1770353086.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#939393",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_PureGrey1770353125.jpg"
+    },
+    {
+        "name": "Royal Blue",
+        "hex": "#07133f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_RoyalBlue1770353174.jpg"
+    }
+],
+  "tata-altroz": [
+    {
+        "name": "Dune Glow DT",
+        "hex": "#ccc6ba",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_DuneGlow1747061161.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#e7e7e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PristineWhite1747061269.jpg"
+    },
+    {
+        "name": "Royal Blue DT",
+        "hex": "#2d2f68",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_RoyalBlue1747061524.jpg"
+    },
+    {
+        "name": "Ember Glow DT",
+        "hex": "#e72200",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_EmberGlow1747062155.jpg"
+    },
+    {
+        "name": "Pure Grey DT",
+        "hex": "#868485",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PureGrey1747143670.jpg"
+    },
+    {
+        "name": "Dune Glow",
+        "hex": "#aea191",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_DuneGlow1770353002.jpg"
+    },
+    {
+        "name": "Ember Glow",
+        "hex": "#b32c0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_EmberGlow1770353045.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#e2e2e2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_PristineWhite1770353086.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#939393",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_PureGrey1770353125.jpg"
+    },
+    {
+        "name": "Royal Blue",
+        "hex": "#07133f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_RoyalBlue1770353174.jpg"
+    }
+],
+  "tata-safari-2026": [
+    {
+        "name": "Supernova Copper DT",
+        "hex": "#5b2118",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_SupernovaCopperDT1770286985.jpg"
+    },
+    {
+        "name": "Cosmic Gold DT",
+        "hex": "#8c7455",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_CosmicGoldDT1770286948.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#dbdbdb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_PristineWhiteDT1770286901.jpg"
+    },
+    {
+        "name": "Daytona Grey DT",
+        "hex": "#3d3d3f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_DaytonaGreyDT1770286864.jpg"
+    },
+    {
+        "name": "Frost White DT",
+        "hex": "#dbdcdf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_FrostWhiteDT1770287728.jpg"
+    },
+    {
+        "name": "Carbon Black",
+        "hex": "#101010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_CarbonBlack1770286568.jpg"
+    },
+    {
+        "name": "Pure Grey DT",
+        "hex": "#585858",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_PureGreyDT1770286539.jpg"
+    },
+    {
+        "name": "Royal Blue DT",
+        "hex": "#09193c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_RoyalBlueDT1770286490.jpg"
+    },
+    {
+        "name": "Matte Stealth Black",
+        "hex": "#212528",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_MatteBlackEdition1742198702.jpg"
+    },
+    {
+        "name": "Oberon Black",
+        "hex": "#0e0e0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_OberonBlack1767432360.jpg"
+    }
+],
+  "tata-safari": [
+    {
+        "name": "Supernova Copper DT",
+        "hex": "#5b2118",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_SupernovaCopperDT1770286985.jpg"
+    },
+    {
+        "name": "Cosmic Gold DT",
+        "hex": "#8c7455",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_CosmicGoldDT1770286948.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#dbdbdb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_PristineWhiteDT1770286901.jpg"
+    },
+    {
+        "name": "Daytona Grey DT",
+        "hex": "#3d3d3f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_DaytonaGreyDT1770286864.jpg"
+    },
+    {
+        "name": "Frost White DT",
+        "hex": "#dbdcdf",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_FrostWhiteDT1770287728.jpg"
+    },
+    {
+        "name": "Carbon Black",
+        "hex": "#101010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_CarbonBlack1770286568.jpg"
+    },
+    {
+        "name": "Pure Grey DT",
+        "hex": "#585858",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_PureGreyDT1770286539.jpg"
+    },
+    {
+        "name": "Royal Blue DT",
+        "hex": "#09193c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_RoyalBlueDT1770286490.jpg"
+    },
+    {
+        "name": "Matte Stealth Black",
+        "hex": "#212528",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_MatteBlackEdition1742198702.jpg"
+    },
+    {
+        "name": "Oberon Black",
+        "hex": "#0e0e0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_OberonBlack1767432360.jpg"
+    }
+],
+  "tata-harrier-2026": [
+    {
+        "name": "Pure Grey",
+        "hex": "#71767a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_AshGrey1697537195.jpg"
+    },
+    {
+        "name": "Fearless Red",
+        "hex": "#a01614",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_CoralRed1697537556.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#f0f0f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_LunarWhite1697537580.jpg"
+    },
+    {
+        "name": "Oberon Black",
+        "hex": "#0d0e12",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_OberonBlack1767438643.jpg"
+    },
+    {
+        "name": "Daytona Grey",
+        "hex": "#646569",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PebbleGrey1697537604.jpg"
+    },
+    {
+        "name": "Seaweed Green",
+        "hex": "#282d19",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SeaweedGreen1697537614.jpg"
+    },
+    {
+        "name": "Sunlit Yellow",
+        "hex": "#eae355",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SunlitYellow1697537623.jpg"
+    },
+    {
+        "name": "Matte Stealth Black",
+        "hex": "#434343",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_MatteStealthBlack1742191859.jpg"
+    },
+    {
+        "name": "Daytona Grey DT",
+        "hex": "#6a6a6a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_DaytonaGreyDT1767436606.jpg"
+    },
+    {
+        "name": "Fearless Red DT",
+        "hex": "#c51716",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_FearlessRedDT1767436682.jpg"
+    },
+    {
+        "name": "Nitro Crimson DT",
+        "hex": "#831224",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_NitroCrimsonDT1767436814.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#e0e0e0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PristineWhiteDT1767436955.jpg"
+    },
+    {
+        "name": "Pure Grey DT",
+        "hex": "#565a5d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PureGreyDT1767438049.jpg"
+    },
+    {
+        "name": "Seaweed Green DT",
+        "hex": "#3a4324",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SeaweedGreenDT1767438196.jpg"
+    },
+    {
+        "name": "Red Dark Carbon Black",
+        "hex": "#0e0e0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_RedDarkCarbonBlack1767438863.jpg"
+    }
+],
+  "tata-harrier": [
+    {
+        "name": "Pure Grey",
+        "hex": "#71767a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_AshGrey1697537195.jpg"
+    },
+    {
+        "name": "Fearless Red",
+        "hex": "#a01614",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_CoralRed1697537556.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#f0f0f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_LunarWhite1697537580.jpg"
+    },
+    {
+        "name": "Oberon Black",
+        "hex": "#0d0e12",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_OberonBlack1767438643.jpg"
+    },
+    {
+        "name": "Daytona Grey",
+        "hex": "#646569",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PebbleGrey1697537604.jpg"
+    },
+    {
+        "name": "Seaweed Green",
+        "hex": "#282d19",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SeaweedGreen1697537614.jpg"
+    },
+    {
+        "name": "Sunlit Yellow",
+        "hex": "#eae355",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SunlitYellow1697537623.jpg"
+    },
+    {
+        "name": "Matte Stealth Black",
+        "hex": "#434343",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_MatteStealthBlack1742191859.jpg"
+    },
+    {
+        "name": "Daytona Grey DT",
+        "hex": "#6a6a6a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_DaytonaGreyDT1767436606.jpg"
+    },
+    {
+        "name": "Fearless Red DT",
+        "hex": "#c51716",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_FearlessRedDT1767436682.jpg"
+    },
+    {
+        "name": "Nitro Crimson DT",
+        "hex": "#831224",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_NitroCrimsonDT1767436814.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#e0e0e0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PristineWhiteDT1767436955.jpg"
+    },
+    {
+        "name": "Pure Grey DT",
+        "hex": "#565a5d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PureGreyDT1767438049.jpg"
+    },
+    {
+        "name": "Seaweed Green DT",
+        "hex": "#3a4324",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SeaweedGreenDT1767438196.jpg"
+    },
+    {
+        "name": "Red Dark Carbon Black",
+        "hex": "#0e0e0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_RedDarkCarbonBlack1767438863.jpg"
+    }
+],
+  "mahindra-xuv700-2026": [
+    {
+        "name": "Everest White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_EverestWhite1766051422.jpg"
+    },
+    {
+        "name": "Valyrian Sliver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_ValyrianSliver1766051597.jpg"
+    },
+    {
+        "name": "Midnight Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_MidnightBlack1766051796.jpg"
+    },
+    {
+        "name": "Valyrian Sliver DT",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_DazzlingSilverDT1716281994.jpg"
+    },
+    {
+        "name": "Everest White DT",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_EverestWhiteDT1716282102.jpg"
+    },
+    {
+        "name": "Midnight Black DT",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_MidnightBlackDT1716282173.jpg"
+    },
+    {
+        "name": "Burnt Sienna",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_BurntSienna1729920543.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_DeepForest1729920797.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_EbonyBlack1742199441.jpg"
+    }
+],
+  "mahindra-xuv700": [
+    {
+        "name": "Everest White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_EverestWhite1766051422.jpg"
+    },
+    {
+        "name": "Valyrian Sliver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_ValyrianSliver1766051597.jpg"
+    },
+    {
+        "name": "Midnight Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_MidnightBlack1766051796.jpg"
+    },
+    {
+        "name": "Valyrian Sliver DT",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_DazzlingSilverDT1716281994.jpg"
+    },
+    {
+        "name": "Everest White DT",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_EverestWhiteDT1716282102.jpg"
+    },
+    {
+        "name": "Midnight Black DT",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_MidnightBlackDT1716282173.jpg"
+    },
+    {
+        "name": "Burnt Sienna",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_BurntSienna1729920543.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_DeepForest1729920797.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV700_EbonyBlack1742199441.jpg"
+    }
+],
+  "maruti-swift-2026": [
+    {
+        "name": "Luster Blue with Midnight Black Roof",
+        "hex": "#00008B",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_LusterBluewithMidnightBlackRoof1715243583.jpg"
+    },
+    {
+        "name": "Pearl Artic White with Midnight Black Roof",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PearlArticWhitewithMidnightBlackRoof1715243669.jpg"
+    },
+    {
+        "name": "Magma Grey",
+        "hex": "#808080",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicMagmaGrey1715243891.jpg"
+    },
+    {
+        "name": "Sizzling Red",
+        "hex": "#FF0000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicSizzlingRed1715243977.jpg"
+    },
+    {
+        "name": "Pearl Artic White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PearlArticWhite1715244055.jpg"
+    },
+    {
+        "name": "Sizzling Red with Bluish Black Roof",
+        "hex": "#FF0000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_SizzlingRedwithMidnightBlackRoof1715244157.jpg"
+    },
+    {
+        "name": "Luster Blue",
+        "hex": "#00008B",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeLusterBlue1715244246.jpg"
+    },
+    {
+        "name": "Novel Orange",
+        "hex": "#c01b04",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeNovelOrange1715244335.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#C0C0C0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeSplendidSilver1715244429.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#1c1e24",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_BluishBlack1748688068.jpg"
+    }
+],
+  "maruti-suzuki-swift": [
+    {
+        "name": "Luster Blue with Midnight Black Roof",
+        "hex": "#00008B",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_LusterBluewithMidnightBlackRoof1715243583.jpg"
+    },
+    {
+        "name": "Pearl Artic White with Midnight Black Roof",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PearlArticWhitewithMidnightBlackRoof1715243669.jpg"
+    },
+    {
+        "name": "Magma Grey",
+        "hex": "#808080",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicMagmaGrey1715243891.jpg"
+    },
+    {
+        "name": "Sizzling Red",
+        "hex": "#FF0000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicSizzlingRed1715243977.jpg"
+    },
+    {
+        "name": "Pearl Artic White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PearlArticWhite1715244055.jpg"
+    },
+    {
+        "name": "Sizzling Red with Bluish Black Roof",
+        "hex": "#FF0000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_SizzlingRedwithMidnightBlackRoof1715244157.jpg"
+    },
+    {
+        "name": "Luster Blue",
+        "hex": "#00008B",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeLusterBlue1715244246.jpg"
+    },
+    {
+        "name": "Novel Orange",
+        "hex": "#c01b04",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeNovelOrange1715244335.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#C0C0C0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeSplendidSilver1715244429.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#1c1e24",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_BluishBlack1748688068.jpg"
+    }
+],
+  "mahindra-thar-2026": [
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#111010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_STEALTHBLACK1763901054.jpg"
+    },
+    {
+        "name": "EVEREST WHITE",
+        "hex": "#d8e0e6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_EVERESTWHITE1763900945.jpg"
+    },
+    {
+        "name": "GALAXY GREY",
+        "hex": "#646974",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_GALAXYGREY1763900876.jpg"
+    },
+    {
+        "name": "TANGO RED",
+        "hex": "#cf3a4d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_TANGORED1763900795.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#52594c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_DeepForest1763900725.jpg"
+    },
+    {
+        "name": "BATTLESHIP GREY",
+        "hex": "#424f60",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_BATTLESHIPGREY1763901230.jpg"
+    }
+],
+  "mahindra-thar": [
+    {
+        "name": "STEALTH BLACK",
+        "hex": "#111010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_STEALTHBLACK1763901054.jpg"
+    },
+    {
+        "name": "EVEREST WHITE",
+        "hex": "#d8e0e6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_EVERESTWHITE1763900945.jpg"
+    },
+    {
+        "name": "GALAXY GREY",
+        "hex": "#646974",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_GALAXYGREY1763900876.jpg"
+    },
+    {
+        "name": "TANGO RED",
+        "hex": "#cf3a4d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_TANGORED1763900795.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#52594c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_DeepForest1763900725.jpg"
+    },
+    {
+        "name": "BATTLESHIP GREY",
+        "hex": "#424f60",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_BATTLESHIPGREY1763901230.jpg"
+    }
+],
+  "tata-punch-2026": [
+    {
+        "name": "Bengal Rouge DT",
+        "hex": "#cb161d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_BengalRouge1768293235.jpg"
+    },
+    {
+        "name": "Caramel DT",
+        "hex": "#ae6913",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Caramel1768293341.jpg"
+    },
+    {
+        "name": "Coorg Clouds DT",
+        "hex": "#eeecf1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_CoorgClouds1768293407.jpg"
+    },
+    {
+        "name": "Cyantafic DT",
+        "hex": "#0192cc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Cyantafic1768293494.jpg"
+    },
+    {
+        "name": "Daytona Grey DT",
+        "hex": "#5f5e60",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_DaytonaGrey1768293560.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#fcfcff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_PristineWhite1768293614.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#fcfcff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_PristineWhite1770295051.jpg"
+    },
+    {
+        "name": "Daytona Grey",
+        "hex": "#5f5e60",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_DaytonaGrey1770295140.jpg"
+    },
+    {
+        "name": "Cyantafic",
+        "hex": "#0192cc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Cyantafic1770295497.jpg"
+    },
+    {
+        "name": "Coorg Clouds",
+        "hex": "#eeecf1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_CoorgClouds1770295565.jpg"
+    },
+    {
+        "name": "Caramel",
+        "hex": "#ae6913",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Caramel1770296025.jpg"
+    },
+    {
+        "name": "Bengal Rogue",
+        "hex": "#cb161d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_BengalRogue1770296143.jpg"
+    }
+],
+  "tata-punch": [
+    {
+        "name": "Bengal Rouge DT",
+        "hex": "#cb161d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_BengalRouge1768293235.jpg"
+    },
+    {
+        "name": "Caramel DT",
+        "hex": "#ae6913",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Caramel1768293341.jpg"
+    },
+    {
+        "name": "Coorg Clouds DT",
+        "hex": "#eeecf1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_CoorgClouds1768293407.jpg"
+    },
+    {
+        "name": "Cyantafic DT",
+        "hex": "#0192cc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Cyantafic1768293494.jpg"
+    },
+    {
+        "name": "Daytona Grey DT",
+        "hex": "#5f5e60",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_DaytonaGrey1768293560.jpg"
+    },
+    {
+        "name": "Pristine White DT",
+        "hex": "#fcfcff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_PristineWhite1768293614.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#fcfcff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_PristineWhite1770295051.jpg"
+    },
+    {
+        "name": "Daytona Grey",
+        "hex": "#5f5e60",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_DaytonaGrey1770295140.jpg"
+    },
+    {
+        "name": "Cyantafic",
+        "hex": "#0192cc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Cyantafic1770295497.jpg"
+    },
+    {
+        "name": "Coorg Clouds",
+        "hex": "#eeecf1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_CoorgClouds1770295565.jpg"
+    },
+    {
+        "name": "Caramel",
+        "hex": "#ae6913",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Caramel1770296025.jpg"
+    },
+    {
+        "name": "Bengal Rogue",
+        "hex": "#cb161d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_BengalRogue1770296143.jpg"
+    }
+],
+  "tata-nexon-2026": [
+    {
+        "name": "Daytona Grey",
+        "hex": "#393f40",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_DaytonaGrey1694683078.jpg"
+    },
+    {
+        "name": "Royal Blue",
+        "hex": "#3b4866",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RoyalBlue1770293146.jpg"
+    },
+    {
+        "name": "Pristine White With Black Roof",
+        "hex": "#dadada",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_PristineWhite1694683267.jpg"
+    },
+    {
+        "name": "Dark",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_DarkEdition1717752982.jpg"
+    },
+    {
+        "name": "Pure Grey With Black Roof",
+        "hex": "#8a8b90",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PureGreyWithBlackRoof1764912327.jpg"
+    },
+    {
+        "name": "Daytona Grey With Black Roof",
+        "hex": "#474747",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_DaytonaGreyWithDualTone1727524170.jpg"
+    },
+    {
+        "name": "Creative Ocean with White roof",
+        "hex": "#548695",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_CreativeOcceanWithDualTone1727524654.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#acadb2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PureGrey1727940032.png"
+    },
+    {
+        "name": "Creative Ocean",
+        "hex": "#548695",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_CreativeOcean1770293289.jpg"
+    },
+    {
+        "name": "Grassland Beige DT",
+        "hex": "#86846d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_GrasslandBeigeDT1770288903.jpg"
+    },
+    {
+        "name": "Royal Blue DT",
+        "hex": "#061848",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RoyalBlueDT1770288860.jpg"
+    },
+    {
+        "name": "Grassland Beige",
+        "hex": "#86846d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_GrasslandBeige1770293226.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#dadada",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PristineWhite1770293405.jpg"
+    },
+    {
+        "name": "Red Dark",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RedDark1770293969.jpg"
+    }
+],
+  "tata-nexon": [
+    {
+        "name": "Daytona Grey",
+        "hex": "#393f40",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_DaytonaGrey1694683078.jpg"
+    },
+    {
+        "name": "Royal Blue",
+        "hex": "#3b4866",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RoyalBlue1770293146.jpg"
+    },
+    {
+        "name": "Pristine White With Black Roof",
+        "hex": "#dadada",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_PristineWhite1694683267.jpg"
+    },
+    {
+        "name": "Dark",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_DarkEdition1717752982.jpg"
+    },
+    {
+        "name": "Pure Grey With Black Roof",
+        "hex": "#8a8b90",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PureGreyWithBlackRoof1764912327.jpg"
+    },
+    {
+        "name": "Daytona Grey With Black Roof",
+        "hex": "#474747",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_DaytonaGreyWithDualTone1727524170.jpg"
+    },
+    {
+        "name": "Creative Ocean with White roof",
+        "hex": "#548695",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_CreativeOcceanWithDualTone1727524654.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#acadb2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PureGrey1727940032.png"
+    },
+    {
+        "name": "Creative Ocean",
+        "hex": "#548695",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_CreativeOcean1770293289.jpg"
+    },
+    {
+        "name": "Grassland Beige DT",
+        "hex": "#86846d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_GrasslandBeigeDT1770288903.jpg"
+    },
+    {
+        "name": "Royal Blue DT",
+        "hex": "#061848",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RoyalBlueDT1770288860.jpg"
+    },
+    {
+        "name": "Grassland Beige",
+        "hex": "#86846d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_GrasslandBeige1770293226.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#dadada",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PristineWhite1770293405.jpg"
+    },
+    {
+        "name": "Red Dark",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RedDark1770293969.jpg"
+    }
+],
+  "hyundai-creta-2026": [
+    {
+        "name": "Titanium Black",
+        "hex": "#636768",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg"
+    },
+    {
+        "name": "Atlas White with Titanium Black",
+        "hex": "#eef2f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_AtlasWhitewithTitaniumBlack1776058792.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#eef2f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_AtlasWhite1776058784.jpg"
+    },
+    {
+        "name": "Titanium Black Matte",
+        "hex": "#101010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlackMatte1776061467.jpg"
+    },
+    {
+        "name": "Titan Grey",
+        "hex": "#2c2d31",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitanGrey1776058761.jpg"
+    },
+    {
+        "name": "Robust Emerald Pearl",
+        "hex": "#46584c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_RobustEmeraldPearl1776058747.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#212a40",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_StarryNight1776058718.jpg"
+    },
+    {
+        "name": "Titan Grey Matte",
+        "hex": "#3d3f42",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitanGreyMatte1776058706.jpg"
+    },
+    {
+        "name": "King Limited Edition - Titanium Black Matte",
+        "hex": "#101010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_KingLimitedEdition-TitaniumBlackMatte1776058733.jpg"
+    }
+],
+  "hyundai-creta": [
+    {
+        "name": "Titanium Black",
+        "hex": "#636768",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg"
+    },
+    {
+        "name": "Atlas White with Titanium Black",
+        "hex": "#eef2f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_AtlasWhitewithTitaniumBlack1776058792.jpg"
+    },
+    {
+        "name": "Atlas White",
+        "hex": "#eef2f4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_AtlasWhite1776058784.jpg"
+    },
+    {
+        "name": "Titanium Black Matte",
+        "hex": "#101010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlackMatte1776061467.jpg"
+    },
+    {
+        "name": "Titan Grey",
+        "hex": "#2c2d31",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitanGrey1776058761.jpg"
+    },
+    {
+        "name": "Robust Emerald Pearl",
+        "hex": "#46584c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_RobustEmeraldPearl1776058747.jpg"
+    },
+    {
+        "name": "Starry Night",
+        "hex": "#212a40",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_StarryNight1776058718.jpg"
+    },
+    {
+        "name": "Titan Grey Matte",
+        "hex": "#3d3f42",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitanGreyMatte1776058706.jpg"
+    },
+    {
+        "name": "King Limited Edition - Titanium Black Matte",
+        "hex": "#101010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_KingLimitedEdition-TitaniumBlackMatte1776058733.jpg"
+    }
+],
+  "audi-q7": [
+    {
+        "name": "Samurai Gray Metallic",
+        "hex": "#6e6e70",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_SamuraiGrey1688972993.jpg"
+    },
+    {
+        "name": "Glacier White Metallic",
+        "hex": "#e5e9ea",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_CarraraWhite1688973140.jpg"
+    },
+    {
+        "name": "Mythos Black Metallic",
+        "hex": "#040404",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_MythosBlack1716271672.jpg"
+    },
+    {
+        "name": "Sakhir Gold Metallic",
+        "hex": "#ab946b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_SakhirGoldMetallic1732785133.jpg"
+    },
+    {
+        "name": "Waitomo Blue Metallic",
+        "hex": "#191d26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_WaitomoBlueMetallic1732785297.jpg"
+    }
+],
+  "audi-q7-2026": [
+    {
+        "name": "Samurai Gray Metallic",
+        "hex": "#6e6e70",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_SamuraiGrey1688972993.jpg"
+    },
+    {
+        "name": "Glacier White Metallic",
+        "hex": "#e5e9ea",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_CarraraWhite1688973140.jpg"
+    },
+    {
+        "name": "Mythos Black Metallic",
+        "hex": "#040404",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_MythosBlack1716271672.jpg"
+    },
+    {
+        "name": "Sakhir Gold Metallic",
+        "hex": "#ab946b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_SakhirGoldMetallic1732785133.jpg"
+    },
+    {
+        "name": "Waitomo Blue Metallic",
+        "hex": "#191d26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q7_WaitomoBlueMetallic1732785297.jpg"
+    }
+],
+  "bmw-x3": [
+    {
+        "name": "Dune Grey metallic",
+        "hex": "#b7b5af",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X3_DuneGreymetallic1771491156.jpg"
+    },
+    {
+        "name": "Black Sapphire metallic",
+        "hex": "#181818",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X3_BlackSapphiremetallic1771491068.jpg"
+    },
+    {
+        "name": "Tanzanite Blue metallic",
+        "hex": "#131d50",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X3_TanzaniteBluemetallic1771490975.jpg"
+    }
+],
+  "bmw-x3-2026": [
+    {
+        "name": "Dune Grey metallic",
+        "hex": "#b7b5af",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X3_DuneGreymetallic1771491156.jpg"
+    },
+    {
+        "name": "Black Sapphire metallic",
+        "hex": "#181818",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X3_BlackSapphiremetallic1771491068.jpg"
+    },
+    {
+        "name": "Tanzanite Blue metallic",
+        "hex": "#131d50",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X3_TanzaniteBluemetallic1771490975.jpg"
+    }
+],
+  "mercedes-benz-e-class": [
+    {
+        "name": "Obsidian  Black -Metallic Paint",
+        "hex": "#131313",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_ObsidianBlack1640862187.png"
+    },
+    {
+        "name": "Polar White - Non Metallic Paint",
+        "hex": "#cfd2cc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_PolarWhite1640862187.png"
+    },
+    {
+        "name": "Verde Silver - Metallic",
+        "hex": "#405550",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_MojaveSilver1640862187.png"
+    },
+    {
+        "name": "Graphite Grey - Metallic Paint",
+        "hex": "#30302e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_NauticBlue1730265013.jpg"
+    },
+    {
+        "name": "Nautik Blue - Metallic Paint",
+        "hex": "#121925",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_NautikBlue-MetallicPaint1765711391.jpg"
+    }
+],
+  "mercedes-benz-e-class-2026": [
+    {
+        "name": "Obsidian  Black -Metallic Paint",
+        "hex": "#131313",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_ObsidianBlack1640862187.png"
+    },
+    {
+        "name": "Polar White - Non Metallic Paint",
+        "hex": "#cfd2cc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_PolarWhite1640862187.png"
+    },
+    {
+        "name": "Verde Silver - Metallic",
+        "hex": "#405550",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_MojaveSilver1640862187.png"
+    },
+    {
+        "name": "Graphite Grey - Metallic Paint",
+        "hex": "#30302e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_NauticBlue1730265013.jpg"
+    },
+    {
+        "name": "Nautik Blue - Metallic Paint",
+        "hex": "#121925",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E-Class_NautikBlue-MetallicPaint1765711391.jpg"
+    }
+],
+  "lexus-nx": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/nx/lexus-nx-0-1767931950.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/nx/lexus-nx-0-1767931950.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/nx/lexus-nx-0-1767931950.png"
+    }
+],
+  "lexus-nx-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/nx/lexus-nx-0-1767931950.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/nx/lexus-nx-0-1767931950.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/nx/lexus-nx-0-1767931950.png"
+    }
+],
+  "mini-countryman": [
+    {
+        "name": "Chilli Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Countryman_ChilliRed1640870832.png"
+    },
+    {
+        "name": "Midnight Black Metallic",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Countryman_MidnightBlackMetallic1640870832.png"
+    },
+    {
+        "name": "Sage Green Metallic",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Countryman_SageGreenMetallic1640870832.png"
+    },
+    {
+        "name": "British Racing Green IV Metallic",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_Countryman_BritishRacingGreenIVMetallic1677657746.jpg"
+    },
+    {
+        "name": "Slate Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_Countryman_IslandBlue1677657746.jpg"
+    }
+],
+  "mini-countryman-2026": [
+    {
+        "name": "Chilli Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Countryman_ChilliRed1640870832.png"
+    },
+    {
+        "name": "Midnight Black Metallic",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Countryman_MidnightBlackMetallic1640870832.png"
+    },
+    {
+        "name": "Sage Green Metallic",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Countryman_SageGreenMetallic1640870832.png"
+    },
+    {
+        "name": "British Racing Green IV Metallic",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_Countryman_BritishRacingGreenIVMetallic1677657746.jpg"
+    },
+    {
+        "name": "Slate Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_Countryman_IslandBlue1677657746.jpg"
+    }
+],
+  "isuzu-d-max-v-cross": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "isuzu-d-max-v-cross-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "citroen-c5-aircross": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-0-1766141820.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-0-1766141820.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-0-1766141820.png"
+    }
+],
+  "citroen-c5-aircross-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-0-1766141820.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-0-1766141820.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-0-1766141820.png"
+    }
+],
+  "byd-dolphin": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-0-1769505856.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-0-1769505856.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-0-1769505856.png"
+    }
+],
+  "byd-dolphin-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-0-1769505856.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-0-1769505856.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-0-1769505856.png"
+    }
+],
+  "byd-emax-7": [
+    {
+        "name": "Quartz Blue",
+        "hex": "#121a2b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eMAX_7_QuartzBlue1728390892.jpg"
+    },
+    {
+        "name": "Cosmos Black",
+        "hex": "#0a0c0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eMAX_7_CosmosBlack1728390938.jpg"
+    },
+    {
+        "name": "Crystal White",
+        "hex": "#c4ccd7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eMAX_7_CrystalWhite1728390987.jpg"
+    },
+    {
+        "name": "Harbour Grey",
+        "hex": "#88898d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eMAX_7_HarbourGrey1728391030.jpg"
+    }
+],
+  "byd-emax-7-2026": [
+    {
+        "name": "Quartz Blue",
+        "hex": "#121a2b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eMAX_7_QuartzBlue1728390892.jpg"
+    },
+    {
+        "name": "Cosmos Black",
+        "hex": "#0a0c0e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eMAX_7_CosmosBlack1728390938.jpg"
+    },
+    {
+        "name": "Crystal White",
+        "hex": "#c4ccd7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eMAX_7_CrystalWhite1728390987.jpg"
+    },
+    {
+        "name": "Harbour Grey",
+        "hex": "#88898d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/eMAX_7_HarbourGrey1728391030.jpg"
+    }
+],
+  "mg-cyberster": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "mg-cyberster-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "mahindra-xuv-e8": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mahindra/xuv-e8/mahindra-xuv-e8-0-1766745464.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mahindra/xuv-e8/mahindra-xuv-e8-0-1766745464.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mahindra/xuv-e8/mahindra-xuv-e8-0-1766745464.png"
+    }
+],
+  "mahindra-xuv-e8-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mahindra/xuv-e8/mahindra-xuv-e8-0-1766745464.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mahindra/xuv-e8/mahindra-xuv-e8-0-1766745464.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mahindra/xuv-e8/mahindra-xuv-e8-0-1766745464.png"
+    }
+],
+  "maruti-suzuki-e-vitara": [
+    {
+        "name": "Land Breeze Green Pearl Metallic × Bluish Black Pearl",
+        "hex": "#24271a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_LandBreezeGreenPearlMetallicBluishBlackPearl1730781121.jpg"
+    },
+    {
+        "name": "Opulent Red Pearl Metallic × Bluish Black Pearl",
+        "hex": "#430307",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_OpulentRedPearlMetallicBluishBlackPearl1730781532.jpg"
+    },
+    {
+        "name": "Arctic White Pearl × Bluish Black Pearl",
+        "hex": "#8c8d8d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_ArcticWhitePearlBluishBlackPearl1730781652.jpg"
+    },
+    {
+        "name": "Splendid Silver Pearl Metallic × Bluish Black Pearl",
+        "hex": "#677179",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_SplendidSilverPearlMetallicBluishBlackPearl1730781773.jpg"
+    },
+    {
+        "name": "Grandeur Grey Pearl Metallic × Bluish Black Pearl",
+        "hex": "#2a2a28",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_GrandeurGreyPearlMetallicBluishBlackPearl1730781896.jpg"
+    },
+    {
+        "name": "Land Breeze Green Pearl Metalic",
+        "hex": "#1c1e13",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_LandBreezeGreenPearlMetalic1730782043.jpg"
+    },
+    {
+        "name": "Celestial Blue Pearl Metallic",
+        "hex": "#02132d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_CelestialBluePearlMetallic1730782146.jpg"
+    },
+    {
+        "name": "Arctic White Pearl",
+        "hex": "#939392",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_ArcticWhitePearl1730782250.jpg"
+    },
+    {
+        "name": "Splendid Silver Pearl Metallic",
+        "hex": "#5d676e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_SplendidSilverPearlMetallic1730782342.jpg"
+    },
+    {
+        "name": "Grandeur Grey Pearl Metallic",
+        "hex": "#2b2b2a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_GrandeurGreyPearlMetallic1730782441.jpg"
+    },
+    {
+        "name": "Bluish Black Pearl",
+        "hex": "#0a0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_BluishBlackPearl1730782531.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#811a23",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_OpulentRed1764668911.jpg"
+    }
+],
+  "maruti-suzuki-e-vitara-2026": [
+    {
+        "name": "Land Breeze Green Pearl Metallic × Bluish Black Pearl",
+        "hex": "#24271a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_LandBreezeGreenPearlMetallicBluishBlackPearl1730781121.jpg"
+    },
+    {
+        "name": "Opulent Red Pearl Metallic × Bluish Black Pearl",
+        "hex": "#430307",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_OpulentRedPearlMetallicBluishBlackPearl1730781532.jpg"
+    },
+    {
+        "name": "Arctic White Pearl × Bluish Black Pearl",
+        "hex": "#8c8d8d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_ArcticWhitePearlBluishBlackPearl1730781652.jpg"
+    },
+    {
+        "name": "Splendid Silver Pearl Metallic × Bluish Black Pearl",
+        "hex": "#677179",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_SplendidSilverPearlMetallicBluishBlackPearl1730781773.jpg"
+    },
+    {
+        "name": "Grandeur Grey Pearl Metallic × Bluish Black Pearl",
+        "hex": "#2a2a28",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_GrandeurGreyPearlMetallicBluishBlackPearl1730781896.jpg"
+    },
+    {
+        "name": "Land Breeze Green Pearl Metalic",
+        "hex": "#1c1e13",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_LandBreezeGreenPearlMetalic1730782043.jpg"
+    },
+    {
+        "name": "Celestial Blue Pearl Metallic",
+        "hex": "#02132d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_CelestialBluePearlMetallic1730782146.jpg"
+    },
+    {
+        "name": "Arctic White Pearl",
+        "hex": "#939392",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_ArcticWhitePearl1730782250.jpg"
+    },
+    {
+        "name": "Splendid Silver Pearl Metallic",
+        "hex": "#5d676e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_SplendidSilverPearlMetallic1730782342.jpg"
+    },
+    {
+        "name": "Grandeur Grey Pearl Metallic",
+        "hex": "#2b2b2a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_GrandeurGreyPearlMetallic1730782441.jpg"
+    },
+    {
+        "name": "Bluish Black Pearl",
+        "hex": "#0a0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_BluishBlackPearl1730782531.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#811a23",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/E_Vitara_OpulentRed1764668911.jpg"
+    }
+],
+  "jeep-grand-cherokee": [
+    {
+        "name": "Bright White",
+        "hex": "#e1e1e1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Cherokee_BrightWhite1749282201.jpg"
+    },
+    {
+        "name": "Diamond Black Crystal",
+        "hex": "#151515",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Cherokee_2022_DiamondBlackCrystal1670998422.png"
+    },
+    {
+        "name": "Rocky Mountain",
+        "hex": "#27261f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Cherokee_2022_RockyMountain1670998422.png"
+    },
+    {
+        "name": "Velvet Red",
+        "hex": "#80021a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Cherokee_2022_VelvetRed1670998422.png"
+    }
+],
+  "jeep-grand-cherokee-2026": [
+    {
+        "name": "Bright White",
+        "hex": "#e1e1e1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Cherokee_BrightWhite1749282201.jpg"
+    },
+    {
+        "name": "Diamond Black Crystal",
+        "hex": "#151515",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Cherokee_2022_DiamondBlackCrystal1670998422.png"
+    },
+    {
+        "name": "Rocky Mountain",
+        "hex": "#27261f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Cherokee_2022_RockyMountain1670998422.png"
+    },
+    {
+        "name": "Velvet Red",
+        "hex": "#80021a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Cherokee_2022_VelvetRed1670998422.png"
+    }
+],
+  "nissan-patrol": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "nissan-patrol-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "volkswagen-id4": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "volkswagen-id4-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "honda-civic": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "honda-civic-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "maruti-ciaz": [
+    {
+        "name": "Pearl Metallic Dignity Brown",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_PearlMetallicDignityBrown1631513955.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_PearlMidnightBlack1631513956.jpg"
+    },
+    {
+        "name": "Nexa Blue (Celestial)",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_NexaBlue1631513956.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_GrandeurGrey1687155677.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_SplendidSilver1687155709.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_OpulentRed1687155740.jpg"
+    },
+    {
+        "name": "Pearl Arctic White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_PearlArcticWhite1687155777.jpg"
+    },
+    {
+        "name": "Pearl Metallic Dignity Brown And Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_PearlMetallicDignityBrownAndBlack1687155855.jpg"
+    },
+    {
+        "name": "Opulent Red And Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_OpulentRedAndBlack1687155908.jpg"
+    },
+    {
+        "name": "Grandeur Grey And Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_GrandeurGreyAndBlack1687155941.jpg"
+    }
+],
+  "maruti-ciaz-2026": [
+    {
+        "name": "Pearl Metallic Dignity Brown",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_PearlMetallicDignityBrown1631513955.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_PearlMidnightBlack1631513956.jpg"
+    },
+    {
+        "name": "Nexa Blue (Celestial)",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_NexaBlue1631513956.jpg"
+    },
+    {
+        "name": "Grandeur Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_GrandeurGrey1687155677.jpg"
+    },
+    {
+        "name": "Splendid Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_SplendidSilver1687155709.jpg"
+    },
+    {
+        "name": "Opulent Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_OpulentRed1687155740.jpg"
+    },
+    {
+        "name": "Pearl Arctic White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_PearlArcticWhite1687155777.jpg"
+    },
+    {
+        "name": "Pearl Metallic Dignity Brown And Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_PearlMetallicDignityBrownAndBlack1687155855.jpg"
+    },
+    {
+        "name": "Opulent Red And Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_OpulentRedAndBlack1687155908.jpg"
+    },
+    {
+        "name": "Grandeur Grey And Bluish Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Ciaz_GrandeurGreyAndBlack1687155941.jpg"
+    }
+],
+  "renault-kwid": [
+    {
+        "name": "Moonlight Silver with Mystery Black Roof",
+        "hex": "#9da2a6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_MoonlightSilverwithMysteryBlackRoof1784355636.jpg"
+    },
+    {
+        "name": "Ice Cool White with Mystery Black Roof",
+        "hex": "#f1f2f5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_IceCoolWhitewithMysteryBlackRoof1784355571.jpg"
+    },
+    {
+        "name": "Zanskar Blue with Mystery Black Roof",
+        "hex": "#035470",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_ZanskarBluewithMysteryBlackRoof1784355486.jpg"
+    },
+    {
+        "name": "Fiery Red with Mystery Black Roof",
+        "hex": "#9d1117",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_FieryRedwithMysteryBlackRoof1784355335.jpg"
+    }
+],
+  "renault-kwid-2026": [
+    {
+        "name": "Moonlight Silver with Mystery Black Roof",
+        "hex": "#9da2a6",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_MoonlightSilverwithMysteryBlackRoof1784355636.jpg"
+    },
+    {
+        "name": "Ice Cool White with Mystery Black Roof",
+        "hex": "#f1f2f5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_IceCoolWhitewithMysteryBlackRoof1784355571.jpg"
+    },
+    {
+        "name": "Zanskar Blue with Mystery Black Roof",
+        "hex": "#035470",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_ZanskarBluewithMysteryBlackRoof1784355486.jpg"
+    },
+    {
+        "name": "Fiery Red with Mystery Black Roof",
+        "hex": "#9d1117",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_FieryRedwithMysteryBlackRoof1784355335.jpg"
+    }
+],
+  "ford-ecosport": [
+    {
+        "name": "Absolute Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_AbsoluteBlack1631548373.jpg"
+    },
+    {
+        "name": "Diamond White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_DiamondWhite1631548373.jpg"
+    },
+    {
+        "name": "Lightning Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_LightningBlue1631548374.jpg"
+    },
+    {
+        "name": "Moondust Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_MoondustSilver1631548374.jpg"
+    },
+    {
+        "name": "Smoke Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_SmokeGrey1631548374.jpg"
+    },
+    {
+        "name": "Canyon Ridge",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_CanyonRidge1631548374.jpg"
+    },
+    {
+        "name": "Race Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_RaceRed1631548374.jpg"
+    }
+],
+  "ford-ecosport-2026": [
+    {
+        "name": "Absolute Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_AbsoluteBlack1631548373.jpg"
+    },
+    {
+        "name": "Diamond White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_DiamondWhite1631548373.jpg"
+    },
+    {
+        "name": "Lightning Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_LightningBlue1631548374.jpg"
+    },
+    {
+        "name": "Moondust Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_MoondustSilver1631548374.jpg"
+    },
+    {
+        "name": "Smoke Grey",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_SmokeGrey1631548374.jpg"
+    },
+    {
+        "name": "Canyon Ridge",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_CanyonRidge1631548374.jpg"
+    },
+    {
+        "name": "Race Red",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EcoSport_RaceRed1631548374.jpg"
+    }
+],
+  "ford-endeavour": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-0-1769505896.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-0-1769505896.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-0-1769505896.png"
+    }
+],
+  "ford-endeavour-2026": [
+    {
+        "name": "Glacier White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-0-1769505896.png"
+    },
+    {
+        "name": "Phantom Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-0-1769505896.png"
+    },
+    {
+        "name": "Cosmic Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-0-1769505896.png"
+    }
+],
+  "maruti-s-presso": [
+    {
+        "name": "Solid White",
+        "hex": "#eff0f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidWhite1661950628.jpg"
+    },
+    {
+        "name": "Metallic silky silver",
+        "hex": "#d2cfd0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_Metallicsilkysilver1661950628.jpg"
+    },
+    {
+        "name": "Solid Fire Red",
+        "hex": "#ab0f13",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidFireRed1661950628.jpg"
+    },
+    {
+        "name": "Solid Sizzle Orange",
+        "hex": "#ec6904",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidSizzleOrange1661950628.jpg"
+    },
+    {
+        "name": "Metallic Graphite Grey",
+        "hex": "#909090",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_MetallicGraphiteGrey1661950628.jpg"
+    },
+    {
+        "name": "Pearl Starry Blue",
+        "hex": "#004eba",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_PearlStarryBlue1661950628.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#141414",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_PearlMidnightBlack1719648496.jpg"
+    }
+],
+  "maruti-s-presso-2026": [
+    {
+        "name": "Solid White",
+        "hex": "#eff0f2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidWhite1661950628.jpg"
+    },
+    {
+        "name": "Metallic silky silver",
+        "hex": "#d2cfd0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_Metallicsilkysilver1661950628.jpg"
+    },
+    {
+        "name": "Solid Fire Red",
+        "hex": "#ab0f13",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidFireRed1661950628.jpg"
+    },
+    {
+        "name": "Solid Sizzle Orange",
+        "hex": "#ec6904",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidSizzleOrange1661950628.jpg"
+    },
+    {
+        "name": "Metallic Graphite Grey",
+        "hex": "#909090",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_MetallicGraphiteGrey1661950628.jpg"
+    },
+    {
+        "name": "Pearl Starry Blue",
+        "hex": "#004eba",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_PearlStarryBlue1661950628.jpg"
+    },
+    {
+        "name": "Bluish Black",
+        "hex": "#141414",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_PearlMidnightBlack1719648496.jpg"
+    }
+],
+  "mahindra-be-6e": [
+    {
+        "name": "Desert Myst Satin",
+        "hex": "#b2a696",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMystSatin1777965078.jpg"
+    },
+    {
+        "name": "Desert Myst",
+        "hex": "#cec2ac",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMyst1777965058.jpg"
+    },
+    {
+        "name": "Tango Red",
+        "hex": "#bd4247",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_TangoRed1777965107.jpg"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#fffff7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhite1777965141.jpg"
+    },
+    {
+        "name": "Everest White Satin",
+        "hex": "#fefffa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhiteSatin1777965161.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#21272f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_StealthBlack1777965182.jpg"
+    },
+    {
+        "name": "Firestorm Orange",
+        "hex": "#ff7b70",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FirestormOrange1777965201.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#6f7163",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DeepForest1777965003.jpg"
+    },
+    {
+        "name": "Formula E Black",
+        "hex": "#111314",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEBlack1777965221.jpg"
+    },
+    {
+        "name": "Formula E Orange",
+        "hex": "#ff5409",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEOrange1777965240.jpg"
+    },
+    {
+        "name": "Formula E Red",
+        "hex": "#cd1730",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaERed1777965267.jpg"
+    },
+    {
+        "name": "Formula E White",
+        "hex": "#fffffd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEWhite1777965309.jpg"
+    }
+],
+  "mahindra-be-6e-2026": [
+    {
+        "name": "Desert Myst Satin",
+        "hex": "#b2a696",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMystSatin1777965078.jpg"
+    },
+    {
+        "name": "Desert Myst",
+        "hex": "#cec2ac",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMyst1777965058.jpg"
+    },
+    {
+        "name": "Tango Red",
+        "hex": "#bd4247",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_TangoRed1777965107.jpg"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#fffff7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhite1777965141.jpg"
+    },
+    {
+        "name": "Everest White Satin",
+        "hex": "#fefffa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhiteSatin1777965161.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#21272f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_StealthBlack1777965182.jpg"
+    },
+    {
+        "name": "Firestorm Orange",
+        "hex": "#ff7b70",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FirestormOrange1777965201.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#6f7163",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DeepForest1777965003.jpg"
+    },
+    {
+        "name": "Formula E Black",
+        "hex": "#111314",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEBlack1777965221.jpg"
+    },
+    {
+        "name": "Formula E Orange",
+        "hex": "#ff5409",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEOrange1777965240.jpg"
+    },
+    {
+        "name": "Formula E Red",
+        "hex": "#cd1730",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaERed1777965267.jpg"
+    },
+    {
+        "name": "Formula E White",
+        "hex": "#fffffd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEWhite1777965309.jpg"
+    }
+],
+  "mahindra-xev-9e": [
+    {
+        "name": "Desert Myst",
+        "hex": "#feeec3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_DesertMyst1772537743.jpg"
+    },
+    {
+        "name": "Tango Red",
+        "hex": "#ed4546",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_TangoRed1772537706.jpg"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#fffee8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_EverestWhite1772537659.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#171f2a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_StealthBlack1772537615.jpg"
+    },
+    {
+        "name": "Nebula Blue",
+        "hex": "#5f7a75",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_NebulaBlue1772537542.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#465c67",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_DeepForest1772537501.jpg"
+    },
+    {
+        "name": "Ruby Velvet",
+        "hex": "#743e36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_RubyVelvet1772537447.jpg"
+    },
+    {
+        "name": "Satin Black",
+        "hex": "#030302",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_SatinBlack1772537941.jpg"
+    },
+    {
+        "name": "Satin White",
+        "hex": "#fbfbfc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_SatinWhite1772538088.jpg"
+    }
+],
+  "mahindra-xev-9e-2026": [
+    {
+        "name": "Desert Myst",
+        "hex": "#feeec3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_DesertMyst1772537743.jpg"
+    },
+    {
+        "name": "Tango Red",
+        "hex": "#ed4546",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_TangoRed1772537706.jpg"
+    },
+    {
+        "name": "Everest White",
+        "hex": "#fffee8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_EverestWhite1772537659.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#171f2a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_StealthBlack1772537615.jpg"
+    },
+    {
+        "name": "Nebula Blue",
+        "hex": "#5f7a75",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_NebulaBlue1772537542.jpg"
+    },
+    {
+        "name": "Deep Forest",
+        "hex": "#465c67",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_DeepForest1772537501.jpg"
+    },
+    {
+        "name": "Ruby Velvet",
+        "hex": "#743e36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_RubyVelvet1772537447.jpg"
+    },
+    {
+        "name": "Satin Black",
+        "hex": "#030302",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_SatinBlack1772537941.jpg"
+    },
+    {
+        "name": "Satin White",
+        "hex": "#fbfbfc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XEV_9e_SatinWhite1772538088.jpg"
+    }
+],
+  "renault-triber": [
+    {
+        "name": "Amber terracotta with mystery black roof",
+        "hex": "#742309",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Amberterracottawithmysteryblackroof1753268274.jpg"
+    },
+    {
+        "name": "Amber terracotta",
+        "hex": "#5c1d00",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Amberterracotta1753268387.jpg"
+    },
+    {
+        "name": "Ice cool white with mystery black roof",
+        "hex": "#ebebeb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Icecoolwhitewithmysteryblackroof1753268460.jpg"
+    },
+    {
+        "name": "Ice cool white",
+        "hex": "#eeeeee",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Icecoolwhite1753268540.jpg"
+    },
+    {
+        "name": "Moonlight silver",
+        "hex": "#969694",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Moonlightsilver1753268595.jpg"
+    },
+    {
+        "name": "Shadow grey with mystery black roof",
+        "hex": "#909090",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Shadowgreywithmysteryblackroof1753268678.jpg"
+    },
+    {
+        "name": "Shadow grey",
+        "hex": "#848484",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Shadowgrey1753268753.jpg"
+    },
+    {
+        "name": "Stealth black",
+        "hex": "#010101",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Stealthblack1753268798.jpg"
+    },
+    {
+        "name": "Zanskar blue",
+        "hex": "#65c5dc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Zanskarblue1753268838.jpg"
+    }
+],
+  "renault-triber-2026": [
+    {
+        "name": "Amber terracotta with mystery black roof",
+        "hex": "#742309",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Amberterracottawithmysteryblackroof1753268274.jpg"
+    },
+    {
+        "name": "Amber terracotta",
+        "hex": "#5c1d00",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Amberterracotta1753268387.jpg"
+    },
+    {
+        "name": "Ice cool white with mystery black roof",
+        "hex": "#ebebeb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Icecoolwhitewithmysteryblackroof1753268460.jpg"
+    },
+    {
+        "name": "Ice cool white",
+        "hex": "#eeeeee",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Icecoolwhite1753268540.jpg"
+    },
+    {
+        "name": "Moonlight silver",
+        "hex": "#969694",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Moonlightsilver1753268595.jpg"
+    },
+    {
+        "name": "Shadow grey with mystery black roof",
+        "hex": "#909090",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Shadowgreywithmysteryblackroof1753268678.jpg"
+    },
+    {
+        "name": "Shadow grey",
+        "hex": "#848484",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Shadowgrey1753268753.jpg"
+    },
+    {
+        "name": "Stealth black",
+        "hex": "#010101",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Stealthblack1753268798.jpg"
+    },
+    {
+        "name": "Zanskar blue",
+        "hex": "#65c5dc",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Zanskarblue1753268838.jpg"
+    }
+],
+  "renault-duster": [
+    {
+        "name": "Sunset Red",
+        "hex": "#ed474c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_SunsetRed1775042822.jpg"
+    },
+    {
+        "name": "Moonlight Silver",
+        "hex": "#d3d2d1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MoonlightSilver1775043158.jpg"
+    },
+    {
+        "name": "Mountain Jade Green",
+        "hex": "#64764c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MountainJadeGreen1775043220.jpg"
+    },
+    {
+        "name": "River Blue",
+        "hex": "#4d6392",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_RiverBlue1775043277.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#4a4a4a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_StealthBlack1775043327.jpg"
+    },
+    {
+        "name": "Pearl White",
+        "hex": "#e3e0d5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_PearlWhite1775043373.jpg"
+    },
+    {
+        "name": "Mountain Jade Green with Stealth Black Roof",
+        "hex": "#6d8052",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MountainJadeGreenwithStealthBlackRoof1775043461.jpg"
+    },
+    {
+        "name": "River Blue with Stealth Black Roof",
+        "hex": "#445985",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_RiverBluewithStealthBlackRoof1775043529.jpg"
+    },
+    {
+        "name": "Sunset Red with Stealth Black Roof",
+        "hex": "#e74045",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_SunsetRedwithStealthBlackRoof1775043575.jpg"
+    },
+    {
+        "name": "Pearl White with Stealth Black Roof",
+        "hex": "#e1ded3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_PearlWhitewithStealthBlackRoof1775043628.jpg"
+    }
+],
+  "renault-duster-2026": [
+    {
+        "name": "Sunset Red",
+        "hex": "#ed474c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_SunsetRed1775042822.jpg"
+    },
+    {
+        "name": "Moonlight Silver",
+        "hex": "#d3d2d1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MoonlightSilver1775043158.jpg"
+    },
+    {
+        "name": "Mountain Jade Green",
+        "hex": "#64764c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MountainJadeGreen1775043220.jpg"
+    },
+    {
+        "name": "River Blue",
+        "hex": "#4d6392",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_RiverBlue1775043277.jpg"
+    },
+    {
+        "name": "Stealth Black",
+        "hex": "#4a4a4a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_StealthBlack1775043327.jpg"
+    },
+    {
+        "name": "Pearl White",
+        "hex": "#e3e0d5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_PearlWhite1775043373.jpg"
+    },
+    {
+        "name": "Mountain Jade Green with Stealth Black Roof",
+        "hex": "#6d8052",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MountainJadeGreenwithStealthBlackRoof1775043461.jpg"
+    },
+    {
+        "name": "River Blue with Stealth Black Roof",
+        "hex": "#445985",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_RiverBluewithStealthBlackRoof1775043529.jpg"
+    },
+    {
+        "name": "Sunset Red with Stealth Black Roof",
+        "hex": "#e74045",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_SunsetRedwithStealthBlackRoof1775043575.jpg"
+    },
+    {
+        "name": "Pearl White with Stealth Black Roof",
+        "hex": "#e1ded3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_PearlWhitewithStealthBlackRoof1775043628.jpg"
+    }
+],
+  "nissan-x-trail": [
+    {
+        "name": "Pearl White",
+        "hex": "#E2DFD2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_PearlWhite1722575503.jpg"
+    },
+    {
+        "name": "Diamond Black",
+        "hex": "#2B303E",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_DiamondBlack1722575631.jpg"
+    },
+    {
+        "name": "Champagne Silver",
+        "hex": "#DDD1C4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_ChampagneSilver1722575713.jpg"
+    }
+],
+  "nissan-x-trail-2026": [
+    {
+        "name": "Pearl White",
+        "hex": "#E2DFD2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_PearlWhite1722575503.jpg"
+    },
+    {
+        "name": "Diamond Black",
+        "hex": "#2B303E",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_DiamondBlack1722575631.jpg"
+    },
+    {
+        "name": "Champagne Silver",
+        "hex": "#DDD1C4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_ChampagneSilver1722575713.jpg"
+    }
+],
+  "skoda-superb": [
+    {
+        "name": "Magic Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Superb_MagicBlack1656150974.jpg"
+    },
+    {
+        "name": "Water World Green",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Superb_WaterWorldGreen1715756180.jpg"
+    },
+    {
+        "name": "Rosso Brunello",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Superb_RossoBrunello1715756294.jpg"
+    }
+],
+  "skoda-superb-2026": [
+    {
+        "name": "Magic Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Superb_MagicBlack1656150974.jpg"
+    },
+    {
+        "name": "Water World Green",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Superb_WaterWorldGreen1715756180.jpg"
+    },
+    {
+        "name": "Rosso Brunello",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Superb_RossoBrunello1715756294.jpg"
+    }
+],
+  "volkswagen-golf-gti": [
+    {
+        "name": "Grenadilla Black Metallic",
+        "hex": "#2b3345",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Golf_GTI_GrenadillaBlackMetallic1754542613.jpg"
+    },
+    {
+        "name": "Kings Red Metallic",
+        "hex": "#490d11",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Golf_GTI_KingsRedMetallic1754542600.jpg"
+    },
+    {
+        "name": "Moonstone Grey",
+        "hex": "#4a4c5c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Golf_GTI_MoonstoneGrey1754542628.jpg"
+    },
+    {
+        "name": "Oryx White Premium Mother-of-Pearl Black",
+        "hex": "#9b9aa5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Golf_GTI_OryxWhitePremiumMother-of-PearlBlack1754542574.jpg"
+    }
+],
+  "volkswagen-golf-gti-2026": [
+    {
+        "name": "Grenadilla Black Metallic",
+        "hex": "#2b3345",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Golf_GTI_GrenadillaBlackMetallic1754542613.jpg"
+    },
+    {
+        "name": "Kings Red Metallic",
+        "hex": "#490d11",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Golf_GTI_KingsRedMetallic1754542600.jpg"
+    },
+    {
+        "name": "Moonstone Grey",
+        "hex": "#4a4c5c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Golf_GTI_MoonstoneGrey1754542628.jpg"
+    },
+    {
+        "name": "Oryx White Premium Mother-of-Pearl Black",
+        "hex": "#9b9aa5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Golf_GTI_OryxWhitePremiumMother-of-PearlBlack1754542574.jpg"
+    }
+],
+  "byd-sealion-7": [
+    {
+        "name": "Solid White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Midnight Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Flame Red",
+        "hex": "#DC2626",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "byd-sealion-7-2026": [
+    {
+        "name": "Solid White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Midnight Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    },
+    {
+        "name": "Flame Red",
+        "hex": "#DC2626",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png"
+    }
+],
+  "toyota-urban-cruiser-hyryder": [
+    {
+        "name": "Cave Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/urban-cruiser-hyryder/toyota-urban-cruiser-hyryder-0-1766738694.png"
+    },
+    {
+        "name": "Sportin Red",
+        "hex": "#DC2626",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/urban-cruiser-hyryder/toyota-urban-cruiser-hyryder-0-1766738694.png"
+    },
+    {
+        "name": "Enticing Silver",
+        "hex": "#94A3B8",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/urban-cruiser-hyryder/toyota-urban-cruiser-hyryder-0-1766738694.png"
+    },
+    {
+        "name": "Cafe White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/urban-cruiser-hyryder/toyota-urban-cruiser-hyryder-0-1766738694.png"
+    }
+],
+  "toyota-urban-cruiser-hyryder-2026": [
+    {
+        "name": "Cave Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/urban-cruiser-hyryder/toyota-urban-cruiser-hyryder-0-1766738694.png"
+    },
+    {
+        "name": "Sportin Red",
+        "hex": "#DC2626",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/urban-cruiser-hyryder/toyota-urban-cruiser-hyryder-0-1766738694.png"
+    },
+    {
+        "name": "Enticing Silver",
+        "hex": "#94A3B8",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/urban-cruiser-hyryder/toyota-urban-cruiser-hyryder-0-1766738694.png"
+    },
+    {
+        "name": "Cafe White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/urban-cruiser-hyryder/toyota-urban-cruiser-hyryder-0-1766738694.png"
+    }
+],
+  "citroen-c3": [
+    {
+        "name": "Polar White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_PolarWhite1766898304.jpg"
+    },
+    {
+        "name": "Cosmo Blue",
+        "hex": "#1A2A4E",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_CosmoBlue1766898378.jpg"
+    },
+    {
+        "name": "Garnet Red",
+        "hex": "#d54638",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_GarnetRed1766898428.jpg"
+    },
+    {
+        "name": "Perla Nera Black",
+        "hex": "#202327",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_PerlaNeraBlack1766898444.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#969c98",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_SteelGrey1764876818.jpeg"
+    }
+],
+  "citroen-c3-2026": [
+    {
+        "name": "Polar White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_PolarWhite1766898304.jpg"
+    },
+    {
+        "name": "Cosmo Blue",
+        "hex": "#1A2A4E",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_CosmoBlue1766898378.jpg"
+    },
+    {
+        "name": "Garnet Red",
+        "hex": "#d54638",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_GarnetRed1766898428.jpg"
+    },
+    {
+        "name": "Perla Nera Black",
+        "hex": "#202327",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_PerlaNeraBlack1766898444.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#969c98",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_SteelGrey1764876818.jpeg"
+    }
+],
+  "audi-a4": [
+    {
+        "name": "Manhattan Gray Metallic",
+        "hex": "#12181c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_IbisWhite1656145394.jpg"
+    },
+    {
+        "name": "Mythos Black Metallic",
+        "hex": "#0b0b0b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_MythBlackMetallic1656145394.jpg"
+    },
+    {
+        "name": "Navarra Blue Metallic",
+        "hex": "#1c2856",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_NavarraBlueMetallic1656145394.jpg"
+    },
+    {
+        "name": "Glacier White Metallic",
+        "hex": "#e8ebec",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_GlacierWhiteMetallic1765457277.jpg"
+    },
+    {
+        "name": "Progressive Red Metallic",
+        "hex": "#d20815",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_TangoRed1677311744.jpg"
+    }
+],
+  "audi-a4-2026": [
+    {
+        "name": "Manhattan Gray Metallic",
+        "hex": "#12181c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_IbisWhite1656145394.jpg"
+    },
+    {
+        "name": "Mythos Black Metallic",
+        "hex": "#0b0b0b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_MythBlackMetallic1656145394.jpg"
+    },
+    {
+        "name": "Navarra Blue Metallic",
+        "hex": "#1c2856",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_NavarraBlueMetallic1656145394.jpg"
+    },
+    {
+        "name": "Glacier White Metallic",
+        "hex": "#e8ebec",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_GlacierWhiteMetallic1765457277.jpg"
+    },
+    {
+        "name": "Progressive Red Metallic",
+        "hex": "#d20815",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/A4_TangoRed1677311744.jpg"
+    }
+],
+  "audi-q3": [
+    {
+        "name": "Mythos Black Metallic",
+        "hex": "#070707",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_MythosBlackMetallic1665057796.jpg"
+    },
+    {
+        "name": "Progressive Red Metallic",
+        "hex": "#e30f1f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_PulseOrangeSolid1665057796.jpg"
+    },
+    {
+        "name": "Nano Grey Metallic",
+        "hex": "#353533",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_ChronosGreyMetallic1665057797.jpg"
+    },
+    {
+        "name": "Navarra Blue Metallic",
+        "hex": "#091648",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_NavarraBlueMetallic1665057797.jpg"
+    },
+    {
+        "name": "Glacier White Metallic",
+        "hex": "#e7e9ed",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_GlacierWhiteMetallic1765456686.jpg"
+    }
+],
+  "audi-q3-2026": [
+    {
+        "name": "Mythos Black Metallic",
+        "hex": "#070707",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_MythosBlackMetallic1665057796.jpg"
+    },
+    {
+        "name": "Progressive Red Metallic",
+        "hex": "#e30f1f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_PulseOrangeSolid1665057796.jpg"
+    },
+    {
+        "name": "Nano Grey Metallic",
+        "hex": "#353533",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_ChronosGreyMetallic1665057797.jpg"
+    },
+    {
+        "name": "Navarra Blue Metallic",
+        "hex": "#091648",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_NavarraBlueMetallic1665057797.jpg"
+    },
+    {
+        "name": "Glacier White Metallic",
+        "hex": "#e7e9ed",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q3_GlacierWhiteMetallic1765456686.jpg"
+    }
+],
+  "audi-q5": [
+    {
+        "name": "Manhattan Gray Metallic",
+        "hex": "#2c3237",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_ManhattanGrayMetallic1765456207.jpg"
+    },
+    {
+        "name": "Mythos Black Metallic",
+        "hex": "#010102",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_MythosBlackMetallic1765456190.jpg"
+    },
+    {
+        "name": "Navarra Blue Metallic",
+        "hex": "#021744",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_NavarraBlueMetallic1765456176.jpg"
+    },
+    {
+        "name": "Glacier White Metallic",
+        "hex": "#e9eced",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_GlacierWhiteMetallic1765455712.jpg"
+    },
+    {
+        "name": "District Green Metallic",
+        "hex": "#444b3c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_DistrictGreenMetallic1765456148.jpg"
+    }
+],
+  "audi-q5-2026": [
+    {
+        "name": "Manhattan Gray Metallic",
+        "hex": "#2c3237",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_ManhattanGrayMetallic1765456207.jpg"
+    },
+    {
+        "name": "Mythos Black Metallic",
+        "hex": "#010102",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_MythosBlackMetallic1765456190.jpg"
+    },
+    {
+        "name": "Navarra Blue Metallic",
+        "hex": "#021744",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_NavarraBlueMetallic1765456176.jpg"
+    },
+    {
+        "name": "Glacier White Metallic",
+        "hex": "#e9eced",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_GlacierWhiteMetallic1765455712.jpg"
+    },
+    {
+        "name": "District Green Metallic",
+        "hex": "#444b3c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Q5_DistrictGreenMetallic1765456148.jpg"
+    }
+],
+  "bmw-3-series": [
+    {
+        "name": "Black Saphire Metallic",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_BlackSaphireMetallic1721375001.jpg"
+    },
+    {
+        "name": "Dravit Grey Metallic",
+        "hex": "#808080",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_DravitGreyMetallic1721374879.jpg"
+    },
+    {
+        "name": "Arctic Race Blue",
+        "hex": "#1c2c3b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_ArcticRaceBlue1731579702.jpg"
+    },
+    {
+        "name": "Fire Red Metallic",
+        "hex": "#4b1010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_FireRedMetallic1731579845.jpg"
+    },
+    {
+        "name": "Tanzanite Blue",
+        "hex": "#0f131b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_BMWINDIVIDUALTANZANITEBLUE1733459699.jpg"
+    }
+],
+  "bmw-3-series-2026": [
+    {
+        "name": "Black Saphire Metallic",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_BlackSaphireMetallic1721375001.jpg"
+    },
+    {
+        "name": "Dravit Grey Metallic",
+        "hex": "#808080",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_DravitGreyMetallic1721374879.jpg"
+    },
+    {
+        "name": "Arctic Race Blue",
+        "hex": "#1c2c3b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_ArcticRaceBlue1731579702.jpg"
+    },
+    {
+        "name": "Fire Red Metallic",
+        "hex": "#4b1010",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_FireRedMetallic1731579845.jpg"
+    },
+    {
+        "name": "Tanzanite Blue",
+        "hex": "#0f131b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/3-Series_BMWINDIVIDUALTANZANITEBLUE1733459699.jpg"
+    }
+],
+  "bmw-x1": [
+    {
+        "name": "Black Sapphire metallic",
+        "hex": "#212121",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_BlackSapphiremetallic1675080549.jpg"
+    },
+    {
+        "name": "Cape York Green metallic",
+        "hex": "#3f434a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_CapeYorkGreenmetallic1765456271.jpg"
+    },
+    {
+        "name": "M Portimao Blue metallic",
+        "hex": "#23396b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_MPortimaoBluemetallic1675080549.jpg"
+    },
+    {
+        "name": "Space Silver metallic",
+        "hex": "#868982",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_SpaceSilvermetallic1675080549.jpg"
+    },
+    {
+        "name": "Alpine White solid",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_AlpineWhitesolid1765456359.jpg"
+    }
+],
+  "bmw-x1-2026": [
+    {
+        "name": "Black Sapphire metallic",
+        "hex": "#212121",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_BlackSapphiremetallic1675080549.jpg"
+    },
+    {
+        "name": "Cape York Green metallic",
+        "hex": "#3f434a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_CapeYorkGreenmetallic1765456271.jpg"
+    },
+    {
+        "name": "M Portimao Blue metallic",
+        "hex": "#23396b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_MPortimaoBluemetallic1675080549.jpg"
+    },
+    {
+        "name": "Space Silver metallic",
+        "hex": "#868982",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_SpaceSilvermetallic1675080549.jpg"
+    },
+    {
+        "name": "Alpine White solid",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X1_AlpineWhitesolid1765456359.jpg"
+    }
+],
+  "bmw-x5": [
+    {
+        "name": "Skyscraper Grey metallic",
+        "hex": "#808080",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X5_SkyscraperGreymetallic1689577066.jpg"
+    },
+    {
+        "name": "Black Sapphire metallic",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X5_BlackSapphiremetallic1689577132.jpg"
+    },
+    {
+        "name": "Mineral White metallic",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X5_MineralWhitemetallic1689577190.jpg"
+    }
+],
+  "bmw-x5-2026": [
+    {
+        "name": "Skyscraper Grey metallic",
+        "hex": "#808080",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X5_SkyscraperGreymetallic1689577066.jpg"
+    },
+    {
+        "name": "Black Sapphire metallic",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X5_BlackSapphiremetallic1689577132.jpg"
+    },
+    {
+        "name": "Mineral White metallic",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/X5_MineralWhitemetallic1689577190.jpg"
+    }
+],
+  "mercedes-benz-c-class": [
+    {
+        "name": "Selenite Grey",
+        "hex": "#404546",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_SeleniteGrey1661951053.JPG"
+    },
+    {
+        "name": "High Tech Silver",
+        "hex": "#8b8f97",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_HighTechSilver1661951053.JPG"
+    },
+    {
+        "name": "Opalite White Bright",
+        "hex": "#efefef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_ManufakturOpaliteWhiteBright1661951053.JPG"
+    },
+    {
+        "name": "Obsidian Black",
+        "hex": "#040403",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_ObsidianBlack1661951054.JPG"
+    },
+    {
+        "name": "Sodalite Blue",
+        "hex": "#29315f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_CavansiteBlue1661951054.JPG"
+    }
+],
+  "mercedes-benz-c-class-2026": [
+    {
+        "name": "Selenite Grey",
+        "hex": "#404546",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_SeleniteGrey1661951053.JPG"
+    },
+    {
+        "name": "High Tech Silver",
+        "hex": "#8b8f97",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_HighTechSilver1661951053.JPG"
+    },
+    {
+        "name": "Opalite White Bright",
+        "hex": "#efefef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_ManufakturOpaliteWhiteBright1661951053.JPG"
+    },
+    {
+        "name": "Obsidian Black",
+        "hex": "#040403",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_ObsidianBlack1661951054.JPG"
+    },
+    {
+        "name": "Sodalite Blue",
+        "hex": "#29315f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C-Class_2022_CavansiteBlue1661951054.JPG"
+    }
+],
+  "mercedes-benz-gla": [
+    {
+        "name": "Cosmos Black",
+        "hex": "#06080e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_CosmosBlack1640862717.png"
+    },
+    {
+        "name": "Spectral Blue",
+        "hex": "#7c97ae",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_DenimBlue1640862717.png"
+    },
+    {
+        "name": "Iridium Silver",
+        "hex": "#c9c8cb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_IridiumSilver1640862717.png"
+    },
+    {
+        "name": "Mountain Grey",
+        "hex": "#bfc1c2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_MountainGrey1640862717.png"
+    },
+    {
+        "name": "Polar White (Non-Metallic)",
+        "hex": "#f3f1ef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_PolarWhite(Non-Metallic)1640862717.png"
+    }
+],
+  "mercedes-benz-gla-2026": [
+    {
+        "name": "Cosmos Black",
+        "hex": "#06080e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_CosmosBlack1640862717.png"
+    },
+    {
+        "name": "Spectral Blue",
+        "hex": "#7c97ae",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_DenimBlue1640862717.png"
+    },
+    {
+        "name": "Iridium Silver",
+        "hex": "#c9c8cb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_IridiumSilver1640862717.png"
+    },
+    {
+        "name": "Mountain Grey",
+        "hex": "#bfc1c2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_MountainGrey1640862717.png"
+    },
+    {
+        "name": "Polar White (Non-Metallic)",
+        "hex": "#f3f1ef",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLA_PolarWhite(Non-Metallic)1640862717.png"
+    }
+],
+  "mercedes-benz-glc": [
+    {
+        "name": "Obsidian Black",
+        "hex": "#1e1f23",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_ObsidianBlack1691643617.jpg"
+    },
+    {
+        "name": "Polar White",
+        "hex": "#dfdde2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_PolarWhite1691643650.jpg"
+    },
+    {
+        "name": "Graphite Grey",
+        "hex": "#313131",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_GraphiteGrey1720069731.jpg"
+    },
+    {
+        "name": "HIGH-TECH SILVER",
+        "hex": "#959ea2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_HIGH-TECHSILVER1730266060.jpg"
+    },
+    {
+        "name": "SPECTRAL BLUE",
+        "hex": "#09487c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_SPECTRALBLUE1730266244.jpg"
+    }
+],
+  "mercedes-benz-glc-2026": [
+    {
+        "name": "Obsidian Black",
+        "hex": "#1e1f23",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_ObsidianBlack1691643617.jpg"
+    },
+    {
+        "name": "Polar White",
+        "hex": "#dfdde2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_PolarWhite1691643650.jpg"
+    },
+    {
+        "name": "Graphite Grey",
+        "hex": "#313131",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_GraphiteGrey1720069731.jpg"
+    },
+    {
+        "name": "HIGH-TECH SILVER",
+        "hex": "#959ea2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_HIGH-TECHSILVER1730266060.jpg"
+    },
+    {
+        "name": "SPECTRAL BLUE",
+        "hex": "#09487c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/GLC_SPECTRALBLUE1730266244.jpg"
+    }
+],
+  "volvo-xc60": [
+    {
+        "name": "Onyx Black",
+        "hex": "#0e1216",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_OnyxBlack1765341542.jpg"
+    },
+    {
+        "name": "Crystal White",
+        "hex": "#e7e9eb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_CrystalWhite1765341387.jpg"
+    },
+    {
+        "name": "Denim Blue",
+        "hex": "#1f2932",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_DenimBlue1765341339.jpg"
+    },
+    {
+        "name": "Mulberry Red",
+        "hex": "#27191a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_MulberryRed1765341208.jpg"
+    },
+    {
+        "name": "Bright Dusk",
+        "hex": "#aca09c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_BrightDusk1765341091.jpg"
+    },
+    {
+        "name": "Vapour Grey",
+        "hex": "#a6a7ab",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_VapourGrey1765341065.jpg"
+    },
+    {
+        "name": "Forest Lake",
+        "hex": "#3f4746",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_ForestLake1765341691.jpg"
+    }
+],
+  "volvo-xc60-2026": [
+    {
+        "name": "Onyx Black",
+        "hex": "#0e1216",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_OnyxBlack1765341542.jpg"
+    },
+    {
+        "name": "Crystal White",
+        "hex": "#e7e9eb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_CrystalWhite1765341387.jpg"
+    },
+    {
+        "name": "Denim Blue",
+        "hex": "#1f2932",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_DenimBlue1765341339.jpg"
+    },
+    {
+        "name": "Mulberry Red",
+        "hex": "#27191a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_MulberryRed1765341208.jpg"
+    },
+    {
+        "name": "Bright Dusk",
+        "hex": "#aca09c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_BrightDusk1765341091.jpg"
+    },
+    {
+        "name": "Vapour Grey",
+        "hex": "#a6a7ab",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_VapourGrey1765341065.jpg"
+    },
+    {
+        "name": "Forest Lake",
+        "hex": "#3f4746",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/XC60_ForestLake1765341691.jpg"
+    }
+],
+  "volvo-ex40": [
+    {
+        "name": "Sage Green",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Fjord Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Crystal White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Onyx Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Silver Dawn",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    }
+],
+  "volvo-ex40-2026": [
+    {
+        "name": "Sage Green",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Fjord Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Crystal White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Onyx Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Silver Dawn",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    }
+],
+  "land-rover-defender": [
+    {
+        "name": "Pangea Green",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Gondwana Stone",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Tasman Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Santorini Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Fuji White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    }
+],
+  "land-rover-defender-2026": [
+    {
+        "name": "Pangea Green",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Gondwana Stone",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Tasman Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Santorini Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    },
+    {
+        "name": "Fuji White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/porsche/macan-ev/porsche-macan-ev-3-1764997807.png"
+    }
+],
+  "range-rover-evoque": [
+    {
+        "name": "Tribeca Blue",
+        "hex": "#436074",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_TribecaBlue1715836858.jpg"
+    },
+    {
+        "name": "Fuji White",
+        "hex": "#d2d7eb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_FujiWhite1715836805.jpg"
+    },
+    {
+        "name": "Santorini Black",
+        "hex": "#2f2f2f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_SantoriniBlack1715836788.jpg"
+    },
+    {
+        "name": "Corinthian Bronze",
+        "hex": "#765948",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_CorinthianBronze1715836895.jpg"
+    },
+    {
+        "name": "Eiger Grey",
+        "hex": "#575757",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_EigerGrey1715836993.jpg"
+    }
+],
+  "range-rover-evoque-2026": [
+    {
+        "name": "Tribeca Blue",
+        "hex": "#436074",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_TribecaBlue1715836858.jpg"
+    },
+    {
+        "name": "Fuji White",
+        "hex": "#d2d7eb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_FujiWhite1715836805.jpg"
+    },
+    {
+        "name": "Santorini Black",
+        "hex": "#2f2f2f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_SantoriniBlack1715836788.jpg"
+    },
+    {
+        "name": "Corinthian Bronze",
+        "hex": "#765948",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_CorinthianBronze1715836895.jpg"
+    },
+    {
+        "name": "Eiger Grey",
+        "hex": "#575757",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Range_Rover_Evoque_EigerGrey1715836993.jpg"
+    }
+],
+  "porsche-macan": [
+    {
+        "name": "Black",
+        "hex": "#060606",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_Black1640954082.png"
+    },
+    {
+        "name": "White",
+        "hex": "#eeedf2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_White1765636543.jpg"
+    },
+    {
+        "name": "Carrara White Metallic",
+        "hex": "#eeedf2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_CarraraWhiteMetallic1640954082.png"
+    },
+    {
+        "name": "Jet Black Metallic",
+        "hex": "#0d0d0d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_JetBlackMetallic1640954082.png"
+    },
+    {
+        "name": "Volcano Grey Metallic",
+        "hex": "#2c2c2c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_VolcanoGreyMetallic1640954082.png"
+    },
+    {
+        "name": "Dolomite Silver Metallic",
+        "hex": "#c4c6c7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_DolomiteSilverMetallic1640954082.png"
+    },
+    {
+        "name": "Carmine Red",
+        "hex": "#94383c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_CarmineRed1640954083.png"
+    },
+    {
+        "name": "Crayon",
+        "hex": "#bfbfbb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_Crayon1640954083.png"
+    },
+    {
+        "name": "Copper Ruby Metallic",
+        "hex": "#280a1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_CopperRubyMetallic1688993186.jpg"
+    },
+    {
+        "name": "Gentian Blue Metallic",
+        "hex": "#000d44",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_GentianBlueMetallic1688993159.jpg"
+    }
+],
+  "porsche-macan-2026": [
+    {
+        "name": "Black",
+        "hex": "#060606",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_Black1640954082.png"
+    },
+    {
+        "name": "White",
+        "hex": "#eeedf2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_White1765636543.jpg"
+    },
+    {
+        "name": "Carrara White Metallic",
+        "hex": "#eeedf2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_CarraraWhiteMetallic1640954082.png"
+    },
+    {
+        "name": "Jet Black Metallic",
+        "hex": "#0d0d0d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_JetBlackMetallic1640954082.png"
+    },
+    {
+        "name": "Volcano Grey Metallic",
+        "hex": "#2c2c2c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_VolcanoGreyMetallic1640954082.png"
+    },
+    {
+        "name": "Dolomite Silver Metallic",
+        "hex": "#c4c6c7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_DolomiteSilverMetallic1640954082.png"
+    },
+    {
+        "name": "Carmine Red",
+        "hex": "#94383c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_CarmineRed1640954083.png"
+    },
+    {
+        "name": "Crayon",
+        "hex": "#bfbfbb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_2019-2021_Crayon1640954083.png"
+    },
+    {
+        "name": "Copper Ruby Metallic",
+        "hex": "#280a1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_CopperRubyMetallic1688993186.jpg"
+    },
+    {
+        "name": "Gentian Blue Metallic",
+        "hex": "#000d44",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Macan_GentianBlueMetallic1688993159.jpg"
+    }
+],
+  "porsche-cayenne": [
+    {
+        "name": "Arctic Grey",
+        "hex": "#4b5056",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_ArcticGrey1765614284.jpg"
+    },
+    {
+        "name": "Cashmere Beige Metallic",
+        "hex": "#9c9078",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CashmereBeigeMetallic1765614464.jpg"
+    },
+    {
+        "name": "Carrara White",
+        "hex": "#dcdbe0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarraraWhite1632118261.jpg"
+    },
+    {
+        "name": "Algarve Blue Metallic",
+        "hex": "#1a1e2a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_JetBlackMetallic1632118261.jpg"
+    },
+    {
+        "name": "Montego Blue Metallic",
+        "hex": "#192030",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_MoonlightBlueMetallic1632118261.jpg"
+    },
+    {
+        "name": "Carmine Red",
+        "hex": "#6d0414",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarmineRed1765611153.jpg"
+    },
+    {
+        "name": "Crayon",
+        "hex": "#b1b5c1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_Crayon1632118261.jpg"
+    },
+    {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_White1632118262.jpg"
+    },
+    {
+        "name": "Chromite Black Metallic",
+        "hex": "#242428",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_ChromiteBlackMetallic1677584113.jpg"
+    },
+    {
+        "name": "Dolomite Silver Metallic",
+        "hex": "#798089",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_DolomiteSilverMetallic1677584760.jpg"
+    },
+    {
+        "name": "Vanadium Grey Metallic",
+        "hex": "#9498a1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_VanadiumGreyMetallic1765613260.jpg"
+    }
+],
+  "porsche-cayenne-2026": [
+    {
+        "name": "Arctic Grey",
+        "hex": "#4b5056",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_ArcticGrey1765614284.jpg"
+    },
+    {
+        "name": "Cashmere Beige Metallic",
+        "hex": "#9c9078",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CashmereBeigeMetallic1765614464.jpg"
+    },
+    {
+        "name": "Carrara White",
+        "hex": "#dcdbe0",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarraraWhite1632118261.jpg"
+    },
+    {
+        "name": "Algarve Blue Metallic",
+        "hex": "#1a1e2a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_JetBlackMetallic1632118261.jpg"
+    },
+    {
+        "name": "Montego Blue Metallic",
+        "hex": "#192030",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_MoonlightBlueMetallic1632118261.jpg"
+    },
+    {
+        "name": "Carmine Red",
+        "hex": "#6d0414",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarmineRed1765611153.jpg"
+    },
+    {
+        "name": "Crayon",
+        "hex": "#b1b5c1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_Crayon1632118261.jpg"
+    },
+    {
+        "name": "White",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_White1632118262.jpg"
+    },
+    {
+        "name": "Chromite Black Metallic",
+        "hex": "#242428",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_ChromiteBlackMetallic1677584113.jpg"
+    },
+    {
+        "name": "Dolomite Silver Metallic",
+        "hex": "#798089",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_DolomiteSilverMetallic1677584760.jpg"
+    },
+    {
+        "name": "Vanadium Grey Metallic",
+        "hex": "#9498a1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_VanadiumGreyMetallic1765613260.jpg"
+    }
+],
+  "lexus-es": [
+    {
+        "name": "Sonic Quartz",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/es/lexus-es-0-1774004968.png"
+    },
+    {
+        "name": "Sonic Titanium",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/es/lexus-es-0-1774004968.png"
+    },
+    {
+        "name": "Graphite Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/es/lexus-es-0-1774004968.png"
+    },
+    {
+        "name": "Deep Blue Mica",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/es/lexus-es-0-1774004968.png"
+    }
+],
+  "lexus-es-2026": [
+    {
+        "name": "Sonic Quartz",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/es/lexus-es-0-1774004968.png"
+    },
+    {
+        "name": "Sonic Titanium",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/es/lexus-es-0-1774004968.png"
+    },
+    {
+        "name": "Graphite Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/es/lexus-es-0-1774004968.png"
+    },
+    {
+        "name": "Deep Blue Mica",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/es/lexus-es-0-1774004968.png"
+    }
+],
+  "lexus-rx": [
+    {
+        "name": "Sonic Copper",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/rx/lexus-rx-2-1767931830.png"
+    },
+    {
+        "name": "Heat Blue Contrast Layering",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/rx/lexus-rx-2-1767931830.png"
+    },
+    {
+        "name": "White Nova Glass Flake",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/rx/lexus-rx-2-1767931830.png"
+    },
+    {
+        "name": "Graphite Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/rx/lexus-rx-2-1767931830.png"
+    }
+],
+  "lexus-rx-2026": [
+    {
+        "name": "Sonic Copper",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/rx/lexus-rx-2-1767931830.png"
+    },
+    {
+        "name": "Heat Blue Contrast Layering",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/rx/lexus-rx-2-1767931830.png"
+    },
+    {
+        "name": "White Nova Glass Flake",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/rx/lexus-rx-2-1767931830.png"
+    },
+    {
+        "name": "Graphite Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lexus/rx/lexus-rx-2-1767931830.png"
+    }
+],
+  "mini-cooper": [
+    {
+        "name": "Blazing Blue",
+        "hex": "#0000FF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_BlazingBlue1721819643.jpg"
+    },
+    {
+        "name": "British Racing Green",
+        "hex": "#003c17",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_BritishRacingGreen1721819689.jpg"
+    },
+    {
+        "name": "Chilli Red II",
+        "hex": "#b61a1a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_ChilliRedII1721819752.jpg"
+    },
+    {
+        "name": "Ocean Wave Green",
+        "hex": "#86b9aa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_OceanWaveGreen1721819831.jpg"
+    },
+    {
+        "name": "Sunny Side Yellow",
+        "hex": "#f5e317",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_SunnySideYellow1721819878.jpg"
+    }
+],
+  "mini-cooper-2026": [
+    {
+        "name": "Ocean Wave Green",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mini/cooper/mini-cooper-5-1766222038.png"
+    },
+    {
+        "name": "Sunny Side Yellow",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mini/cooper/mini-cooper-5-1766222038.png"
+    },
+    {
+        "name": "Chili Red",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mini/cooper/mini-cooper-5-1766222038.png"
+    },
+    {
+        "name": "Blazing Blue",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mini/cooper/mini-cooper-5-1766222038.png"
+    },
+    {
+        "name": "Nanuq White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/mini/cooper/mini-cooper-5-1766222038.png"
+    }
+],
+  "aston-martin-dbx": [
+    {
+        "name": "China Grey",
+        "hex": "#a0a1b5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_ChinaGrey1679634319.jpg"
+    },
+    {
+        "name": "Cumberland Grey",
+        "hex": "#6b6356",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_CumberlandGrey1679634319.jpg"
+    },
+    {
+        "name": "Divine Red",
+        "hex": "#6d3f3c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_DivineRed1679634319.jpg"
+    },
+    {
+        "name": "Ion Blue",
+        "hex": "#253a68",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_IonBlue1679634319.jpg"
+    },
+    {
+        "name": "Jet black",
+        "hex": "#161618",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_Jetblack1679634319.jpg"
+    },
+    {
+        "name": "Magnetic Silver",
+        "hex": "#7c8081",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_MagneticSilver1679634319.jpg"
+    },
+    {
+        "name": "Minotaur Green",
+        "hex": "#494834",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_MinotaurGreen1679634319.jpg"
+    },
+    {
+        "name": "Royal Indigo",
+        "hex": "#2e2f41",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_RoyalIndigo1679634319.jpg"
+    }
+],
+  "aston-martin-dbx-2026": [
+    {
+        "name": "China Grey",
+        "hex": "#a0a1b5",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_ChinaGrey1679634319.jpg"
+    },
+    {
+        "name": "Cumberland Grey",
+        "hex": "#6b6356",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_CumberlandGrey1679634319.jpg"
+    },
+    {
+        "name": "Divine Red",
+        "hex": "#6d3f3c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_DivineRed1679634319.jpg"
+    },
+    {
+        "name": "Ion Blue",
+        "hex": "#253a68",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_IonBlue1679634319.jpg"
+    },
+    {
+        "name": "Jet black",
+        "hex": "#161618",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_Jetblack1679634319.jpg"
+    },
+    {
+        "name": "Magnetic Silver",
+        "hex": "#7c8081",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_MagneticSilver1679634319.jpg"
+    },
+    {
+        "name": "Minotaur Green",
+        "hex": "#494834",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_MinotaurGreen1679634319.jpg"
+    },
+    {
+        "name": "Royal Indigo",
+        "hex": "#2e2f41",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/DBX_RoyalIndigo1679634319.jpg"
+    }
+],
+  "lamborghini-urus": [
+    {
+        "name": "Giallo Auctus (Yellow)",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    },
+    {
+        "name": "Arancio Egon (Orange)",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    },
+    {
+        "name": "Verde Viper (Green)",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    },
+    {
+        "name": "Nero Noctis (Black)",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    },
+    {
+        "name": "Bianco Monocerus (White)",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    }
+],
+  "lamborghini-urus-2026": [
+    {
+        "name": "Giallo Auctus (Yellow)",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    },
+    {
+        "name": "Arancio Egon (Orange)",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    },
+    {
+        "name": "Verde Viper (Green)",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    },
+    {
+        "name": "Nero Noctis (Black)",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    },
+    {
+        "name": "Bianco Monocerus (White)",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/lamborghini/urus/lamborghini-urus-0-1770097528.png"
+    }
+],
+  "toyota-innova-crysta": [
+    {
+        "name": "Attitude Black Mica",
+        "hex": "#060606",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_AttitudeBlackMica1780897701.jpg"
+    },
+    {
+        "name": "Avant-Garde Bronze Metalic",
+        "hex": "#706b62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_Avant-GardeBronzeMetalic1780897676.jpg"
+    },
+    {
+        "name": "Silver Metallic",
+        "hex": "#abb0b1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_SilverMetallic1780897649.jpg"
+    },
+    {
+        "name": "Super White",
+        "hex": "#faf7f8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_SuperWhite1780897624.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#ebebeb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_PlatinumWhitePearl1780897592.jpg"
+    }
+],
+  "toyota-innova-crysta-2026": [
+    {
+        "name": "Attitude Black Mica",
+        "hex": "#060606",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_AttitudeBlackMica1780897701.jpg"
+    },
+    {
+        "name": "Avant-Garde Bronze Metalic",
+        "hex": "#706b62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_Avant-GardeBronzeMetalic1780897676.jpg"
+    },
+    {
+        "name": "Silver Metallic",
+        "hex": "#abb0b1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_SilverMetallic1780897649.jpg"
+    },
+    {
+        "name": "Super White",
+        "hex": "#faf7f8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_SuperWhite1780897624.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#ebebeb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_PlatinumWhitePearl1780897592.jpg"
+    }
+],
+  "toyota-land-cruiser-300": [
+    {
+        "name": "Precious White Pearl",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Attitude Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Dark Blue Mica",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    }
+],
+  "toyota-land-cruiser-300-2026": [
+    {
+        "name": "Precious White Pearl",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Attitude Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Dark Blue Mica",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    }
+],
+  "toyota-vellfire": [
+    {
+        "name": "Black",
+        "hex": "#0a0b0d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Vellfire_Black1687247869.jpg"
+    },
+    {
+        "name": "Preciuos Metal",
+        "hex": "#91939d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Vellfire_PreciuosMetal1719995739.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#e5e6e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Vellfire_PearlWhite1687247812.jpg"
+    }
+],
+  "toyota-vellfire-2026": [
+    {
+        "name": "Black",
+        "hex": "#0a0b0d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Vellfire_Black1687247869.jpg"
+    },
+    {
+        "name": "Preciuos Metal",
+        "hex": "#91939d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Vellfire_PreciuosMetal1719995739.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#e5e6e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Vellfire_PearlWhite1687247812.jpg"
+    }
+],
+  "honda-amaze": [
+    {
+        "name": "Lunar Silver Metallic",
+        "hex": "#a0a3ab",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_LunarSilverMetallic1733305756.jpg"
+    },
+    {
+        "name": "Meteoroid Grey Metallic",
+        "hex": "#6d6a6f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_MeteoroidGreyMetallic1733305965.jpg"
+    },
+    {
+        "name": "Golden Brown Metallic",
+        "hex": "#4f4947",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_GoldenBrownMetallic1733306229.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#e4e5ee",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_PlatinumWhitePearl1733306451.jpg"
+    },
+    {
+        "name": "Radiant Red Metallic",
+        "hex": "#ed2033",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_RadiantRedMetallic1733306591.jpg"
+    },
+    {
+        "name": "Obsidian Blue Pearl",
+        "hex": "#314487",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_ObsidianBluePearl1733306724.jpg"
+    },
+    {
+        "name": "Crystal Black Pearl",
+        "hex": "#070809",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_CrystalBlackPearl1758025179.jpg"
+    }
+],
+  "honda-amaze-2026": [
+    {
+        "name": "Lunar Silver Metallic",
+        "hex": "#a0a3ab",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_LunarSilverMetallic1733305756.jpg"
+    },
+    {
+        "name": "Meteoroid Grey Metallic",
+        "hex": "#6d6a6f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_MeteoroidGreyMetallic1733305965.jpg"
+    },
+    {
+        "name": "Golden Brown Metallic",
+        "hex": "#4f4947",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_GoldenBrownMetallic1733306229.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#e4e5ee",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_PlatinumWhitePearl1733306451.jpg"
+    },
+    {
+        "name": "Radiant Red Metallic",
+        "hex": "#ed2033",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_RadiantRedMetallic1733306591.jpg"
+    },
+    {
+        "name": "Obsidian Blue Pearl",
+        "hex": "#314487",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_ObsidianBluePearl1733306724.jpg"
+    },
+    {
+        "name": "Crystal Black Pearl",
+        "hex": "#070809",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_CrystalBlackPearl1758025179.jpg"
+    }
+],
+  "honda-city-hybrid": [
+    {
+        "name": "Radiant Red Metallic",
+        "hex": "#ad0b10",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_RadiantRedMetallic1779451977.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_PlatinumWhitePearl1779452049.jpg"
+    },
+    {
+        "name": "Obsidian Blue Pearl",
+        "hex": "#10152c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_ObsidianBluePearl1779452108.jpg"
+    },
+    {
+        "name": "Meteoroid Gray Metallic",
+        "hex": "#434b52",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_MeteoroidGrayMetallic1779452199.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic",
+        "hex": "#696b6b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_LunarSilverMetallic1779452260.jpg"
+    },
+    {
+        "name": "Crystal Black Pearl",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_CrystalBlackPearl1779452327.jpg"
+    }
+],
+  "honda-city-hybrid-2026": [
+    {
+        "name": "Radiant Red Metallic",
+        "hex": "#ad0b10",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_RadiantRedMetallic1779451977.jpg"
+    },
+    {
+        "name": "Platinum White Pearl",
+        "hex": "#ffffff",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_PlatinumWhitePearl1779452049.jpg"
+    },
+    {
+        "name": "Obsidian Blue Pearl",
+        "hex": "#10152c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_ObsidianBluePearl1779452108.jpg"
+    },
+    {
+        "name": "Meteoroid Gray Metallic",
+        "hex": "#434b52",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_MeteoroidGrayMetallic1779452199.jpg"
+    },
+    {
+        "name": "Lunar Silver Metallic",
+        "hex": "#696b6b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_LunarSilverMetallic1779452260.jpg"
+    },
+    {
+        "name": "Crystal Black Pearl",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_CrystalBlackPearl1779452327.jpg"
+    }
+],
+  "mg-zs-ev": [
+    {
+        "name": "Aurora Silver",
+        "hex": "#555961",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/ZS_EV_AuroraSilver1677739695.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#b6b9c3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/ZS_EV_CandyWhite1677739695.jpg"
+    },
+    {
+        "name": "Glaze Red",
+        "hex": "#9c1c1c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/ZS_EV_GlazeRed1677739695.jpg"
+    },
+    {
+        "name": "Starry Black",
+        "hex": "#232325",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/ZS_EV_StarryBlack1677739695.jpg"
+    }
+],
+  "mg-zs-ev-2026": [
+    {
+        "name": "Aurora Silver",
+        "hex": "#555961",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/ZS_EV_AuroraSilver1677739695.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#b6b9c3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/ZS_EV_CandyWhite1677739695.jpg"
+    },
+    {
+        "name": "Glaze Red",
+        "hex": "#9c1c1c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/ZS_EV_GlazeRed1677739695.jpg"
+    },
+    {
+        "name": "Starry Black",
+        "hex": "#232325",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/ZS_EV_StarryBlack1677739695.jpg"
+    }
+],
+  "mg-astor": [
+    {
+        "name": "Aurora Silver",
+        "hex": "#d1d1db",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_AuroraSilver1705058196.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#eae9e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_CandyWhite1705058261.jpg"
+    },
+    {
+        "name": "Dual Tone White and Black",
+        "hex": "#eae9e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_DualTonwWhiteandBlack1705058291.jpg"
+    },
+    {
+        "name": "Glaze Red",
+        "hex": "#e32735",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_GlazeRed1705058348.jpg"
+    },
+    {
+        "name": "Havana Gray",
+        "hex": "#6b6f73",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_HavanaGray1705058396.jpg"
+    },
+    {
+        "name": "Starry Black",
+        "hex": "#242020",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_StarryBlack1705058436.jpg"
+    }
+],
+  "mg-astor-2026": [
+    {
+        "name": "Aurora Silver",
+        "hex": "#d1d1db",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_AuroraSilver1705058196.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#eae9e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_CandyWhite1705058261.jpg"
+    },
+    {
+        "name": "Dual Tone White and Black",
+        "hex": "#eae9e7",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_DualTonwWhiteandBlack1705058291.jpg"
+    },
+    {
+        "name": "Glaze Red",
+        "hex": "#e32735",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_GlazeRed1705058348.jpg"
+    },
+    {
+        "name": "Havana Gray",
+        "hex": "#6b6f73",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_HavanaGray1705058396.jpg"
+    },
+    {
+        "name": "Starry Black",
+        "hex": "#242020",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_StarryBlack1705058436.jpg"
+    }
+],
+  "mg-gloster": [
+    {
+        "name": "Metal Ash",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_MetalAsh1718009513.jpg"
+    },
+    {
+        "name": "Metal Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_MetalBlack1718009690.jpg"
+    },
+    {
+        "name": "Deep Golden",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_DeepGolden1718009524.jpg"
+    },
+    {
+        "name": "Warm White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_WarmWhite1727787608.jpg"
+    },
+    {
+        "name": "BLACKSTORM",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_BLACKSTROM1752142654.jpg"
+    },
+    {
+        "name": "SNOWSTORM",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_SNOWSTROM1752142942.jpg"
+    },
+    {
+        "name": "DESERTSTORM",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_DESERTSTORM1752143269.jpg"
+    }
+],
+  "mg-gloster-2026": [
+    {
+        "name": "Metal Ash",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_MetalAsh1718009513.jpg"
+    },
+    {
+        "name": "Metal Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_MetalBlack1718009690.jpg"
+    },
+    {
+        "name": "Deep Golden",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_DeepGolden1718009524.jpg"
+    },
+    {
+        "name": "Warm White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_WarmWhite1727787608.jpg"
+    },
+    {
+        "name": "BLACKSTORM",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_BLACKSTROM1752142654.jpg"
+    },
+    {
+        "name": "SNOWSTORM",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_SNOWSTROM1752142942.jpg"
+    },
+    {
+        "name": "DESERTSTORM",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gloster_DESERTSTORM1752143269.jpg"
+    }
+],
+  "skoda-kodiaq": [
+    {
+        "name": "Bronx Gold",
+        "hex": "#a99975",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_BronxGold1744948953.jpg"
+    },
+    {
+        "name": "Black Magic",
+        "hex": "#100e11",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_BlackMagic1744948917.jpg"
+    },
+    {
+        "name": "Velvet Red",
+        "hex": "#b5242f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_VelvetRed1744949152.jpg"
+    },
+    {
+        "name": "Race Blue",
+        "hex": "#2361a2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_RaceBlue1744949086.jpg"
+    },
+    {
+        "name": "Moon White",
+        "hex": "#e2e2e2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_MoonWhite1744949037.jpg"
+    },
+    {
+        "name": "Graphite Grey",
+        "hex": "#b5b6b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_GraphiteGrey1744949007.jpg"
+    }
+],
+  "skoda-kodiaq-2026": [
+    {
+        "name": "Bronx Gold",
+        "hex": "#a99975",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_BronxGold1744948953.jpg"
+    },
+    {
+        "name": "Black Magic",
+        "hex": "#100e11",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_BlackMagic1744948917.jpg"
+    },
+    {
+        "name": "Velvet Red",
+        "hex": "#b5242f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_VelvetRed1744949152.jpg"
+    },
+    {
+        "name": "Race Blue",
+        "hex": "#2361a2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_RaceBlue1744949086.jpg"
+    },
+    {
+        "name": "Moon White",
+        "hex": "#e2e2e2",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_MoonWhite1744949037.jpg"
+    },
+    {
+        "name": "Graphite Grey",
+        "hex": "#b5b6b8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Kodiaq_GraphiteGrey1744949007.jpg"
+    }
+],
+  "skoda-octavia": [
+    {
+        "name": "Brilliant Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_BrilliantSilver1656150730.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_CandyWhite1656150731.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_LavaBlue1656150731.jpg"
+    },
+    {
+        "name": "Magic Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_MagicBlack1656150731.jpg"
+    },
+    {
+        "name": "Maple Brown",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_MapleBrown1656150731.jpg"
+    },
+    {
+        "name": "Honey Orange",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_HoneyOrange1690363955.jpg"
+    }
+],
+  "skoda-octavia-2026": [
+    {
+        "name": "Brilliant Silver",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_BrilliantSilver1656150730.jpg"
+    },
+    {
+        "name": "Candy White",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_CandyWhite1656150731.jpg"
+    },
+    {
+        "name": "Lava Blue",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_LavaBlue1656150731.jpg"
+    },
+    {
+        "name": "Magic Black",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_MagicBlack1656150731.jpg"
+    },
+    {
+        "name": "Maple Brown",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_MapleBrown1656150731.jpg"
+    },
+    {
+        "name": "Honey Orange",
+        "hex": "#555555",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Octavia_HoneyOrange1690363955.jpg"
+    }
+],
+  "byd-atto-3": [
+    {
+        "name": "Boulder Grey",
+        "hex": "#383c43",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Atto_3_BoulderGrey1670937088.png"
+    },
+    {
+        "name": "Ski White",
+        "hex": "#9da1aa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Atto_3_SkiWhite1670937088.png"
+    },
+    {
+        "name": "Surf Blue",
+        "hex": "#00516f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Atto_3_SurfBlue1670937088.png"
+    },
+    {
+        "name": "Cosmos Black",
+        "hex": "#1e2024",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Atto_3_CosmosBlack1720601922.jpg"
+    }
+],
+  "byd-atto-3-2026": [
+    {
+        "name": "Boulder Grey",
+        "hex": "#383c43",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Atto_3_BoulderGrey1670937088.png"
+    },
+    {
+        "name": "Ski White",
+        "hex": "#9da1aa",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Atto_3_SkiWhite1670937088.png"
+    },
+    {
+        "name": "Surf Blue",
+        "hex": "#00516f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Atto_3_SurfBlue1670937088.png"
+    },
+    {
+        "name": "Cosmos Black",
+        "hex": "#1e2024",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Atto_3_CosmosBlack1720601922.jpg"
+    }
+],
+  "byd-seal": [
+    {
+        "name": "Arctic Blue",
+        "hex": "#5ea3b3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seal_EV_ArcticBlue1709630446.jpg"
+    },
+    {
+        "name": "Atlantis Gray",
+        "hex": "#808080",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seal_EV_AtlantisGray1709630600.jpg"
+    },
+    {
+        "name": "Aurora White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seal_EV_AuroraWhite1709630657.jpg"
+    },
+    {
+        "name": "Cosmos Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seal_EV_CosmosBlack1709630692.jpg"
+    }
+],
+  "byd-seal-2026": [
+    {
+        "name": "Arctic Blue",
+        "hex": "#5ea3b3",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seal_EV_ArcticBlue1709630446.jpg"
+    },
+    {
+        "name": "Atlantis Gray",
+        "hex": "#808080",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seal_EV_AtlantisGray1709630600.jpg"
+    },
+    {
+        "name": "Aurora White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seal_EV_AuroraWhite1709630657.jpg"
+    },
+    {
+        "name": "Cosmos Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seal_EV_CosmosBlack1709630692.jpg"
+    }
+],
+  "byd-e6": [
+    {
+        "name": "Doctor Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Crystal White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    }
+],
+  "byd-e6-2026": [
+    {
+        "name": "Doctor Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Crystal White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    }
+],
+  "jeep-compass": [
+    {
+        "name": "Silvery Moon",
+        "hex": "#c3bfbd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_SilveryMoon1760682210.jpg"
+    },
+    {
+        "name": "Galaxy Blue",
+        "hex": "#33599a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_GalaxyBlue1760682194.jpg"
+    },
+    {
+        "name": "Magnesio Grey",
+        "hex": "#4e4e53",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_MagnesioGrey1760682221.jpg"
+    },
+    {
+        "name": "Techno Metallic Green",
+        "hex": "#263733",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_TechnoMetallicGreen1760682170.jpg"
+    },
+    {
+        "name": "Grigio Magnesio",
+        "hex": "#898b88",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_GrigioMagnesio1760682150.jpg"
+    },
+    {
+        "name": "Exotica Red",
+        "hex": "#9a2123",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_ExoticaRed1760682104.jpg"
+    },
+    {
+        "name": "Brilliant Black",
+        "hex": "#010101",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_BrilliantBlack1760682085.jpg"
+    },
+    {
+        "name": "Pearl White",
+        "hex": "#e1eded",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_PearlWhite1760682292.jpg"
+    }
+],
+  "jeep-compass-2026": [
+    {
+        "name": "Silvery Moon",
+        "hex": "#c3bfbd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_SilveryMoon1760682210.jpg"
+    },
+    {
+        "name": "Galaxy Blue",
+        "hex": "#33599a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_GalaxyBlue1760682194.jpg"
+    },
+    {
+        "name": "Magnesio Grey",
+        "hex": "#4e4e53",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_MagnesioGrey1760682221.jpg"
+    },
+    {
+        "name": "Techno Metallic Green",
+        "hex": "#263733",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_TechnoMetallicGreen1760682170.jpg"
+    },
+    {
+        "name": "Grigio Magnesio",
+        "hex": "#898b88",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_GrigioMagnesio1760682150.jpg"
+    },
+    {
+        "name": "Exotica Red",
+        "hex": "#9a2123",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_ExoticaRed1760682104.jpg"
+    },
+    {
+        "name": "Brilliant Black",
+        "hex": "#010101",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_BrilliantBlack1760682085.jpg"
+    },
+    {
+        "name": "Pearl White",
+        "hex": "#e1eded",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_PearlWhite1760682292.jpg"
+    }
+],
+  "jeep-meridian": [
+    {
+        "name": "Pearl White",
+        "hex": "#abadae",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_PearlWhite1682091254.jpg"
+    },
+    {
+        "name": "Minimal Grey",
+        "hex": "#5b5f62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_MinimalGrey1749281086.jpg"
+    },
+    {
+        "name": "Brilliant Black",
+        "hex": "#161813",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_BrilliantBlack1717581628.jpg"
+    },
+    {
+        "name": "Galaxy Blue",
+        "hex": "#12111f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_GalaxyBlue1717581693.jpg"
+    },
+    {
+        "name": "Magnesio Grey",
+        "hex": "#444949",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_MagnesioGrey1717581772.jpg"
+    },
+    {
+        "name": "Silvery Moon",
+        "hex": "#92919b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_SilveryMoon1717581984.jpg"
+    },
+    {
+        "name": "Techno Metallic Green",
+        "hex": "#222e26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_TechnoMetallicGreen1717582056.jpg"
+    },
+    {
+        "name": "Velvet Red",
+        "hex": "#611829",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_VelvetRed1717585097.jpg"
+    }
+],
+  "jeep-meridian-2026": [
+    {
+        "name": "Pearl White",
+        "hex": "#abadae",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_PearlWhite1682091254.jpg"
+    },
+    {
+        "name": "Minimal Grey",
+        "hex": "#5b5f62",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_MinimalGrey1749281086.jpg"
+    },
+    {
+        "name": "Brilliant Black",
+        "hex": "#161813",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_BrilliantBlack1717581628.jpg"
+    },
+    {
+        "name": "Galaxy Blue",
+        "hex": "#12111f",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_GalaxyBlue1717581693.jpg"
+    },
+    {
+        "name": "Magnesio Grey",
+        "hex": "#444949",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_MagnesioGrey1717581772.jpg"
+    },
+    {
+        "name": "Silvery Moon",
+        "hex": "#92919b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_SilveryMoon1717581984.jpg"
+    },
+    {
+        "name": "Techno Metallic Green",
+        "hex": "#222e26",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_TechnoMetallicGreen1717582056.jpg"
+    },
+    {
+        "name": "Velvet Red",
+        "hex": "#611829",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_VelvetRed1717585097.jpg"
+    }
+],
+  "jeep-wrangler": [
+    {
+        "name": "Anvil Clear Coat",
+        "hex": "#6b7577",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_AnvilClearCoat1746435885.jpg"
+    },
+    {
+        "name": "Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_Black1746435866.jpg"
+    },
+    {
+        "name": "Bright White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_BrightWhite1746435846.jpg"
+    },
+    {
+        "name": "&#x27;41",
+        "hex": "#746123",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_411746433421.jpg"
+    },
+    {
+        "name": "Firecracker Red",
+        "hex": "#cd1818",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_FirecrackerRed1746433460.jpg"
+    }
+],
+  "jeep-wrangler-2026": [
+    {
+        "name": "Anvil Clear Coat",
+        "hex": "#6b7577",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_AnvilClearCoat1746435885.jpg"
+    },
+    {
+        "name": "Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_Black1746435866.jpg"
+    },
+    {
+        "name": "Bright White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_BrightWhite1746435846.jpg"
+    },
+    {
+        "name": "&#x27;41",
+        "hex": "#746123",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_411746433421.jpg"
+    },
+    {
+        "name": "Firecracker Red",
+        "hex": "#cd1818",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_FirecrackerRed1746433460.jpg"
+    }
+],
+  "citroen-basalt": [
+    {
+        "name": "Polar White with Perla Nera Black",
+        "hex": "#b4b4b4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhitewithPerlaNeraBlack1723186374.jpg"
+    },
+    {
+        "name": "Garnet Red with Perla Nera Black",
+        "hex": "#5e0909",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_GarnetRedwithPerlaNeraBlack1723186483.jpg"
+    },
+    {
+        "name": "Cosmo Blue",
+        "hex": "#253b5e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_CosmoBlue1757135936.jpg"
+    },
+    {
+        "name": "Garnet Red",
+        "hex": "#910f27",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_GarnetRed1757135977.jpg"
+    },
+    {
+        "name": "Perla Nera Black",
+        "hex": "#100824",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PerlaNeraBlack1757136024.jpg"
+    },
+    {
+        "name": "Polar White",
+        "hex": "#f7faf8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhite1757136081.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#b1b3b1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_SteelGrey1757136122.jpg"
+    }
+],
+  "citroen-basalt-2026": [
+    {
+        "name": "Polar White with Perla Nera Black",
+        "hex": "#b4b4b4",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhitewithPerlaNeraBlack1723186374.jpg"
+    },
+    {
+        "name": "Garnet Red with Perla Nera Black",
+        "hex": "#5e0909",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_GarnetRedwithPerlaNeraBlack1723186483.jpg"
+    },
+    {
+        "name": "Cosmo Blue",
+        "hex": "#253b5e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_CosmoBlue1757135936.jpg"
+    },
+    {
+        "name": "Garnet Red",
+        "hex": "#910f27",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_GarnetRed1757135977.jpg"
+    },
+    {
+        "name": "Perla Nera Black",
+        "hex": "#100824",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PerlaNeraBlack1757136024.jpg"
+    },
+    {
+        "name": "Polar White",
+        "hex": "#f7faf8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhite1757136081.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#b1b3b1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_SteelGrey1757136122.jpg"
+    }
+],
+  "citroen-c3-aircross": [
+    {
+        "name": "Cosmo Blue With Polar White",
+        "hex": "#141c35",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_CosmoBlueWithPolarWhite1695628513.jpg"
+    },
+    {
+        "name": "Cosmo Blue",
+        "hex": "#141c35",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_CosmoBlue1695629786.jpg"
+    },
+    {
+        "name": "Platinum Gray With Polar White",
+        "hex": "#323232",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_PlatinumGrayWithPolerWhite1695629979.jpg"
+    },
+    {
+        "name": "Platinum Grey",
+        "hex": "#3c424b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_PlatinumGrey1695630114.jpg"
+    },
+    {
+        "name": "Polar White With Platinum Grey",
+        "hex": "#a1a6a8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_PolarWhiteWithPlatinumGrey1695630244.jpg"
+    },
+    {
+        "name": "Polar White",
+        "hex": "#a7a99d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_PolarWhite1695630280.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#616567",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_SteelGrey1695630462.jpg"
+    },
+    {
+        "name": "GARNET RED (PERLA NERA BLACK)",
+        "hex": "#982B2E",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aircross_X_GARNETRED(PERLANERABLACK)1766898637.jpg"
+    }
+],
+  "citroen-c3-aircross-2026": [
+    {
+        "name": "Cosmo Blue With Polar White",
+        "hex": "#141c35",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_CosmoBlueWithPolarWhite1695628513.jpg"
+    },
+    {
+        "name": "Cosmo Blue",
+        "hex": "#141c35",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_CosmoBlue1695629786.jpg"
+    },
+    {
+        "name": "Platinum Gray With Polar White",
+        "hex": "#323232",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_PlatinumGrayWithPolerWhite1695629979.jpg"
+    },
+    {
+        "name": "Platinum Grey",
+        "hex": "#3c424b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_PlatinumGrey1695630114.jpg"
+    },
+    {
+        "name": "Polar White With Platinum Grey",
+        "hex": "#a1a6a8",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_PolarWhiteWithPlatinumGrey1695630244.jpg"
+    },
+    {
+        "name": "Polar White",
+        "hex": "#a7a99d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_PolarWhite1695630280.jpg"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#616567",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_Aircross_SteelGrey1695630462.jpg"
+    },
+    {
+        "name": "GARNET RED (PERLA NERA BLACK)",
+        "hex": "#982B2E",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Aircross_X_GARNETRED(PERLANERABLACK)1766898637.jpg"
+    }
+],
+  "citroen-ec3": [
+    {
+        "name": "Polar White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Zesty Orange",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Platinum Grey",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    }
+],
+  "citroen-ec3-2026": [
+    {
+        "name": "Polar White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Zesty Orange",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Platinum Grey",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    },
+    {
+        "name": "Steel Grey",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1766738694.png"
+    }
+],
+  "force-gurkha": [
+    {
+        "name": "Black",
+        "hex": "#000000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gurkha_5_Door_Black1714654966.jpg"
+    },
+    {
+        "name": "Green",
+        "hex": "#00FF00",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gurkha_5_Door_Green1714655074.jpg"
+    },
+    {
+        "name": "Red",
+        "hex": "#FF0000",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gurkha_5_Door_Red1714655147.jpg"
+    },
+    {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Gurkha_5_Door_White1714655179.jpg"
+    }
+],
+  "force-gurkha-2026": [
+    {
+        "name": "Green",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/force/gurkha/force-gurkha-0-1767874586.png"
+    },
+    {
+        "name": "Red",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/force/gurkha/force-gurkha-0-1767874586.png"
+    },
+    {
+        "name": "White",
+        "hex": "#F8FAFC",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/force/gurkha/force-gurkha-0-1767874586.png"
+    },
+    {
+        "name": "Black",
+        "hex": "#0F172A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/force/gurkha/force-gurkha-0-1767874586.png"
+    },
+    {
+        "name": "Grey",
+        "hex": "#1E3A8A",
+        "image": "https://images.91wheels.com/assets/c_images/gallery/force/gurkha/force-gurkha-0-1767874586.png"
+    }
+],
+  "tata-sierra": [
+    {
+        "name": "Munnar Mist",
+        "hex": "#3d3b2c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_MunnarMist1764074028.jpg"
+    },
+    {
+        "name": "Andaman Adventure",
+        "hex": "#cead36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_AndamanAdventure1764073989.jpg"
+    },
+    {
+        "name": "Bengal Rouge",
+        "hex": "#560402",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_BengalRouge1764073953.jpg"
+    },
+    {
+        "name": "Coorg Clouds",
+        "hex": "#5d5d5d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_CoorgClouds1764073909.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#6e6f74",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_PureGrey1764073878.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#e1e1e1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_PristineWhite1764073839.jpg"
+    }
+],
+  "tata-sierra-2026": [
+    {
+        "name": "Munnar Mist",
+        "hex": "#3d3b2c",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_MunnarMist1764074028.jpg"
+    },
+    {
+        "name": "Andaman Adventure",
+        "hex": "#cead36",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_AndamanAdventure1764073989.jpg"
+    },
+    {
+        "name": "Bengal Rouge",
+        "hex": "#560402",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_BengalRouge1764073953.jpg"
+    },
+    {
+        "name": "Coorg Clouds",
+        "hex": "#5d5d5d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_CoorgClouds1764073909.jpg"
+    },
+    {
+        "name": "Pure Grey",
+        "hex": "#6e6f74",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_PureGrey1764073878.jpg"
+    },
+    {
+        "name": "Pristine White",
+        "hex": "#e1e1e1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sierra_PristineWhite1764073839.jpg"
+    }
+],
+
   "c1": [
     {
       "name": "Luster Blue with Midnight Black Roof",
       "hex": "#00008B",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_LusterBluewithMidnightBlackRoof1715243583.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_LusterBluewithMidnightBlackRoof1715243583.jpg"
     },
     {
       "name": "Pearl Artic White with Midnight Black Roof",
       "hex": "#FFFFFF",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PearlArticWhitewithMidnightBlackRoof1715243669.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PearlArticWhitewithMidnightBlackRoof1715243669.jpg"
     },
     {
       "name": "Magma Grey",
       "hex": "#808080",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicMagmaGrey1715243891.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicMagmaGrey1715243891.jpg"
     },
     {
       "name": "Sizzling Red",
       "hex": "#FF0000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicSizzlingRed1715243977.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicSizzlingRed1715243977.jpg"
     },
     {
       "name": "Pearl Artic White",
       "hex": "#FFFFFF",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PearlArticWhitewithMidnightBlackRoof1715243669.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PearlArticWhitewithMidnightBlackRoof1715243669.jpg"
     },
     {
       "name": "Sizzling Red with Bluish Black Roof",
       "hex": "#FF0000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicSizzlingRed1715243977.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_MetallicSizzlingRed1715243977.jpg"
     },
     {
       "name": "Luster Blue",
       "hex": "#00008B",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_LusterBluewithMidnightBlackRoof1715243583.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_LusterBluewithMidnightBlackRoof1715243583.jpg"
     },
     {
       "name": "Novel Orange",
       "hex": "#c01b04",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeNovelOrange1715244335.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeNovelOrange1715244335.jpg"
     },
     {
       "name": "Splendid Silver",
       "hex": "#C0C0C0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeSplendidSilver1715244429.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_PrimeSplendidSilver1715244429.jpg"
     },
     {
       "name": "Bluish Black",
       "hex": "#1c1e24",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_SizzlingRedwithMidnightBlackRoof1715244157.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Swift_SizzlingRedwithMidnightBlackRoof1715244157.jpg"
     }
   ],
   "c2": [
     {
       "name": "Titanium Black",
       "hex": "#636768",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg"
     },
     {
       "name": "Atlas White with Titanium Black",
       "hex": "#eef2f4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg"
     },
     {
       "name": "Atlas White",
       "hex": "#eef2f4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_AtlasWhitewithTitaniumBlack1776058792.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_AtlasWhitewithTitaniumBlack1776058792.jpg"
     },
     {
       "name": "Titanium Black Matte",
       "hex": "#101010",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg"
     },
     {
       "name": "Titan Grey",
       "hex": "#2c2d31",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitanGrey1776058761.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitanGrey1776058761.jpg"
     },
     {
       "name": "Robust Emerald Pearl",
       "hex": "#46584c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_RobustEmeraldPearl1776058747.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_RobustEmeraldPearl1776058747.jpg"
     },
     {
       "name": "Starry Night",
       "hex": "#212a40",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_StarryNight1776058718.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_StarryNight1776058718.jpg"
     },
     {
       "name": "Titan Grey Matte",
       "hex": "#3d3f42",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitanGrey1776058761.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitanGrey1776058761.jpg"
     },
     {
       "name": "King Limited Edition - Titanium Black Matte",
       "hex": "#101010",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Creta_TitaniumBlack1776058805.jpg"
     }
   ],
-  "c3": [
+"c3": [
     {
       "name": "Daytona Grey with Black Roof",
       "hex": "#313131",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_DaytonaGreywithBlackRoof1769142404.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_DaytonaGreywithBlackRoof1769142404.jpg"
     },
     {
       "name": "Pure Grey with Black Roof",
       "hex": "#999999",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PureGreywithBlackRoof1769142298.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PureGreywithBlackRoof1769142298.jpg"
     },
     {
       "name": "Oxide with DT",
       "hex": "#c5c6be",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_OxidewithDT1769142216.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_OxidewithDT1769142216.jpg"
     },
     {
       "name": "Ocean Blue with Black Roof",
       "hex": "#78a3ad",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_OceanBluewithBlackRoof1769142175.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_OceanBluewithBlackRoof1769142175.jpg"
     },
     {
       "name": "Pristine White DT",
       "hex": "#d6d6d6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PristineWhiteDT1769142119.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PristineWhiteDT1769142119.jpg"
     },
     {
       "name": "Pristine White",
       "hex": "#d5d5d5",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PristineWhiteDT1769142119.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_PristineWhiteDT1769142119.jpg"
     },
     {
       "name": "Carbon Black",
       "hex": "#020202",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_CarbonBlack1770352184.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_EV_CarbonBlack1770352184.jpg"
     }
   ],
-  "c4": [
+"c4": [
     {
       "name": "DEEP FOREST",
       "hex": "#2e3725",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_DEEPFOREST1763957770.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_DEEPFOREST1763957770.jpg"
     },
     {
       "name": "EVEREST WHITE",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_EVERESTWHITE1763957823.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_EVERESTWHITE1763957823.jpg"
     },
     {
       "name": "STEALTH BLACK",
       "hex": "#0c0c0c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_STEALTHBLACK1763957858.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_STEALTHBLACK1763957858.jpg"
     },
     {
       "name": "VALYRIAN SILVER",
       "hex": "#a3a4aa",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_VALYRIANSILVER1763957930.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_VALYRIANSILVER1763957930.jpg"
     },
     {
       "name": "MIDNIGHT BLACK",
       "hex": "#04070d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_MIDNIGHTBLACK1763958079.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_N_MIDNIGHTBLACK1763958079.jpg"
     }
   ],
-  "c5": [
+"c5": [
     {
       "name": "Attitude Black",
       "hex": "#000000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_AttitudeBlack1677846030.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_AttitudeBlack1677846030.jpg"
     },
     {
       "name": "Avant-Garde Bronze",
       "hex": "#c0b3a8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_Avant-GardeBronze1677846030.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_Avant-GardeBronze1677846030.jpg"
     },
     {
       "name": "Silver Metallic",
       "hex": "#868890",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_GreyMetallic1677846030.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_GreyMetallic1677846030.jpg"
     },
     {
       "name": "Phantom Brown",
       "hex": "#191512",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_PhantomBrown1677846030.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_PhantomBrown1677846030.jpg"
     },
     {
       "name": "Sparkling Black Cystal Shine",
       "hex": "#202022",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_SparklingBlackCystalShine1677846030.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_SparklingBlackCystalShine1677846030.jpg"
     },
     {
       "name": "Super White",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_SuperWhite1677846030.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_SuperWhite1677846030.jpg"
     },
     {
       "name": "Platinum White Pearl",
       "hex": "#e0e0da",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_WhitePearlCrystalShine1677846030.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fortuner_WhitePearlCrystalShine1677846030.jpg"
     }
   ],
-  "c6": [
+"c6": [
     {
       "name": "Radiant Red Metallic",
       "hex": "#ad0b10",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_RadiantRedMetallic1779451977.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_RadiantRedMetallic1779451977.jpg"
     },
     {
       "name": "Platinum White Pearl",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_PlatinumWhitePearl1779452049.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_PlatinumWhitePearl1779452049.jpg"
     },
     {
       "name": "Obsidian Blue Pearl",
       "hex": "#10152c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_ObsidianBluePearl1779452108.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_ObsidianBluePearl1779452108.jpg"
     },
     {
       "name": "Meteoroid Gray Metallic",
       "hex": "#434b52",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_MeteoroidGrayMetallic1779452199.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_MeteoroidGrayMetallic1779452199.jpg"
     },
     {
       "name": "Lunar Silver Metallic",
       "hex": "#696b6b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_LunarSilverMetallic1779452260.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_LunarSilverMetallic1779452260.jpg"
     },
     {
       "name": "Crystal Black Pearl",
       "hex": "#000000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_CrystalBlackPearl1779452327.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/City_Facelift_CrystalBlackPearl1779452327.jpg"
     }
   ],
-  "c-brezza": [
+"c-brezza": [
     {
       "name": "Pearl Arctic White",
       "hex": "#f7f9f9",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_PearlArcticWhite1657974811.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_PearlArcticWhite1657974811.JPG"
     },
     {
       "name": "Exuberant Blue",
       "hex": "#21479a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_EsxuberantBlue1657974811.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_EsxuberantBlue1657974811.JPG"
     },
     {
       "name": "Brave Khaki",
       "hex": "#5d4d2d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_BraveKhaki1657974811.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_BraveKhaki1657974811.JPG"
     },
     {
       "name": "Brave Khaki With Pearl Arctic roof",
       "hex": "#5d4d2d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_BraveKhaki1657974811.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_BraveKhaki1657974811.JPG"
     },
     {
       "name": "Magma Grey",
       "hex": "#656563",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_MagmaGrey1657974811.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_MagmaGrey1657974811.JPG"
     },
     {
       "name": "Sizzling Red With Midnight Black Roof",
       "hex": "#e62924",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SizzlingRedWithMidnightBlackRoof1657974811.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SizzlingRedWithMidnightBlackRoof1657974811.JPG"
     },
     {
       "name": "Sizzling Red",
       "hex": "#e62924",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SizzlingRedWithMidnightBlackRoof1657974811.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SizzlingRedWithMidnightBlackRoof1657974811.JPG"
     },
     {
       "name": "Splendid Silver",
       "hex": "#998c8c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SplendidSilver1657974811.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SplendidSilver1657974811.JPG"
     },
     {
       "name": "Splendid Silver with Midnight Black Roof",
       "hex": "#998c8c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SplendidSilver1657974811.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_2022_SplendidSilver1657974811.JPG"
     },
     {
       "name": "Bluish Black",
       "hex": "#141414",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_BluishBlack1754737934.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Brezza_BluishBlack1754737934.jpg"
     }
   ],
-  "c-bolero": [
+"c-bolero": [
     {
       "name": "DIAMOND WHITE",
       "hex": "#f7f2eb",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_DIAMONDWHITE1763886605.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_DIAMONDWHITE1763886605.jpg"
     },
     {
       "name": "ROCKEY BEIGE",
       "hex": "#2c3a12",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_ROCKEYBEIGE1763886450.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_ROCKEYBEIGE1763886450.jpg"
     },
     {
       "name": "STEALTH BLACK",
       "hex": "#323132",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_STEALTHBLACK1763886451.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_STEALTHBLACK1763886451.jpg"
     },
     {
       "name": "DSAT SILVER",
       "hex": "#8c8889",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_DSATSILVER1763886452.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_DSATSILVER1763886452.jpg"
     }
   ],
-  "c-kylaq": [
+"c-kylaq": [
     {
       "name": "Cherry Red",
       "hex": "#a11b20",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CherryRed1775205215.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CherryRed1775205215.jpg"
     },
     {
       "name": "Lava Blue",
       "hex": "#4d596f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_LavaBlue1775205167.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_LavaBlue1775205167.jpg"
     },
     {
       "name": "Carbon Steel",
       "hex": "#2c2930",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CarbonSteel1775205144.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CarbonSteel1775205144.jpg"
     },
     {
       "name": "Brilliant Silver",
       "hex": "#757b91",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_BrilliantSilver1775205123.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_BrilliantSilver1775205123.jpg"
     },
     {
       "name": "Candy White",
       "hex": "#e0f2ff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CandyWhite1775205113.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_CandyWhite1775205113.jpg"
     },
     {
       "name": "Deep Black",
       "hex": "#101010",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_DeepBlack1775205096.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kylaq_DeepBlack1775205096.jpg"
     }
   ],
-  "c-basalt": [
+"c-basalt": [
     {
       "name": "Polar White with Perla Nera Black",
       "hex": "#b4b4b4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhitewithPerlaNeraBlack1723186374.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhitewithPerlaNeraBlack1723186374.jpg"
     },
     {
       "name": "Garnet Red with Perla Nera Black",
       "hex": "#5e0909",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_GarnetRedwithPerlaNeraBlack1723186483.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_GarnetRedwithPerlaNeraBlack1723186483.jpg"
     },
     {
       "name": "Cosmo Blue",
       "hex": "#253b5e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_CosmoBlue1757135936.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_CosmoBlue1757135936.jpg"
     },
     {
       "name": "Garnet Red",
       "hex": "#910f27",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_GarnetRedwithPerlaNeraBlack1723186483.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_GarnetRedwithPerlaNeraBlack1723186483.jpg"
     },
     {
       "name": "Perla Nera Black",
       "hex": "#100824",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhitewithPerlaNeraBlack1723186374.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhitewithPerlaNeraBlack1723186374.jpg"
     },
     {
       "name": "Polar White",
       "hex": "#f7faf8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhitewithPerlaNeraBlack1723186374.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_PolarWhitewithPerlaNeraBlack1723186374.jpg"
     },
     {
       "name": "Steel Grey",
       "hex": "#b1b3b1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_SteelGrey1757136122.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Basalt_SteelGrey1757136122.jpg"
     }
   ],
-  "c-thar": [
+"c-thar": [
     {
       "name": "STEALTH BLACK",
       "hex": "#111010",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_STEALTHBLACK1763901054.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_STEALTHBLACK1763901054.jpg"
     },
     {
       "name": "EVEREST WHITE",
       "hex": "#d8e0e6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_EVERESTWHITE1763900945.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_EVERESTWHITE1763900945.jpg"
     },
     {
       "name": "GALAXY GREY",
       "hex": "#646974",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_GALAXYGREY1763900876.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_GALAXYGREY1763900876.jpg"
     },
     {
       "name": "TANGO RED",
       "hex": "#cf3a4d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_TANGORED1763900795.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_TANGORED1763900795.jpg"
     },
     {
       "name": "Deep Forest",
       "hex": "#52594c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_DeepForest1763900725.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_DeepForest1763900725.jpg"
     },
     {
       "name": "BATTLESHIP GREY",
       "hex": "#424f60",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_BATTLESHIPGREY1763901230.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_BATTLESHIPGREY1763901230.jpg"
     }
   ],
-  "c-xuv700": [
+"c-xuv700": [
     {
       "name": "Galaxy Grey Stealth Black",
       "hex": "#272626",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_GALAXYGREYSTEALTHBLACK1767697529.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_GALAXYGREYSTEALTHBLACK1767697529.jpg"
     },
     {
       "name": "Desert Myst Stealth Black",
       "hex": "#cfc9c4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_DESERTMYSTSTEALTHBLACK1767697488.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_DESERTMYSTSTEALTHBLACK1767697488.jpg"
     },
     {
       "name": "Midnight Black Stealth Black",
       "hex": "#191f2b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_MIDNIGHTBLACKSTEALTHBLACK1767697472.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_MIDNIGHTBLACKSTEALTHBLACK1767697472.jpg"
     },
     {
       "name": "Everest White Stealth Black",
       "hex": "#eeeff0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_EVERESTWHITESTEALTHBLACK1767697455.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_EVERESTWHITESTEALTHBLACK1767697455.jpg"
     },
     {
       "name": "Everest White",
       "hex": "#d4d6d8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_EVERESTWHITESTEALTHBLACK1767697455.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_EVERESTWHITESTEALTHBLACK1767697455.jpg"
     },
     {
       "name": "Nebula Blue",
       "hex": "#000c1f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_NebulaBlue1767697427.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_NebulaBlue1767697427.jpg"
     },
     {
       "name": "Midnight Black",
       "hex": "#00020a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_MIDNIGHTBLACKSTEALTHBLACK1767697472.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_MIDNIGHTBLACKSTEALTHBLACK1767697472.jpg"
     },
     {
       "name": "Desert Myst",
       "hex": "#a5a09c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_DESERTMYSTSTEALTHBLACK1767697488.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_DESERTMYSTSTEALTHBLACK1767697488.jpg"
     },
     {
       "name": "Galaxy Grey",
       "hex": "#5b5e64",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_GALAXYGREYSTEALTHBLACK1767697529.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_GALAXYGREYSTEALTHBLACK1767697529.jpg"
     },
     {
       "name": "Ruby Velvet",
       "hex": "#010001",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_RubyVelvet1767697309.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_RubyVelvet1767697309.jpg"
     },
     {
       "name": "Stealth Black",
       "hex": "#262726",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_GALAXYGREYSTEALTHBLACK1767697529.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_7X0_GALAXYGREYSTEALTHBLACK1767697529.jpg"
     }
   ],
-  "c-punch": [
+"c-punch": [
     {
       "name": "Bengal Rouge DT",
       "hex": "#cb161d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_BengalRouge1768293235.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_BengalRouge1768293235.jpg"
     },
     {
       "name": "Caramel DT",
       "hex": "#ae6913",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Caramel1768293341.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Caramel1768293341.jpg"
     },
     {
       "name": "Coorg Clouds DT",
       "hex": "#eeecf1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_CoorgClouds1768293407.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_CoorgClouds1768293407.jpg"
     },
     {
       "name": "Cyantafic DT",
       "hex": "#0192cc",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Cyantafic1768293494.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Cyantafic1768293494.jpg"
     },
     {
       "name": "Daytona Grey DT",
       "hex": "#5f5e60",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_DaytonaGrey1768293560.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_DaytonaGrey1768293560.jpg"
     },
     {
       "name": "Pristine White DT",
       "hex": "#fcfcff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_PristineWhite1768293614.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_PristineWhite1768293614.jpg"
     },
     {
       "name": "Pristine White",
       "hex": "#fcfcff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_PristineWhite1768293614.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_PristineWhite1768293614.jpg"
     },
     {
       "name": "Daytona Grey",
       "hex": "#5f5e60",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_DaytonaGrey1768293560.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_DaytonaGrey1768293560.jpg"
     },
     {
       "name": "Cyantafic",
       "hex": "#0192cc",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Cyantafic1768293494.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Cyantafic1768293494.jpg"
     },
     {
       "name": "Coorg Clouds",
       "hex": "#eeecf1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_CoorgClouds1768293407.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_CoorgClouds1768293407.jpg"
     },
     {
       "name": "Caramel",
       "hex": "#ae6913",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Caramel1768293341.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_Caramel1768293341.jpg"
     },
     {
       "name": "Bengal Rogue",
       "hex": "#cb161d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_BengalRogue1770296143.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_BengalRogue1770296143.jpg"
     }
   ],
-  "c-seltos": [
+"c-seltos": [
     {
       "name": "Frost Blue",
       "hex": "#4a6577",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_FrostBlue1776236343.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_FrostBlue1776236343.jpg"
     },
     {
       "name": "Aurora Black Pearl",
       "hex": "#131619",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_AuroraBlackPearl1776236384.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_AuroraBlackPearl1776236384.jpg"
     },
     {
       "name": "Glacier White Pearl",
       "hex": "#f4f9fb",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_GlacierWhitePearl1776236293.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_GlacierWhitePearl1776236293.jpg"
     },
     {
       "name": "Gravity Grey",
       "hex": "#444444",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_GravityGrey1776236247.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_GravityGrey1776236247.jpg"
     },
     {
       "name": "Imperial Blue",
       "hex": "#2b2c71",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_ImperialBlue1776236201.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_ImperialBlue1776236201.jpg"
     },
     {
       "name": "Ivory Silver Gloss",
       "hex": "#9fa09b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_IvorySilverGloss1776236063.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_IvorySilverGloss1776236063.jpg"
     },
     {
       "name": "Magma Red",
       "hex": "#77141b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_MagmaRed1776235988.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_MagmaRed1776235988.jpg"
     },
     {
       "name": "Morning Haze",
       "hex": "#a7b4b1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_MorningHaze1776235923.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_MorningHaze1776235923.jpg"
     },
     {
       "name": "Pewter Olive",
       "hex": "#3f493b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_PewterOlive1776235810.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_PewterOlive1776235810.jpg"
     }
   ],
   "c-hycross": [
     {
       "name": "Attitude Black Mica",
       "hex": "#0b0a0a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_AttitudeBlackMica1672223195.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_AttitudeBlackMica1672223195.jpg"
     },
     {
       "name": "Avant Garde Bronze Metalic",
       "hex": "#807c77",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_AvantGardeBronze1672223196.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_AvantGardeBronze1672223196.jpg"
     },
     {
       "name": "Blackish Ageha Glass Flake",
       "hex": "#30404e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_BlackishAgehaGlassFlake1672223196.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_BlackishAgehaGlassFlake1672223196.jpg"
     },
     {
       "name": "Platinum White Pearl",
       "hex": "#e7e7e7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_PLATINUMWHITEPEARL1672223196.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_PLATINUMWHITEPEARL1672223196.jpg"
     },
     {
       "name": "Silver Metallic",
       "hex": "#d6d6d6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_SilverMetallic1672223196.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_SilverMetallic1672223196.jpg"
     },
     {
       "name": "Super White",
       "hex": "#e7e6eb",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_SuperWhite1672223196.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Hycross_SuperWhite1672223196.jpg"
     }
   ],
-  "c-baleno": [
+"c-baleno": [
     {
       "name": "Nexa Blue",
       "hex": "#4169e1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_NexaBlue1687249238.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_NexaBlue1687249238.jpg"
     },
     {
       "name": "Splendid Silver",
       "hex": "#c1c1c1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_SplendidSilver1687249228.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_SplendidSilver1687249228.jpg"
     },
     {
       "name": "Luxe Beige",
       "hex": "#705145",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_LuxeBeige1687249216.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_LuxeBeige1687249216.jpg"
     },
     {
       "name": "Grandeur Grey",
       "hex": "#484546",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_GrandeurGrey1687249205.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_GrandeurGrey1687249205.jpg"
     },
     {
       "name": "Opulent Red",
       "hex": "#8e1c26",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_OpulentRed1687249191.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_OpulentRed1687249191.jpg"
     },
     {
       "name": "Arctic White",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_ArcticWhite1687249178.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_ArcticWhite1687249178.jpg"
     },
     {
       "name": "Bluish Black",
       "hex": "#231f20",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_PearlMidnightBlack1688728954.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Baleno_PearlMidnightBlack1688728954.jpg"
     }
   ],
-  "c-ertiga": [
+"c-ertiga": [
     {
       "name": "Splendid Silver",
       "hex": "#a9acb1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_SplendidSilver1755515314.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_SplendidSilver1755515314.jpg"
     },
     {
       "name": "Magma Grey",
       "hex": "#5b5e65",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_MagmaGrey1755515285.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_MagmaGrey1755515285.jpg"
     },
     {
       "name": "Bluish Black",
       "hex": "#282d43",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_BluishBlack1755515250.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_BluishBlack1755515250.jpg"
     },
     {
       "name": "Auburn Red",
       "hex": "#852e36",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_AuburnRed1755515209.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_AuburnRed1755515209.jpg"
     },
     {
       "name": "Pearl Metallic Dignity Brown",
       "hex": "#513d39",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_PearlMetallicDignityBrown1755515164.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_PearlMetallicDignityBrown1755515164.jpg"
     },
     {
       "name": "Prime Oxford Blue",
       "hex": "#333b6c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_PrimeOxfordBlue1755515120.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_PrimeOxfordBlue1755515120.jpg"
     },
     {
       "name": "Arctic White",
       "hex": "#c0c3c8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_ArcticWhite1755515087.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ertiga_ArcticWhite1755515087.jpg"
     }
   ],
-  "c-safari": [
+"c-safari": [
     {
       "name": "Supernova Copper DT",
       "hex": "#5b2118",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_SupernovaCopperDT1770286985.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_SupernovaCopperDT1770286985.jpg"
     },
     {
       "name": "Cosmic Gold DT",
       "hex": "#8c7455",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_CosmicGoldDT1770286948.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_CosmicGoldDT1770286948.jpg"
     },
     {
       "name": "Pristine White DT",
       "hex": "#dbdbdb",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_PristineWhiteDT1770286901.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_PristineWhiteDT1770286901.jpg"
     },
     {
       "name": "Daytona Grey DT",
       "hex": "#3d3d3f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_DaytonaGreyDT1770286864.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_DaytonaGreyDT1770286864.jpg"
     },
     {
       "name": "Frost White DT",
       "hex": "#dbdcdf",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_FrostWhiteDT1770287728.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_FrostWhiteDT1770287728.jpg"
     },
     {
       "name": "Carbon Black",
       "hex": "#101010",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_CarbonBlack1770286568.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_CarbonBlack1770286568.jpg"
     },
     {
       "name": "Pure Grey DT",
       "hex": "#585858",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_PureGreyDT1770286539.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_PureGreyDT1770286539.jpg"
     },
     {
       "name": "Royal Blue DT",
       "hex": "#09193c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_RoyalBlueDT1770286490.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_RoyalBlueDT1770286490.jpg"
     },
     {
       "name": "Matte Stealth Black",
       "hex": "#212528",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_MatteBlackEdition1742198702.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_MatteBlackEdition1742198702.jpg"
     },
     {
       "name": "Oberon Black",
       "hex": "#0e0e0e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_OberonBlack1767432360.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Safari_OberonBlack1767432360.jpg"
     }
   ],
-  "c-i20": [
+"c-i20": [
     {
       "name": "Titan Grey",
       "hex": "#2c2d31",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_TitanGrey1694159659.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_TitanGrey1694159659.jpg"
     },
     {
       "name": "Starry Night",
       "hex": "#242736",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_StarryNight1694159633.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_StarryNight1694159633.jpg"
     },
     {
       "name": "Abyss Black - Knight",
       "hex": "#2b2b2b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AbyssBlack-Knight1764050959.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AbyssBlack-Knight1764050959.jpg"
     },
     {
       "name": "Atlas White with Abyss Black",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AtlasWhitewithAbyssBlack1694159581.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AtlasWhitewithAbyssBlack1694159581.jpg"
     },
     {
       "name": "Atlas White",
       "hex": "#eef3f4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AtlasWhitewithAbyssBlack1694159581.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AtlasWhitewithAbyssBlack1694159581.jpg"
     },
     {
       "name": "Fiery Red with Abyss Black",
       "hex": "#941b0a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_FieryRedwithAbyssBlack1694159374.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_FieryRedwithAbyssBlack1694159374.jpg"
     },
     {
       "name": "Fiery Red",
       "hex": "#941b0a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_FieryRedwithAbyssBlack1694159374.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_FieryRedwithAbyssBlack1694159374.jpg"
     },
     {
       "name": "Amazon Grey",
       "hex": "#555953",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AmazonGrey1694159322.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/i20_AmazonGrey1694159322.jpg"
     }
   ],
-  "c-hector": [
+"c-hector": [
     {
       "name": "Aurora Silver",
       "hex": "#b6b6c1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_AuroraSilver1765788997.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_AuroraSilver1765788997.jpg"
     },
     {
       "name": "Celadon Blue",
       "hex": "#1c293e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_CeladonBlue1765789061.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_CeladonBlue1765789061.jpg"
     },
     {
       "name": "Glaze Red",
       "hex": "#f14256",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_GlazeRed1765789149.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_GlazeRed1765789149.jpg"
     },
     {
       "name": "Pearl White",
       "hex": "#e7e7e7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_PearlWhite1765789206.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_PearlWhite1765789206.jpg"
     },
     {
       "name": "Starry Black",
       "hex": "#181818",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_StarryBlack1765789258.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Facelift_StarryBlack1765789258.jpg"
     }
   ],
-  "c-slavia": [
+"c-slavia": [
     {
       "name": "Brilliant Silver",
       "hex": "#b8bdb4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_BrilliantSilver1779453928.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_BrilliantSilver1779453928.jpg"
     },
     {
       "name": "Carbon Steel",
       "hex": "#af1d22",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CarbonSteel1779454113.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CarbonSteel1779454113.jpg"
     },
     {
       "name": "Candy White",
       "hex": "#eae8e3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CandyWhite1779453844.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CandyWhite1779453844.jpg"
     },
     {
       "name": "Lava Blue",
       "hex": "#124d6a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_LavaBlue1779454186.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_LavaBlue1779454186.jpg"
     },
     {
       "name": "Deep Black",
       "hex": "#131313",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_DeepBlack1779454236.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_DeepBlack1779454236.jpg"
     },
     {
       "name": "Candy White Dual Tone",
       "hex": "#d4d4d4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CandyWhite1779453844.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CandyWhite1779453844.jpg"
     },
     {
       "name": "Lava Blue Dual Tone",
       "hex": "#143a4f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_LavaBlue1779454186.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_LavaBlue1779454186.jpg"
     },
     {
       "name": "Brilliant Silver Dual Tone",
       "hex": "#cbd7e3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_BrilliantSilver1779453928.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_BrilliantSilver1779453928.jpg"
     },
     {
       "name": "Carbon Steel Matte",
       "hex": "#474c52",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CarbonSteel1779454113.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CarbonSteel1779454113.jpg"
     },
     {
       "name": "Cherry Red",
       "hex": "#af1d22",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CherryRed1779454031.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_CherryRed1779454031.jpg"
     },
     {
       "name": "Steel Grey",
       "hex": "#6f7477",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_SteelGrey1784703669.jpeg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_SteelGrey1784703669.jpeg"
     },
     {
       "name": "Shimla Green",
       "hex": "#6c7261",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_ShimlaGreen1784703772.jpeg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Slavia_ShimlaGreen1784703772.jpeg"
     }
   ],
-  "c-virtus": [
+"c-virtus": [
     {
       "name": "Rising Blue Metallic",
       "hex": "#3972a9",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_RisingBlueMetallic1709618764.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_RisingBlueMetallic1709618764.jpg"
     },
     {
       "name": "Carbon Steel Grey",
       "hex": "#465054",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CarbonSteelGrey1709618737.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CarbonSteelGrey1709618737.jpg"
     },
     {
       "name": "Reflex Silver",
       "hex": "#a5a9ac",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_ReflexSilver1709618725.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_ReflexSilver1709618725.jpg"
     },
     {
       "name": "Candy White",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CandyWhite1709618713.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CandyWhite1709618713.jpg"
     },
     {
       "name": "Wild Cherry Red",
       "hex": "#852125",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_WildCherryRed1709618686.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_WildCherryRed1709618686.jpg"
     },
     {
       "name": "Carbon Steel Matte Grey",
       "hex": "#8a878b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CarbonSteelMatteGrey1709618845.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_CarbonSteelMatteGrey1709618845.jpg"
     },
     {
       "name": "Lava Blue",
       "hex": "#4892d9",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_LavaBlue1744694651.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_LavaBlue1744694651.jpg"
     },
     {
       "name": "Deep Black Pearl",
       "hex": "#3a3b36",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_DeepBlackPearl1768818016.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Virtus_DeepBlackPearl1768818016.jpg"
     }
   ],
-  "c-verna": [
+"c-verna": [
     {
       "name": "Titanium Black",
       "hex": "#131514",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitaniumBlack1773059753.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitaniumBlack1773059753.jpg"
     },
     {
       "name": "Atlas White with Black Roof",
       "hex": "#dce4e9",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_AtlasWhitewithBlackRoof1773059878.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_AtlasWhitewithBlackRoof1773059878.jpg"
     },
     {
       "name": "Starry Night",
       "hex": "#0f1a2b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_StarryNight1773059501.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_StarryNight1773059501.jpg"
     },
     {
       "name": "Titan Grey",
       "hex": "#5e5f62",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitanGrey1773059370.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitanGrey1773059370.jpg"
     },
     {
       "name": "Atlas White",
       "hex": "#e4eaee",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_AtlasWhitewithBlackRoof1773059878.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_AtlasWhitewithBlackRoof1773059878.jpg"
     },
     {
       "name": "Classy Blue",
       "hex": "#141e36",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_ClassyBlue1773059997.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_ClassyBlue1773059997.jpg"
     },
     {
       "name": "Titan Grey Matte",
       "hex": "#454948",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitanGrey1773059370.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Verna_TitanGrey1773059370.jpg"
     }
   ],
-  "c-elevate": [
-    {
-      "name": "Golden Brown Metallic",
-      "hex": "#6b534e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_GoldenBrownMetallic1735636537.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Lunar Silver Metallic",
-      "hex": "#b4b6b8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallic1735636695.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Meteoroid Gray Metallic",
-      "hex": "#46454c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_MeteoroidGrayMetallic1735636815.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Obsidian Blue Pearl",
-      "hex": "#294381",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_ObsidianBluePearl1735636863.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Platinum White Pearl with Crystal Black Pearl Roof",
-      "hex": "#edeef7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_PlatinumWhitePearlwithCrystalBlackPearlRoof1735637103.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Platinum White Pearl",
-      "hex": "#f1f1fa",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_PlatinumWhitePearlwithCrystalBlackPearlRoof1735637103.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Radiant Red Metallic with Crystal Black Pearl Roof",
-      "hex": "#d44551",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_RadiantRedMetallicwithCrystalBlackPearlRoof1735637222.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Radiant Red Metallic",
-      "hex": "#b0282f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_RadiantRedMetallicwithCrystalBlackPearlRoof1735637222.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Crystal Black Pearl",
-      "hex": "#161819",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_PlatinumWhitePearlwithCrystalBlackPearlRoof1735637103.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Lunar Silver Metallic - ADV",
-      "hex": "#abadae",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallic1735636695.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Meteoroid Grey Metallic - ADV",
-      "hex": "#3c3e40",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_MeteoroidGreyMetallic-ADV1762172558.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Lunar Silver Metallic with Crystal Black Pearl Roof - ADV",
-      "hex": "#8e9091",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallic1735636695.jpg?w=1040&amp;q=40"
-    },
-    {
-      "name": "Meteoroid Grey Metallic with Crystal Black Pearl Roof - ADV",
-      "hex": "#393a40",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_CrystalBlackPearl1739797588.jpg?w=1040&amp;q=40"
-    }
-  ],
-  "c-grandvitara": [
+"c-elevate": [
+  {
+    "name": "Phoenix Orange Pearl with Crystal Black Pearl Roof",
+    "hex": "#D45500",
+    "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_RadiantRedMetallicwithCrystalBlackPearlRoof1735637222.jpg"
+  },
+  {
+    "name": "Obsidian Blue Pearl",
+    "hex": "#1A2F5A",
+    "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_ObsidianBluePearl1735636863.jpg"
+  },
+  {
+    "name": "Radiant Red Metallic",
+    "hex": "#B0282F",
+    "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_RadiantRedMetallicwithCrystalBlackPearlRoof1735637222.jpg"
+  },
+  {
+    "name": "Platinum White Pearl",
+    "hex": "#F1F1FA",
+    "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_PlatinumWhitePearlwithCrystalBlackPearlRoof1735637103.jpg"
+  },
+  {
+    "name": "Golden Brown Metallic",
+    "hex": "#6B534E",
+    "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_GoldenBrownMetallic1735636537.jpg"
+  },
+  {
+    "name": "Lunar Silver Metallic",
+    "hex": "#B4B6B8",
+    "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_LunarSilverMetallic1735636695.jpg"
+  },
+  {
+    "name": "Meteoroid Gray Metallic",
+    "hex": "#46454C",
+    "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_MeteoroidGrayMetallic1735636815.jpg"
+  },
+  {
+    "name": "Crystal Black Pearl",
+    "hex": "#161819",
+    "image": "https://images.91wheels.com/assets/uploads/swatchs/Elevate_CrystalBlackPearl1739797588.jpg"
+  }
+],
+"c-grandvitara": [
     {
       "name": "Arctic White",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ArcticWhite1664195307.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ArcticWhite1664195307.jpg"
     },
     {
       "name": "Arctic White+ Black",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ArcticWhite1664195307.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ArcticWhite1664195307.jpg"
     },
     {
       "name": "Nexa Blue",
       "hex": "#012573",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_CelestialBlue1664195307.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_CelestialBlue1664195307.jpg"
     },
     {
       "name": "Chestnut Brown",
       "hex": "#5e391e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ChestnutBrown1664195307.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_ChestnutBrown1664195307.jpg"
     },
     {
       "name": "Grandeur Grey",
       "hex": "#58585c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_GrandeurGrey1664195307.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_GrandeurGrey1664195307.jpg"
     },
     {
       "name": "Oppulent Red",
       "hex": "#8e1c26",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_OppulentRed1664195307.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_OppulentRed1664195307.jpg"
     },
     {
       "name": "Oppulent Red + Black",
       "hex": "#8e1c26",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_OppulentRed1664195307.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_OppulentRed1664195307.jpg"
     },
     {
       "name": "Splendid Silver",
       "hex": "#808696",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_SplendidSilver1664195307.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_SplendidSilver1664195307.jpg"
     },
     {
       "name": "Splendid Silver+ Black",
       "hex": "#808696",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_SplendidSilver1664195307.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_SplendidSilver1664195307.jpg"
     },
     {
       "name": "Midnight Black",
       "hex": "#393b41",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_MidnightBlack1688726385.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_MidnightBlack1688726385.jpg"
     },
     {
       "name": "Phantom Blaq Edition",
       "hex": "#282828",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_PhantomBlaqEdition1754890086.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_Vitara_PhantomBlaqEdition1754890086.jpg"
     }
   ],
-  "c-tiago-ev": [
+"c-tiago-ev": [
     {
       "name": "Dehradun Dew with Dual Tone",
       "hex": "#bacaa5",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_Facelift_DehradunDewwithDualTone1779971169.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_Facelift_DehradunDewwithDualTone1779971169.jpg"
     },
     {
       "name": "Sobo Surge with Dual Tone",
       "hex": "#ab9a91",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_Facelift_SoboSurgewithDualTone1779971259.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_Facelift_SoboSurgewithDualTone1779971259.jpg"
     },
     {
       "name": "Pangong Pulse with Dual Tone",
       "hex": "#8ca8b4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PangongPulsewithDualTone1779971379.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PangongPulsewithDualTone1779971379.jpg"
     },
     {
       "name": "Pure Grey with Dual Tone",
       "hex": "#808484",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PureGreywithDualTone1779971495.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PureGreywithDualTone1779971495.jpg"
     },
     {
       "name": "Daytona Grey with Dual Tone",
       "hex": "#38393b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_DaytonaGreywithDualTone1779971707.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_DaytonaGreywithDualTone1779971707.jpg"
     },
     {
       "name": "Pristine White with Dual Tone",
       "hex": "#dcdddf",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PristineWhitewithDualTone1779971911.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_EV_PristineWhitewithDualTone1779971911.jpg"
     }
   ],
-  "c-scorpio-classic": [
+"c-scorpio-classic": [
     {
       "name": "Stealth Black",
       "hex": "#000000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_NapoliBlack1662187449.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_NapoliBlack1662187449.JPG"
     },
     {
       "name": "Diamond White",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_DiamondWhite1763898447.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_DiamondWhite1763898447.jpg"
     },
     {
       "name": "Molten Red Rage",
       "hex": "#b60100",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_RedRage1662187449.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_RedRage1662187449.JPG"
     },
     {
       "name": "Everest White",
       "hex": "#fefefe",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_PearlWhite1662187449.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_PearlWhite1662187449.JPG"
     },
     {
       "name": "Galaxy Grey",
       "hex": "#b2b2ab",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_GalaxyGrey1662187449.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Scorpio_Classic_GalaxyGrey1662187449.JPG"
     }
   ],
-  "c-glanza": [
+"c-glanza": [
     {
       "name": "Insta Blue",
       "hex": "#405DE6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_InstaBlue1653371260.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_InstaBlue1653371260.jpg"
     },
     {
       "name": "Gaming Grey",
       "hex": "#a9a9a9",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_GamingGrey1653371260.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_GamingGrey1653371260.jpg"
     },
     {
       "name": "Enticing Silver",
       "hex": "#C0C0C0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_EnticingSilver1653371260.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_EnticingSilver1653371260.jpg"
     },
     {
       "name": "Sportin Red",
       "hex": "#8f1622",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_SportinRed1653371261.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_SportinRed1653371261.jpg"
     },
     {
       "name": "Cafe White",
       "hex": "#e6e0d4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_CafeWhite1653371261.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Glanza_CafeWhite1653371261.jpg"
     }
   ],
-  "c-jimny": [
+"c-jimny": [
     {
       "name": "Bluish Black",
       "hex": "#5a5f6b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_BluishBlack1680159906.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_BluishBlack1680159906.jpg"
     },
     {
       "name": "Granite Grey",
       "hex": "#404040",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_GraniteGrey1680159906.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_GraniteGrey1680159906.jpg"
     },
     {
       "name": "Kinetic Yellow with Bluish Black Roof",
       "hex": "#dbee62",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_BluishBlack1680159906.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_BluishBlack1680159906.jpg"
     },
     {
       "name": "Nexa Blue",
       "hex": "#2f4371",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_NexaBlue1680159907.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_NexaBlue1680159907.jpg"
     },
     {
       "name": "Pearl Artic White",
       "hex": "#a8a8a6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_PearlArticWhite1680159907.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_PearlArticWhite1680159907.jpg"
     },
     {
       "name": "Sizzling Red with Bluish Black Roof",
       "hex": "#b81b14",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_BluishBlack1680159906.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_BluishBlack1680159906.jpg"
     },
     {
       "name": "Sizzling Red",
       "hex": "#ae361f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_SizzlingRedwithBluishBlackRoof1680159907.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Jimny_SizzlingRedwithBluishBlackRoof1680159907.jpg"
     }
   ],
-  "c-xuv3xo": [
+"c-xuv3xo": [
     {
       "name": "Citrine Yellow Black",
       "hex": "#6a5c11",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_CitrineYellowStealthBlack1714452885.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_CitrineYellowStealthBlack1714452885.jpg"
     },
     {
       "name": "Citrine Yellow",
       "hex": "#baa21b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_CitrineYellowStealthBlack1714452885.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_CitrineYellowStealthBlack1714452885.jpg"
     },
     {
       "name": "Deep Forest  Grey",
       "hex": "#3f423a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DeepForestGalvanoGrey1714452995.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DeepForestGalvanoGrey1714452995.jpg"
     },
     {
       "name": "Deep Forest",
       "hex": "#282d22",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DeepForestGalvanoGrey1714452995.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DeepForestGalvanoGrey1714452995.jpg"
     },
     {
       "name": "Dune Beige Black",
       "hex": "#362e25",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DuneBeigeStealthBlack1714453111.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DuneBeigeStealthBlack1714453111.jpg"
     },
     {
       "name": "Dune Beige",
       "hex": "#907b61",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DuneBeigeStealthBlack1714453111.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_DuneBeigeStealthBlack1714453111.jpg"
     },
     {
       "name": "Everest White  Black",
       "hex": "#9c9b9b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_EverestWhiteStealthBlack1714453234.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_EverestWhiteStealthBlack1714453234.jpg"
     },
     {
       "name": "Everest White",
       "hex": "#cfcdcd",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_EverestWhiteStealthBlack1714453234.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_EverestWhiteStealthBlack1714453234.jpg"
     },
     {
       "name": "Galaxy Grey Black",
       "hex": "#38393f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_GalaxyGreyStealthBlack1714453382.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_GalaxyGreyStealthBlack1714453382.jpg"
     },
     {
       "name": "Galaxy Grey",
       "hex": "#575a63",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_GalaxyGreyStealthBlack1714453382.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_GalaxyGreyStealthBlack1714453382.jpg"
     },
     {
       "name": "Nebula Blue Grey",
       "hex": "#2b3341",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_NebulaBlueGalvanoGrey1714453514.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_NebulaBlueGalvanoGrey1714453514.jpg"
     },
     {
       "name": "Nebula Blue",
       "hex": "#07132a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_NebulaBlueGalvanoGrey1714453514.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_NebulaBlueGalvanoGrey1714453514.jpg"
     },
     {
       "name": "Stealth Black Grey",
       "hex": "#232322",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_StealthBlackGalvanoGrey1714453675.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_StealthBlackGalvanoGrey1714453675.jpg"
     },
     {
       "name": "Stealth Black",
       "hex": "#060505",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_StealthBlackGalvanoGrey1714453675.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_StealthBlackGalvanoGrey1714453675.jpg"
     },
     {
       "name": "Tango Red  Black",
       "hex": "#57030c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_TangoRedStealthBlack1714453793.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_TangoRedStealthBlack1714453793.jpg"
     },
     {
       "name": "Tango Red",
       "hex": "#970211",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_TangoRedStealthBlack1714453793.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_3XO_TangoRedStealthBlack1714453793.jpg"
     }
   ],
-  "c-alcazar": [
+"c-alcazar": [
     {
       "name": "Titanium Black",
       "hex": "#000000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlack1725948802.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlack1725948802.jpg"
     },
     {
       "name": "Atlas White",
       "hex": "#f1f4fa",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AtlasWhite1725948833.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AtlasWhite1725948833.jpg"
     },
     {
       "name": "Titanium Black Matte - Knight",
       "hex": "#000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlack1725948802.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlack1725948802.jpg"
     },
     {
       "name": "Atlas White with Titanium Black",
       "hex": "#f1f4fa",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlack1725948802.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_AbyssBlack1725948802.jpg"
     },
     {
       "name": "Robust Emerald Pearl",
       "hex": "#314136",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_RobustEmeraldPearl1725949242.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_RobustEmeraldPearl1725949242.jpg"
     },
     {
       "name": "Robust Emerald Matte",
       "hex": "#354238",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_RobustEmeraldMatte1725949296.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_RobustEmeraldMatte1725949296.jpg"
     },
     {
       "name": "Starry Night",
       "hex": "#344b69",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_StarryNightTurbo1725949338.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alcazar_StarryNightTurbo1725949338.jpg"
     }
   ],
-  "c-sonet": [
+"c-sonet": [
     {
       "name": "Aurora Black Pearl",
       "hex": "#222427",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_AuroraBlackPearl1776227419.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_AuroraBlackPearl1776227419.jpg"
     },
     {
       "name": "Glacier White Pearl + Aurora Black Pearl",
       "hex": "#f3f9fb",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_AuroraBlackPearl1776227419.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_AuroraBlackPearl1776227419.jpg"
     },
     {
       "name": "Glacier White Pearl",
       "hex": "#f3f9fb",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GlacierWhitePearlAuroraBlackPearl1776227438.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GlacierWhitePearlAuroraBlackPearl1776227438.jpg"
     },
     {
       "name": "Gravity Grey",
       "hex": "#333438",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GravityGrey1776227462.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GravityGrey1776227462.jpg"
     },
     {
       "name": "Imperial Blue",
       "hex": "#2b2c71",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_ImperialBlue1776227475.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_ImperialBlue1776227475.jpg"
     },
     {
       "name": "Matte Graphite",
       "hex": "#1c1e1d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_MatteGraphite1776227522.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_MatteGraphite1776227522.jpg"
     },
     {
       "name": "Magma Red",
       "hex": "#5d1012",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_MagmaRed1776227619.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_MagmaRed1776227619.jpg"
     },
     {
       "name": "Pewter Olive",
       "hex": "#3e493b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_PewterOlive1776227640.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_PewterOlive1776227640.jpg"
     }
   ],
   "c-amaze": [
     {
       "name": "Lunar Silver Metallic",
       "hex": "#a0a3ab",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_LunarSilverMetallic1733305756.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_LunarSilverMetallic1733305756.jpg"
     },
     {
       "name": "Meteoroid Grey Metallic",
       "hex": "#6d6a6f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_MeteoroidGreyMetallic1733305965.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_MeteoroidGreyMetallic1733305965.jpg"
     },
     {
       "name": "Golden Brown Metallic",
       "hex": "#4f4947",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_GoldenBrownMetallic1733306229.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_GoldenBrownMetallic1733306229.jpg"
     },
     {
       "name": "Platinum White Pearl",
       "hex": "#e4e5ee",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_PlatinumWhitePearl1733306451.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_PlatinumWhitePearl1733306451.jpg"
     },
     {
       "name": "Radiant Red Metallic",
       "hex": "#ed2033",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_RadiantRedMetallic1733306591.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_RadiantRedMetallic1733306591.jpg"
     },
     {
       "name": "Obsidian Blue Pearl",
       "hex": "#314487",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_ObsidianBluePearl1733306724.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_ObsidianBluePearl1733306724.jpg"
     },
     {
       "name": "Crystal Black Pearl",
       "hex": "#070809",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_CrystalBlackPearl1758025179.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Amaze_CrystalBlackPearl1758025179.jpg"
     }
   ],
   "c-camry": [
     {
       "name": "Precious Metal",
       "hex": "#696e71",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_PreciousMetal1755065695.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_PreciousMetal1755065695.jpg"
     },
     {
       "name": "Platium White",
       "hex": "#e0e0e0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_PlatiumWhite1755065661.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_PlatiumWhite1755065661.jpg"
     },
     {
       "name": "Emotional Red",
       "hex": "#a86162",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_EmotionalRed1755065635.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_EmotionalRed1755065635.jpg"
     },
     {
       "name": "Dark Blue",
       "hex": "#2d3b65",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_DarkBlue1755065606.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_DarkBlue1755065606.jpg"
     },
     {
       "name": "Cement Grey",
       "hex": "#898d8e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_CementGrey1755065557.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_CementGrey1755065557.jpg"
     },
     {
       "name": "Attitude Black",
       "hex": "#040404",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_AttitudeBlack1755065535.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Camry_AttitudeBlack1755065535.jpg"
     }
   ],
   "c-dzire": [
     {
       "name": "Magma Grey",
       "hex": "#242424",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_MagmaGrey1731312160.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_MagmaGrey1731312160.jpg"
     },
     {
       "name": "Gallant Red",
       "hex": "#872223",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_GallantRed1731311795.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_GallantRed1731311795.jpg"
     },
     {
       "name": "Alluring Blue",
       "hex": "#294659",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_AlluringBlue1731311897.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_AlluringBlue1731311897.jpg"
     },
     {
       "name": "Pearl Arctic White",
       "hex": "#c9c9c7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_PearlArcticWhite1731312024.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_PearlArcticWhite1731312024.jpg"
     },
     {
       "name": "Bluish Black",
       "hex": "#1f1f1f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_BluishBlack1731312088.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_BluishBlack1731312088.jpg"
     },
     {
       "name": "Nutemg Brown",
       "hex": "#3c3227",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_NutemgBrown1731312236.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_NutemgBrown1731312236.jpg"
     },
     {
       "name": "Splendid Silver",
       "hex": "#868e91",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_SlendidSilver1731312309.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Dzire_SlendidSilver1731312309.jpg"
     }
   ],
   "c-altok10": [
     {
       "name": "Metallic Sizzling Red",
       "hex": "#e62924",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicSizzlingRed1661947948.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicSizzlingRed1661947948.JPG"
     },
     {
       "name": "Metallic silky silver",
       "hex": "#d2cfd0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_Metallicsilkysilver1661947948.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_Metallicsilkysilver1661947948.JPG"
     },
     {
       "name": "Premium Earth Gold",
       "hex": "#7e5f2f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_PremiumEarthGold1661947948.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_PremiumEarthGold1661947948.JPG"
     },
     {
       "name": "Solid White",
       "hex": "#efefef",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_SolidWhite1661947948.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_SolidWhite1661947948.JPG"
     },
     {
       "name": "Metallic Granite Grey",
       "hex": "#313037",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicGraniteGrey1661947948.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicGraniteGrey1661947948.JPG"
     },
     {
       "name": "Metallic Speedy Blue",
       "hex": "#0358e2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicSpeedyBlue1661947948.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_MetallicSpeedyBlue1661947948.JPG"
     },
     {
       "name": "Pearl  Bluish Black",
       "hex": "#151718",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_PearlMidnightBlack1687150234.png?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Alto_K10_PearlMidnightBlack1687150234.png"
     }
   ],
   "c-magnite": [
     {
       "name": "Vivid Blue",
       "hex": "#4293e9",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_VividBlue1728102042.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_VividBlue1728102042.jpg"
     },
     {
       "name": "Storm White",
       "hex": "#eef0f3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_StormWhite1728102162.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_StormWhite1728102162.jpg"
     },
     {
       "name": "Blade Silver",
       "hex": "#a7acb4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_BladeSilver1728102215.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_BladeSilver1728102215.jpg"
     },
     {
       "name": "Onyx Black",
       "hex": "#363839",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg"
     },
     {
       "name": "Pear White",
       "hex": "#cfd5e3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_PearWhite1728102470.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_PearWhite1728102470.jpg"
     },
     {
       "name": "Flare Garnet Red",
       "hex": "#9a0000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_FlareGarnetRed1728103117.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_FlareGarnetRed1728103117.jpg"
     },
     {
       "name": "Blade Silver with Onyx Black",
       "hex": "#666567",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_BladeSilver1728102215.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_BladeSilver1728102215.jpg"
     },
     {
       "name": "Flare Garnet Red with Onyx Black",
       "hex": "#971c1e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg"
     },
     {
       "name": "Pearl White with Onyx Black",
       "hex": "#d0d1d3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg"
     },
     {
       "name": "Sunrise Copper Orange with Onyx Black",
       "hex": "#f79152",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_OnyxBlack1728102379.jpg"
     },
     {
       "name": "Sunrise Copper Orange",
       "hex": "#da6e3e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_SunriseCopperOrangewithOnyxBlack1778843896.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Magnite_SunriseCopperOrangewithOnyxBlack1778843896.jpg"
     }
   ],
   "c-c3": [
     {
       "name": "Polar White",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_PolarWhite1766898304.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_PolarWhite1766898304.jpg"
     },
     {
       "name": "Cosmo Blue",
       "hex": "#1A2A4E",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_CosmoBlue1766898378.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_CosmoBlue1766898378.jpg"
     },
     {
       "name": "Garnet Red",
       "hex": "#d54638",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_GarnetRed1766898428.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_GarnetRed1766898428.jpg"
     },
     {
       "name": "Perla Nera Black",
       "hex": "#202327",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_PerlaNeraBlack1766898444.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_PerlaNeraBlack1766898444.jpg"
     },
     {
       "name": "Steel Grey",
       "hex": "#969c98",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_SteelGrey1764876818.jpeg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/C3_X_SteelGrey1764876818.jpeg"
     }
   ],
   "c-fronx": [
     {
       "name": "Arctic White",
       "hex": "#f9f9f9",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_ArcticWhite1686999724.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_ArcticWhite1686999724.jpg"
     },
     {
       "name": "Earthen Brown with Bluish Black Roof",
       "hex": "#93897d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrownwithBluishBlackRoof1687001705.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrownwithBluishBlackRoof1687001705.jpg"
     },
     {
       "name": "Earthen Brown",
       "hex": "#5a4841",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrownwithBluishBlackRoof1687001705.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrownwithBluishBlackRoof1687001705.jpg"
     },
     {
       "name": "Grandeur Grey",
       "hex": "#414c5e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_GrandeurGrey1686999944.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_GrandeurGrey1686999944.jpg"
     },
     {
       "name": "NEXA Blue (Celestial)",
       "hex": "#18346f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_NEXABlue(Celestial)1686999665.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_NEXABlue(Celestial)1686999665.jpg"
     },
     {
       "name": "Opulent Red + Black",
       "hex": "#ab1611",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_OpulentRedBlack1687001822.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_OpulentRedBlack1687001822.jpg"
     },
     {
       "name": "Opulent Red",
       "hex": "#b11710",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_OpulentRedBlack1687001822.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_OpulentRedBlack1687001822.jpg"
     },
     {
       "name": "Splendid Silver with Bluish Black Roof",
       "hex": "#b5babd",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_SplendidSilverwithBluishBlackRoof1687001776.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_SplendidSilverwithBluishBlackRoof1687001776.jpg"
     },
     {
       "name": "Splendid Silver",
       "hex": "#b6babd",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_SplendidSilverwithBluishBlackRoof1687001776.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_SplendidSilverwithBluishBlackRoof1687001776.jpg"
     },
     {
       "name": "Bluish Black",
       "hex": "#171717",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrownwithBluishBlackRoof1687001705.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Fronx_EarthenBrownwithBluishBlackRoof1687001705.jpg"
     }
   ],
   "c-wagonr": [
     {
       "name": "Peral Bluish Black Metalic With Black Roof",
       "hex": "#656563",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_MetMagmaGreyPlusBlack1646048557.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_MetMagmaGreyPlusBlack1646048557.jpg"
     },
     {
       "name": "Gallant Red With Black Roof",
       "hex": "#a40c10",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PRIME-GALLANT-RED1646048557.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PRIME-GALLANT-RED1646048557.jpg"
     },
     {
       "name": "Solid White",
       "hex": "#e2e4e8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_SolidWhite1646048557.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_SolidWhite1646048557.jpg"
     },
     {
       "name": "Metalic Magma Grey",
       "hex": "#656563",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_MagmaGrey1646048557.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_MagmaGrey1646048557.jpg"
     },
     {
       "name": "PERAL METALIC NUTMEG BROWN",
       "hex": "#322419",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_NUTMEGBROWN1646048557.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_NUTMEGBROWN1646048557.jpg"
     },
     {
       "name": "Metalic Silky Silver",
       "hex": "#b3b5b0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_SilkySilver1646048557.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_SilkySilver1646048557.jpg"
     },
     {
       "name": "Peral Metalic Gallent Red",
       "hex": "#a40c10",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PRime-GallantRedPlusBlack1646048557.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PRime-GallantRedPlusBlack1646048557.jpg"
     },
     {
       "name": "PEARL METALIC POOLSIDE BLUE",
       "hex": "#16367d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_POOLSIDEBLUE1646048557.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_POOLSIDEBLUE1646048557.jpg"
     },
     {
       "name": "Pearl Bluish Black",
       "hex": "#07082c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PearlBluishBlack1727679099.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wagon_R_PearlBluishBlack1727679099.jpg"
     }
   ],
   "c-exter": [
     {
       "name": "Golden Bronze",
       "hex": "#726b63",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_GoldenBronze1774070294.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_GoldenBronze1774070294.jpg"
     },
     {
       "name": "Titan Grey",
       "hex": "#414143",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitanGrey1774070344.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitanGrey1774070344.jpg"
     },
     {
       "name": "Starry Night",
       "hex": "#041121",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_StarryNight1774070441.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_StarryNight1774070441.jpg"
     },
     {
       "name": "Titanium Black",
       "hex": "#151515",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitaniumBlack1774070498.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitaniumBlack1774070498.jpg"
     },
     {
       "name": "Titanium Black Matte",
       "hex": "#141414",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitaniumBlack1774070498.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_TitaniumBlack1774070498.jpg"
     },
     {
       "name": "Ranger Khaki",
       "hex": "#596456",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_RangerKhaki1774070635.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_RangerKhaki1774070635.jpg"
     },
     {
       "name": "Atlas White",
       "hex": "#9d9d9d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_AtlasWhite1774070693.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_AtlasWhite1774070693.jpg"
     },
     {
       "name": "Ranger Khaki with black roof",
       "hex": "#535d52",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_RangerKhaki1774070635.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Exter_RangerKhaki1774070635.jpg"
     }
   ],
   "c-altroz": [
     {
       "name": "Dune Glow DT",
       "hex": "#ccc6ba",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_DuneGlow1747061161.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_DuneGlow1747061161.jpg"
     },
     {
       "name": "Pristine White DT",
       "hex": "#e7e7e7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PristineWhite1747061269.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PristineWhite1747061269.jpg"
     },
     {
       "name": "Royal Blue DT",
       "hex": "#2d2f68",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_RoyalBlue1747061524.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_RoyalBlue1747061524.jpg"
     },
     {
       "name": "Ember Glow DT",
       "hex": "#e72200",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_EmberGlow1747062155.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_EmberGlow1747062155.jpg"
     },
     {
       "name": "Pure Grey DT",
       "hex": "#868485",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PureGrey1747143670.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PureGrey1747143670.jpg"
     },
     {
       "name": "Dune Glow",
       "hex": "#aea191",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_DuneGlow1747061161.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_DuneGlow1747061161.jpg"
     },
     {
       "name": "Ember Glow",
       "hex": "#b32c0e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_EmberGlow1747062155.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_EmberGlow1747062155.jpg"
     },
     {
       "name": "Pristine White",
       "hex": "#e2e2e2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PristineWhite1747061269.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PristineWhite1747061269.jpg"
     },
     {
       "name": "Pure Grey",
       "hex": "#939393",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PureGrey1747143670.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_PureGrey1747143670.jpg"
     },
     {
       "name": "Royal Blue",
       "hex": "#07133f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_RoyalBlue1747061524.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Altroz_Facelift_RoyalBlue1747061524.jpg"
     }
   ],
   "c-curvv": [
     {
       "name": "Daytona Grey",
       "hex": "#38393b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_DaytonaGrey1723099443.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_DaytonaGrey1723099443.jpg"
     },
     {
       "name": "Flame Red",
       "hex": "#a01c1d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_FlameRed1723099478.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_FlameRed1723099478.jpg"
     },
     {
       "name": "Opera Blue",
       "hex": "#313a72",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_OperaBlue1723099517.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_OperaBlue1723099517.jpg"
     },
     {
       "name": "Pristine White",
       "hex": "#ecedef",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PristineWhite1723099553.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PristineWhite1723099553.jpg"
     },
     {
       "name": "Pure Grey",
       "hex": "#aaabb0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PureGrey1723099624.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PureGrey1723099624.jpg"
     },
     {
       "name": "Gold Essence",
       "hex": "#b9a593",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_GoldEssence1723102481.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_GoldEssence1723102481.jpg"
     },
     {
       "name": "Gold Essence with Dual Tone",
       "hex": "#cabcaf",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_GoldEssence1723102481.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_GoldEssence1723102481.jpg"
     },
     {
       "name": "Daytona Grey With Dual Tone",
       "hex": "#9b9b9b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_DaytonaGrey1723099443.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_DaytonaGrey1723099443.jpg"
     },
     {
       "name": "Pristine White With Dual Tone",
       "hex": "#e6e6e6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PristineWhite1723099553.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PristineWhite1723099553.jpg"
     },
     {
       "name": "Pure Grey With Dual Tone",
       "hex": "#bababa",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PureGrey1723099624.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_PureGrey1723099624.jpg"
     },
     {
       "name": "Opera Blue With Dual Tone",
       "hex": "#2c326b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_OperaBlue1723099517.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_OperaBlue1723099517.jpg"
     },
     {
       "name": "Flame Red With Dual Tone",
       "hex": "#bb2322",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_FlameRed1723099478.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_FlameRed1723099478.jpg"
     },
     {
       "name": "Nitro Crimson With Dual Tone",
       "hex": "#840a33",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_NitroCrimsonWithDualTone1739866872.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_NitroCrimsonWithDualTone1739866872.jpg"
     },
     {
       "name": "Carbon Black Dark Edition",
       "hex": "#0b0b0b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_CarbonBlackDarkEdition1744453306.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_CarbonBlackDarkEdition1744453306.jpg"
     },
     {
       "name": "Nitro Crimson",
       "hex": "#840a33",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_NitroCrimsonWithDualTone1739866872.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_NitroCrimsonWithDualTone1739866872.jpg"
     }
   ],
   "c-tharroxx": [
     {
       "name": "Everest White",
       "hex": "#eeeff0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_EverestWhite1723706934.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_EverestWhite1723706934.jpg"
     },
     {
       "name": "Battleship Grey",
       "hex": "#858f9b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_BattleshipGrey1723706994.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_BattleshipGrey1723706994.jpg"
     },
     {
       "name": "Tango Red",
       "hex": "#970b1c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_TangoRed1723707044.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_TangoRed1723707044.jpg"
     },
     {
       "name": "Nebula Blue",
       "hex": "#143449",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_NebulaBlue1723707139.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_NebulaBlue1723707139.jpg"
     },
     {
       "name": "Burnt Sienna",
       "hex": "#3d1d0c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_BurntSienna1723707262.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_BurntSienna1723707262.jpg"
     },
     {
       "name": "Stealth Black",
       "hex": "#151411",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_StealthBlack1723707406.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_StealthBlack1723707406.jpg"
     },
     {
       "name": "Deep Forest",
       "hex": "#2f322c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_DeepForest1723707576.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Thar_Roxx_DeepForest1723707576.jpg"
     }
   ],
   "c-xuv400": [
     {
       "name": "Artic Blue Dual Tone",
       "hex": "#6d7784",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_ArticBlueDualTone1674561415.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_ArticBlueDualTone1674561415.jpg"
     },
     {
       "name": "Artic Blue",
       "hex": "#334b64",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_ArticBlueDualTone1674561415.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_ArticBlueDualTone1674561415.jpg"
     },
     {
       "name": "Everest White Dual tone",
       "hex": "#b8b9bb",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_EverestWhiteDualtone1674561416.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_EverestWhiteDualtone1674561416.jpg"
     },
     {
       "name": "Galaxy Grey Dual Tone",
       "hex": "#414246",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_GalaxyGreyDualTone1674561416.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_GalaxyGreyDualTone1674561416.jpg"
     },
     {
       "name": "Galaxy Grey",
       "hex": "#868785",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_GalaxyGreyDualTone1674561416.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_GalaxyGreyDualTone1674561416.jpg"
     },
     {
       "name": "Infinity Blue Dual Tone",
       "hex": "#0b46aa",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_InfinityBlueDualTone1674561416.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_InfinityBlueDualTone1674561416.jpg"
     },
     {
       "name": "Infinity Blue",
       "hex": "#0b46aa",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_InfinityBlueDualTone1674561416.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_InfinityBlueDualTone1674561416.jpg"
     },
     {
       "name": "Stealth Black DualTone",
       "hex": "#232426",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_NapoliBlackDualTone1674561416.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_NapoliBlackDualTone1674561416.jpg"
     },
     {
       "name": "Stealth Black",
       "hex": "#0a0b0d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_NapoliBlackDualTone1674561416.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_NapoliBlackDualTone1674561416.jpg"
     },
     {
       "name": "Everest White",
       "hex": "#bcbdbf",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_EverestWhiteDualtone1674561416.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XUV_400_Electric_EverestWhiteDualtone1674561416.jpg"
     }
   ],
   "c-carens": [
     {
       "name": "Imperial Blue",
       "hex": "#2b2c71",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_ImperialBlue1652706967.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_ImperialBlue1652706967.jpg"
     },
     {
       "name": "Pewter Olive",
       "hex": "#3e493b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_PewterOlive1715919309.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_PewterOlive1715919309.jpg"
     },
     {
       "name": "Aurora Black Pearl",
       "hex": "#0b0a0a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_AuroraBlackPearl1652706967.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_AuroraBlackPearl1652706967.jpg"
     },
     {
       "name": "Sparkling Silver",
       "hex": "#e1e1e1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_SparklingSilver1652706968.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_SparklingSilver1652706968.jpg"
     },
     {
       "name": "Gravity Grey",
       "hex": "#454545",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_GravityGrey1652706968.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_GravityGrey1652706968.jpg"
     },
     {
       "name": "Clear White",
       "hex": "#f0f9fd",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_GlacierWhitePearl1652706968.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_GlacierWhitePearl1652706968.jpg"
     }
   ],
   "c-astor": [
     {
       "name": "Aurora Silver",
       "hex": "#d1d1db",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_AuroraSilver1705058196.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_AuroraSilver1705058196.jpg"
     },
     {
       "name": "Candy White",
       "hex": "#eae9e7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_CandyWhite1705058261.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_CandyWhite1705058261.jpg"
     },
     {
       "name": "Dual Tone White and Black",
       "hex": "#eae9e7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_DualTonwWhiteandBlack1705058291.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_DualTonwWhiteandBlack1705058291.jpg"
     },
     {
       "name": "Glaze Red",
       "hex": "#e32735",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_GlazeRed1705058348.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_GlazeRed1705058348.jpg"
     },
     {
       "name": "Havana Gray",
       "hex": "#6b6f73",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_HavanaGray1705058396.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_HavanaGray1705058396.jpg"
     },
     {
       "name": "Starry Black",
       "hex": "#242020",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_StarryBlack1705058436.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Astor_StarryBlack1705058436.jpg"
     }
   ],
   "c-kushaq": [
     {
       "name": "Brilliant Silver",
       "hex": "#C0C0C0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_BrilliantSilver1774093463.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_BrilliantSilver1774093463.jpg"
     },
     {
       "name": "Candy White",
       "hex": "#FFFFFF",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CandyWhite1774093479.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CandyWhite1774093479.jpg"
     },
     {
       "name": "Carbon Steel",
       "hex": "#585E5E",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CarbonSteel1774093499.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CarbonSteel1774093499.jpg"
     },
     {
       "name": "Lava Blue",
       "hex": "#0000FF",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_LavaBlue1774093515.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_LavaBlue1774093515.jpg"
     },
     {
       "name": "Deep Black",
       "hex": "#16151b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_DeepBlack1774093542.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_DeepBlack1774093542.jpg"
     },
     {
       "name": "Cherry Red",
       "hex": "#521224",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CherryRed1774093620.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_CherryRed1774093620.jpg"
     },
     {
       "name": "Steel Grey",
       "hex": "#3b3f41",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_SteelGrey1774093698.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_SteelGrey1774093698.jpg"
     },
     {
       "name": "Shimla Green",
       "hex": "#3d4639",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_ShimlaGreen1774093740.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kushaq_ShimlaGreen1774093740.jpg"
     }
   ],
   "c-kiger": [
     {
       "name": "Caspian Blue",
       "hex": "#0588c5",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_CaspianBlue1756105621.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_CaspianBlue1756105621.jpg"
     },
     {
       "name": "Shadow Grey",
       "hex": "#656565",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_ShadowGrey1756105739.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_ShadowGrey1756105739.jpg"
     },
     {
       "name": "Moonlight Silver",
       "hex": "#c5c3c3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_MoonlightSilver1756105784.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_MoonlightSilver1756105784.jpg"
     },
     {
       "name": "Oasis Yellow",
       "hex": "#fff67d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_OasisYellow1756105831.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_OasisYellow1756105831.jpg"
     },
     {
       "name": "Stealth Black",
       "hex": "#010101",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_StealthBlack1756105911.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_StealthBlack1756105911.jpg"
     },
     {
       "name": "Ice Cool White",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_IceCoolWhite1756105974.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_IceCoolWhite1756105974.jpg"
     },
     {
       "name": "Oasis Yellow With Mystery Black Roof",
       "hex": "#fff27f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_OasisYellow1756105831.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_OasisYellow1756105831.jpg"
     },
     {
       "name": "Shadow Grey Mystery Black Roof",
       "hex": "#adadad",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_ShadowGrey1756105739.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_ShadowGrey1756105739.jpg"
     },
     {
       "name": "Radiant Red With Mystery Black Roof",
       "hex": "#c90010",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_RadiantRedWithMysteryBlackRoof1756106170.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_RadiantRedWithMysteryBlackRoof1756106170.jpg"
     },
     {
       "name": "Ice Cool White With Mystery Black Roof",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_IceCoolWhite1756105974.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kiger_IceCoolWhite1756105974.jpg"
     }
   ],
   "c-xl6": [
     {
       "name": "Arctic White",
       "hex": "#eeeff0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_ArcticWhite1763988311.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_ArcticWhite1763988311.jpg"
     },
     {
       "name": "Brave Khaki",
       "hex": "#60480c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BraveKhaki1763988286.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BraveKhaki1763988286.jpg"
     },
     {
       "name": "Grandeur Grey",
       "hex": "#49423a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_GrandeurGrey1763988268.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_GrandeurGrey1763988268.jpg"
     },
     {
       "name": "Splendid Silver",
       "hex": "#afb3b8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_SplendidSilver1763988252.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_SplendidSilver1763988252.jpg"
     },
     {
       "name": "Nexa Blue",
       "hex": "#163f64",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_NexaBlue1763988235.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_NexaBlue1763988235.jpg"
     },
     {
       "name": "Opulent Red",
       "hex": "#a81926",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_OpulentRed1763988201.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_OpulentRed1763988201.jpg"
     },
     {
       "name": "Opulent Red With Midnight Black Roof",
       "hex": "#b11710",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_OpulentRed1763988201.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_OpulentRed1763988201.jpg"
     },
     {
       "name": "Splendid Silver With Midnight Black Roof",
       "hex": "#c5c3cf",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_SplendidSilver1763988252.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_SplendidSilver1763988252.jpg"
     },
     {
       "name": "Brave Khaki With Midnight Black Roof",
       "hex": "#574914",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BraveKhaki1763988286.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BraveKhaki1763988286.jpg"
     },
     {
       "name": "Bluish Black",
       "hex": "#3e3f43",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BluishBlack1763988090.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/XL6_BluishBlack1763988090.jpg"
     }
   ],
   "c-invicto": [
     {
       "name": "Nexa Blue (Celestial)",
       "hex": "#303e67",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_NexaBlue1688556064.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_NexaBlue1688556064.jpg"
     },
     {
       "name": "Stellar Bronze",
       "hex": "#56584d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_StellarBronze1688556097.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_StellarBronze1688556097.jpg"
     },
     {
       "name": "Majestic Silver",
       "hex": "#565f64",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MajesticSilver1688556119.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MajesticSilver1688556119.jpg"
     },
     {
       "name": "Mystic White",
       "hex": "#f1f1f1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MysticWhite1688556143.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MysticWhite1688556143.jpg"
     },
     {
       "name": "Magnificent Black",
       "hex": "#0f1012",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MagnificentBlack1727685712.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Invicto_MagnificentBlack1727685712.jpg"
     }
   ],
   "c-venue": [
     {
       "name": "Mystic Sapphire",
       "hex": "#12172b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_MysticSapphire1762248430.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_MysticSapphire1762248430.jpg"
     },
     {
       "name": "Titanium Black",
       "hex": "#0c0c0c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_AbyssBlack1762248482.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_AbyssBlack1762248482.jpg"
     },
     {
       "name": "Atlas white",
       "hex": "#a2a2a2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Atlaswhite1762248530.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Atlaswhite1762248530.jpg"
     },
     {
       "name": "Dragon Red",
       "hex": "#c72329",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_DragonRed1762248579.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_DragonRed1762248579.jpg"
     },
     {
       "name": "Hazel Blue",
       "hex": "#373b46",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_HazelBlue1762248624.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_HazelBlue1762248624.jpg"
     },
     {
       "name": "Titan grey",
       "hex": "#595a5e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Titangrey1762248755.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Titangrey1762248755.jpg"
     },
     {
       "name": "Atlas white with abyss black roof",
       "hex": "#e9e9e9",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Atlaswhite1762248530.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_Atlaswhite1762248530.jpg"
     },
     {
       "name": "Hazel Blue with abyss black roof",
       "hex": "#454952",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_HazelBlue1762248624.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Venue_HazelBlue1762248624.jpg"
     }
   ],
   "c-punchev": [
     {
       "name": "Bengal Rouge DT",
       "hex": "#570005",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_BengalRouge1771583456.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_BengalRouge1771583456.jpg"
     },
     {
       "name": "Caramel DT",
       "hex": "#7b3602",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Caramel1771583527.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Caramel1771583527.jpg"
     },
     {
       "name": "Fearless Yellow DT",
       "hex": "#a29301",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_FearlessYellow1771583578.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_FearlessYellow1771583578.jpg"
     },
     {
       "name": "Oxide DT",
       "hex": "#acafa7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Oxide1771583633.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Oxide1771583633.jpg"
     },
     {
       "name": "Pristine White DT",
       "hex": "#f7f8f8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PristineWhite1771583696.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PristineWhite1771583696.jpg"
     },
     {
       "name": "Pure Grey DT",
       "hex": "#5f6165",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PureGrey1771583741.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PureGrey1771583741.jpg"
     },
     {
       "name": "Supernova Copper DT",
       "hex": "#350805",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_SupernovaCopper1771583798.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_SupernovaCopper1771583798.jpg"
     },
     {
       "name": "Bengal Rogue",
       "hex": "#80101a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_BengalRogue1771828646.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_BengalRogue1771828646.jpg"
     },
     {
       "name": "Caramel",
       "hex": "#855a1b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Caramel1771583527.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Caramel1771583527.jpg"
     },
     {
       "name": "Presitne white",
       "hex": "#c4c4c4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Presitnewhite1771828672.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_Presitnewhite1771828672.jpg"
     },
     {
       "name": "Pure Grey",
       "hex": "#888888",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PureGrey1771583741.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_PureGrey1771583741.jpg"
     },
     {
       "name": "Supernova copper",
       "hex": "#3d1f17",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_SupernovaCopper1771583798.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Punch_EV_SupernovaCopper1771583798.jpg"
     }
   ],
   "c-celerio": [
     {
       "name": "Metallic Silky silver",
       "hex": "#efefef",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_Silkysilver1661949550.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_Silkysilver1661949550.JPG"
     },
     {
       "name": "Metallic Speedy Blue",
       "hex": "#0000ff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_SpeedyBlue1661949551.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_SpeedyBlue1661949551.JPG"
     },
     {
       "name": "Pearl Arctic white",
       "hex": "#fff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_White1661949551.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_White1661949551.JPG"
     },
     {
       "name": "Pearl Caffeine Brown",
       "hex": "#80402c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_CaffeineBrown1661949551.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_CaffeineBrown1661949551.JPG"
     },
     {
       "name": "Meatallic Glistering Grey",
       "hex": "#595959",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_GlisteringGrey1661949551.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_GlisteringGrey1661949551.JPG"
     },
     {
       "name": "solid Fire Red",
       "hex": "#e62a21",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_FireRed1661949551.JPG?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_FireRed1661949551.JPG"
     },
     {
       "name": "Pearl Bluish Black",
       "hex": "#151515",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_PearlMidnightBlack1687156845.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Celerio_PearlMidnightBlack1687156845.jpg"
     }
   ],
   "c-tiago": [
     {
       "name": "Varanasi Vibrance with Dual Tone",
       "hex": "#d75f4f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_VaranasiVibrancewithDualTone1779968608.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_VaranasiVibrancewithDualTone1779968608.jpg"
     },
     {
       "name": "Pangong Pulse with Dual Tone",
       "hex": "#8ca8b4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PangongPulsewithDualTone1779969132.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PangongPulsewithDualTone1779969132.jpg"
     },
     {
       "name": "Sobo Surge with Dual Tone",
       "hex": "#ab9a91",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_SoboSurgewithDualTone1779969239.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_SoboSurgewithDualTone1779969239.jpg"
     },
     {
       "name": "Pure Grey with Dual Tone",
       "hex": "#808484",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PureGreywithDualTone1779969362.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PureGreywithDualTone1779969362.jpg"
     },
     {
       "name": "Daytona Grey with Dual Tone",
       "hex": "#38393b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_DaytonaGreywithDualTone1779969513.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_DaytonaGreywithDualTone1779969513.jpg"
     },
     {
       "name": "Pristine White with Dual Tone",
       "hex": "#dcdddf",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PristineWhitewithDualTone1779969638.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tiago_Facelift_PristineWhitewithDualTone1779969638.jpg"
     }
   ],
   "c-tigor": [
     {
       "name": "Arizona Blue",
       "hex": "#043465",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_ArizonaBlue1770360367.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_ArizonaBlue1770360367.jpg"
     },
     {
       "name": "Daytona Grey",
       "hex": "#43494a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_DaytonaGrey1770360345.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_DaytonaGrey1770360345.jpg"
     },
     {
       "name": "Pristine White",
       "hex": "#d9d9d9",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_PristineWhite1770360329.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_PristineWhite1770360329.jpg"
     },
     {
       "name": "Supernova Copper",
       "hex": "#432622",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_SupernovaCopper1770360302.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_SupernovaCopper1770360302.jpg"
     },
     {
       "name": "Meteor Bronze",
       "hex": "#43331b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_MeteorBronze1770360266.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Tigor_MeteorBronze1770360266.jpg"
     }
   ],
   "c-aura": [
     {
       "name": "Titan Grey",
       "hex": "#50555b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_TitanGrey1687165487.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_TitanGrey1687165487.jpg"
     },
     {
       "name": "Typhoon Silver",
       "hex": "#e0e4e7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_TyphoonSilver1687165568.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_TyphoonSilver1687165568.jpg"
     },
     {
       "name": "Starry Night",
       "hex": "#2c2e43",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_StarryNight1687165698.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_StarryNight1687165698.jpg"
     },
     {
       "name": "Atlas White",
       "hex": "#eff3f4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_AtlasWhite1687165762.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Aura_AtlasWhite1687165762.jpg"
     }
   ],
   "c-eeco": [
     {
       "name": "Metalic Brisk BLue",
       "hex": "#0077b5",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_CeruleanBlue1631515669.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_CeruleanBlue1631515669.jpg"
     },
     {
       "name": "Metallic Glistening Grey",
       "hex": "#525354",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_MetallicGlisteningGrey1631515669.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_MetallicGlisteningGrey1631515669.jpg"
     },
     {
       "name": "Bluish Black",
       "hex": "#262b2e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_PearlMidnightBlack1631515669.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_PearlMidnightBlack1631515669.jpg"
     },
     {
       "name": "Solid White",
       "hex": "#eff0f2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_SolidWhite1631515669.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_SolidWhite1631515669.jpg"
     },
     {
       "name": "Metallic Silky Silver",
       "hex": "#d2cfd0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_MetallicSilkySilver1631515670.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Eeco_MetallicSilkySilver1631515670.jpg"
     }
   ],
   "c-spresso": [
     {
       "name": "Solid White",
       "hex": "#eff0f2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidWhite1661950628.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidWhite1661950628.jpg"
     },
     {
       "name": "Metallic silky silver",
       "hex": "#d2cfd0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_Metallicsilkysilver1661950628.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_Metallicsilkysilver1661950628.jpg"
     },
     {
       "name": "Solid Fire Red",
       "hex": "#ab0f13",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidFireRed1661950628.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidFireRed1661950628.jpg"
     },
     {
       "name": "Solid Sizzle Orange",
       "hex": "#ec6904",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidSizzleOrange1661950628.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_SolidSizzleOrange1661950628.jpg"
     },
     {
       "name": "Metallic Graphite Grey",
       "hex": "#909090",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_MetallicGraphiteGrey1661950628.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_MetallicGraphiteGrey1661950628.jpg"
     },
     {
       "name": "Pearl Starry Blue",
       "hex": "#004eba",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_PearlStarryBlue1661950628.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_2022_PearlStarryBlue1661950628.jpg"
     },
     {
       "name": "Bluish Black",
       "hex": "#141414",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_PearlMidnightBlack1719648496.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_PearlMidnightBlack1719648496.jpg"
     }
   ],
   "c-boleroneo": [
     {
       "name": "Diamond White",
       "hex": "#d5d7d8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_DiamondWhite1763889600.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_DiamondWhite1763889600.jpg"
     },
     {
       "name": "Rocky Beige",
       "hex": "#565e4c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_RockyBeige1763889515.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_RockyBeige1763889515.jpg"
     },
     {
       "name": "PEARL WHITE",
       "hex": "#f9f9fa",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITE1763889372.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITE1763889372.jpg"
     },
     {
       "name": "CONCRETE GREY DT",
       "hex": "#314147",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREYDT1763889740.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREYDT1763889740.jpg"
     },
     {
       "name": "CONCRETE GREY",
       "hex": "#2f3f45",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREYDT1763889740.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_CONCRETEGREYDT1763889740.jpg"
     },
     {
       "name": "JEANS BLUE DT",
       "hex": "#15273a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUEDT1763889969.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUEDT1763889969.jpg"
     },
     {
       "name": "JEANS BLUE",
       "hex": "#2b4156",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUEDT1763889969.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_JEANSBLUEDT1763889969.jpg"
     },
     {
       "name": "PEARL WHITE DT",
       "hex": "#dddedf",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITE1763889372.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_PEARLWHITE1763889372.jpg"
     },
     {
       "name": "STEALTH BLACK",
       "hex": "#0b0a0a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_STEALTHBLACK1763890197.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Bolero_Neo_STEALTHBLACK1763890197.jpg"
     }
   ],
   "c-carnival": [
     {
       "name": "Fusion Black",
       "hex": "#090a09",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carnival_2024_FusionBlack1726653164.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carnival_2024_FusionBlack1726653164.jpg"
     },
     {
       "name": "Glacier White Pearl",
       "hex": "#f1f2f1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carnival_2024_GlacierWhitePearl1726653237.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Carnival_2024_GlacierWhitePearl1726653237.jpg"
     }
   ],
   "c-innovacrysta": [
     {
       "name": "Attitude Black Mica",
       "hex": "#060606",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_AttitudeBlackMica1780897701.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_AttitudeBlackMica1780897701.jpg"
     },
     {
       "name": "Avant-Garde Bronze Metalic",
       "hex": "#706b62",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_Avant-GardeBronzeMetalic1780897676.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_Avant-GardeBronzeMetalic1780897676.jpg"
     },
     {
       "name": "Silver Metallic",
       "hex": "#abb0b1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_SilverMetallic1780897649.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_SilverMetallic1780897649.jpg"
     },
     {
       "name": "Super White",
       "hex": "#faf7f8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_SuperWhite1780897624.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_SuperWhite1780897624.jpg"
     },
     {
       "name": "Platinum White Pearl",
       "hex": "#ebebeb",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_PlatinumWhitePearl1780897592.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Innova_Crysta_PlatinumWhitePearl1780897592.jpg"
     }
   ],
   "c-cometev": [
     {
-      "name": "APPLE GREEN &amp; STARRY BLACK",
+      "name": "APPLE GREEN & STARRY BLACK",
       "hex": "#b9e170",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_APPLEGREENSTARRYBLACK1682493977.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_APPLEGREENSTARRYBLACK1682493977.jpg"
     },
     {
       "name": "AURORA SILVER",
       "hex": "#d1d1db",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_AURORASILVER1765342932.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_AURORASILVER1765342932.jpg"
     },
     {
-      "name": "CANDY WHITE &amp; STARRY BLACK",
+      "name": "CANDY WHITE & STARRY BLACK",
       "hex": "#eae9e8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_CANDYWHITESTARRYBLACK1682493978.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_CANDYWHITESTARRYBLACK1682493978.jpg"
     },
     {
       "name": "CANDY WHITE",
       "hex": "#f5f1f2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_CANDYWHITESTARRYBLACK1682493978.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_CANDYWHITESTARRYBLACK1682493978.jpg"
     },
     {
       "name": "STARRY BLACK",
       "hex": "#242020",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_APPLEGREENSTARRYBLACK1682493977.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Comet_EV_APPLEGREENSTARRYBLACK1682493977.jpg"
     }
   ],
   "c-windsorev": [
     {
       "name": "Pearl White",
       "hex": "#eaeaea",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_PearlWhite1726047313.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_PearlWhite1726047313.jpg"
     },
     {
       "name": "Clay Beige",
       "hex": "#eee6e0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_CLAYBEIGE1726047650.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_CLAYBEIGE1726047650.jpg"
     },
     {
       "name": "Starburst Black",
       "hex": "#1d1d1d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_StarburstBlack1726047677.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_StarburstBlack1726047677.jpg"
     },
     {
       "name": "Torquoise Green",
       "hex": "#7d97a3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_TorquoiseGreen1726047837.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_TorquoiseGreen1726047837.jpg"
     },
     {
       "name": "Celadon Blue",
       "hex": "#303f51",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_CeladonBlue1752146201.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_CeladonBlue1752146201.jpg"
     },
     {
       "name": "Aurora Silver",
       "hex": "#595b6a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_AuroraSilver1752146766.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_AuroraSilver1752146766.jpg"
     },
     {
       "name": "Glaze Red",
       "hex": "#df1a2f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_GlazeRed1752146967.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Windsor_EV_GlazeRed1752146967.jpg"
     }
   ],
   "c-jeepcompass": [
     {
       "name": "Silvery Moon",
       "hex": "#c3bfbd",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_SilveryMoon1760682210.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_SilveryMoon1760682210.jpg"
     },
     {
       "name": "Galaxy Blue",
       "hex": "#33599a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_GalaxyBlue1760682194.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_GalaxyBlue1760682194.jpg"
     },
     {
       "name": "Magnesio Grey",
       "hex": "#4e4e53",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_MagnesioGrey1760682221.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_MagnesioGrey1760682221.jpg"
     },
     {
       "name": "Techno Metallic Green",
       "hex": "#263733",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_TechnoMetallicGreen1760682170.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_TechnoMetallicGreen1760682170.jpg"
     },
     {
       "name": "Grigio Magnesio",
       "hex": "#898b88",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_GrigioMagnesio1760682150.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_GrigioMagnesio1760682150.jpg"
     },
     {
       "name": "Exotica Red",
       "hex": "#9a2123",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_ExoticaRed1760682104.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_ExoticaRed1760682104.jpg"
     },
     {
       "name": "Brilliant Black",
       "hex": "#010101",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_BrilliantBlack1760682085.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_BrilliantBlack1760682085.jpg"
     },
     {
       "name": "Pearl White",
       "hex": "#e1eded",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_PearlWhite1760682292.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Compass_PearlWhite1760682292.jpg"
     }
   ],
   "c-triber": [
     {
       "name": "Amber terracotta with mystery black roof",
       "hex": "#742309",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Amberterracottawithmysteryblackroof1753268274.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Amberterracottawithmysteryblackroof1753268274.jpg"
     },
     {
       "name": "Amber terracotta",
       "hex": "#5c1d00",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Amberterracottawithmysteryblackroof1753268274.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Amberterracottawithmysteryblackroof1753268274.jpg"
     },
     {
       "name": "Ice cool white with mystery black roof",
       "hex": "#ebebeb",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Icecoolwhitewithmysteryblackroof1753268460.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Icecoolwhitewithmysteryblackroof1753268460.jpg"
     },
     {
       "name": "Ice cool white",
       "hex": "#eeeeee",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Icecoolwhitewithmysteryblackroof1753268460.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Icecoolwhitewithmysteryblackroof1753268460.jpg"
     },
     {
       "name": "Moonlight silver",
       "hex": "#969694",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Moonlightsilver1753268595.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Moonlightsilver1753268595.jpg"
     },
     {
       "name": "Shadow grey with mystery black roof",
       "hex": "#909090",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Shadowgreywithmysteryblackroof1753268678.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Shadowgreywithmysteryblackroof1753268678.jpg"
     },
     {
       "name": "Shadow grey",
       "hex": "#848484",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Shadowgreywithmysteryblackroof1753268678.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Shadowgreywithmysteryblackroof1753268678.jpg"
     },
     {
       "name": "Stealth black",
       "hex": "#010101",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Stealthblack1753268798.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Stealthblack1753268798.jpg"
     },
     {
       "name": "Zanskar blue",
       "hex": "#65c5dc",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Zanskarblue1753268838.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Triber_Zanskarblue1753268838.jpg"
     }
   ],
   "c_porsche_porsche_cayenne": [
     {
       "name": "Arctic Grey",
       "hex": "#4b5056",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_ArcticGrey1765614284.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_ArcticGrey1765614284.jpg"
     },
     {
       "name": "Cashmere Beige Metallic",
       "hex": "#9c9078",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CashmereBeigeMetallic1765614464.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CashmereBeigeMetallic1765614464.jpg"
     },
     {
       "name": "Carrara White",
       "hex": "#dcdbe0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarraraWhite1632118261.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarraraWhite1632118261.jpg"
     },
     {
       "name": "Algarve Blue Metallic",
       "hex": "#1a1e2a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_JetBlackMetallic1632118261.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_JetBlackMetallic1632118261.jpg"
     },
     {
       "name": "Montego Blue Metallic",
       "hex": "#192030",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_MoonlightBlueMetallic1632118261.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_MoonlightBlueMetallic1632118261.jpg"
     },
     {
       "name": "Carmine Red",
       "hex": "#6d0414",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarmineRed1765611153.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarmineRed1765611153.jpg"
     },
     {
       "name": "Crayon",
       "hex": "#b1b5c1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_Crayon1632118261.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_Crayon1632118261.jpg"
     },
     {
       "name": "White",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarraraWhite1632118261.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_CarraraWhite1632118261.jpg"
     },
     {
       "name": "Chromite Black Metallic",
       "hex": "#242428",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_ChromiteBlackMetallic1677584113.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_ChromiteBlackMetallic1677584113.jpg"
     },
     {
       "name": "Dolomite Silver Metallic",
       "hex": "#798089",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_DolomiteSilverMetallic1677584760.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_DolomiteSilverMetallic1677584760.jpg"
     },
     {
       "name": "Vanadium Grey Metallic",
       "hex": "#9498a1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_VanadiumGreyMetallic1765613260.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cayenne_VanadiumGreyMetallic1765613260.jpg"
     }
   ],
   "c_mini_cooper_s": [
     {
       "name": "Blazing Blue",
       "hex": "#0000FF",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_BlazingBlue1721819643.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_BlazingBlue1721819643.jpg"
     },
     {
       "name": "British Racing Green",
       "hex": "#003c17",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_BritishRacingGreen1721819689.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_BritishRacingGreen1721819689.jpg"
     },
     {
       "name": "Chilli Red II",
       "hex": "#b61a1a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_ChilliRedII1721819752.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_ChilliRedII1721819752.jpg"
     },
     {
       "name": "Ocean Wave Green",
       "hex": "#86b9aa",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_OceanWaveGreen1721819831.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_OceanWaveGreen1721819831.jpg"
     },
     {
       "name": "Sunny Side Yellow",
       "hex": "#f5e317",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_SunnySideYellow1721819878.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Cooper_S_SunnySideYellow1721819878.jpg"
     }
   ],
   "c-hectorplus": [
     {
       "name": "Aurora Silver",
       "hex": "#abaeb8",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_AuroraSilver1765865792.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_AuroraSilver1765865792.jpg"
     },
     {
       "name": "Celadon Blue",
       "hex": "#253146",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_CeladonBlue1765865890.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_CeladonBlue1765865890.jpg"
     },
     {
       "name": "Glaze Red",
       "hex": "#ec374d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_GlazeRed1765865939.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_GlazeRed1765865939.jpg"
     },
     {
       "name": "Pearl White",
       "hex": "#dddddd",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_PearlWhite1765865986.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_PearlWhite1765865986.jpg"
     },
     {
       "name": "Starry Black",
       "hex": "#141414",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_StarryBlack1765866418.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hector_Plus_StarryBlack1765866418.jpg"
     }
   ],
   "c_nissan_x_trail": [
     {
       "name": "Pearl White",
       "hex": "#E2DFD2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_PearlWhite1722575503.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_PearlWhite1722575503.jpg"
     },
     {
       "name": "Diamond Black",
       "hex": "#2B303E",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_DiamondBlack1722575631.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_DiamondBlack1722575631.jpg"
     },
     {
       "name": "Champagne Silver",
       "hex": "#DDD1C4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_ChampagneSilver1722575713.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/X_Trail_ChampagneSilver1722575713.jpg"
     }
   ],
   "c-taigun": [
     {
       "name": "Avocado Pearl Effect",
       "hex": "#343d3e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_AvocadoPearlEffect1775722099.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_AvocadoPearlEffect1775722099.jpg"
     },
     {
       "name": "Candy White",
       "hex": "#8e999e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CandyWhite1775722176.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CandyWhite1775722176.jpg"
     },
     {
       "name": "Carbon Steel Grey Metallic",
       "hex": "#3b4657",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CarbonSteelGreyMetallic1775722238.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CarbonSteelGreyMetallic1775722238.jpg"
     },
     {
       "name": "Lava Blue Metallic",
       "hex": "#192a3c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_LavaBlueMetallic1775722296.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_LavaBlueMetallic1775722296.jpg"
     },
     {
       "name": "Reflex Silver Metallic",
       "hex": "#6c7c90",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_ReflexSilverMetallic1775722360.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_ReflexSilverMetallic1775722360.jpg"
     },
     {
       "name": "Steel Grey",
       "hex": "#3a4352",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CarbonSteelGreyMetallic1775722238.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_CarbonSteelGreyMetallic1775722238.jpg"
     },
     {
       "name": "Wild Cherry Red Metallic",
       "hex": "#380e18",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_WildCherryRedMetallic1775722482.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_WildCherryRedMetallic1775722482.jpg"
     },
     {
       "name": "Carbon Steel Grey Matte",
       "hex": "#222a33",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_SteelGrey1775722418.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_SteelGrey1775722418.jpg"
     },
     {
       "name": "Deep Black Pearl Effect",
       "hex": "#07090a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_DeepBlackPearlEffect1775733650.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taigun_Facelift_DeepBlackPearlEffect1775733650.jpg"
     }
   ],
   "c_tata_harrier": [
     {
       "name": "Pure Grey",
       "hex": "#71767a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_AshGrey1697537195.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_AshGrey1697537195.jpg"
     },
     {
       "name": "Fearless Red",
       "hex": "#a01614",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_CoralRed1697537556.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_CoralRed1697537556.jpg"
     },
     {
       "name": "Pristine White",
       "hex": "#f0f0f2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_LunarWhite1697537580.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_LunarWhite1697537580.jpg"
     },
     {
       "name": "Oberon Black",
       "hex": "#0d0e12",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_OberonBlack1767438643.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_OberonBlack1767438643.jpg"
     },
     {
       "name": "Daytona Grey",
       "hex": "#646569",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PebbleGrey1697537604.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PebbleGrey1697537604.jpg"
     },
     {
       "name": "Seaweed Green",
       "hex": "#282d19",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SeaweedGreen1697537614.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SeaweedGreen1697537614.jpg"
     },
     {
       "name": "Sunlit Yellow",
       "hex": "#eae355",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SunlitYellow1697537623.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SunlitYellow1697537623.jpg"
     },
     {
       "name": "Matte Stealth Black",
       "hex": "#2e3033",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_MatteStealthBlack1742191859.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_MatteStealthBlack1742191859.jpg"
     },
     {
       "name": "Daytona Grey DT",
       "hex": "#6a6a6a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PebbleGrey1697537604.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_PebbleGrey1697537604.jpg"
     },
     {
       "name": "Fearless Red DT",
       "hex": "#c51716",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_CoralRed1697537556.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_CoralRed1697537556.jpg"
     },
     {
       "name": "Nitro Crimson DT",
       "hex": "#831224",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_NitroCrimsonDT1767436814.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_NitroCrimsonDT1767436814.jpg"
     },
     {
       "name": "Pristine White DT",
       "hex": "#e0e0e0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_LunarWhite1697537580.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_LunarWhite1697537580.jpg"
     },
     {
       "name": "Pure Grey DT",
       "hex": "#565a5d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_AshGrey1697537195.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_AshGrey1697537195.jpg"
     },
     {
       "name": "Seaweed Green DT",
       "hex": "#3a4324",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SeaweedGreen1697537614.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_SeaweedGreen1697537614.jpg"
     },
     {
       "name": "Red Dark Carbon Black",
       "hex": "#0e0e0e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_RedDarkCarbonBlack1767438863.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Harrier_RedDarkCarbonBlack1767438863.jpg"
     }
   ],
   "c_tata_nexon_ice": [
     {
       "name": "Daytona Grey",
       "hex": "#393f40",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_DaytonaGrey1694683078.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_DaytonaGrey1694683078.jpg"
     },
     {
       "name": "Royal Blue",
       "hex": "#3b4866",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RoyalBlue1770293146.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RoyalBlue1770293146.jpg"
     },
     {
       "name": "Pristine White With Black Roof",
       "hex": "#dadada",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_PristineWhite1694683267.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_PristineWhite1694683267.jpg"
     },
     {
       "name": "Dark",
       "hex": "#000000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_DarkEdition1717752982.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_DarkEdition1717752982.jpg"
     },
     {
       "name": "Pure Grey With Black Roof",
       "hex": "#8a8b90",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PureGreyWithBlackRoof1764912327.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PureGreyWithBlackRoof1764912327.jpg"
     },
     {
       "name": "Daytona Grey With Black Roof",
       "hex": "#474747",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_DaytonaGrey1694683078.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_DaytonaGrey1694683078.jpg"
     },
     {
       "name": "Creative Ocean with White roof",
       "hex": "#548695",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_CreativeOcceanWithDualTone1727524654.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_CreativeOcceanWithDualTone1727524654.jpg"
     },
     {
       "name": "Pure Grey",
       "hex": "#acadb2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PureGreyWithBlackRoof1764912327.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_PureGreyWithBlackRoof1764912327.jpg"
     },
     {
       "name": "Creative Ocean",
       "hex": "#548695",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_CreativeOcceanWithDualTone1727524654.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_CreativeOcceanWithDualTone1727524654.jpg"
     },
     {
       "name": "Grassland Beige DT",
       "hex": "#86846d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_GrasslandBeigeDT1770288903.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_GrasslandBeigeDT1770288903.jpg"
     },
     {
       "name": "Royal Blue DT",
       "hex": "#061848",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RoyalBlue1770293146.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_RoyalBlue1770293146.jpg"
     },
     {
       "name": "Grassland Beige",
       "hex": "#86846d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_GrasslandBeigeDT1770288903.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_GrasslandBeigeDT1770288903.jpg"
     },
     {
       "name": "Pristine White",
       "hex": "#dadada",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_PristineWhite1694683267.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_2023_PristineWhite1694683267.jpg"
     },
     {
       "name": "Red Dark",
       "hex": "#000000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_DarkEdition1717752982.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Nexon_DarkEdition1717752982.jpg"
     }
   ],
   "c_tata_curvv_ev": [
     {
       "name": "Flame Red",
       "hex": "#9a1213",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_FlameRed1723037286.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_FlameRed1723037286.jpg"
     },
     {
       "name": "Virtual Sunrise",
       "hex": "#353857",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_VirtualSunrise1723037401.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_VirtualSunrise1723037401.jpg"
     },
     {
       "name": "Pristine White",
       "hex": "#b8b7b7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PristineWhite1723037473.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PristineWhite1723037473.jpg"
     },
     {
       "name": "Pure Grey",
       "hex": "#54565d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PureGrey1723037532.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PureGrey1723037532.jpg"
     },
     {
       "name": "Empowered Oxide",
       "hex": "#b0b0a6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_EmpoweredOxide1723037634.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_EmpoweredOxide1723037634.jpg"
     },
     {
       "name": "Virtual Sunrise With Dual Tone",
       "hex": "#686e9a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_VirtualSunrise1723037401.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_VirtualSunrise1723037401.jpg"
     },
     {
       "name": "Flame Red With Dual Tone",
       "hex": "#aa1d1f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_FlameRed1723037286.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_FlameRed1723037286.jpg"
     },
     {
       "name": "Pristine White With Dual Tone",
       "hex": "#d6d6d6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PristineWhite1723037473.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PristineWhite1723037473.jpg"
     },
     {
       "name": "Pure Grey With Dual Tone",
       "hex": "#97989c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PureGrey1723037532.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_PureGrey1723037532.jpg"
     },
     {
       "name": "Empowered Oxide With Dual Tone",
       "hex": "#acaea4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_EmpoweredOxide1723037634.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Curvv_EV_EmpoweredOxide1723037634.jpg"
     }
   ],
   "c_hyundai_ioniq_5": [
     {
       "name": "Titan Grey",
       "hex": "#6b6b6b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_TitanGrey1777375827.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_TitanGrey1777375827.jpg"
     },
     {
       "name": "Optic White",
       "hex": "#f0f0f7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_OpticWhite1777375894.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_OpticWhite1777375894.jpg"
     },
     {
       "name": "Midnight Black Pearl",
       "hex": "#1c1c1c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_MidnightBlackPearl1777376014.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_MidnightBlackPearl1777376014.jpg"
     },
     {
       "name": "Gravity Gold Matte",
       "hex": "#b0aba7",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_GravityGoldMatte1777376105.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Ioniq_5_Facelift_GravityGoldMatte1777376105.jpg"
     }
   ],
   "c_hyundai_grand_i10_nios": [
     {
       "name": "Fiery red",
       "hex": "#9e1414",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Fieryred1775822630.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Fieryred1775822630.jpg"
     },
     {
       "name": "Aqua teal",
       "hex": "#153854",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Aquateal1775822641.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Aquateal1775822641.jpg"
     },
     {
       "name": "Titan Grey Matte",
       "hex": "#28272e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_TitanGreyMatte1775822864.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_TitanGreyMatte1775822864.jpg"
     },
     {
       "name": "Titan Grey",
       "hex": "#50555b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_TitanGreyMatte1775822864.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_TitanGreyMatte1775822864.jpg"
     },
     {
       "name": "Typhoon silver",
       "hex": "#e1e2e5",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Typhoonsilver1775822673.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_Typhoonsilver1775822673.jpg"
     },
     {
       "name": "Atlas White",
       "hex": "#eff3f4",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_AtlasWhite1775822684.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Grand_i10_Nios_AtlasWhite1775822684.jpg"
     }
   ],
   "c_jeep_wrangler": [
     {
       "name": "Anvil Clear Coat",
       "hex": "#6b7577",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_AnvilClearCoat1746435885.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_AnvilClearCoat1746435885.jpg"
     },
     {
       "name": "Black",
       "hex": "#000000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_Black1746435866.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_Black1746435866.jpg"
     },
     {
       "name": "Bright White",
       "hex": "#FFFFFF",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_BrightWhite1746435846.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_BrightWhite1746435846.jpg"
     },
     {
       "name": "&#x27;41",
       "hex": "#746123",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_411746433421.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_411746433421.jpg"
     },
     {
       "name": "Firecracker Red",
       "hex": "#cd1818",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_FirecrackerRed1746433460.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Wrangler_FirecrackerRed1746433460.jpg"
     }
   ],
   "c_jeep_meridian": [
     {
       "name": "Pearl White",
       "hex": "#abadae",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_PearlWhite1682091254.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_PearlWhite1682091254.jpg"
     },
     {
       "name": "Minimal Grey",
       "hex": "#5b5f62",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_MinimalGrey1749281086.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_MinimalGrey1749281086.jpg"
     },
     {
       "name": "Brilliant Black",
       "hex": "#161813",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_BrilliantBlack1717581628.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_BrilliantBlack1717581628.jpg"
     },
     {
       "name": "Galaxy Blue",
       "hex": "#12111f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_GalaxyBlue1717581693.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_GalaxyBlue1717581693.jpg"
     },
     {
       "name": "Magnesio Grey",
       "hex": "#444949",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_MagnesioGrey1717581772.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_MagnesioGrey1717581772.jpg"
     },
     {
       "name": "Silvery Moon",
       "hex": "#92919b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_SilveryMoon1717581984.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_SilveryMoon1717581984.jpg"
     },
     {
       "name": "Techno Metallic Green",
       "hex": "#222e26",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_TechnoMetallicGreen1717582056.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_TechnoMetallicGreen1717582056.jpg"
     },
     {
       "name": "Velvet Red",
       "hex": "#611829",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_VelvetRed1717585097.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Meridian_VelvetRed1717585097.jpg"
     }
   ],
   "c_porsche_911": [
     {
       "name": "Black",
       "hex": "#000000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_Black1631542996.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_Black1631542996.jpg"
     },
     {
       "name": "Lugano Blue",
       "hex": "#30537b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_BlueMetallic1631542996.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_BlueMetallic1631542996.jpg"
     },
     {
       "name": "Oak Green Metallic Neo",
       "hex": "#567442",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_OakGreenMetallicNeo1765625706.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_OakGreenMetallicNeo1765625706.jpg"
     },
     {
       "name": "Ice Grey Metallic",
       "hex": "#9793a2",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_IceGreyMetallic1765621034.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_IceGreyMetallic1765621034.jpg"
     },
     {
       "name": "Slate Grey Neo",
       "hex": "#90909a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_SlateGreyNeo1765626410.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_SlateGreyNeo1765626410.jpg"
     },
     {
       "name": "Carmine Red",
       "hex": "#ba2a27",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_RedMetacllicc1631542997.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_RedMetacllicc1631542997.jpg"
     },
     {
       "name": "Crayon",
       "hex": "#bdac9a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_Crayon1765626833.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_Crayon1765626833.jpg"
     },
     {
       "name": "Vanadium Grey Metallic",
       "hex": "#929ba6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_VanadiumGreyMetallic1765620503.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_VanadiumGreyMetallic1765620503.jpg"
     },
     {
       "name": "GT Silver Metallic",
       "hex": "#cccccc",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_GTSilverMetallic1689058224.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_GTSilverMetallic1689058224.jpg"
     },
     {
       "name": "Guards Red",
       "hex": "#ce1010",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_GuardsRed1689058259.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_GuardsRed1689058259.jpg"
     },
     {
       "name": "Cartagena Yellow Metallic",
       "hex": "#c2bc5e",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_CartagenaYellowMetallic1765624735.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_CartagenaYellowMetallic1765624735.jpg"
     },
     {
       "name": "White",
       "hex": "#efefef",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_White1689058344.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_White1689058344.jpg"
     },
     {
       "name": "Aventurine Green Metallic",
       "hex": "#3c3c32",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_AventurineGreenMetallic1689058371.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_AventurineGreenMetallic1689058371.jpg"
     },
     {
       "name": "Gentian Blue Metallic",
       "hex": "#00194b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_GentianBlueMetallic1689058408.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_GentianBlueMetallic1689058408.jpg"
     },
     {
       "name": "Jet Black Metallic",
       "hex": "#17120c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_Black1631542996.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_Black1631542996.jpg"
     },
     {
       "name": "Provence",
       "hex": "#ab8ba3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_Provence1765625267.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_Provence1765625267.jpg"
     },
     {
       "name": "Shade Green Metallic",
       "hex": "#aab3a0",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_ShadeGreenMetallic1765626035.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/911_ShadeGreenMetallic1765626035.jpg"
     }
   ],
   "c_porsche_taycan": [
     {
       "name": "Mamba Green Metallic",
       "hex": "#497827",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_MambaGreenMetallic1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_MambaGreenMetallic1637741582.jpg"
     },
     {
       "name": "Frozen Berry Metallic",
       "hex": "#a79193",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_FrozenBerryMetallic1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_FrozenBerryMetallic1637741582.jpg"
     },
     {
       "name": "Coffee Beige Metallic",
       "hex": "#b4a89c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_CoffeeBeigeMetallic1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_CoffeeBeigeMetallic1637741582.jpg"
     },
     {
       "name": "Black",
       "hex": "#000000",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_Black1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_Black1637741582.jpg"
     },
     {
       "name": "Ice Grey Metallic",
       "hex": "#b3b4b6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_IceGreyMetallic1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_IceGreyMetallic1637741582.jpg"
     },
     {
       "name": "Gentian Blue Metallic",
       "hex": "#04113b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_GentianBlueMetallic1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_GentianBlueMetallic1637741582.jpg"
     },
     {
       "name": "Crayon",
       "hex": "#c4c5c1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_Crayon1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_Crayon1637741582.jpg"
     },
     {
       "name": "Volcano Grey Metallic",
       "hex": "#52514f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_VolcanoGreyMetallic1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_VolcanoGreyMetallic1637741582.jpg"
     },
     {
       "name": "Jet Black Metallic",
       "hex": "#00050b",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_Black1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_Black1637741582.jpg"
     },
     {
       "name": "Frozen Blue Metallic",
       "hex": "#90bed6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_FrozenBlueMetallic1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_FrozenBlueMetallic1637741582.jpg"
     },
     {
       "name": "Carmine Red",
       "hex": "#ba292d",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_CarmineRed1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_CarmineRed1637741582.jpg"
     },
     {
       "name": "White",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_White1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_White1637741582.jpg"
     },
     {
       "name": "Carrara White  Metallic",
       "hex": "#ffffff",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_White1637741582.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_White1637741582.jpg"
     },
     {
       "name": "Dolomite Silver Metallic",
       "hex": "#bbc0c3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_DolomiteSilverMetallic1637741583.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_DolomiteSilverMetallic1637741583.jpg"
     },
     {
       "name": "Neptune Blue",
       "hex": "#28386c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_NeptuneBlue1637741583.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_NeptuneBlue1637741583.jpg"
     },
     {
       "name": "Mahogany Metallic",
       "hex": "#5d2b32",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_MahoganyMetallic1637741583.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_MahoganyMetallic1637741583.jpg"
     },
     {
       "name": "Cherry Metallic",
       "hex": "#36030f",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_CherryMetallic1637741583.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Taycan_CherryMetallic1637741583.jpg"
     }
   ],
   "c_renault_kwid": [
     {
       "name": "Moonlight Silver with Mystery Black Roof",
       "hex": "#9da2a6",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_MoonlightSilverwithMysteryBlackRoof1784355636.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_MoonlightSilverwithMysteryBlackRoof1784355636.jpg"
     },
     {
       "name": "Ice Cool White with Mystery Black Roof",
       "hex": "#f1f2f5",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_IceCoolWhitewithMysteryBlackRoof1784355571.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_IceCoolWhitewithMysteryBlackRoof1784355571.jpg"
     },
     {
       "name": "Zanskar Blue with Mystery Black Roof",
       "hex": "#035470",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_ZanskarBluewithMysteryBlackRoof1784355486.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_ZanskarBluewithMysteryBlackRoof1784355486.jpg"
     },
     {
       "name": "Fiery Red with Mystery Black Roof",
       "hex": "#9d1117",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_FieryRedwithMysteryBlackRoof1784355335.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Kwid_FieryRedwithMysteryBlackRoof1784355335.jpg"
     }
   ],
   "c_renault_duster": [
     {
       "name": "Sunset Red",
       "hex": "#ed474c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_SunsetRed1775042822.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_SunsetRed1775042822.jpg"
     },
     {
       "name": "Moonlight Silver",
       "hex": "#d3d2d1",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MoonlightSilver1775043158.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MoonlightSilver1775043158.jpg"
     },
     {
       "name": "Mountain Jade Green",
       "hex": "#64764c",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MountainJadeGreen1775043220.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MountainJadeGreen1775043220.jpg"
     },
     {
       "name": "River Blue",
       "hex": "#4d6392",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_RiverBlue1775043277.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_RiverBlue1775043277.jpg"
     },
     {
       "name": "Stealth Black",
       "hex": "#4a4a4a",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_StealthBlack1775043327.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_StealthBlack1775043327.jpg"
     },
     {
       "name": "Pearl White",
       "hex": "#e3e0d5",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_PearlWhite1775043373.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_PearlWhite1775043373.jpg"
     },
     {
       "name": "Mountain Jade Green with Stealth Black Roof",
       "hex": "#6d8052",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MountainJadeGreen1775043220.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_MountainJadeGreen1775043220.jpg"
     },
     {
       "name": "River Blue with Stealth Black Roof",
       "hex": "#445985",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_RiverBlue1775043277.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_RiverBlue1775043277.jpg"
     },
     {
       "name": "Sunset Red with Stealth Black Roof",
       "hex": "#e74045",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_SunsetRed1775042822.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_SunsetRed1775042822.jpg"
     },
     {
       "name": "Pearl White with Stealth Black Roof",
       "hex": "#e1ded3",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_StealthBlack1775043327.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Duster_StealthBlack1775043327.jpg"
     }
   ],
   "c_toyota_hilux": [
     {
       "name": "White Pearl Crystal Shine",
       "hex": "#dfdfdd",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_PearlWhiteCrystalShine1677926438.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_PearlWhiteCrystalShine1677926438.jpg"
     },
     {
       "name": "Grey Metallic",
       "hex": "#868890",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_GreyMetallic1677926438.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_GreyMetallic1677926438.jpg"
     },
     {
       "name": "Super White",
       "hex": "#fdfdfd",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_SuperWhite1677926438.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_SuperWhite1677926438.jpg"
     },
     {
       "name": "Emotional Red",
       "hex": "#d01203",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_EmotionalRed1677926438.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_EmotionalRed1677926438.jpg"
     },
     {
       "name": "Attiude Black",
       "hex": "#303030",
-      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_AttiudeBlack1755063136.jpg?w=1040&amp;q=40"
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/Hilux_AttiudeBlack1755063136.jpg"
     }
-  ]
+  ],
+  "kia-seltos": [
+    {
+        "name": "Frost Blue",
+        "hex": "#4a6577",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_FrostBlue1776236343.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#131619",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_AuroraBlackPearl1776236384.jpg"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#f4f9fb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_GlacierWhitePearl1776236293.jpg"
+    },
+    {
+        "name": "Gravity Grey",
+        "hex": "#444444",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_GravityGrey1776236247.jpg"
+    },
+    {
+        "name": "Imperial Blue",
+        "hex": "#2b2c71",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_ImperialBlue1776236201.jpg"
+    },
+    {
+        "name": "Ivory Silver Gloss",
+        "hex": "#9fa09b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_IvorySilverGloss1776236063.jpg"
+    },
+    {
+        "name": "Magma Red",
+        "hex": "#77141b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_MagmaRed1776235988.jpg"
+    },
+    {
+        "name": "Morning Haze",
+        "hex": "#a7b4b1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_MorningHaze1776235923.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#3f493b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_PewterOlive1776235810.jpg"
+    }
+],
+  "kia-seltos-2026": [
+    {
+        "name": "Frost Blue",
+        "hex": "#4a6577",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_FrostBlue1776236343.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#131619",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_AuroraBlackPearl1776236384.jpg"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#f4f9fb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_GlacierWhitePearl1776236293.jpg"
+    },
+    {
+        "name": "Gravity Grey",
+        "hex": "#444444",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_GravityGrey1776236247.jpg"
+    },
+    {
+        "name": "Imperial Blue",
+        "hex": "#2b2c71",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_ImperialBlue1776236201.jpg"
+    },
+    {
+        "name": "Ivory Silver Gloss",
+        "hex": "#9fa09b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_IvorySilverGloss1776236063.jpg"
+    },
+    {
+        "name": "Magma Red",
+        "hex": "#77141b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_MagmaRed1776235988.jpg"
+    },
+    {
+        "name": "Morning Haze",
+        "hex": "#a7b4b1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_MorningHaze1776235923.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#3f493b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Seltos_PewterOlive1776235810.jpg"
+    }
+],
+  "kia-sonet": [
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#222427",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_AuroraBlackPearl1776227419.jpg"
+    },
+    {
+        "name": "Glacier White Pearl + Aurora Black Pearl",
+        "hex": "#f3f9fb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GlacierWhitePearlAuroraBlackPearl1776227438.jpg"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#f3f9fb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GlacierWhitePearl1776227450.jpg"
+    },
+    {
+        "name": "Gravity Grey",
+        "hex": "#333438",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GravityGrey1776227462.jpg"
+    },
+    {
+        "name": "Imperial Blue",
+        "hex": "#2b2c71",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_ImperialBlue1776227475.jpg"
+    },
+    {
+        "name": "Matte Graphite",
+        "hex": "#1c1e1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_MatteGraphite1776227522.jpg"
+    },
+    {
+        "name": "Magma Red",
+        "hex": "#5d1012",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_MagmaRed1776227619.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#3e493b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_PewterOlive1776227640.jpg"
+    }
+],
+  "kia-sonet-2026": [
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#222427",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_AuroraBlackPearl1776227419.jpg"
+    },
+    {
+        "name": "Glacier White Pearl + Aurora Black Pearl",
+        "hex": "#f3f9fb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GlacierWhitePearlAuroraBlackPearl1776227438.jpg"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#f3f9fb",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GlacierWhitePearl1776227450.jpg"
+    },
+    {
+        "name": "Gravity Grey",
+        "hex": "#333438",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_GravityGrey1776227462.jpg"
+    },
+    {
+        "name": "Imperial Blue",
+        "hex": "#2b2c71",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_ImperialBlue1776227475.jpg"
+    },
+    {
+        "name": "Matte Graphite",
+        "hex": "#1c1e1d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_MatteGraphite1776227522.jpg"
+    },
+    {
+        "name": "Magma Red",
+        "hex": "#5d1012",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_MagmaRed1776227619.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#3e493b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Sonet_PewterOlive1776227640.jpg"
+    }
+],
+  "kia-carens": [
+    {
+        "name": "Imperial Blue",
+        "hex": "#2b2c71",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_ImperialBlue1652706967.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#3e493b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_PewterOlive1715919309.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#0b0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_AuroraBlackPearl1652706967.jpg"
+    },
+    {
+        "name": "Sparkling Silver",
+        "hex": "#e1e1e1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_SparklingSilver1652706968.jpg"
+    },
+    {
+        "name": "Gravity Grey",
+        "hex": "#454545",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_GravityGrey1652706968.jpg"
+    },
+    {
+        "name": "Clear White",
+        "hex": "#f0f9fd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_GlacierWhitePearl1652706968.jpg"
+    }
+],
+  "kia-carens-2026": [
+    {
+        "name": "Imperial Blue",
+        "hex": "#2b2c71",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_ImperialBlue1652706967.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#3e493b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_PewterOlive1715919309.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#0b0a0a",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_AuroraBlackPearl1652706967.jpg"
+    },
+    {
+        "name": "Sparkling Silver",
+        "hex": "#e1e1e1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_SparklingSilver1652706968.jpg"
+    },
+    {
+        "name": "Gravity Grey",
+        "hex": "#454545",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_GravityGrey1652706968.jpg"
+    },
+    {
+        "name": "Clear White",
+        "hex": "#f0f9fd",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carens_GlacierWhitePearl1652706968.jpg"
+    }
+],
+  "kia-ev6": [
+    {
+        "name": "Wolf Grey",
+        "hex": "#adadad",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV6_WolfGrey1776232569.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#323232",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV6_AuroraBlackPearl1776232631.jpg"
+    },
+    {
+        "name": "Runway Red",
+        "hex": "#9c0e12",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV6_RunwayRed1776232684.jpg"
+    },
+    {
+        "name": "Snow White Pearl",
+        "hex": "#c9cace",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV6_SnowWhitePearl1776232731.jpg"
+    }
+],
+  "kia-ev6-2026": [
+    {
+        "name": "Wolf Grey",
+        "hex": "#adadad",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV6_WolfGrey1776232569.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#323232",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV6_AuroraBlackPearl1776232631.jpg"
+    },
+    {
+        "name": "Runway Red",
+        "hex": "#9c0e12",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV6_RunwayRed1776232684.jpg"
+    },
+    {
+        "name": "Snow White Pearl",
+        "hex": "#c9cace",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/EV6_SnowWhitePearl1776232731.jpg"
+    }
+],
+  "kia-carnival": [
+    {
+        "name": "Fusion Black",
+        "hex": "#090a09",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carnival_2024_FusionBlack1726653164.jpg"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#f1f2f1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carnival_2024_GlacierWhitePearl1726653237.jpg"
+    }
+],
+  "kia-carnival-2026": [
+    {
+        "name": "Fusion Black",
+        "hex": "#090a09",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carnival_2024_FusionBlack1726653164.jpg"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#f1f2f1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Carnival_2024_GlacierWhitePearl1726653237.jpg"
+    }
+],
+  "kia-syros": [
+    {
+        "name": "Frost Blue",
+        "hex": "#628092",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_FrostBlue1777885330.jpg"
+    },
+    {
+        "name": "Ivory Silver Matte",
+        "hex": "#a8a89e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_IvorySilverMatte1777885292.jpg"
+    },
+    {
+        "name": "Gravity Gray",
+        "hex": "#595d5d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_GravityGray1777885246.jpg"
+    },
+    {
+        "name": "Imperial Blue",
+        "hex": "#2f3b69",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_ImperialBlue1777885199.jpg"
+    },
+    {
+        "name": "Magma Red",
+        "hex": "#751420",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_MagmaRed1777885161.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#343f2d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_PewterOlive1777885118.jpg"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#dee0df",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_GlacierWhitePearl1777885066.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#1b1b1b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_AuroraBlackPearl1777885028.jpg"
+    },
+    {
+        "name": "Ivory Silver Gloss",
+        "hex": "#acaba1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_IvorySilverGloss1777885432.jpg"
+    }
+],
+  "kia-syros-2026": [
+    {
+        "name": "Frost Blue",
+        "hex": "#628092",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_FrostBlue1777885330.jpg"
+    },
+    {
+        "name": "Ivory Silver Matte",
+        "hex": "#a8a89e",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_IvorySilverMatte1777885292.jpg"
+    },
+    {
+        "name": "Gravity Gray",
+        "hex": "#595d5d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_GravityGray1777885246.jpg"
+    },
+    {
+        "name": "Imperial Blue",
+        "hex": "#2f3b69",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_ImperialBlue1777885199.jpg"
+    },
+    {
+        "name": "Magma Red",
+        "hex": "#751420",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_MagmaRed1777885161.jpg"
+    },
+    {
+        "name": "Pewter Olive",
+        "hex": "#343f2d",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_PewterOlive1777885118.jpg"
+    },
+    {
+        "name": "Glacier White Pearl",
+        "hex": "#dee0df",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_GlacierWhitePearl1777885066.jpg"
+    },
+    {
+        "name": "Aurora Black Pearl",
+        "hex": "#1b1b1b",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_AuroraBlackPearl1777885028.jpg"
+    },
+    {
+        "name": "Ivory Silver Gloss",
+        "hex": "#acaba1",
+        "image": "https://images.91wheels.com/assets/uploads/swatchs/Syros_IvorySilverGloss1777885432.jpg"
+    }
+]
 };
+
+// Map vehicle slugs & IDs dynamically to their color datasets
+const aliases: Record<string, string> = {
+  "maruti-swift-2024": "c1",
+  "maruti-suzuki-swift": "c1",
+  "hyundai-creta-2024": "c2",
+  "hyundai-creta": "c2",
+  "tata-nexon-ev-2024": "c3",
+  "tata-nexon-ev": "c3",
+  "mahindra-scorpio-n-2024": "c4",
+  "mahindra-scorpio-n": "c4",
+  "toyota-fortuner-2024": "c5",
+  "toyota-fortuner": "c5",
+  "honda-city-2024": "c6",
+  "honda-city": "c6",
+  "maruti-suzuki-brezza": "c-brezza",
+  "mahindra-bolero": "c-bolero",
+  "skoda-kylaq": "c-kylaq",
+  "citroen-basalt": "c-basalt",
+  "mahindra-thar": "c-thar",
+  "mahindra-xuv700": "c-xuv700",
+  "tata-punch": "c-punch",
+  "kia-seltos-2026": "kia-seltos",
+  "toyota-innova-hycross": "c-hycross",
+  "maruti-suzuki-baleno": "c-baleno",
+  "maruti-suzuki-ertiga": "c-ertiga",
+  "tata-safari": "c-safari",
+  "hyundai-i20": "c-i20",
+  "mg-hector": "c-hector",
+  "skoda-slavia": "c-slavia",
+  "volkswagen-virtus": "c-virtus",
+  "hyundai-verna": "c-verna",
+  "honda-elevate": "c-elevate",
+  "maruti-suzuki-grand-vitara": "c-grandvitara",
+  "tata-tiago-ev": "c-tiago-ev",
+  "mahindra-scorpio-classic": "c-scorpio-classic",
+  "toyota-glanza": "c-glanza",
+  "maruti-suzuki-jimny": "c-jimny",
+  "mahindra-xuv3xo": "c-xuv3xo",
+  "hyundai-alcazar": "c-alcazar"
+};
+
+for (const [alias, target] of Object.entries(aliases)) {
+  if (vehicleColorsData[target] && !vehicleColorsData[alias]) {
+    vehicleColorsData[alias] = vehicleColorsData[target];
+  }
+}
+

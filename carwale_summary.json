@@ -1,0 +1,182 @@
+[
+  {
+    "brand": "Maruti Suzuki",
+    "model": "Swift",
+    "url": "https://www.carwale.com/maruti-suzuki-cars/swift/",
+    "priceText": "5.79 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/159099/swift-exterior-right-front-three-quarter-31.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Tata",
+    "model": "Nexon",
+    "url": "https://www.carwale.com/tata-cars/nexon/",
+    "priceText": "7.40 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/141867/nexon-exterior-right-front-three-quarter-79.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Creta",
+    "url": "https://www.carwale.com/hyundai-cars/creta/",
+    "priceText": "10.91 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/106815/creta-exterior-right-front-three-quarter-6.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Mahindra",
+    "model": "Thar",
+    "url": "https://www.carwale.com/mahindra-cars/thar/",
+    "priceText": "10.32 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/204996/thar-2025-exterior-right-front-three-quarter-5.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Tata",
+    "model": "Punch",
+    "url": "https://www.carwale.com/tata-cars/punch/",
+    "priceText": "5.70 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/172825/punch-exterior-right-front-three-quarter-250.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Maruti Suzuki",
+    "model": "Brezza",
+    "url": "https://www.carwale.com/maruti-suzuki-cars/brezza/",
+    "priceText": "7.40 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/212741/2026-brezza-exterior-right-front-three-quarter.jpeg",
+    "hasLdData": false
+  },
+  {
+    "brand": "Mahindra",
+    "model": "Scorpio N",
+    "url": "https://www.carwale.com/mahindra-cars/scorpio-n/",
+    "priceText": "13.49 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/40432/scorpio-n-exterior-right-front-three-quarter-4.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Venue",
+    "url": "https://www.carwale.com/hyundai-cars/venue/",
+    "priceText": "8.00 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/197163/venue-exterior-right-front-three-quarter-38.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Kia",
+    "model": "Seltos",
+    "url": "https://www.carwale.com/kia-cars/seltos/",
+    "priceText": "11.00 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/192817/seltos-exterior-right-front-three-quarter-50.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Toyota",
+    "model": "Fortuner",
+    "url": "https://www.carwale.com/toyota-cars/fortuner/",
+    "priceText": "34.76 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/44709/fortuner-exterior-right-front-three-quarter-28.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Maruti Suzuki",
+    "model": "Baleno",
+    "url": "https://www.carwale.com/maruti-suzuki-cars/baleno/",
+    "priceText": "5.99 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-69.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Mahindra",
+    "model": "XUV700",
+    "url": "https://www.carwale.com/mahindra-cars/xuv700/",
+    "priceText": "13.99 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/205104/xuv-7xo-exterior-right-front-three-quarter-547.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Maruti Suzuki",
+    "model": "Fronx",
+    "url": "https://www.carwale.com/maruti-suzuki-cars/fronx/",
+    "priceText": "6.85 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Kia",
+    "model": "Sonet",
+    "url": "https://www.carwale.com/kia-cars/sonet/",
+    "priceText": "7.41 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/174423/sonet-exterior-right-front-three-quarter-12.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Toyota",
+    "model": "Innova Crysta",
+    "url": "https://www.carwale.com/toyota-cars/innova-crysta/",
+    "priceText": "19.72 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/222736/innova-crysta-2026-exterior-right-front-three-quarter.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Verna",
+    "url": "https://www.carwale.com/hyundai-cars/verna/",
+    "priceText": "10.99 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/204398/verna-exterior-right-front-three-quarter.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Honda",
+    "model": "City",
+    "url": "https://www.carwale.com/honda-cars/city/",
+    "priceText": "12.04 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/219846/city-facelift-exterior-right-front-three-quarter-2.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "MG",
+    "model": "Hector",
+    "url": "https://www.carwale.com/mg-cars/hector/",
+    "priceText": "11.99 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/212881/hector-facelift-exterior-right-front-three-quarter.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Skoda",
+    "model": "Slavia",
+    "url": "https://www.carwale.com/skoda-cars/slavia/",
+    "priceText": "10.00 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/175951/slavia-exterior-right-front-three-quarter-10.png",
+    "hasLdData": false
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Virtus",
+    "url": "https://www.carwale.com/volkswagen-cars/virtus/",
+    "priceText": "10.71 Lakh",
+    "imageCount": 8,
+    "sampleImage": "https://imgd.aeplcdn.com/664x374/n/cw/ec/144681/virtus-exterior-right-front-three-quarter-11.png",
+    "hasLdData": false
+  }
+]

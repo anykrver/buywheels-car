@@ -92,10 +92,11 @@ export default function VehicleFilters({ filters, onChange, brands }: VehicleFil
           <div className="space-y-3">
             {[
               { label: 'Under ₹5 Lakh', min: 0, max: 500000 },
+              { label: 'Under ₹10 Lakh', min: 0, max: 1000000 },
               { label: '₹5 - 10 Lakh', min: 500000, max: 1000000 },
-              { label: '₹10 - 20 Lakh', min: 1000000, max: 2000000 },
-              { label: '₹20 - 50 Lakh', min: 2000000, max: 5000000 },
-              { label: 'Above ₹50 Lakh', min: 5000000, max: 100000000 },
+              { label: '₹10 - 15 Lakh', min: 1000000, max: 1500000 },
+              { label: '₹15 - 20 Lakh', min: 1500000, max: 2000000 },
+              { label: 'Above ₹20 Lakh', min: 2000000, max: 100000000 },
             ].map(({ label, min, max }) => (
               <label key={label} className="flex items-center gap-3 cursor-pointer group">
                 <input

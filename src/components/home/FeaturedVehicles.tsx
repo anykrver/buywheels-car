@@ -218,7 +218,7 @@ export default function FeaturedVehicles() {
 
         {/* Floating Compare Tray */}
         {compareList.length > 0 && (
-          <div className="fixed bottom-20 lg:bottom-6 left-1/2 -translate-x-1/2 z-40 bg-dark/95 backdrop-blur-md text-white rounded-2xl shadow-card-hover px-6 py-4 flex items-center gap-4 animate-slide-up border border-white/10">
+          <div data-compare-bar="true" className="fixed bottom-20 lg:bottom-6 left-1/2 -translate-x-1/2 z-40 bg-dark/95 backdrop-blur-md text-white rounded-2xl shadow-card-hover px-6 py-4 flex items-center gap-4 animate-slide-up border border-white/10">
             <span className="text-sm font-medium">{compareList.length} vehicles selected</span>
             <div className="flex gap-2">
               {compareList.map(v => (

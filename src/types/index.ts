@@ -1,6 +1,6 @@
 export type VehicleCategory = 'car' | 'ev';
 export type FuelType = 'Petrol' | 'Diesel' | 'Electric' | 'CNG' | 'Hybrid';
-export type TransmissionType = 'Manual' | 'Automatic' | 'CVT' | 'AMT' | 'iMT' | 'DCT';
+export type TransmissionType = 'Manual' | 'Automatic' | 'CVT' | 'e-CVT' | 'IVT' | 'AMT' | 'iMT' | 'DCT' | 'DSG' | 'Single Speed' | 'Direct Drive';
 
 export interface Variant {
   id: string;
@@ -61,6 +61,7 @@ export interface Vehicle {
   pros?: string[];
   cons?: string[];
   groundClearance?: number;
+  rangeKm?: number;
 }
 
 export interface Brand {

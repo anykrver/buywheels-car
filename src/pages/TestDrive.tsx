@@ -2,13 +2,23 @@ import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Calendar, Check, Car, MapPin, ArrowLeft } from 'lucide-react';
 import { supabase } from '../utils/supabaseClient';
-import { vehicles, formatPriceShort } from '../utils/data';
+import { vehicles as mockVehicles, formatPriceShort } from '../utils/data';
+import { fetchVehicles } from '../utils/supabaseService';
+import type { Vehicle } from '../types';
 
 export default function TestDrive() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  const [vehicleId, setVehicleId] = useState(vehicles[0]?.id || '');
+  const [vehicleList, setVehicleList] = useState<Vehicle[]>(mockVehicles);
+  const [vehicleId, setVehicleId] = useState(mockVehicles[0]?.id || '');
+
+  useEffect(() => {
+    fetchVehicles().then(data => {
+      if (data && data.length > 0) setVehicleList(data);
+    });
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -25,14 +35,14 @@ export default function TestDrive() {
   useEffect(() => {
     const vParam = searchParams.get('vehicle');
     if (vParam) {
-      const match = vehicles.find(v => v.id === vParam || v.slug === vParam);
+      const match = vehicleList.find(v => v.id === vParam || v.slug === vParam);
       if (match) {
         setVehicleId(match.id);
       }
     }
-  }, [searchParams]);
+  }, [searchParams, vehicleList]);
 
-  const selectedVehicle = vehicles.find(v => v.id === vehicleId) || vehicles[0];
+  const selectedVehicle = vehicleList.find(v => v.id === vehicleId) || vehicleList[0];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -94,7 +104,7 @@ export default function TestDrive() {
                     alt={selectedVehicle.model}
                     className="w-full aspect-video object-cover rounded-xl mb-3 border border-border"
                     onError={(e) => {
-                      e.currentTarget.src = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
+                      e.currentTarget.src = 'https://imgd.aeplcdn.com/664x374/n/cw/ec/141879/nexon-ev-exterior-right-front-three-quarter-7.jpeg';
                     }}
                   />
                   <div>
@@ -145,7 +155,7 @@ export default function TestDrive() {
                       onChange={e => setVehicleId(e.target.value)}
                       className="select-field text-sm"
                     >
-                      {vehicles.map(v => (
+                      {vehicleList.map(v => (
                         <option key={v.id} value={v.id}>{v.brand} {v.model}</option>
                       ))}
                     </select>

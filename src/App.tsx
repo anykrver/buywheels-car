@@ -25,6 +25,7 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Sitemap from './pages/Sitemap';
 import { WishlistProvider } from './context/WishlistContext';
+import { LocationProvider } from './context/LocationContext';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -84,10 +85,12 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <WishlistProvider>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </WishlistProvider>
+    <LocationProvider>
+      <WishlistProvider>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </WishlistProvider>
+    </LocationProvider>
   );
 }

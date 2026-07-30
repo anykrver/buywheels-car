@@ -1,9 +1,20 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingDown, MapPin, Star, ArrowRight, CheckCircle } from 'lucide-react';
-import { vehicles, formatPriceShort } from '../../utils/data';
+import { vehicles as mockVehicles, formatPriceShort } from '../../utils/data';
+import { fetchVehicles } from '../../utils/supabaseService';
+import type { Vehicle } from '../../types';
 
 export default function PriceComparisonSection() {
-  const vehicle = vehicles[1]; // Hyundai Creta
+  const [vehicleList, setVehicleList] = useState<Vehicle[]>(mockVehicles);
+
+  useEffect(() => {
+    fetchVehicles().then(data => {
+      if (data && data.length > 0) setVehicleList(data);
+    });
+  }, []);
+
+  const vehicle = vehicleList.find(v => v.slug === 'hyundai-creta') || vehicleList[0] || mockVehicles[0];
 
   return (
     <section className="py-20 bg-surface">

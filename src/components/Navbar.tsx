@@ -6,6 +6,9 @@ import {
   Search, Heart, MapPin, ChevronDown, Menu, X, User, Phone, Check,
 } from 'lucide-react';
 import SearchSuggestions from './SearchSuggestions';
+import AreaPincodeModal, { AreaItem } from './AreaPincodeModal';
+
+import { useLocationContext } from '../context/LocationContext';
 
 const CITIES = ['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh', 'Deoghar'];
 
@@ -33,10 +36,27 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [cityDropdownOpen, setCityDropdownOpen] = useState(false);
-  const [selectedCity, setSelectedCity] = useState<string>(() => {
-    return localStorage.getItem('userCity') || 'Ranchi';
-  });
+
+  const {
+    selectedCity,
+    selectedPincode,
+    selectedArea,
+    pincodeModalOpen,
+    openPincodeModal,
+    closePincodeModal,
+    setSelectedLocation,
+  } = useLocationContext();
+
+  const displayLocation = selectedCity;
+
+  const handleSelectArea = (item: AreaItem) => {
+    setSelectedLocation({
+      city: item.city,
+      pincode: item.pincode,
+      area: item.area,
+    });
+    closePincodeModal();
+  };
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -58,7 +78,6 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
-    setCityDropdownOpen(false);
   }, [location]);
 
   const navBg = isHome && !scrolled
@@ -98,10 +117,7 @@ export default function Navbar() {
             {/* Left Group: 3-line Menu Button + Logo shifted left for clean alignment */}
             <div className="flex items-center gap-2">
               <button
-                onClick={() => {
-                  setMobileOpen(!mobileOpen);
-                  setCityDropdownOpen(false);
-                }}
+                onClick={() => setMobileOpen(!mobileOpen)}
                 className={`p-1.5 rounded-xl transition-colors ${
                   isHome && !scrolled ? 'text-white hover:bg-white/10' : 'text-dark hover:bg-surface'
                 }`}
@@ -144,44 +160,20 @@ export default function Navbar() {
                 )}
               </Link>
 
-              {/* Select City Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
-                  className={`flex items-center gap-1 px-2 py-1.5 rounded-xl text-xs font-bold border transition-all ${
-                    isHome && !scrolled
-                      ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
-                      : 'bg-surface text-dark border-border hover:border-primary'
-                  }`}
-                >
-                  <MapPin size={12} className="text-primary shrink-0" />
-                  <span className="truncate max-w-[55px] sm:max-w-[90px]">{selectedCity}</span>
-                  <ChevronDown size={11} className="text-muted shrink-0" />
-                </button>
-
-                {/* City Dropdown Menu */}
-                {cityDropdownOpen && (
-                  <div className="absolute right-0 top-full mt-2 w-44 bg-white rounded-2xl shadow-card-hover border border-border py-2 z-50 animate-scale-in">
-                    <p className="px-3 py-1 text-[10px] font-bold text-muted uppercase tracking-wider">Select City</p>
-                    {CITIES.map(city => (
-                      <button
-                        key={city}
-                        onClick={() => {
-                          setSelectedCity(city);
-                          localStorage.setItem('userCity', city);
-                          setCityDropdownOpen(false);
-                        }}
-                        className={`w-full text-left px-3 py-1.5 text-xs font-semibold flex items-center justify-between hover:bg-primary-50 hover:text-primary transition-colors ${
-                          selectedCity === city ? 'text-primary font-bold bg-primary-50/50' : 'text-dark-600'
-                        }`}
-                      >
-                        <span>{city}</span>
-                        {selectedCity === city && <Check size={12} className="text-primary" />}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+              {/* Select Area / Pincode Button (Mobile) */}
+              <button
+                onClick={openPincodeModal}
+                className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition-all ${
+                  isHome && !scrolled
+                    ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
+                    : 'bg-surface text-dark border-border hover:border-primary'
+                }`}
+                title="Search your Area or Pincode"
+              >
+                <MapPin size={12} className="text-primary shrink-0" />
+                <span className="truncate max-w-[70px] sm:max-w-[110px]">{displayLocation}</span>
+                <ChevronDown size={11} className="text-muted shrink-0" />
+              </button>
             </div>
           </div>
 
@@ -239,43 +231,20 @@ export default function Navbar() {
 
             {/* Desktop Right side actions */}
             <div className="flex items-center gap-2">
-              {/* Select City Button (Desktop) */}
-              <div className="relative">
-                <button
-                  onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border transition-all ${
-                    isHome && !scrolled
-                      ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
-                      : 'bg-surface text-dark border-border hover:border-primary'
-                  }`}
-                >
-                  <MapPin size={14} className="text-primary" />
-                  <span>{selectedCity}</span>
-                  <ChevronDown size={12} className="text-muted" />
-                </button>
-
-                {cityDropdownOpen && (
-                  <div className="absolute right-0 top-full mt-2 w-44 bg-white rounded-2xl shadow-card-hover border border-border py-2 z-50 animate-scale-in">
-                    <p className="px-3 py-1 text-[10px] font-bold text-muted uppercase tracking-wider">Select City</p>
-                    {CITIES.map(city => (
-                      <button
-                        key={city}
-                        onClick={() => {
-                          setSelectedCity(city);
-                          localStorage.setItem('userCity', city);
-                          setCityDropdownOpen(false);
-                        }}
-                        className={`w-full text-left px-3 py-1.5 text-xs font-semibold flex items-center justify-between hover:bg-primary-50 hover:text-primary transition-colors ${
-                          selectedCity === city ? 'text-primary font-bold bg-primary-50/50' : 'text-dark-600'
-                        }`}
-                      >
-                        <span>{city}</span>
-                        {selectedCity === city && <Check size={12} className="text-primary" />}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+              {/* Select Area / Pincode Button (Desktop) */}
+              <button
+                onClick={openPincodeModal}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border transition-all ${
+                  isHome && !scrolled
+                    ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
+                    : 'bg-surface text-dark border-border hover:border-primary'
+                }`}
+                title="Search your Area or Pincode"
+              >
+                <MapPin size={14} className="text-primary shrink-0" />
+                <span className="truncate max-w-[140px]">{displayLocation}</span>
+                <ChevronDown size={12} className="text-muted shrink-0" />
+              </button>
 
               {/* Search */}
               <button
@@ -437,6 +406,14 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Search Area / Pincode Modal */}
+      <AreaPincodeModal
+        isOpen={pincodeModalOpen}
+        onClose={closePincodeModal}
+        onSelectArea={handleSelectArea}
+        currentPincode={selectedPincode}
+      />
     </>
   );
 }

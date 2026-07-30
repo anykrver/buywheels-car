@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { vehicles } from '../utils/data';
 import { Vehicle } from '../types';
 import {
   MessageSquare, X, RefreshCw, ChevronRight,
-  Sparkles
+  Sparkles, User, Phone, Send
 } from 'lucide-react';
 import './ChatAssistant.css';
 
@@ -13,7 +13,7 @@ interface Message {
   sender: 'bot' | 'user';
   text: string;
   timestamp: Date;
-  type?: 'text' | 'options' | 'cars' | 'email-input';
+  type?: 'text' | 'options' | 'cars' | 'lead-form';
   options?: { label: string; value: string; stepTarget: string }[];
   cars?: Vehicle[];
 }
@@ -36,9 +36,29 @@ export default function ChatAssistant() {
   const [showVideo, setShowVideo] = useState(true);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputVal, setInputVal] = useState('');
+  const [nameInput, setNameInput] = useState('');
+  const [phoneInput, setPhoneInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [currentStep, setCurrentStep] = useState<'greeting' | 'email' | 'budget' | 'fuel' | 'freeform'>('greeting');
+  const [currentStep, setCurrentStep] = useState<'greeting' | 'lead-info' | 'budget' | 'fuel' | 'freeform'>('greeting');
   const [selectedBudget, setSelectedBudget] = useState('');
+  const location = useLocation();
+  const [hasCompareBar, setHasCompareBar] = useState(false);
+
+  useEffect(() => {
+    const checkCompareBar = () => {
+      const el = document.querySelector('[data-compare-bar="true"]');
+      setHasCompareBar(!!el);
+    };
+
+    checkCompareBar();
+    const interval = setInterval(checkCompareBar, 300);
+    window.addEventListener('resize', checkCompareBar);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', checkCompareBar);
+    };
+  }, [location.pathname]);
 
   const chatEndRef = useRef<HTMLDivElement>(null);
   const chatBodyRef = useRef<HTMLDivElement>(null);
@@ -71,24 +91,25 @@ export default function ChatAssistant() {
     setSelectedBudget('');
 
     setTimeout(() => {
-      // Check if email already exists in localstorage
-      const storedEmail = localStorage.getItem('niaa_user_email');
+      // Check if user details exist in localstorage
+      const storedName = localStorage.getItem('niaa_user_name');
+      const storedPhone = localStorage.getItem('niaa_user_phone');
       
       const newMessages: Message[] = [
         {
           id: 'msg-greet-1',
           sender: 'bot',
-          text: 'Hello, welcome to Buywheels. I Am Buywheels, your personal car assistant!',
+          text: 'Hello! Welcome to Buywheels, your personal car assistant in Jharkhand.',
           timestamp: new Date(),
           type: 'text',
         }
       ];
 
-      if (storedEmail) {
+      if (storedName && storedPhone) {
         newMessages.push({
-          id: 'msg-greet-2-email-stored',
+          id: 'msg-greet-2-stored',
           sender: 'bot',
-          text: `Welcome back! I remembered your email: ${storedEmail}. Let's find your dream car!`,
+          text: `Welcome back, ${storedName}! Let's find your ideal car today.`,
           timestamp: new Date(),
           type: 'text'
         });
@@ -99,17 +120,17 @@ export default function ChatAssistant() {
         askBudget();
       } else {
         newMessages.push({
-          id: 'msg-greet-2-ask-email',
+          id: 'msg-greet-2-ask-info',
           sender: 'bot',
-          text: 'But before we begin, please help me with your Email Address!',
+          text: 'To get started and unlock exclusive dealer offers in your city, please share your Name and Mobile Number:',
           timestamp: new Date(),
-          type: 'text'
+          type: 'lead-form'
         });
         setMessages(newMessages);
         setIsTyping(false);
-        setCurrentStep('email');
+        setCurrentStep('lead-info');
       }
-    }, 1000);
+    }, 800);
   };
 
   useEffect(() => {
@@ -117,6 +138,42 @@ export default function ChatAssistant() {
       initChat();
     }
   }, [isOpen]);
+
+  // Handle Name and Phone submission
+  const handleLeadSubmit = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!nameInput.trim() || phoneInput.trim().length !== 10) return;
+
+    const userMsgText = `${nameInput.trim()} (${phoneInput.trim()})`;
+    const userMsg: Message = {
+      id: `user-lead-${Date.now()}`,
+      sender: 'user',
+      text: userMsgText,
+      timestamp: new Date(),
+      type: 'text'
+    };
+
+    localStorage.setItem('niaa_user_name', nameInput.trim());
+    localStorage.setItem('niaa_user_phone', phoneInput.trim());
+
+    setMessages(prev => [...prev, userMsg]);
+    setIsTyping(true);
+
+    setTimeout(() => {
+      setMessages(prev => [
+        ...prev,
+        {
+          id: `lead-success-${Date.now()}`,
+          sender: 'bot',
+          text: `Thank you, ${nameInput.trim()}! Your details are registered. Let's find your dream car!`,
+          timestamp: new Date(),
+          type: 'text'
+        }
+      ]);
+      setIsTyping(false);
+      askBudget();
+    }, 800);
+  };
 
   // Transition to budget step
   const askBudget = () => {
@@ -218,7 +275,6 @@ export default function ChatAssistant() {
   // Filter cars logic
   const getFilteredCars = (budgetVal: string, fuelVal: string): Vehicle[] => {
     return vehicles.filter(v => {
-      // 1. Budget filter
       let matchesBudget = false;
       const price = v.startingPrice;
       if (budgetVal === '<8L') matchesBudget = price < 800000;
@@ -228,7 +284,6 @@ export default function ChatAssistant() {
       else if (budgetVal === '>30L') matchesBudget = price > 3000000;
       else matchesBudget = true;
 
-      // 2. Fuel filter
       let matchesFuel = false;
       if (!fuelVal || fuelVal === 'Any') {
         matchesFuel = true;
@@ -253,11 +308,10 @@ export default function ChatAssistant() {
     return 'Any Budget';
   };
 
-  // Simple Regex/NLP Parser for free-form user typing
+  // Free-form user typing parser
   const parseFreeformText = (text: string) => {
     const lower = text.toLowerCase();
 
-    // 1. Check for greeting resets
     if (lower.match(/^(hello|hi|hey|greetings|restart|start over|reset)/)) {
       initChat();
       return;
@@ -272,66 +326,55 @@ export default function ChatAssistant() {
       return;
     }
 
-    // 2. Extract budget keywords
-    let budgetQuery = 'Any';
     let budgetLimit = 0;
-    if (lower.includes('under 8') || lower.includes('less than 8') || lower.includes('<8')) {
-      budgetQuery = '<8L';
-      budgetLimit = 800000;
-    } else if (lower.includes('under 12') || lower.includes('less than 12') || lower.includes('8-12') || lower.includes('8 to 12')) {
-      budgetQuery = '8-12L';
-      budgetLimit = 1200000;
-    } else if (lower.includes('under 18') || lower.includes('less than 18') || lower.includes('12-18') || lower.includes('12 to 18')) {
-      budgetQuery = '12-18L';
-      budgetLimit = 1800000;
-    } else if (lower.includes('under 30') || lower.includes('less than 30') || lower.includes('18-30') || lower.includes('18 to 30')) {
-      budgetQuery = '18-30L';
-      budgetLimit = 3000000;
-    } else if (lower.includes('above 30') || lower.includes('more than 30') || lower.includes('>30') || lower.includes('premium')) {
-      budgetQuery = '>30L';
-    }
-
-    // Try to parse exact numbers e.g. "under 15 lakhs", "10 lakhs"
-    const lakhMatch = lower.match(/(under|below|less than)?\s*(\d+)\s*(lakh|lakhs)/);
-    if (lakhMatch) {
-      const amount = parseInt(lakhMatch[2], 10);
-      budgetLimit = amount * 100000;
-    }
-
-    // 3. Extract fuel type
+    let budgetQuery = 'Any';
     let fuelQuery = 'Any';
-    if (lower.includes('petrol')) fuelQuery = 'Petrol';
-    else if (lower.includes('diesel')) fuelQuery = 'Diesel';
-    else if (lower.includes('cng')) fuelQuery = 'CNG';
-    else if (lower.includes('hybrid')) fuelQuery = 'Hybrid';
-    else if (lower.includes('electric') || lower.includes('ev') || lower.includes('evs')) fuelQuery = 'Electric';
 
-    // 4. Extract Brand / Model keywords
-    let matchedBrandOrModel: Vehicle[] = [];
-    vehicles.forEach(v => {
-      if (lower.includes(v.model.toLowerCase()) || lower.includes(v.brand.toLowerCase())) {
-        if (!matchedBrandOrModel.some(added => added.id === v.id)) {
-          matchedBrandOrModel.push(v);
-        }
-      }
-    });
+    if (lower.includes('under 8') || lower.includes('below 8') || lower.includes('cheap')) {
+      budgetLimit = 800000;
+      budgetQuery = '<8L';
+    } else if (lower.includes('under 12') || lower.includes('below 12')) {
+      budgetLimit = 1200000;
+      budgetQuery = '8-12L';
+    } else if (lower.includes('under 15') || lower.includes('below 15') || lower.includes('under 18')) {
+      budgetLimit = 1800000;
+      budgetQuery = '12-18L';
+    } else if (lower.includes('under 20') || lower.includes('under 25') || lower.includes('under 30')) {
+      budgetLimit = 3000000;
+      budgetQuery = '18-30L';
+    }
+
+    if (lower.includes('ev') || lower.includes('electric')) {
+      fuelQuery = 'Electric';
+    } else if (lower.includes('cng')) {
+      fuelQuery = 'CNG';
+    } else if (lower.includes('diesel')) {
+      fuelQuery = 'Diesel';
+    } else if (lower.includes('petrol')) {
+      fuelQuery = 'Petrol';
+    } else if (lower.includes('hybrid')) {
+      fuelQuery = 'Hybrid';
+    }
+
+    const matchedBrandOrModel = vehicles.filter(v => 
+      lower.includes(v.brand.toLowerCase()) || 
+      lower.includes(v.model.toLowerCase())
+    );
 
     setIsTyping(true);
-
     setTimeout(() => {
-      // Direct matches found
       if (matchedBrandOrModel.length > 0) {
         setMessages(prev => [
           ...prev,
           {
-            id: `bot-res-${Date.now()}`,
+            id: `bot-res-direct-${Date.now()}`,
             sender: 'bot',
-            text: `Sure, I found these vehicles matching your search for "${text}":`,
+            text: `Here are the matching cars for "${text}":`,
             timestamp: new Date(),
             type: 'text'
           },
           {
-            id: `bot-res-cars-${Date.now()}`,
+            id: `bot-res-direct-cars-${Date.now()}`,
             sender: 'bot',
             text: '',
             timestamp: new Date(),
@@ -351,12 +394,9 @@ export default function ChatAssistant() {
         return;
       }
 
-      // Filter based on parsed budget / fuel
       let results = vehicles;
       if (budgetLimit > 0) {
         results = results.filter(v => v.startingPrice <= budgetLimit);
-      } else if (budgetQuery !== 'Any') {
-        results = getFilteredCars(budgetQuery, 'Any');
       }
 
       if (fuelQuery !== 'Any') {
@@ -367,7 +407,6 @@ export default function ChatAssistant() {
         });
       }
 
-      // Feature extraction (e.g. SUV, Automatic, Sunroof)
       if (lower.includes('suv')) {
         results = results.filter(v => 
           (v.description && v.description.toLowerCase().includes('suv')) || 
@@ -380,26 +419,7 @@ export default function ChatAssistant() {
           v.model.toLowerCase().includes('fortuner')
         );
       }
-      if (lower.includes('automatic') || lower.includes('amt') || lower.includes('cvt') || lower.includes('at')) {
-        results = results.filter(v => v.transmissions.some(t => t.toLowerCase() !== 'manual'));
-      }
-      if (lower.includes('sunroof')) {
-        results = results.filter(v => v.features.some(f => f.toLowerCase().includes('sunroof')));
-      }
-      if (lower.includes('safety') || lower.includes('safe') || lower.includes('5 star')) {
-        results = results.filter(v => v.safetyRating === 5);
-      }
-      if (lower.includes('mileage') || lower.includes('efficient') || lower.includes('average')) {
-        results = results.filter(v => {
-          const mileageNum = parseFloat(v.mileage);
-          return mileageNum >= 18 || v.mileage.toLowerCase().includes('range') || v.isEV;
-        });
-      }
-      if (lower.includes('bestseller') || lower.includes('best seller') || lower.includes('popular')) {
-        results = results.filter(v => v.isBestSeller || v.rating >= 4.6);
-      }
 
-      // Construct bot reply
       let replyText = '';
       if (results.length > 0) {
         replyText = `Based on your request, I found these vehicles for you:`;
@@ -438,14 +458,12 @@ export default function ChatAssistant() {
     }, 1000);
   };
 
-  // Handle user inputs via keyboard Send button
   const handleSend = () => {
     if (!inputVal.trim()) return;
 
     const userMsgText = inputVal.trim();
     setInputVal('');
 
-    // Add user message to UI
     const userMsg: Message = {
       id: `user-msg-${Date.now()}`,
       sender: 'user',
@@ -456,59 +474,23 @@ export default function ChatAssistant() {
 
     setMessages(prev => [...prev, userMsg]);
 
-    // Handle flow steps
-    if (currentStep === 'email') {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (emailRegex.test(userMsgText)) {
-        localStorage.setItem('niaa_user_email', userMsgText);
-        
-        setIsTyping(true);
-        setTimeout(() => {
-          setMessages(prev => [
-            ...prev,
-            {
-              id: `email-success-${Date.now()}`,
-              sender: 'bot',
-              text: 'Thank you! Your email has been validated successfully.',
-              timestamp: new Date(),
-              type: 'text'
-            }
-          ]);
-          setIsTyping(false);
-          askBudget();
-        }, 800);
-      } else {
-        setIsTyping(true);
-        setTimeout(() => {
-          setMessages(prev => [
-            ...prev,
-            {
-              id: `email-error-${Date.now()}`,
-              sender: 'bot',
-              text: 'Oops, that email looks invalid. Please enter a valid email address so we can start!',
-              timestamp: new Date(),
-              type: 'text'
-            }
-          ]);
-          setIsTyping(false);
-        }, 800);
+    if (currentStep === 'lead-info') {
+      // If user typed in chat input during lead step
+      if (userMsgText.length >= 10 && !isNaN(Number(userMsgText.replace(/\s/g, '')))) {
+        setPhoneInput(userMsgText);
+        if (nameInput) handleLeadSubmit();
       }
     } else if (currentStep === 'budget') {
-      // Try to parse their input as a budget, then go to fuel
       setSelectedBudget(userMsgText);
       askFuel();
     } else if (currentStep === 'fuel') {
-      // Try to parse fuel
       showRecommendations(selectedBudget, userMsgText);
     } else {
-      // Freeform chat mode
       parseFreeformText(userMsgText);
     }
   };
 
-  // Handle quick choice adapter selections
   const handleOptionClick = (optionValue: string, stepTarget: string) => {
-    // Add user response bubble
     const userMsg: Message = {
       id: `user-opt-${Date.now()}`,
       sender: 'user',
@@ -530,13 +512,13 @@ export default function ChatAssistant() {
     } else if (stepTarget === 'redirect-testdrive') {
       window.location.href = '/test-drive';
     } else if (stepTarget === 'redirect-finance') {
-      window.location.href = '/finance';
+      window.location.href = '/offers';
     } else if (stepTarget === 'redirect-dealers') {
-      window.location.href = '/dealers';
+      window.location.href = '/cars';
     } else if (stepTarget === 'query-safety') {
-      parseFreeformText('safety');
+      parseFreeformText('5 star safety');
     } else if (stepTarget === 'query-mileage') {
-      parseFreeformText('mileage');
+      parseFreeformText('best mileage');
     } else if (stepTarget === 'query-ev') {
       parseFreeformText('electric');
     } else if (stepTarget === 'query-suv') {
@@ -546,248 +528,306 @@ export default function ChatAssistant() {
     }
   };
 
+  // Hide chat assistant ONLY when compare variants tray is active
+  if (hasCompareBar) {
+    return null;
+  }
+
+  const positionClasses = 'bottom-20 lg:bottom-6 right-4 lg:right-6';
+
   return (
-    <div className="niaa-chat-container fixed bottom-6 right-6 flex flex-col items-end">
+    <>
       {/* Floating launcher button */}
       {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="niaa-floating-btn w-14 h-14 rounded-full flex items-center justify-center text-white cursor-pointer relative"
-          title="Chat with Buywheels"
-        >
-          <MessageSquare size={26} />
-          <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-500"></span>
-          </span>
-          {/* Subtle tooltip */}
-          <div className="absolute right-16 bg-dark text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity pointer-events-none font-medium hidden md:block shadow-md">
-            Need Help? Ask Buywheels! 👋
-          </div>
-        </button>
+        <div className={`niaa-chat-container fixed ${positionClasses} flex flex-col items-end z-40`}>
+          <button
+            onClick={() => setIsOpen(true)}
+            className="w-14 h-14 rounded-full flex items-center justify-center p-2 bg-white border-2 border-primary shadow-2xl hover:scale-105 cursor-pointer relative transition-all duration-200"
+            title="Chat with Buywheels"
+            id="chat-assistant-floating-btn"
+          >
+            <img src="/logo.png" alt="Buywheels Chat Assistant" className="w-full h-full object-contain" />
+            <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-500"></span>
+            </span>
+            <div className="absolute right-16 bg-dark text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity pointer-events-none font-medium hidden md:block shadow-md">
+              Need Help? Ask Buywheels! 👋
+            </div>
+          </button>
+        </div>
       )}
 
-      {/* Chat Window */}
+      {/* Chat Window Modal / Backdrop (Pincode Modal Style on Mobile) */}
       {isOpen && (
-        <div id="__npfchatWindow" className="niaa-chat-window animate-scale-in">
-          {/* Header */}
-          <div className="chatHeader">
-            <div className="rightContent">
-              <div className="img-wrapper bg-white flex items-center justify-center p-1">
-                <img src="/logo.png" alt="Buywheels Logo" className="w-8 h-8 object-contain" />
+        <div
+          className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-end md:items-center justify-center md:justify-end md:p-6 animate-fade-in"
+          onClick={() => setIsOpen(false)}
+        >
+          <div
+            id="__npfchatWindow"
+            className="w-full md:w-[400px] h-[88vh] md:h-[600px] max-h-[90vh] bg-white rounded-t-3xl md:rounded-2xl shadow-2xl overflow-hidden animate-scale-in border border-border flex flex-col relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="chatHeader">
+              <div className="rightContent">
+                <div className="img-wrapper bg-white flex items-center justify-center p-1">
+                  <img src="/logo.png" alt="Buywheels Logo" className="w-8 h-8 object-contain" />
+                </div>
+                <div className="userDetails">
+                  <h4 className="flex items-center gap-1.5 font-bold">
+                    Buywheels <Sparkles size={13} className="text-amber-400 fill-amber-400" />
+                  </h4>
+                  <p className="text-xs text-white/80">
+                    <span>Online</span>
+                  </p>
+                </div>
               </div>
-              <div className="userDetails">
-                <h4 className="flex items-center gap-1.5">
-                  Buywheels <Sparkles size={13} className="text-amber-400 fill-amber-400" />
-                </h4>
-                <p>
-                  <span>Online</span>
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <button 
-                onClick={initChat} 
-                className="p-1.5 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors"
-                title="Reset Chat"
-              >
-                <RefreshCw size={16} />
-              </button>
-              <button 
-                onClick={() => setIsOpen(false)} 
-                className="p-1.5 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors"
-                title="Close Window"
-              >
-                <X size={18} />
-              </button>
-            </div>
-          </div>
-
-          {/* Chat message history container */}
-          <div id="__npfmessageWindow" className="chatbox chatBody" ref={chatBodyRef}>
-            {/* Introductory YouTube Video */}
-            {showVideo && (
-              <div className="videoIntro">
+              <div className="flex items-center gap-2">
                 <button 
-                  className="videoCloseBtn" 
-                  onClick={() => setShowVideo(false)}
-                  title="Hide Video"
+                  onClick={initChat} 
+                  className="p-1.5 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors"
+                  title="Reset Chat"
                 >
-                  <X size={10} />
+                  <RefreshCw size={16} />
                 </button>
-                <iframe
-                  title="Introductory Video"
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/U7_8JWJ6lPo"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="inchat_vdo"
-                  style={{ border: 0 }}
-                />
+                <button 
+                  onClick={() => setIsOpen(false)} 
+                  className="p-1.5 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors"
+                  title="Close Window"
+                >
+                  <X size={18} />
+                </button>
               </div>
-            )}
+            </div>
 
-            {/* Render messages */}
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={
-                  msg.sender === 'bot'
-                    ? '__npfchatmsg_left fadeIn'
-                    : '__npfchatmsg_right fadeIn'
-                }
-              >
-                {msg.sender === 'bot' && (
-                  <div className="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
-                    <img src="/logo.png" alt="Buywheels Logo" className="w-6 h-6 object-contain" />
-                  </div>
-                )}
-                
-                <div className="ac-container ac-adaptiveCard">
-                  <div className="ac-textBlock">
-                    <p className="name">{msg.sender === 'bot' ? 'Buywheels' : 'You'}</p>
-                    
-                    {msg.text && (
-                      <div className="message whitespace-pre-line">{msg.text}</div>
-                    )}
+            {/* Chat message history container */}
+            <div id="__npfmessageWindow" className="chatbox chatBody flex-1 overflow-y-auto p-4" ref={chatBodyRef}>
+              {/* Introductory YouTube Video */}
+              {showVideo && (
+                <div className="videoIntro mb-4 rounded-xl overflow-hidden relative">
+                  <button 
+                    className="videoCloseBtn absolute top-2 right-2 z-10 bg-black/60 text-white p-1 rounded-full hover:bg-black" 
+                    onClick={() => setShowVideo(false)}
+                    title="Hide Video"
+                  >
+                    <X size={12} />
+                  </button>
+                  <iframe
+                    title="Introductory Video"
+                    width="100%"
+                    height="180"
+                    src="https://www.youtube.com/embed/U7_8JWJ6lPo"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="inchat_vdo rounded-xl"
+                    style={{ border: 0 }}
+                  />
+                </div>
+              )}
 
+              {/* Render messages */}
+              {messages.map((msg) => (
+                <div
+                  key={msg.id}
+                  className={
+                    msg.sender === 'bot'
+                      ? '__npfchatmsg_left fadeIn mb-4'
+                      : '__npfchatmsg_right fadeIn mb-4'
+                  }
+                >
+                  {msg.sender === 'bot' && (
+                    <div className="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
+                      <img src="/logo.png" alt="Buywheels Logo" className="w-6 h-6 object-contain" />
+                    </div>
+                  )}
+                  
+                  <div className="ac-container ac-adaptiveCard flex-1">
+                    <div className="ac-textBlock">
+                      <p className="name text-xs font-semibold text-muted mb-1">{msg.sender === 'bot' ? 'Buywheels' : 'You'}</p>
+                      
+                      {msg.text && (
+                        <div className="message whitespace-pre-line text-xs sm:text-sm">{msg.text}</div>
+                      )}
 
-
-                    {/* Options adapter */}
-                    {msg.type === 'options' && msg.options && (
-                      <div className={msg.options.length > 4 ? "niaa-options-grid" : "niaa-options-container"}>
-                        {msg.options.map((opt, idx) => (
+                      {/* Lead Form: Name & Mobile Number */}
+                      {msg.type === 'lead-form' && (
+                        <form
+                          onSubmit={handleLeadSubmit}
+                          className="mt-3 bg-surface p-4 rounded-2xl border border-border space-y-3 animate-fade-in"
+                        >
+                          <div>
+                            <label className="block text-xs font-semibold text-dark mb-1 flex items-center gap-1">
+                              <User size={13} className="text-primary" /> Full Name
+                            </label>
+                            <input
+                              type="text"
+                              placeholder="Enter your name, e.g. Rahul Kumar"
+                              value={nameInput}
+                              onChange={(e) => setNameInput(e.target.value)}
+                              className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-white outline-none focus:border-primary text-dark"
+                              required
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-xs font-semibold text-dark mb-1 flex items-center gap-1">
+                              <Phone size={13} className="text-primary" /> Mobile Number
+                            </label>
+                            <input
+                              type="tel"
+                              maxLength={10}
+                              placeholder="10-digit mobile, e.g. 9876543210"
+                              value={phoneInput}
+                              onChange={(e) => setPhoneInput(e.target.value.replace(/\D/g, ''))}
+                              className="w-full px-3 py-2 text-xs rounded-xl border border-border bg-white outline-none focus:border-primary text-dark"
+                              required
+                            />
+                          </div>
                           <button
-                            key={idx}
-                            className="niaa-option-btn"
-                            onClick={() => handleOptionClick(opt.value, opt.stepTarget)}
+                            type="submit"
+                            disabled={!nameInput.trim() || phoneInput.length !== 10}
+                            className="w-full py-2.5 bg-primary text-white font-semibold text-xs rounded-xl shadow-sm hover:bg-primary-600 disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5"
                           >
-                            <span className="flex-1">{opt.label}</span>
-                            {msg.options!.length <= 4 && <ChevronRight size={14} className="opacity-60" />}
+                            <span>Start Exploring Cars</span>
+                            <Send size={13} />
                           </button>
-                        ))}
-                      </div>
-                    )}
+                        </form>
+                      )}
 
-                    {/* Recommended cars cards list */}
-                    {msg.type === 'cars' && msg.cars && (
-                      <div className="niaa-cars-carousel no-scrollbar">
-                        {msg.cars.map((car) => (
-                          <div key={car.id} className="niaa-car-card">
-                            <div className="niaa-car-img-wrapper">
-                              <img
-                                src={car.thumbnailUrl || (car.images && car.images[0])}
-                                alt={`${car.brand} ${car.model}`}
-                                className="niaa-car-img"
-                                onError={(e) => {
-                                  // Fallback image in case of broken link
-                                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600';
-                                }}
-                              />
-                              {car.isBestSeller && (
-                                <span className="niaa-car-badge">Best Seller</span>
-                              )}
-                              {car.category === 'ev' && (
-                                <span className="niaa-car-badge bg-green-600">EV ⚡</span>
-                              )}
-                            </div>
-                            <div className="niaa-car-content">
-                              <div className="niaa-car-brand">{car.brand}</div>
-                              <div className="niaa-car-title">{car.model}</div>
-                              <div className="niaa-car-price">
-                                ₹{(car.startingPrice / 100000).toFixed(2)} Lakhs+
-                              </div>
-                              <div className="niaa-car-meta">
-                                <span className="niaa-car-tag">⭐ {car.rating}</span>
-                                <span className="niaa-car-tag">{car.mileage}</span>
-                                {car.transmissions && car.transmissions.length > 0 && (
-                                  <span className="niaa-car-tag">{car.transmissions[0]}</span>
+                      {/* Options adapter */}
+                      {msg.type === 'options' && msg.options && (
+                        <div className={msg.options.length > 4 ? "niaa-options-grid" : "niaa-options-container"}>
+                          {msg.options.map((opt, idx) => (
+                            <button
+                              key={idx}
+                              className="niaa-option-btn"
+                              onClick={() => handleOptionClick(opt.value, opt.stepTarget)}
+                            >
+                              <span className="flex-1">{opt.label}</span>
+                              {msg.options!.length <= 4 && <ChevronRight size={14} className="opacity-60" />}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Recommended cars cards list */}
+                      {msg.type === 'cars' && msg.cars && (
+                        <div className="niaa-cars-carousel no-scrollbar">
+                          {msg.cars.map((car) => (
+                            <div key={car.id} className="niaa-car-card">
+                              <div className="niaa-car-img-wrapper">
+                                <img
+                                  src={car.thumbnailUrl || (car.images && car.images[0])}
+                                  alt={`${car.brand} ${car.model}`}
+                                  className="niaa-car-img"
+                                  onError={(e) => {
+                                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600';
+                                  }}
+                                />
+                                {car.isBestSeller && (
+                                  <span className="niaa-car-badge">Best Seller</span>
+                                )}
+                                {car.category === 'ev' && (
+                                  <span className="niaa-car-badge bg-green-600">EV ⚡</span>
                                 )}
                               </div>
-                              <Link
-                                to={`/vehicle/${car.slug}`}
-                                onClick={() => setIsOpen(false)}
-                                className="niaa-car-link"
-                              >
-                                View Details
-                              </Link>
+                              <div className="niaa-car-content">
+                                <div className="niaa-car-brand">{car.brand}</div>
+                                <div className="niaa-car-title">{car.model}</div>
+                                <div className="niaa-car-price">
+                                  ₹{(car.startingPrice / 100000).toFixed(2)} Lakhs+
+                                </div>
+                                <div className="niaa-car-meta">
+                                  <span className="niaa-car-tag">⭐ {car.rating}</span>
+                                  <span className="niaa-car-tag">{car.mileage}</span>
+                                  {car.transmissions && car.transmissions.length > 0 && (
+                                    <span className="niaa-car-tag">{car.transmissions[0]}</span>
+                                  )}
+                                </div>
+                                <Link
+                                  to={`/vehicle/${car.slug}`}
+                                  onClick={() => setIsOpen(false)}
+                                  className="niaa-car-link"
+                                >
+                                  View Details
+                                </Link>
+                              </div>
                             </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* Simulating chatbot typing */}
-            {isTyping && (
-              <div className="__npfchatmsg_left fadeIn">
-                <div className="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
-                  <img src="/logo.png" alt="Buywheels Logo" className="w-6 h-6 object-contain" />
-                </div>
-                <div className="ac-container ac-adaptiveCard">
-                  <div className="ac-textBlock">
-                    <p className="name">Buywheels</p>
-                    <div className="chatLoader dataLoader">
-                      <div className="typing typing-1"></div>
-                      <div className="typing typing-2"></div>
-                      <div className="typing typing-3"></div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+              ))}
 
-            <div ref={chatEndRef} />
-          </div>
+              {/* Simulating chatbot typing */}
+              {isTyping && (
+                <div className="__npfchatmsg_left fadeIn mb-4">
+                  <div className="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
+                    <img src="/logo.png" alt="Buywheels Logo" className="w-6 h-6 object-contain" />
+                  </div>
+                  <div className="ac-container ac-adaptiveCard">
+                    <div className="ac-textBlock">
+                      <p className="name text-xs font-semibold text-muted mb-1">Buywheels</p>
+                      <div className="chatLoader dataLoader">
+                        <div className="typing typing-1"></div>
+                        <div className="typing typing-2"></div>
+                        <div className="typing typing-3"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
-          {/* Chat message input bar */}
-          <div id="npfmessage-input" className="npfmessage-in">
-            <div className="wrap">
-              <input
-                ref={inputRef}
-                type={currentStep === 'email' ? 'email' : 'text'}
-                placeholder={currentStep === 'email' ? 'Enter your email address...' : 'Type your message here...'}
-                id="npfMsg-in"
-                value={inputVal}
-                onChange={(e) => setInputVal(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    handleSend();
-                  }
-                }}
-              />
-              <div className="btnSend">
+              <div ref={chatEndRef} />
+            </div>
+
+            {/* Chat message input bar */}
+            <div id="npfmessage-input" className="npfmessage-in border-t border-border p-2 bg-white">
+              <div className="wrap flex items-center gap-2">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  placeholder={currentStep === 'lead-info' ? 'Enter Name and Mobile Number above...' : 'Type your message here...'}
+                  id="npfMsg-in"
+                  value={inputVal}
+                  onChange={(e) => setInputVal(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      handleSend();
+                    }
+                  }}
+                  className="flex-1 px-3 py-2 text-xs sm:text-sm bg-surface rounded-xl outline-none text-dark"
+                />
                 <button
                   id="sendClickBtn"
-                  className="submit btn-control"
+                  className="p-2.5 bg-primary text-white rounded-xl shadow-sm hover:bg-primary-600 transition-colors"
                   title="Send"
                   onClick={handleSend}
                 >
-                  <span className="sendBtnClick"></span>
+                  <Send size={16} />
                 </button>
               </div>
             </div>
-          </div>
 
-          {/* Copyright footer */}
-          <div className="ctCopyright">
-            <div className="niaaSign flex items-center">
-              <img
-                src="/logo.png"
-                alt="Buywheels Logo"
-                className="h-6 object-contain"
-              />
-            </div>
-            <div>
-              Powered by <Link to="/" className="hover:underline">Buywheels</Link>
+            {/* Copyright footer */}
+            <div className="ctCopyright px-4 py-2 bg-surface border-t border-border text-[11px] text-muted flex items-center justify-between">
+              <div className="niaaSign flex items-center gap-1.5">
+                <img
+                  src="/logo.png"
+                  alt="Buywheels Logo"
+                  className="h-5 object-contain"
+                />
+              </div>
+              <div>
+                Powered by <Link to="/" className="hover:underline font-semibold text-primary">Buywheels</Link>
+              </div>
             </div>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

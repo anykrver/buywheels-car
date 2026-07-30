@@ -4,6 +4,7 @@ import { useWishlist } from '../context/WishlistContext';
 import { Heart, GitCompare, Star, Fuel, Gauge, ArrowRight } from 'lucide-react';
 import type { Vehicle } from '../types';
 import { formatPriceShort } from '../utils/data';
+import { BRAND_LOGOS_OVERRIDE } from '../utils/supabaseService';
 
 interface VehicleCardProps {
   vehicle: Vehicle;
@@ -17,7 +18,7 @@ export default function VehicleCard({ vehicle, onCompare, compact }: VehicleCard
   const wishlisted = isWishlisted(vehicle.id);
   const [imgError, setImgError] = useState(false);
 
-  const fallbackImg = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
+  const fallbackImg = 'https://imgd.aeplcdn.com/664x374/n/cw/ec/141879/nexon-ev-exterior-right-front-three-quarter-7.jpeg';
 
   const handleCardClick = () => {
     navigate(`/vehicle/${vehicle.slug}`);
@@ -29,11 +30,11 @@ export default function VehicleCard({ vehicle, onCompare, compact }: VehicleCard
       className="group bg-white rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full cursor-pointer"
     >
       {/* Image */}
-      <div className={`relative overflow-hidden bg-surface ${compact ? 'aspect-[16/9]' : 'aspect-[16/10]'}`}>
+      <div className={`relative overflow-hidden bg-gray-100 ${compact ? 'aspect-[16/9]' : 'aspect-[16/10]'}`}>
         <img
           src={(!vehicle.thumbnailUrl || imgError) ? fallbackImg : vehicle.thumbnailUrl}
           alt={`${vehicle.brand} ${vehicle.model}`}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-contain scale-120 transition-transform duration-500 group-hover:scale-135"
           onError={() => setImgError(true)}
           loading="lazy"
         />
@@ -86,7 +87,16 @@ export default function VehicleCard({ vehicle, onCompare, compact }: VehicleCard
       <div className={`${compact ? 'p-3' : 'p-5'} flex flex-col flex-1`}>
         {/* Brand & Model */}
         <div className="mb-3">
-          <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-0.5">{vehicle.brand}</p>
+          <div className="flex items-center gap-1.5 mb-0.5">
+            {BRAND_LOGOS_OVERRIDE[vehicle.brand] && (
+              <img
+                src={BRAND_LOGOS_OVERRIDE[vehicle.brand]}
+                alt={vehicle.brand}
+                className="h-4 w-auto object-contain bg-surface rounded p-0.5 border border-border shrink-0"
+              />
+            )}
+            <p className="text-xs font-semibold text-primary uppercase tracking-wider">{vehicle.brand}</p>
+          </div>
           <h3 className={`font-heading font-semibold text-dark leading-tight group-hover:text-primary transition-colors ${compact ? 'text-base' : 'text-lg'}`}>
             {vehicle.model}
           </h3>

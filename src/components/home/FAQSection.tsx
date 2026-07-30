@@ -12,15 +12,20 @@ export default function FAQSection() {
   }, []);
 
   return (
-    <section id="faq" className="py-20 bg-white">
+    <section id="faq" className="py-12 md:py-20 bg-white">
       <div className="container-fluid">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">FAQ</p>
+          <div className="text-center mb-10 md:mb-12">
+            <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-2">FAQ</p>
             <h2 className="font-heading font-bold text-dark text-3xl md:text-4xl mb-3">
               Frequently Asked Questions
             </h2>
-            <p className="text-muted text-lg">Everything you need to know about Buywheels</p>
+            <p className="text-muted text-base md:text-lg font-medium mb-3">
+              Everything you need to know about Buywheels
+            </p>
+            <p className="text-dark-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto bg-surface/60 p-4 rounded-2xl border border-border/80">
+              Buywheels is Jharkhand&apos;s leading car buying platform, connecting you directly with verified local dealerships across Ranchi, Jamshedpur, Dhanbad, and beyond. We provide transparent on-road pricing, exclusive dealer discounts, and unbiased variant comparisons to make your car buying journey effortless.
+            </p>
           </div>
 
           <div className="space-y-3">

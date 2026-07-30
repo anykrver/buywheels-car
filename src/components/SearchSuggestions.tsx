@@ -27,6 +27,7 @@ const POPULAR_SEARCHES = [
 const POPULAR_CATEGORIES = [
   { label: 'Electric Cars (EV)', filter: 'fuel=Electric', icon: Zap },
   { label: 'SUVs & MUVs', filter: 'bodyType=SUV', icon: Car },
+  { label: 'Budget Under ₹5 Lakh', filter: 'priceMax=500000', icon: Sparkles },
   { label: 'Budget Under ₹10 Lakh', filter: 'priceMax=1000000', icon: Sparkles },
 ];
 
@@ -193,7 +194,7 @@ export default function SearchSuggestions({
                         alt={`${vehicle.brand} ${vehicle.model}`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         onError={(e) => {
-                          e.currentTarget.src = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=300';
+                          e.currentTarget.src = 'https://imgd.aeplcdn.com/664x374/n/cw/ec/141879/nexon-ev-exterior-right-front-three-quarter-7.jpeg';
                         }}
                       />
                       {(vehicle.isEV || vehicle.category === 'ev') && (

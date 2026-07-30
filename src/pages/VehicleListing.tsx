@@ -64,11 +64,12 @@ export default function VehicleListing({ category, title, subtitle }: VehicleLis
     if (category === 'all') return vehiclesList;
     const catLower = category.toLowerCase();
     return vehiclesList.filter(v => {
-      const vCatLower = v.category ? v.category.toLowerCase() : '';
-      if (vCatLower === catLower) return true;
-      if (catLower === 'ev' && v.isEV) return true;
-      if (catLower === 'car' && (vCatLower === 'car' || !v.isEV)) return true;
-      return false;
+      const vCat = (v.category || '').toLowerCase();
+      if (catLower === 'ev') return v.isEV || vCat === 'ev';
+      if (catLower === 'car' || catLower === 'cars') return vCat === 'car' || (!vCat && !v.isEV);
+      if (catLower === 'bike' || catLower === 'bikes') return vCat === 'bike' || vCat === 'bikes' || vCat === 'scooter' || vCat === 'two-wheeler';
+      if (catLower === 'truck' || catLower === 'trucks') return vCat === 'truck' || vCat === 'trucks' || vCat === 'commercial';
+      return vCat === catLower;
     });
   }, [category, vehiclesList]);
 
@@ -84,8 +85,37 @@ export default function VehicleListing({ category, title, subtitle }: VehicleLis
     const searchParam = searchParams.get('search') || '';
     const fuelParams = searchParams.getAll('fuel');
     const transParams = searchParams.getAll('transmission');
-    const priceMinParam = parseInt(searchParams.get('priceMin') || '0', 10);
-    const priceMaxParam = parseInt(searchParams.get('priceMax') || '100000000', 10);
+    
+    let priceMinParam = parseInt(searchParams.get('priceMin') || searchParams.get('minPrice') || '0', 10);
+    let priceMaxParam = parseInt(searchParams.get('priceMax') || searchParams.get('maxPrice') || '100000000', 10);
+
+    const budgetParam = searchParams.get('budget');
+    if (budgetParam) {
+      const bLower = budgetParam.toLowerCase();
+      if (bLower.includes('under-5') || bLower.includes('under 5') || bLower === '500000' || bLower.includes('5-lakh') || bLower.includes('5lakh')) {
+        priceMinParam = 0;
+        priceMaxParam = 500000;
+      } else if (bLower.includes('under-10') || bLower.includes('under 10') || bLower === '1000000' || bLower.includes('10-lakh') || bLower.includes('10lakh')) {
+        priceMinParam = 0;
+        priceMaxParam = 1000000;
+      } else if (bLower.includes('5-10')) {
+        priceMinParam = 500000;
+        priceMaxParam = 1000000;
+      } else if (bLower.includes('10-15')) {
+        priceMinParam = 1000000;
+        priceMaxParam = 1500000;
+      } else if (bLower.includes('15-20')) {
+        priceMinParam = 1500000;
+        priceMaxParam = 2000000;
+      } else if (bLower.includes('above-20') || bLower.includes('20-plus')) {
+        priceMinParam = 2000000;
+        priceMaxParam = 100000000;
+      }
+    }
+
+    if (isNaN(priceMinParam)) priceMinParam = 0;
+    if (isNaN(priceMaxParam)) priceMaxParam = 100000000;
+
     const sortByParam = searchParams.get('sortBy') || 'popularity';
     const engineCCMinParam = parseInt(searchParams.get('engineCCMin') || '0', 10);
     const engineCCMaxParam = parseInt(searchParams.get('engineCCMax') || '100000', 10);
@@ -107,10 +137,10 @@ export default function VehicleListing({ category, title, subtitle }: VehicleLis
       priceMin: priceMinParam,
       priceMax: priceMaxParam,
       sortBy: sortByParam,
-      engineCCMin: engineCCMinParam,
-      engineCCMax: engineCCMaxParam,
+      engineCCMin: isNaN(engineCCMinParam) ? 0 : engineCCMinParam,
+      engineCCMax: isNaN(engineCCMaxParam) ? 100000 : engineCCMaxParam,
       bodyType: bodyTypeParam,
-      seatingCapacity: seatingCapacityParam,
+      seatingCapacity: isNaN(seatingCapacityParam) ? 0 : seatingCapacityParam,
       location: locationParam,
     });
 
@@ -121,6 +151,8 @@ export default function VehicleListing({ category, title, subtitle }: VehicleLis
       searchParam ||
       bodyTypeParam ||
       locationParam ||
+      priceMinParam > 0 ||
+      priceMaxParam < 100000000 ||
       seatingCapacityParam > 0 ||
       engineCCMinParam > 0 ||
       engineCCMaxParam < 100000) &&
@@ -423,7 +455,7 @@ export default function VehicleListing({ category, title, subtitle }: VehicleLis
 
         {/* Compare bar */}
         {compareList.length > 0 && (
-          <div className="fixed bottom-20 lg:bottom-6 left-1/2 -translate-x-1/2 z-40 bg-dark text-white rounded-2xl shadow-card-hover px-6 py-4 flex items-center gap-4 animate-slide-up">
+          <div data-compare-bar="true" className="fixed bottom-20 lg:bottom-6 left-1/2 -translate-x-1/2 z-40 bg-dark text-white rounded-2xl shadow-card-hover px-6 py-4 flex items-center gap-4 animate-slide-up">
             <span className="text-sm font-medium">{compareList.length} vehicles selected</span>
             <div className="flex gap-2">
               {compareList.map(v => (

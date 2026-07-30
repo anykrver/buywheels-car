@@ -12,19 +12,19 @@ import {
   X,
 } from 'lucide-react';
 import SearchSuggestions from '../SearchSuggestions';
+import { useLocationContext } from '../../context/LocationContext';
 
 /* ── Data ─────────────────────────────────────────────── */
 
 const CITIES = [
-  'Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh',
-  'Deoghar', 'Giridih', 'Dumka', 'Ramgarh',
+  'Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh', 'Ramgarh',
 ];
 
-const QUICK_CITIES = ['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh'];
+const QUICK_CITIES = ['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh', 'Ramgarh'];
 
 const BUDGET_OPTIONS = [
-  'Under ₹2 Lakh', '₹2–5 Lakh', '₹5–8 Lakh',
-  '₹8–12 Lakh', '₹12–20 Lakh', 'Above ₹20 Lakh',
+  'Under ₹5 Lakh', 'Under ₹10 Lakh', '₹5–10 Lakh',
+  '₹10–15 Lakh', '₹15–20 Lakh', 'Above ₹20 Lakh',
 ];
 
 const BODY_TYPES = ['Hatchback', 'Sedan', 'SUV', 'MUV', 'Coupe', 'Minivan'];
@@ -41,12 +41,12 @@ type ActiveDropdown = 'budget' | 'body' | 'fuel' | 'transmission' | 'allFilters'
 
 export default function HeroSection() {
   const navigate = useNavigate();
+  const { selectedCity, selectedArea, openPincodeModal, setSelectedLocation } = useLocationContext();
 
   // Search state
   const [query, setQuery] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const isUsed = false;
-  const [city, setCity] = useState('Select City');
   const [activeDropdown, setActiveDropdown] = useState<ActiveDropdown>(null);
   const [showCityDropdown, setShowCityDropdown] = useState(false);
   const [citySearch, setCitySearch] = useState('');
@@ -98,28 +98,30 @@ export default function HeroSection() {
     if (selectedBody) {
       params.set('bodyType', selectedBody);
     }
-    if (city && city !== 'Select City') {
-      params.set('location', city);
+    if (selectedCity && selectedCity !== 'Select City') {
+      params.set('location', selectedCity);
     }
     if (selectedBudget) {
       let min = 0;
       let max = 100000000;
-      if (selectedBudget === 'Under ₹2 Lakh') {
-        max = 200000;
-      } else if (selectedBudget === '₹2–5 Lakh') {
-        min = 200000;
+      if (selectedBudget === 'Under ₹5 Lakh') {
+        min = 0;
         max = 500000;
-      } else if (selectedBudget === '₹5–8 Lakh') {
+      } else if (selectedBudget === 'Under ₹10 Lakh') {
+        min = 0;
+        max = 1000000;
+      } else if (selectedBudget === '₹5–10 Lakh' || selectedBudget === '₹5–8 Lakh' || selectedBudget === '₹2–5 Lakh') {
         min = 500000;
-        max = 800000;
-      } else if (selectedBudget === '₹8–12 Lakh') {
-        min = 800000;
-        max = 1200000;
-      } else if (selectedBudget === '₹12–20 Lakh') {
-        min = 1200000;
+        max = 1000000;
+      } else if (selectedBudget === '₹10–15 Lakh' || selectedBudget === '₹8–12 Lakh') {
+        min = 1000000;
+        max = 1500000;
+      } else if (selectedBudget === '₹15–20 Lakh' || selectedBudget === '₹12–20 Lakh') {
+        min = 1500000;
         max = 2000000;
       } else if (selectedBudget === 'Above ₹20 Lakh') {
         min = 2000000;
+        max = 100000000;
       }
       params.set('priceMin', min.toString());
       params.set('priceMax', max.toString());
@@ -144,8 +146,7 @@ export default function HeroSection() {
           Banner strip
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <div
-        className="relative w-full overflow-hidden"
-        style={{ height: '500px' }}
+        className="relative w-full overflow-hidden h-[360px] sm:h-[460px] lg:h-[500px]"
       >
         {/* Background image */}
         <img
@@ -161,14 +162,14 @@ export default function HeroSection() {
         {/* Subtle dark gradient at bottom so search widget reads better */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40" />
 
-        {/* Floating headline on banner (optional – mirrors CarWale feel) */}
+        {/* Floating headline on banner */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <span className="inline-block bg-primary/90 text-white text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4 shadow-lg backdrop-blur-sm">
+          <span className="inline-block bg-primary/90 text-white text-[10px] sm:text-xs font-semibold tracking-widest uppercase px-3 sm:px-4 py-1 sm:py-1.5 rounded-full mb-2 sm:mb-4 shadow-lg backdrop-blur-sm">
             India&apos;s Trusted Car Marketplace
           </span>
           <h1
             className="font-heading font-extrabold text-white drop-shadow-lg"
-            style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.15 }}
+            style={{ fontSize: 'clamp(2rem, 5.5vw, 4.5rem)', lineHeight: 1.15 }}
           >
             Find Your Right Car
           </h1>
@@ -180,16 +181,16 @@ export default function HeroSection() {
           Pulls up with negative margin-top to overlap banner
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <div
-        className="relative z-20 mx-auto px-4 sm:px-6 lg:px-8"
-        style={{ maxWidth: '1200px', marginTop: '-56px' }}
+        className="relative z-20 mx-auto px-3 sm:px-6 lg:px-8 -mt-10 sm:-mt-14"
+        style={{ maxWidth: '1200px' }}
       >
         <div
           className="bg-white rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.15)] overflow-visible"
           ref={dropdownRef}
         >
           {/* ── Row 1: label + city selector ── */}
-          <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-border">
-            <h2 className="font-heading font-bold text-dark text-xl">
+          <div className="flex items-center justify-between px-3.5 sm:px-6 pt-3.5 sm:pt-5 pb-2.5 sm:pb-3 border-b border-border">
+            <h2 className="font-heading font-bold text-dark text-base sm:text-xl">
               Find Your Right Car
             </h2>
 
@@ -197,14 +198,14 @@ export default function HeroSection() {
             <div className="relative" ref={cityRef}>
               <button
                 onClick={() => setShowCityDropdown(p => !p)}
-                className="flex items-center gap-1.5 text-sm font-medium text-dark-600 hover:text-primary transition-colors"
+                className="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-medium text-dark-600 hover:text-primary transition-colors"
                 id="city-selector-btn"
               >
-                <MapPin size={16} className="text-primary" />
-                <span>{city}</span>
+                <MapPin size={15} className="text-primary shrink-0" />
+                <span className="truncate max-w-[110px] sm:max-w-none">{selectedCity}</span>
                 <ChevronDown
-                  size={14}
-                  className={`transition-transform duration-200 ${showCityDropdown ? 'rotate-180' : ''}`}
+                  size={13}
+                  className={`transition-transform duration-200 shrink-0 ${showCityDropdown ? 'rotate-180' : ''}`}
                 />
               </button>
 
@@ -232,12 +233,12 @@ export default function HeroSection() {
                       <li key={c}>
                         <button
                           onClick={() => {
-                            setCity(c);
+                            setSelectedLocation({ city: c });
                             setShowCityDropdown(false);
                             setCitySearch('');
                           }}
                           className={`w-full text-left px-4 py-2.5 text-sm hover:bg-primary-50 hover:text-primary transition-colors ${
-                            city === c ? 'text-primary font-semibold bg-primary-50' : 'text-dark-600'
+                            selectedCity === c ? 'text-primary font-semibold bg-primary-50' : 'text-dark-600'
                           }`}
                         >
                           {c}
@@ -245,28 +246,29 @@ export default function HeroSection() {
                       </li>
                     ))}
                   </ul>
+                  <div className="p-2 border-t border-border bg-surface/50 text-center">
+                    <button
+                      onClick={() => {
+                        setShowCityDropdown(false);
+                        openPincodeModal();
+                      }}
+                      className="text-xs font-semibold text-primary hover:underline"
+                    >
+                      + Search Area / Pincode
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
           </div>
 
-          {/* ── Row 2: Search input + New/Used toggle ── */}
-          <div className="px-6 py-4">
-            <div className="flex items-center gap-3">
-              {/* New / Used toggle pill */}
-              <div className="flex items-center bg-surface rounded-xl p-1 flex-shrink-0 border border-border">
-                <button
-                  className="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white shadow-sm"
-                  id="toggle-new"
-                >
-                  New
-                </button>
-              </div>
-
+          {/* ── Row 2: Search input ── */}
+          <div className="px-3.5 sm:px-6 py-3 sm:py-4">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* Search box */}
               <div className="flex-1 relative" ref={searchContainerRef}>
                 <div className="flex items-center bg-surface rounded-xl border border-border hover:border-primary transition-colors overflow-hidden">
-                  <Search size={18} className="ml-4 text-muted flex-shrink-0" />
+                  <Search size={18} className="ml-3 sm:ml-4 text-muted flex-shrink-0" />
                   <input
                     ref={inputRef}
                     type="text"
@@ -285,7 +287,7 @@ export default function HeroSection() {
                       }
                     }}
                     placeholder={isUsed ? 'Type model name, e.g, Used Alto' : 'Type model name, e.g, Swift, Nexon…'}
-                    className="flex-1 h-12 px-3 bg-transparent text-dark text-sm outline-none placeholder-muted"
+                    className="flex-1 h-11 sm:h-12 px-2.5 sm:px-3 bg-transparent text-dark text-xs sm:text-sm outline-none placeholder-muted"
                     id="hero-search-input"
                   />
                   {query && (
@@ -309,7 +311,7 @@ export default function HeroSection() {
               {/* Search CTA */}
               <button
                 onClick={handleSearch}
-                className="flex-shrink-0 h-12 px-6 bg-primary hover:bg-primary-600 text-white font-heading font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-primary flex items-center gap-2"
+                className="flex-shrink-0 h-11 sm:h-12 px-4 sm:px-6 bg-primary hover:bg-primary-600 text-white font-heading font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-primary flex items-center justify-center gap-1.5"
                 id="hero-search-btn"
               >
                 <Search size={16} />
@@ -469,9 +471,9 @@ export default function HeroSection() {
               {QUICK_CITIES.map(c => (
                 <button
                   key={c}
-                  onClick={() => setCity(c)}
+                  onClick={() => setSelectedLocation({ city: c })}
                   className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
-                    city === c
+                    selectedCity === c
                       ? 'bg-primary text-white shadow-sm'
                       : 'bg-surface text-dark-500 hover:bg-primary-50 hover:text-primary border border-border'
                   }`}

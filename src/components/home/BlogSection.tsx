@@ -23,22 +23,22 @@ const webStories: WebStory[] = [
     id: 'web-story-mitsubishi-pajero-is-officially-coming-back',
     slug: 'mitsubishi-pajero-is-officially-coming-back',
     title: 'Mitsubishi Pajero is officially coming back!',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2026/05/29/0b50f117-a749-41c9-8e54-c159f5561d78-paejro-cover.png?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2026/05/29/0b50f117-a749-41c9-8e54-c159f5561d78-paejro-cover.png&dpr=2&optimize=low&format=auto&quality=50',
     date: '29 May',
     alt: 'mitsubishi pajero launch date',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2026/05/29/0b50f117-a749-41c9-8e54-c159f5561d78-paejro-cover.png?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2026/05/29/0b50f117-a749-41c9-8e54-c159f5561d78-paejro-cover.png',
         title: 'The Legend Returns',
         description: 'Mitsubishi has officially confirmed the revival of the iconic Pajero SUV nameplate, set to debut globally in the near future!'
       },
       {
-        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/44709/fortuner-exterior-right-front-three-quarter-28.png?isig=0&q=80',
+        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/44709/fortuner-exterior-right-front-three-quarter-28.png',
         title: 'Premium Off-roader',
         description: 'Positioned as a luxury SUV, it will challenge premium competitors like the Toyota Land Cruiser Prado with rugged prestige.'
       },
       {
-        image: 'https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/mahindra/scorpio/mahindra-scorpio-3-1767930813.png',
         title: 'PHEV & Advanced 4WD',
         description: 'Expected to feature a powerful plug-in hybrid powertrain combined with Mitsubishi\'s signature S-AWC 4WD system.'
       }
@@ -48,22 +48,22 @@ const webStories: WebStory[] = [
     id: 'web-story-2026-mg-hector-colours-here',
     slug: '2026-mg-hector-colours-here',
     title: 'Check out all 2026 MG Hector colours here!',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/12/16/0bd74fda-d306-49f8-8d0f-2b7323bf3c2b-mg-hector-facelift-front-side-profile-mg.webp?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/12/16/0bd74fda-d306-49f8-8d0f-2b7323bf3c2b-mg-hector-facelift-front-side-profile-mg.webp&dpr=2&optimize=low&format=auto&quality=50',
     date: 'Dec 2025',
     alt: 'MG Hector facelift',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/12/16/0bd74fda-d306-49f8-8d0f-2b7323bf3c2b-mg-hector-facelift-front-side-profile-mg.webp?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/12/16/0bd74fda-d306-49f8-8d0f-2b7323bf3c2b-mg-hector-facelift-front-side-profile-mg.webp',
         title: 'MG Hector Facelift Colours',
         description: 'Check out the striking and rich new shades introduced for the 2026 MG Hector facelift model.'
       },
       {
-        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/106815/creta-exterior-right-front-three-quarter-6.png?isig=0&q=80',
+        image: 'https://imgd.aeplcdn.com/642x336/n/cw/ec/212881/hector-facelift-exterior-right-front-three-quarter.jpeg',
         title: 'Glaze Red & Aurora Silver',
         description: 'The classic premium metallic shades return with a more reflective gloss finish and styling cues.'
       },
       {
-        image: 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/hyundai/creta/hyundai-creta-1-1766205711.png',
         title: 'Contrast Roof Aesthetics',
         description: 'New contrast black roof options are available on higher-end trims, presenting a sporty and modern appearance.'
       }
@@ -73,22 +73,22 @@ const webStories: WebStory[] = [
     id: 'web-story-new-gen-kia-seltos-colour-options-in-pictures-find-your-favourite',
     slug: 'new-gen-kia-seltos-colour-options-in-pictures-find-your-favourite',
     title: 'New gen Kia Seltos colour options in pictures — Find your favourite!',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/12/11/75f3742f-46e1-4827-8c78-f4a517a9223b-kia-seltos-front-side-profile-kia.webp?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/12/11/75f3742f-46e1-4827-8c78-f4a517a9223b-kia-seltos-front-side-profile-kia.webp&dpr=2&optimize=low&format=auto&quality=50',
     date: 'Dec 2025',
     alt: 'New Kia Seltos',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/12/11/75f3742f-46e1-4827-8c78-f4a517a9223b-kia-seltos-front-side-profile-kia.webp?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/12/11/75f3742f-46e1-4827-8c78-f4a517a9223b-kia-seltos-front-side-profile-kia.webp',
         title: 'New Gen Seltos Colours',
         description: 'Explore all the vibrant new paint options available on the next-generation Kia Seltos.'
       },
       {
-        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/192817/seltos-exterior-right-front-three-quarter-50.png?isig=0&q=80',
+        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/192817/seltos-exterior-right-front-three-quarter-50.png',
         title: 'Trending Matte Grey',
         description: 'Kia introduces trending earthy tones alongside its signature X-Line exclusive premium matte finish.'
       },
       {
-        image: 'https://images.pexels.com/photos/110844/pexels-photo-110844.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/kia/seltos/kia-seltos-7-1784704041.png',
         title: 'Intense Blue & Red',
         description: 'Bold metallic primary paint options make a strong return with high-gloss sparkles that look stunning.'
       }
@@ -98,22 +98,22 @@ const webStories: WebStory[] = [
     id: 'web-story-tata-sierra-full-price-list-out-for-smart-plus-pure-adventure-trims',
     slug: 'tata-sierra-full-price-list-out-for-smart-plus-pure-adventure-trims',
     title: 'Tata Sierra full price list out for Smart Plus, Pure & Adventure trims — Details!',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/27/99f84701-27be-426d-8364-4a965d9d53cc-tata-sierra-yellow-front-profile-tata.webp?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/27/99f84701-27be-426d-8364-4a965d9d53cc-tata-sierra-yellow-front-profile-tata.webp&dpr=2&optimize=low&format=auto&quality=50',
     date: 'Dec 2025',
     alt: 'Tata Sierra',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/27/99f84701-27be-426d-8364-4a965d9d53cc-tata-sierra-yellow-front-profile-tata.webp?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/27/99f84701-27be-426d-8364-4a965d9d53cc-tata-sierra-yellow-front-profile-tata.webp',
         title: 'Tata Sierra Pricing Out',
         description: 'Tata Motors announces the full official price lists across various trims of the resurrected Sierra.'
       },
       {
-        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/149123/nexon-ev-exterior-right-front-three-quarter-80.png?isig=0&q=80',
+        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/149123/nexon-ev-exterior-right-front-three-quarter-80.png',
         title: 'Smart Plus & Pure Trims',
         description: 'Entry-level variants start at highly competitive pricing, bringing the rugged SUV stance to mainstream buyers.'
       },
       {
-        image: 'https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png',
         title: 'Adventure Trim Features',
         description: 'The top-spec Adventure variant is equipped with dual panoramic skylights, ambient lighting, and ADAS Level 2.'
       }
@@ -123,22 +123,22 @@ const webStories: WebStory[] = [
     id: 'web-story-tata-sierra-colour-options-in-picture-available-in-six-shades',
     slug: 'tata-sierra-colour-options-in-picture-available-in-six-shades',
     title: 'Tata Sierra colour options in picture — Available in six shades!',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/Webstory---Newsroom/2025/07/09/0c4edbea-6e5b-456c-b5c7-1f26775750fb-tata-sierra-front-side-source-tata-motors.webp?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/Webstory---Newsroom/2025/07/09/0c4edbea-6e5b-456c-b5c7-1f26775750fb-tata-sierra-front-side-source-tata-motors.webp&dpr=2&optimize=low&format=auto&quality=50',
     date: 'Nov 2025',
     alt: 'Tata Sierra India launch details',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/Webstory---Newsroom/2025/07/09/0c4edbea-6e5b-456c-b5c7-1f26775750fb-tata-sierra-front-side-source-tata-motors.webp?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/Webstory---Newsroom/2025/07/09/0c4edbea-6e5b-456c-b5c7-1f26775750fb-tata-sierra-front-side-source-tata-motors.webp',
         title: 'Sierra\'s Six Shades',
         description: 'The production-spec Sierra SUV is offered in 6 distinct color options emphasizing its clean lines.'
       },
       {
-        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/40432/scorpio-n-exterior-right-front-three-quarter-4.png?isig=0&q=80',
+        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/40432/scorpio-n-exterior-right-front-three-quarter-4.png',
         title: 'Earthy & Modern Tones',
         description: 'Features unique colors like Grassland Beige and Forest Green, paying tribute to the original iconic safari style.'
       },
       {
-        image: 'https://images.pexels.com/photos/1035108/pexels-photo-1035108.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-1-1768365444.png',
         title: 'Classic White & Black',
         description: 'Contrast white body panels paired with premium black accents replicate the nostalgic look of the 90s legendary classic.'
       }
@@ -148,12 +148,12 @@ const webStories: WebStory[] = [
     id: 'web-story-citroen-basalt-vision-revealed-in-brazil-india-bound',
     slug: 'citroen-basalt-vision-revealed-in-brazil-india-bound',
     title: 'Citroen Basalt Vision revealed in Brazil — India bound?',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/23/40956d9c-1dfb-4ec2-83ec-3904997b3c85-citroen-basalt-vision-back-profile-citroen-5.webp?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/23/40956d9c-1dfb-4ec2-83ec-3904997b3c85-citroen-basalt-vision-back-profile-citroen-5.webp&dpr=2&optimize=low&format=auto&quality=50',
     date: 'Nov 2025',
     alt: 'Citroen Bsalt Vision',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/23/40956d9c-1dfb-4ec2-83ec-3904997b3c85-citroen-basalt-vision-back-profile-citroen-5.webp?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/23/40956d9c-1dfb-4ec2-83ec-3904997b3c85-citroen-basalt-vision-back-profile-citroen-5.webp',
         title: 'Citroen Basalt Coupe SUV',
         description: 'Citroen reveals the production-intent Basalt Vision Coupe SUV, highlighting its sporty rear profile.'
       },
@@ -163,7 +163,7 @@ const webStories: WebStory[] = [
         description: 'Combining high ground clearance with a sloping liftback roofline, the Basalt delivers a very distinct look.'
       },
       {
-        image: 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/mahindra/thar-roxx/mahindra-thar-roxx-3-1767849893.png',
         title: 'India Launch Confirmed',
         description: 'Developed to compete in the highly active mid-size SUV segment, the Basalt Coupe is launching in India very soon.'
       }
@@ -173,22 +173,22 @@ const webStories: WebStory[] = [
     id: 'web-story-tata-harrier-ev-waiting-period-in-november-2025',
     slug: 'tata-harrier-ev-waiting-period-in-november-2025',
     title: 'Tata Harrier EV waiting period in November 2025 — All details!',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/Webstory---Newsroom/2025/08/05/1f16418a-50c9-4474-bb6d-7acac2ac55d9-2025-tata-harrier-adventure-x-variant-launched-aryan.webp?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/Webstory---Newsroom/2025/08/05/1f16418a-50c9-4474-bb6d-7acac2ac55d9-2025-tata-harrier-adventure-x-variant-launched-aryan.webp&dpr=2&optimize=low&format=auto&quality=50',
     date: 'Nov 2025',
     alt: '2025 tata harrier adventure x variant launched aryan',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/Webstory---Newsroom/2025/08/05/1f16418a-50c9-4474-bb6d-7acac2ac55d9-2025-tata-harrier-adventure-x-variant-launched-aryan.webp?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/Webstory---Newsroom/2025/08/05/1f16418a-50c9-4474-bb6d-7acac2ac55d9-2025-tata-harrier-adventure-x-variant-launched-aryan.webp',
         title: 'Harrier EV Waiting Times',
         description: 'Massive consumer interest in Tata\'s flagship electric SUV has extended waiting periods.'
       },
       {
-        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/149123/nexon-ev-exterior-right-front-three-quarter-80.png?isig=0&q=80',
+        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/149123/nexon-ev-exterior-right-front-three-quarter-80.png',
         title: 'City-wise Breakdown',
         description: 'Buyers in metropolitan areas face up to 3-4 months of waiting time, especially for high-range variants.'
       },
       {
-        image: 'https://images.pexels.com/photos/110844/pexels-photo-110844.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/tata/harrier/tata-harrier-0-1766203373.png',
         title: 'AWD Dual-Motor Option',
         description: 'The high-power AWD system variant with off-road terrain response modes is seeing the highest pre-orders.'
       }
@@ -198,22 +198,22 @@ const webStories: WebStory[] = [
     id: 'web-story-2026-hyundai-venue-n-line-colour-options-in-picture-available-in-8-shades',
     slug: '2026-hyundai-venue-n-line-colour-options-in-picture-available-in-8-shades',
     title: '2026 Hyundai Venue N Line colour options in picture — Available in 8 shades',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/06/67303466-59c6-4df1-b531-0ed1ab9f45af-hyundai-venue-n-line-exterior-side-profile-hyundai.webp?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/06/67303466-59c6-4df1-b531-0ed1ab9f45af-hyundai-venue-n-line-exterior-side-profile-hyundai.webp&dpr=2&optimize=low&format=auto&quality=50',
     date: 'Nov 2025',
     alt: 'Hyundai Venue N Line',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/06/67303466-59c6-4df1-b531-0ed1ab9f45af-hyundai-venue-n-line-exterior-side-profile-hyundai.webp?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/06/67303466-59c6-4df1-b531-0ed1ab9f45af-hyundai-venue-n-line-exterior-side-profile-hyundai.webp',
         title: 'Venue N Line Colours',
         description: 'Hyundai refreshes the visual lineup of the sporty Venue N Line variant with 8 dynamic options.'
       },
       {
-        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/205104/xuv-7xo-exterior-right-front-three-quarter-547.png?isig=0&q=80',
+        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/205104/xuv-7xo-exterior-right-front-three-quarter-547.png',
         title: 'Thunder Blue Contrast',
         description: 'The signature N Line Thunder Blue returns with racing red exterior accents and black pillars.'
       },
       {
-        image: 'https://images.pexels.com/photos/1035108/pexels-photo-1035108.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/hyundai/creta/hyundai-creta-2-1766205711.png',
         title: 'Stealth Grey & Accents',
         description: 'A new modern matte Shadow Grey color is now available, featuring red calipers and dynamic sport exhausts.'
       }
@@ -223,22 +223,22 @@ const webStories: WebStory[] = [
     id: 'web-story-2026-tata-sierra-ev-teased-ahead-of-launch-everything-from-style-to-price-expectations',
     slug: '2026-tata-sierra-ev-teased-ahead-of-launch-everything-from-style-to-price-expectations',
     title: '2026 Tata Sierra EV teased ahead of launch — Everything from style to price expectations',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/14/b5415d30-1f82-41aa-a325-10b05daeffb5-tata-sierra-ev-side-profile-tata.webp?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/14/b5415d30-1f82-41aa-a325-10b05daeffb5-tata-sierra-ev-side-profile-tata.webp&dpr=2&optimize=low&format=auto&quality=50',
     date: 'Nov 2025',
     alt: 'Tata Sierra EV',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/14/b5415d30-1f82-41aa-a325-10b05daeffb5-tata-sierra-ev-side-profile-tata.webp?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/14/b5415d30-1f82-41aa-a325-10b05daeffb5-tata-sierra-ev-side-profile-tata.webp',
         title: 'Tata Sierra EV Teased',
         description: 'Tata Motors releases the first official teasers showing off the futuristic details of the Sierra EV.'
       },
       {
-        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/149123/nexon-ev-exterior-right-front-three-quarter-80.png?isig=0&q=80',
+        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/149123/nexon-ev-exterior-right-front-three-quarter-80.png',
         title: 'Acti.ev Architecture',
         description: 'Built on Tata\'s dedicated EV architecture, promising over 500km real-world range and ultra-fast charging.'
       },
       {
-        image: 'https://images.pexels.com/photos/110844/pexels-photo-110844.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-2-1768365444.png',
         title: 'Price Expectations',
         description: 'Projected to start around ₹21 Lakhs, setting up a direct rivalry with the upcoming Creta EV.'
       }
@@ -248,22 +248,22 @@ const webStories: WebStory[] = [
     id: 'web-story-2026-hyundai-venue-colour-options-in-pictures',
     slug: '2026-hyundai-venue-colour-options-in-pictures',
     title: '2026 Hyundai Venue colour options in pictures — Find your favourite!',
-    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/04/7ce48838-3cb6-40ab-9794-0689792bf827-new-hyundai-venue-exterior-front-profile-hyundai.webp?w=400&dpr=2&optimize=low&format=auto&quality=50',
+    image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/04/7ce48838-3cb6-40ab-9794-0689792bf827-new-hyundai-venue-exterior-front-profile-hyundai.webp&dpr=2&optimize=low&format=auto&quality=50',
     date: 'Nov 2025',
     alt: 'Hyundai Venue 2026',
     slides: [
       {
-        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/04/7ce48838-3cb6-40ab-9794-0689792bf827-new-hyundai-venue-exterior-front-profile-hyundai.webp?w=600',
+        image: 'https://static-cdn.cars24.com/prod/auto-news24-cms/webstory---newsroom/2025/11/04/7ce48838-3cb6-40ab-9794-0689792bf827-new-hyundai-venue-exterior-front-profile-hyundai.webp',
         title: '2026 Venue Paint Colors',
         description: 'Explore the full spectrum of refreshed color paint options for the new-generation Hyundai Venue.'
       },
       {
-        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/106815/creta-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80',
+        image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/141113/venue-exterior-right-front-three-quarter-16.jpeg',
         title: 'Vibrant Fiery Red',
         description: 'The high-gloss Fiery Red shade is updated with deeper metallic flakes for a rich shine in daylight.'
       },
       {
-        image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: 'https://images.91wheels.com/assets/c_images/gallery/mahindra/xuv-3xo/mahindra-xuv-3xo-5-1767875397.png',
         title: 'Classic Tones Restyled',
         description: 'Sleek silver and white tones receive fresh contrasts with dark glossy front grilles and alloy accents.'
       }
