@@ -4,8 +4,8 @@ import { Search, LayoutGrid, List, SlidersHorizontal, X } from 'lucide-react';
 import VehicleCard from '../components/VehicleCard';
 import VehicleFilters, { Filters } from '../components/VehicleFilters';
 import SearchSuggestions from '../components/SearchSuggestions';
-import { getBodyType } from '../utils/data';
-import { fetchVehicles } from '../utils/supabaseService';
+import { getBodyType, vehicles as localVehicles } from '../utils/data';
+;
 import type { Vehicle, VehicleCategory } from '../types';
 
 interface VehicleListingProps {
@@ -15,10 +15,18 @@ interface VehicleListingProps {
 }
 
 export default function VehicleListing({ category, title, subtitle }: VehicleListingProps) {
-  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>([]);
+  // Initialize immediately with local mock data so listings show right away
+  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>(localVehicles);
   
   useEffect(() => {
-    fetchVehicles().then(setVehiclesList);
+    fetchVehicles().then(remote => {
+      // Only update if remote returned more/different vehicles; otherwise keep local data
+      if (remote && remote.length > 0) {
+        setVehiclesList(remote);
+      }
+    }).catch(() => {
+      // Keep local vehicles on error
+    });
   }, []);
 
   const [searchParams, setSearchParams] = useSearchParams();

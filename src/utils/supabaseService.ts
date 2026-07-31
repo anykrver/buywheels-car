@@ -10,120 +10,20 @@ import {
   blogPosts as mockBlogPosts
 } from './data';
 
+// Vehicles are stored entirely locally in vehicle.ts (91Wheels images as priority source).
+// No Supabase query needed — data is served instantly from local mock.
 export async function fetchVehicles(): Promise<Vehicle[]> {
-  try {
-    const { data, error } = await supabase
-      .from('vehicles')
-      .select(`
-        *,
-        variants (*),
-        dealer_prices (
-          price,
-          discount,
-          dealers (
-            id,
-            name,
-            location,
-            rating
-          )
-        )
-      `);
-
-    if (error || !data || data.length === 0) {
-      if (error) console.error('Error fetching vehicles from Supabase, using mock fallback:', error);
-      return mockVehicles;
-    }
-
-    const mapped = data.map((v: any) => {
-      const mock = mockVehicles.find(mv => mv.id === v.id || mv.slug === v.slug);
-      
-      const isCretaOnNonCreta = typeof v.thumbnail_url === 'string' && v.thumbnail_url.includes('106815/creta-exterior') && v.slug !== 'hyundai-creta';
-      const hasCretaImagesOnNonCreta = Array.isArray(v.images) && v.images.some((img: string) => typeof img === 'string' && img.includes('106815/creta-exterior')) && v.slug !== 'hyundai-creta';
-
-      const finalThumbnailUrl = (isCretaOnNonCreta || !v.thumbnail_url) ? (mock?.thumbnailUrl || v.thumbnail_url || '') : v.thumbnail_url;
-      const finalImages = (hasCretaImagesOnNonCreta || !v.images || v.images.length === 0) ? (mock?.images || v.images || []) : v.images;
-
-      return {
-        id: v.id,
-        slug: v.slug,
-        category: v.category,
-        brand: v.brand,
-        model: v.model,
-        year: v.year,
-        startingPrice: Number(v.starting_price),
-        emiFrom: Number(v.emi_from),
-        images: finalImages,
-        threeSixtyImages: (v.three_sixty_images && v.three_sixty_images.length > 0) ? v.three_sixty_images : (mock?.threeSixtyImages || []),
-        thumbnailUrl: finalThumbnailUrl,
-        fuelTypes: (v.fuel_types && v.fuel_types.length > 0) ? v.fuel_types : (mock?.fuelTypes || []),
-        transmissions: (v.transmissions && v.transmissions.length > 0) ? v.transmissions : (mock?.transmissions || []),
-        mileage: v.mileage || mock?.mileage || '',
-        features: (v.features && v.features.length > 0) ? v.features : (mock?.features || []),
-        colors: (v.colors && v.colors.length > 0) ? v.colors : (mock?.colors || []),
-        rating: Number(v.rating || mock?.rating || 4.5),
-        reviewCount: Number(v.review_count || mock?.reviewCount || 100),
-        isNew: v.is_new !== null && v.is_new !== undefined ? v.is_new : mock?.isNew,
-        isBestSeller: v.is_best_seller !== null && v.is_best_seller !== undefined ? v.is_best_seller : mock?.isBestSeller,
-        isEV: v.is_ev !== null && v.is_ev !== undefined ? v.is_ev : mock?.isEV,
-        seatingCapacity: v.seating_capacity || mock?.seatingCapacity,
-        bootSpaceL: v.boot_space_l || mock?.bootSpaceL,
-        engineCC: v.engine_cc || mock?.engineCC,
-        powerBHP: Number(v.power_bhp || mock?.powerBHP || 0),
-        torqueNm: Number(v.torque_nm || mock?.torqueNm || 0),
-        safetyRating: v.safety_rating || mock?.safetyRating,
-        description: v.description || mock?.description,
-        pros: (v.pros && v.pros.length > 0) ? v.pros : (mock?.pros || []),
-        cons: (v.cons && v.cons.length > 0) ? v.cons : (mock?.cons || []),
-        groundClearance: v.ground_clearance !== null && v.ground_clearance !== undefined ? v.ground_clearance : mock?.groundClearance,
-        variants: (() => {
-          const parsed = (v.variants || []).map((vr: any) => ({
-            id: vr.id,
-            name: vr.name,
-            price: Number(vr.price),
-            fuelType: vr.fuel_type,
-            transmission: vr.transmission,
-            engineCC: vr.engine_cc,
-            powerBHP: Number(vr.power_bhp),
-            torqueNm: Number(vr.torque_nm),
-            mileageKmpl: Number(vr.mileage_kmpl),
-            rangeKm: Number(vr.range_km),
-            features: vr.features || [],
-            mileage: vr.mileage,
-            additionalFeaturesOverBase: vr.additional_features_over_base
-          }));
-          return parsed.length > 0 ? parsed : (mock?.variants || [{
-            id: `default-${v.id}`,
-            name: 'Standard',
-            price: Number(v.starting_price),
-            fuelType: v.fuel_types?.[0] || 'Petrol',
-            transmission: v.transmissions?.[0] || 'Manual',
-            engineCC: v.engine_cc,
-            powerBHP: Number(v.power_bhp),
-            torqueNm: Number(v.torque_nm),
-            mileageKmpl: Number(v.mileage) || 0,
-            rangeKm: 0
-          }]);
-        })(),
-        dealerPrices: (() => {
-          const parsed = (v.dealer_prices || []).map((dp: any) => ({
-            dealerId: dp.dealers?.id || '',
-            dealerName: dp.dealers?.name || '',
-            location: dp.dealers?.location || '',
-            price: Number(dp.price),
-            discount: Number(dp.discount),
-            rating: Number(dp.dealers?.rating || 0)
-          }));
-          return parsed.length > 0 ? parsed : (mock?.dealerPrices || []);
-        })()
-      };
-    });
-
-    return mapped.length > 0 ? mapped : mockVehicles;
-  } catch (err) {
-    console.error('Exception fetching vehicles, using mock fallback:', err);
-    return mockVehicles;
-  }
+  // Deduplicate by ID just in case
+  const seen = new Set<string>();
+  return mockVehicles.filter(v => {
+    if (seen.has(v.id)) return false;
+    seen.add(v.id);
+    return true;
+  });
 }
+
+
+
 
 export const BRAND_LOGOS_OVERRIDE: Record<string, string> = {
   'Maruti Suzuki': 'https://imgd.aeplcdn.com/0X0/n/cw/ec/10/brands/logos/maruti-suzuki1647009823420.jpg?v=1647009823707&q=80',

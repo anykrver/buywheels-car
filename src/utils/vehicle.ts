@@ -8283,16 +8283,18 @@ export const maruti_s_presso_2026: Vehicle = {
   ]
 };
 
+
+
 // Mahindra BE 6e
-export const mahindra_be_6e_2026: Vehicle = {
+export const mahindraBe6e2026: Vehicle = {
   id: "mahindra-be-6e-2026",
   slug: "mahindra-be-6e",
-  category: "ev",
+  category: "car",
   brand: "Mahindra",
   model: "BE 6e",
   year: 2026,
-  startingPrice: 650000,
-  emiFrom: 12000,
+  startingPrice: 1890000,
+  emiFrom: 35724,
   images: [
     "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-4-1767931326.png",
     "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-3-1767931325.png",
@@ -8301,1771 +8303,177 @@ export const mahindra_be_6e_2026: Vehicle = {
     "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-5-1767931326.png",
     "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-2-1767931324.png",
     "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-0-1767931323.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-6-1767931327.png"
+    "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-6-1767931327.png",
+    "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-11-1770900377.jpg",
+    "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-6-1770900591.jpg"
   ],
   thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-4-1767931326.png",
-  fuelTypes: ["Petrol"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "18.5 kmpl",
-  engineCC: 1199,
-  powerBHP: 88,
-  torqueNm: 115,
-  bootSpaceL: 350,
-  groundClearance: 175,
-  safetyRating: 4,
-  seatingCapacity: 5,
-  rating: 4.5,
-  reviewCount: 420,
-  isNew: true,
-  isEV: false,
-  description: "Mahindra BE 6e featuring modern digital infotainment, strong fuel efficiency, and 91wheels verified specs.",
-  features: ["Touchscreen Infotainment System", "Automatic Climate Control", "Dual Airbags & ABS with EBD", "Rear Parking Sensors", "Steering Mounted Controls"],
-  colors: ["Solid White", "Midnight Black", "Metallic Grey", "Flame Red"],
-  pros: ["Great value proposition", "Feature-loaded cabin", "Low cost of maintenance"],
-  cons: ["Basic safety in entry variants"],
-  variants: [
-    {
-      id: "mahindra-be-6e-v1",
-      name: "Standard 2026",
-      price: 650000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1199,
-      powerBHP: 88,
-      torqueNm: 115,
-      mileageKmpl: 18.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Mahindra Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 650000,
-      discount: 15000,
-      rating: 4.7
-    }
-  ]
-};
-
-// Mahindra XEV 9e
-export const mahindra_xev_9e_2026: Vehicle = {
-  id: "mahindra-xev-9e-2026",
-  slug: "mahindra-xev-9e",
-  category: "ev",
-  brand: "Mahindra",
-  model: "XEV 9e",
-  year: 2026,
-  startingPrice: 650000,
-  emiFrom: 12000,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-0-1767875526.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-7-1767875531.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-3-1767875528.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-5-1767875530.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-1-1767875527.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-6-1767875530.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-4-1767875529.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-2-1767875528.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-0-1767875526.png",
-  fuelTypes: ["Petrol"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "18.5 kmpl",
-  engineCC: 1199,
-  powerBHP: 88,
-  torqueNm: 115,
-  bootSpaceL: 350,
-  groundClearance: 175,
-  safetyRating: 4,
-  seatingCapacity: 5,
-  rating: 4.5,
-  reviewCount: 420,
-  isNew: true,
-  isEV: false,
-  description: "Mahindra XEV 9e featuring modern digital infotainment, strong fuel efficiency, and 91wheels verified specs.",
-  features: ["Touchscreen Infotainment System", "Automatic Climate Control", "Dual Airbags & ABS with EBD", "Rear Parking Sensors", "Steering Mounted Controls"],
-  colors: ["Solid White", "Midnight Black", "Metallic Grey", "Flame Red"],
-  pros: ["Great value proposition", "Feature-loaded cabin", "Low cost of maintenance"],
-  cons: ["Basic safety in entry variants"],
-  variants: [
-    {
-      id: "mahindra-xev-9e-v1",
-      name: "Standard 2026",
-      price: 650000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1199,
-      powerBHP: 88,
-      torqueNm: 115,
-      mileageKmpl: 18.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Mahindra Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 650000,
-      discount: 15000,
-      rating: 4.7
-    }
-  ]
-};
-
-// Renault Triber
-export const renault_triber_2026: Vehicle = {
-  id: "renault-triber-2026",
-  slug: "renault-triber",
-  category: "car",
-  brand: "Renault",
-  model: "Triber",
-  year: 2026,
-  startingPrice: 650000,
-  emiFrom: 12000,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/renault/triber/renault-triber-5-1765012459.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/triber/renault-triber-2-1765012458.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/triber/renault-triber-3-1765012458.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/triber/renault-triber-1-1765012457.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/triber/renault-triber-6-1765012460.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/triber/renault-triber-7-1765012461.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/triber/renault-triber-4-1765012459.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/triber/renault-triber-0-1765012456.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/renault/triber/renault-triber-5-1765012459.png",
-  fuelTypes: ["Petrol"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "18.5 kmpl",
-  engineCC: 1199,
-  powerBHP: 88,
-  torqueNm: 115,
-  bootSpaceL: 350,
-  groundClearance: 175,
-  safetyRating: 4,
-  seatingCapacity: 5,
-  rating: 4.5,
-  reviewCount: 420,
-  isNew: true,
-  isEV: false,
-  description: "Renault Triber featuring modern digital infotainment, strong fuel efficiency, and 91wheels verified specs.",
-  features: ["Touchscreen Infotainment System", "Automatic Climate Control", "Dual Airbags & ABS with EBD", "Rear Parking Sensors", "Steering Mounted Controls"],
-  colors: ["Solid White", "Midnight Black", "Metallic Grey", "Flame Red"],
-  pros: ["Great value proposition", "Feature-loaded cabin", "Low cost of maintenance"],
-  cons: ["Basic safety in entry variants"],
-  variants: [
-    {
-      id: "renault-triber-v1",
-      name: "Standard 2026",
-      price: 650000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1199,
-      powerBHP: 88,
-      torqueNm: 115,
-      mileageKmpl: 18.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Renault Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 650000,
-      discount: 15000,
-      rating: 4.7
-    }
-  ]
-};
-
-// Renault Duster 2026
-export const renault_duster_2026: Vehicle = {
-  id: "renault-duster-2026",
-  slug: "renault-duster",
-  category: "car",
-  brand: "Renault",
-  model: "Duster 2026",
-  year: 2026,
-  startingPrice: 650000,
-  emiFrom: 12000,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/renault/duster/renault-duster-0-1774597509.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/duster/renault-duster-7-1773734234.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/duster/renault-duster-3-1773734229.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/duster/renault-duster-5-1773734232.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/duster/renault-duster-1-1773734226.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/duster/renault-duster-6-1773734233.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/duster/renault-duster-4-1773734231.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/duster/renault-duster-2-1773734228.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/renault/duster/renault-duster-0-1774597509.png",
-  fuelTypes: ["Petrol"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "18.5 kmpl",
-  engineCC: 1199,
-  powerBHP: 88,
-  torqueNm: 115,
-  bootSpaceL: 350,
-  groundClearance: 175,
-  safetyRating: 4,
-  seatingCapacity: 5,
-  rating: 4.5,
-  reviewCount: 420,
-  isNew: true,
-  isEV: false,
-  description: "Renault Duster 2026 featuring modern digital infotainment, strong fuel efficiency, and 91wheels verified specs.",
-  features: ["Touchscreen Infotainment System", "Automatic Climate Control", "Dual Airbags & ABS with EBD", "Rear Parking Sensors", "Steering Mounted Controls"],
-  colors: ["Solid White", "Midnight Black", "Metallic Grey", "Flame Red"],
-  pros: ["Great value proposition", "Feature-loaded cabin", "Low cost of maintenance"],
-  cons: ["Basic safety in entry variants"],
-  variants: [
-    {
-      id: "renault-duster-v1",
-      name: "Standard 2026",
-      price: 650000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1199,
-      powerBHP: 88,
-      torqueNm: 115,
-      mileageKmpl: 18.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Renault Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 650000,
-      discount: 15000,
-      rating: 4.7
-    }
-  ]
-};
-
-// Nissan X-Trail
-export const nissan_x_trail_2026: Vehicle = {
-  id: "nissan-x-trail-2026",
-  slug: "nissan-x-trail",
-  category: "car",
-  brand: "Nissan",
-  model: "X-Trail",
-  year: 2026,
-  startingPrice: 650000,
-  emiFrom: 12000,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/nissan/x-trail/nissan-x-trail-3-1767852668.png",
-    "https://images.91wheels.com/assets/c_images/gallery/nissan/x-trail/nissan-x-trail-1-1767852666.png",
-    "https://images.91wheels.com/assets/c_images/gallery/nissan/x-trail/nissan-x-trail-0-1767852666.png",
-    "https://images.91wheels.com/assets/c_images/gallery/nissan/x-trail/nissan-x-trail-2-1767852667.png",
-    "https://images.91wheels.com/assets/c_images/gallery/hyundai/creta/hyundai-creta-1-1766205711.png",
-    "https://images.91wheels.com/assets/c_images/gallery/toyota/fortuner/toyota-fortuner-0-1767849630.png",
-    "https://images.91wheels.com/assets/c_images/gallery/audi/q3/audi-q3-0-1766142943.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mini/countryman-c/mini-countryman-c-0-1781693351.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/nissan/x-trail/nissan-x-trail-3-1767852668.png",
-  fuelTypes: ["Petrol"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "18.5 kmpl",
-  engineCC: 1199,
-  powerBHP: 88,
-  torqueNm: 115,
-  bootSpaceL: 350,
-  groundClearance: 175,
-  safetyRating: 4,
-  seatingCapacity: 5,
-  rating: 4.5,
-  reviewCount: 420,
-  isNew: true,
-  isEV: false,
-  description: "Nissan X-Trail featuring modern digital infotainment, strong fuel efficiency, and 91wheels verified specs.",
-  features: ["Touchscreen Infotainment System", "Automatic Climate Control", "Dual Airbags & ABS with EBD", "Rear Parking Sensors", "Steering Mounted Controls"],
-  colors: ["Solid White", "Midnight Black", "Metallic Grey", "Flame Red"],
-  pros: ["Great value proposition", "Feature-loaded cabin", "Low cost of maintenance"],
-  cons: ["Basic safety in entry variants"],
-  variants: [
-    {
-      id: "nissan-x-trail-v1",
-      name: "Standard 2026",
-      price: 650000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1199,
-      powerBHP: 88,
-      torqueNm: 115,
-      mileageKmpl: 18.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Nissan Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 650000,
-      discount: 15000,
-      rating: 4.7
-    }
-  ]
-};
-
-// Skoda Superb
-export const skoda_superb_2026: Vehicle = {
-  id: "skoda-superb-2026",
-  slug: "skoda-superb",
-  category: "car",
-  brand: "Skoda",
-  model: "Superb",
-  year: 2026,
-  startingPrice: 650000,
-  emiFrom: 12000,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Petrol"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "18.5 kmpl",
-  engineCC: 1199,
-  powerBHP: 88,
-  torqueNm: 115,
-  bootSpaceL: 350,
-  groundClearance: 175,
-  safetyRating: 4,
-  seatingCapacity: 5,
-  rating: 4.5,
-  reviewCount: 420,
-  isNew: true,
-  isEV: false,
-  description: "Skoda Superb featuring modern digital infotainment, strong fuel efficiency, and 91wheels verified specs.",
-  features: ["Touchscreen Infotainment System", "Automatic Climate Control", "Dual Airbags & ABS with EBD", "Rear Parking Sensors", "Steering Mounted Controls"],
-  colors: ["Solid White", "Midnight Black", "Metallic Grey", "Flame Red"],
-  pros: ["Great value proposition", "Feature-loaded cabin", "Low cost of maintenance"],
-  cons: ["Basic safety in entry variants"],
-  variants: [
-    {
-      id: "skoda-superb-v1",
-      name: "Standard 2026",
-      price: 650000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1199,
-      powerBHP: 88,
-      torqueNm: 115,
-      mileageKmpl: 18.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Skoda Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 650000,
-      discount: 15000,
-      rating: 4.7
-    }
-  ]
-};
-
-// Volkswagen Golf GTI
-export const volkswagen_golf_gti_2026: Vehicle = {
-  id: "volkswagen-golf-gti-2026",
-  slug: "volkswagen-golf-gti",
-  category: "car",
-  brand: "Volkswagen",
-  model: "Golf GTI",
-  year: 2026,
-  startingPrice: 650000,
-  emiFrom: 12000,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/volkswagen/golf-gti/volkswagen-golf-gti-0-1767847472.png",
-    "https://images.91wheels.com/assets/c_images/gallery/volkswagen/golf-gti/volkswagen-golf-gti-6-1764418172.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/volkswagen/golf-gti/volkswagen-golf-gti-17-1764418179.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/volkswagen/golf-gti/volkswagen-golf-gti-19-1764418180.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/volkswagen/golf-gti/volkswagen-golf-gti-15-1764418178.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/volkswagen/golf-gti/volkswagen-golf-gti-7-1764418173.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/volkswagen/golf-gti/volkswagen-golf-gti-18-1764418180.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/volkswagen/golf-gti/volkswagen-golf-gti-16-1764418179.jpg"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/volkswagen/golf-gti/volkswagen-golf-gti-0-1767847472.png",
-  fuelTypes: ["Petrol"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "18.5 kmpl",
-  engineCC: 1199,
-  powerBHP: 88,
-  torqueNm: 115,
-  bootSpaceL: 350,
-  groundClearance: 175,
-  safetyRating: 4,
-  seatingCapacity: 5,
-  rating: 4.5,
-  reviewCount: 420,
-  isNew: true,
-  isEV: false,
-  description: "Volkswagen Golf GTI featuring modern digital infotainment, strong fuel efficiency, and 91wheels verified specs.",
-  features: ["Touchscreen Infotainment System", "Automatic Climate Control", "Dual Airbags & ABS with EBD", "Rear Parking Sensors", "Steering Mounted Controls"],
-  colors: ["Solid White", "Midnight Black", "Metallic Grey", "Flame Red"],
-  pros: ["Great value proposition", "Feature-loaded cabin", "Low cost of maintenance"],
-  cons: ["Basic safety in entry variants"],
-  variants: [
-    {
-      id: "volkswagen-golf-gti-v1",
-      name: "Standard 2026",
-      price: 650000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1199,
-      powerBHP: 88,
-      torqueNm: 115,
-      mileageKmpl: 18.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Volkswagen Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 650000,
-      discount: 15000,
-      rating: 4.7
-    }
-  ]
-};
-
-// BYD Sealion 7
-export const byd_sealion_7_2026: Vehicle = {
-  id: "byd-sealion-7-2026",
-  slug: "byd-sealion-7",
-  category: "ev",
-  brand: "BYD",
-  model: "Sealion 7",
-  year: 2026,
-  startingPrice: 650000,
-  emiFrom: 12000,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Petrol"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "18.5 kmpl",
-  engineCC: 1199,
-  powerBHP: 88,
-  torqueNm: 115,
-  bootSpaceL: 350,
-  groundClearance: 175,
-  safetyRating: 4,
-  seatingCapacity: 5,
-  rating: 4.5,
-  reviewCount: 420,
-  isNew: true,
-  isEV: false,
-  description: "BYD Sealion 7 featuring modern digital infotainment, strong fuel efficiency, and 91wheels verified specs.",
-  features: ["Touchscreen Infotainment System", "Automatic Climate Control", "Dual Airbags & ABS with EBD", "Rear Parking Sensors", "Steering Mounted Controls"],
-  colors: ["Solid White", "Midnight Black", "Metallic Grey", "Flame Red"],
-  pros: ["Great value proposition", "Feature-loaded cabin", "Low cost of maintenance"],
-  cons: ["Basic safety in entry variants"],
-  variants: [
-    {
-      id: "byd-sealion-7-v1",
-      name: "Standard 2026",
-      price: 650000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1199,
-      powerBHP: 88,
-      torqueNm: 115,
-      mileageKmpl: 18.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "BYD Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 650000,
-      discount: 15000,
-      rating: 4.7
-    }
-  ]
-};
-
-
-
-// Audi Q7
-export const audi_q7_2026: Vehicle = {
-  id: "audi-q7-2026",
-  slug: "audi-q7",
-  category: "car",
-  brand: "Audi",
-  model: "Q7",
-  year: 2026,
-  startingPrice: 8692000,
-  emiFrom: 158036,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/audi/q7/audi-q7-2-1767856045.png",
-    "https://images.91wheels.com/assets/c_images/gallery/audi/q7/audi-q7-1-1767856045.png",
-    "https://images.91wheels.com/assets/c_images/gallery/audi/q7/audi-q7-3-1767856046.png",
-    "https://images.91wheels.com/assets/c_images/gallery/audi/q7/audi-q7-0-1767856044.png",
-    "https://images.91wheels.com/assets/c_images/gallery/porsche/macan/porsche-macan-5-1766213181.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/z4/bmw-z4-0-1766218974.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/amg-c43/mercedesbenz-amg-c43-0-1767860573.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-7-1765011339.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/audi/q7/audi-q7-2-1767856045.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Audi Q7 offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "audi-q7-v1",
-      name: "Luxury 2026",
-      price: 8692000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Audi Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 8692000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// BMW X3
-export const bmw_x3_2026: Vehicle = {
-  id: "bmw-x3-2026",
-  slug: "bmw-x3",
-  category: "car",
-  brand: "BMW",
-  model: "X3",
-  year: 2026,
-  startingPrice: 7490000,
-  emiFrom: 136182,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-5-1766216924.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-4-1766216924.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-0-1766216922.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-2-1766216923.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-6-1766216925.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-3-1766216923.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-1-1766216922.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-7-1766216926.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-5-1766216924.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "BMW X3 offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "bmw-x3-v1",
-      name: "Luxury 2026",
-      price: 7490000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "BMW Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 7490000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Mercedes-Benz E-Class
-export const mercedes_benz_e_class_2026: Vehicle = {
-  id: "mercedes-benz-e-class-2026",
-  slug: "mercedes-benz-e-class",
-  category: "car",
-  brand: "Mercedes-Benz",
-  model: "E-Class",
-  year: 2026,
-  startingPrice: 7850000,
-  emiFrom: 142727,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-5-1766218942.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-2-1766218940.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-4-1766218941.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-0-1766218939.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-6-1766218942.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-3-1766218940.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-1-1766218939.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-7-1766218943.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/mercedesbenz/e-class/mercedesbenz-e-class-5-1766218942.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Mercedes-Benz E-Class offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "mercedes-benz-e-class-v1",
-      name: "Luxury 2026",
-      price: 7850000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Mercedes-Benz Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 7850000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Lexus NX 350h
-export const lexus_nx_2026: Vehicle = {
-  id: "lexus-nx-2026",
-  slug: "lexus-nx",
-  category: "car",
-  brand: "Lexus",
-  model: "NX 350h",
-  year: 2026,
-  startingPrice: 6735000,
-  emiFrom: 122455,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/lexus/nx/lexus-nx-0-1767931950.png",
-    "https://images.91wheels.com/assets/c_images/gallery/jaguar/f-pace/jaguar-f-pace-0-1767933590.png",
-    "https://images.91wheels.com/assets/c_images/gallery/volvo/xc60/volvo-xc60-3-1767847680.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/x3/bmw-x3-5-1766216924.png",
-    "https://images.91wheels.com/assets/c_images/gallery/skoda/kodiaq-rs/skoda-kodiaq-rs-0-1782120448.png",
-    "https://images.91wheels.com/assets/c_images/gallery/audi/q5/audi-q5-1-1767778211.png",
-    "https://images.91wheels.com/assets/c_images/gallery/jeep/wrangler/jeep-wrangler-6-1773212262.png",
-    "https://images.91wheels.com/assets/c_images/gallery/bmw/i4/bmw-i4-0-1766211033.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/lexus/nx/lexus-nx-0-1767931950.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Lexus NX 350h offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "lexus-nx-v1",
-      name: "Luxury 2026",
-      price: 6735000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Lexus Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 6735000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Mini Countryman
-export const mini_countryman_2026: Vehicle = {
-  id: "mini-countryman-2026",
-  slug: "mini-countryman",
-  category: "car",
-  brand: "Mini",
-  model: "Countryman",
-  year: 2026,
-  startingPrice: 5490000,
-  emiFrom: 99818,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Mini Countryman offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "mini-countryman-v1",
-      name: "Luxury 2026",
-      price: 5490000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Mini Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 5490000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Isuzu D-Max V-Cross
-export const isuzu_d_max_v_cross_2026: Vehicle = {
-  id: "isuzu-d-max-v-cross-2026",
-  slug: "isuzu-d-max-v-cross",
-  category: "car",
-  brand: "Isuzu",
-  model: "D-Max V-Cross",
-  year: 2026,
-  startingPrice: 2550000,
-  emiFrom: 46364,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Isuzu D-Max V-Cross offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "isuzu-d-max-v-cross-v1",
-      name: "Luxury 2026",
-      price: 2550000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Isuzu Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 2550000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Citroën C5 Aircross
-export const citroen_c5_aircross_2026: Vehicle = {
-  id: "citroen-c5-aircross-2026",
-  slug: "citroen-c5-aircross",
-  category: "car",
-  brand: "Citroen",
-  model: "Citroën C5 Aircross",
-  year: 2026,
-  startingPrice: 3767000,
-  emiFrom: 68491,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-0-1766141820.png",
-    "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-7-1766141826.png",
-    "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-3-1766141823.png",
-    "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-5-1766141824.png",
-    "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-1-1766141821.png",
-    "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-6-1766141825.png",
-    "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-4-1766141823.png",
-    "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-2-1766141822.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/citroen/c5-aircross/citroen-c5-aircross-0-1766141820.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Citroën C5 Aircross offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "citroen-c5-aircross-v1",
-      name: "Luxury 2026",
-      price: 3767000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Citroen Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 3767000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// BYD Dolphin
-export const byd_dolphin_2026: Vehicle = {
-  id: "byd-dolphin-2026",
-  slug: "byd-dolphin",
-  category: "ev",
-  brand: "BYD",
-  model: "Dolphin",
-  year: 2026,
-  startingPrice: 1800000,
-  emiFrom: 32727,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-0-1769505856.png",
-    "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-6-1774939633.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-2-1774939629.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-5-1774939632.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-3-1774939630.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-1-1774939628.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-2-1774939711.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-9-1774939636.jpg"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/byd-auto/dolphin/byd-auto-dolphin-0-1769505856.png",
   fuelTypes: ["Electric"],
   transmissions: ["Automatic"],
-  mileage: "450 km Range",
+  mileage: "557 - 683 km/charge",
   engineCC: 0,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
+  powerBHP: 282,
+  torqueNm: 380,
+  bootSpaceL: 455,
+  groundClearance: 207,
   safetyRating: 5,
   seatingCapacity: 5,
   rating: 4.8,
-  reviewCount: 380,
+  reviewCount: 340,
   isNew: true,
+  isBestSeller: true,
   isEV: true,
-  description: "BYD Dolphin offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
+  description: "The Mahindra BE 6e is Mahindra's flagship Born Electric coupe SUV built on the INGLO architecture. It features futuristic sci-fi styling, an ultra-modern dual-screen cockpit, custom synthetic motor sounds by AR Rahman, multi-link suspension with frequency sensitive damping, ultra-fast 175 kW DC charging (20-80% in 20 mins), Level 2+ ADAS suite, and up to 683 km claimed range.",
+  features: [
+    "Dual 12.3-inch Curved HD Cockpit Displays",
+    "IN-GLO Platform with 59 kWh & 79 kWh LFP Battery Packs",
+    "Custom Sonic Identity Soundscapes by AR Rahman",
+    "Fixed Panoramic Glass Roof with UV & Infrared Cut",
+    "Level 2+ ADAS with 5 Radars, 1 Camera & Autonomous Parking",
+    "Multi-Link Rear Suspension with Frequency Selective Damping",
+    "175 kW DC Ultra-Fast Charging (20-80% in 20 Mins)",
+    "16-Speaker Harman Kardon Surround Sound System",
+    "Illuminated BE Logo & C-shaped LED Light Bands",
+    "7 Airbags Standard Across All Variants",
+    "Brake-by-Wire Technology & One-Pedal Driving",
+    "Wireless Apple CarPlay & Android Auto with V2L Support"
+  ],
+  colors: [
+    "Desert Myst Satin",
+    "Desert Myst",
+    "Tango Red",
+    "Everest White",
+    "Everest White Satin",
+    "Stealth Black",
+    "Firestorm Orange",
+    "Deep Forest",
+    "Formula E Black",
+    "Formula E Orange",
+    "Formula E Red",
+    "Formula E White"
+  ],
+  pros: [
+    "Striking futuristic coupe SUV design turning heads everywhere",
+    "Instant 282 BHP & 380 Nm torque acceleration with dynamic handling",
+    "Generous 79 kWh battery offering 500+ km real-world range",
+    "Ultra-modern interior with dual screen cockpit and Harman Kardon audio"
+  ],
+  cons: [
+    "Sloping roofline slightly limits rear seat headroom for tall passengers",
+    "Rear window glass area is compact limiting rearward visibility",
+    "Firm suspension tuned for dynamic handling on bumpy city roads"
+  ],
   variants: [
     {
-      id: "byd-dolphin-v1",
-      name: "Luxury 2026",
-      price: 1800000,
+      id: "be6e-v1",
+      name: "Pack One 59kWh RWD",
+      price: 1890000,
       fuelType: "Electric",
       transmission: "Automatic",
       engineCC: 0,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 450,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
+      powerBHP: 228,
+      torqueNm: 380,
+      mileageKmpl: 557,
+      rangeKm: 557,
+      features: ["Dual 12.3-inch Screens", "7 Airbags", "LED DRLs & Lightbar", "175kW Fast Charging Support", "7-Speaker Audio"]
+    },
     {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "BYD Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 1800000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// BYD eMAX 7
-export const byd_emax_7_2026: Vehicle = {
-  id: "byd-emax-7-2026",
-  slug: "byd-emax-7",
-  category: "ev",
-  brand: "BYD",
-  model: "eMAX 7",
-  year: 2026,
-  startingPrice: 2690000,
-  emiFrom: 48909,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Electric"],
-  transmissions: ["Automatic"],
-  mileage: "450 km Range",
-  engineCC: 0,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: true,
-  description: "BYD eMAX 7 offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
+      id: "be6e-v2",
+      name: "Pack Two 59kWh RWD",
+      price: 2190000,
+      fuelType: "Electric",
+      transmission: "Automatic",
+      engineCC: 0,
+      powerBHP: 228,
+      torqueNm: 380,
+      mileageKmpl: 557,
+      rangeKm: 557,
+      features: ["Level 2 ADAS", "Fixed Panoramic Glass Roof", "16-Speaker Harman Kardon", "360-Degree HD Camera", "Wireless Charger"]
+    },
     {
-      id: "byd-emax-7-v1",
-      name: "Luxury 2026",
+      id: "be6e-v3",
+      name: "Pack Two 79kWh RWD",
+      price: 2350000,
+      fuelType: "Electric",
+      transmission: "Automatic",
+      engineCC: 0,
+      powerBHP: 282,
+      torqueNm: 380,
+      mileageKmpl: 683,
+      rangeKm: 683,
+      features: ["79 kWh Battery Pack", "282 BHP Motor", "Level 2+ ADAS Suite", "Ventilated Front Seats", "20-inch Aero Alloys"]
+    },
+    {
+      id: "be6e-v4",
+      name: "Formula E Edition 79kWh RWD",
       price: 2690000,
       fuelType: "Electric",
       transmission: "Automatic",
       engineCC: 0,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 450,
-      features: ["Dual Airbags", "Power Windows"]
+      powerBHP: 282,
+      torqueNm: 380,
+      mileageKmpl: 683,
+      rangeKm: 683,
+      features: ["Formula E Race Livery", "Intelligent Adaptive Suspension", "Nira Carpet Logo Lamp", "Alcantara Sport Seats", "Custom Track Soundscape"]
     }
   ],
   dealerPrices: [
     {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "BYD Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 2690000,
+      dealerId: "mahindra_d1_ranchi",
+      dealerName: "Shree Auto Mahindra Ranchi",
+      location: "Bariatu Road, Ranchi, Jharkhand",
+      price: 1890000,
       discount: 25000,
       rating: 4.8
-    }
-  ]
-};
-
-// MG Cyberster
-export const mg_cyberster_2026: Vehicle = {
-  id: "mg-cyberster-2026",
-  slug: "mg-cyberster",
-  category: "ev",
-  brand: "MG",
-  model: "Cyberster",
-  year: 2026,
-  startingPrice: 6500000,
-  emiFrom: 118182,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Electric"],
-  transmissions: ["Automatic"],
-  mileage: "450 km Range",
-  engineCC: 0,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: true,
-  description: "MG Cyberster offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
+    },
     {
-      id: "mg-cyberster-v1",
-      name: "Luxury 2026",
-      price: 6500000,
-      fuelType: "Electric",
-      transmission: "Automatic",
-      engineCC: 0,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 450,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "MG Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 6500000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Mahindra XUV.e8
-export const mahindra_xuv_e8_2026: Vehicle = {
-  id: "mahindra-xuv-e8-2026",
-  slug: "mahindra-xuv-e8",
-  category: "ev",
-  brand: "Mahindra",
-  model: "XUV.e8",
-  year: 2026,
-  startingPrice: 3500000,
-  emiFrom: 63636,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xuv-e8/mahindra-xuv-e8-0-1766745464.png",
-    "https://images.91wheels.com/assets/c_images/gallery/vinfast/vf7/vinfast-vf7-0-1767846699.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9s/mahindra-xev-9s-0-1766745066.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/harrier-ev/tata-harrier-ev-0-1769674594.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/xev-9e/mahindra-xev-9e-0-1767875526.png",
-    "https://images.91wheels.com/assets/c_images/gallery/toyota/urban-cruiser-ebella/toyota-urban-cruiser-ebella-0-1769588323.png",
-    "https://images.91wheels.com/assets/c_images/gallery/mahindra/be-6e/mahindra-be-6e-4-1767931326.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra-ev/tata-sierra-ev-0-1782897309.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/mahindra/xuv-e8/mahindra-xuv-e8-0-1766745464.png",
-  fuelTypes: ["Electric"],
-  transmissions: ["Automatic"],
-  mileage: "450 km Range",
-  engineCC: 0,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: true,
-  description: "Mahindra XUV.e8 offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "mahindra-xuv-e8-v1",
-      name: "Luxury 2026",
-      price: 3500000,
-      fuelType: "Electric",
-      transmission: "Automatic",
-      engineCC: 0,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 450,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Mahindra Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 3500000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Maruti Suzuki e Vitara
-export const maruti_suzuki_e_vitara_2026: Vehicle = {
-  id: "maruti-suzuki-e-vitara-2026",
-  slug: "maruti-suzuki-e-vitara",
-  category: "ev",
-  brand: "Maruti Suzuki",
-  model: "e Vitara",
-  year: 2026,
-  startingPrice: 2000000,
-  emiFrom: 36364,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Electric"],
-  transmissions: ["Automatic"],
-  mileage: "450 km Range",
-  engineCC: 0,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: true,
-  description: "Maruti Suzuki e Vitara offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "maruti-suzuki-e-vitara-v1",
-      name: "Luxury 2026",
-      price: 2000000,
-      fuelType: "Electric",
-      transmission: "Automatic",
-      engineCC: 0,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 450,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Maruti Suzuki Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 2000000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Jeep Grand Cherokee
-export const jeep_grand_cherokee_2026: Vehicle = {
-  id: "jeep-grand-cherokee-2026",
-  slug: "jeep-grand-cherokee",
-  category: "car",
-  brand: "Jeep",
-  model: "Grand Cherokee",
-  year: 2026,
-  startingPrice: 8050000,
-  emiFrom: 146364,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/jeep/grand-cherokee/jeep-grand-cherokee-5-1766208627.png",
-    "https://images.91wheels.com/assets/c_images/gallery/jeep/grand-cherokee/jeep-grand-cherokee-6-1766208627.png",
-    "https://images.91wheels.com/assets/c_images/gallery/jeep/grand-cherokee/jeep-grand-cherokee-1-1766208624.png",
-    "https://images.91wheels.com/assets/c_images/gallery/jeep/grand-cherokee/jeep-grand-cherokee-4-1766208626.png",
-    "https://images.91wheels.com/assets/c_images/gallery/jeep/grand-cherokee/jeep-grand-cherokee-7-1766208628.png",
-    "https://images.91wheels.com/assets/c_images/gallery/jeep/grand-cherokee/jeep-grand-cherokee-3-1766208625.png",
-    "https://images.91wheels.com/assets/c_images/gallery/jeep/grand-cherokee/jeep-grand-cherokee-2-1766208625.png",
-    "https://images.91wheels.com/assets/c_images/gallery/jeep/grand-cherokee/jeep-grand-cherokee-0-1766208623.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/jeep/grand-cherokee/jeep-grand-cherokee-5-1766208627.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Jeep Grand Cherokee offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "jeep-grand-cherokee-v1",
-      name: "Luxury 2026",
-      price: 8050000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Jeep Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 8050000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Nissan Patrol
-export const nissan_patrol_2026: Vehicle = {
-  id: "nissan-patrol-2026",
-  slug: "nissan-patrol",
-  category: "car",
-  brand: "Nissan",
-  model: "Patrol",
-  year: 2026,
-  startingPrice: 12000000,
-  emiFrom: 218182,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Nissan Patrol offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "nissan-patrol-v1",
-      name: "Luxury 2026",
-      price: 12000000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Nissan Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 12000000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Volkswagen ID.4
-export const volkswagen_id4_2026: Vehicle = {
-  id: "volkswagen-id4-2026",
-  slug: "volkswagen-id4",
-  category: "ev",
-  brand: "Volkswagen",
-  model: "ID.4",
-  year: 2026,
-  startingPrice: 4500000,
-  emiFrom: 81818,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Electric"],
-  transmissions: ["Automatic"],
-  mileage: "450 km Range",
-  engineCC: 0,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: true,
-  description: "Volkswagen ID.4 offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "volkswagen-id4-v1",
-      name: "Luxury 2026",
-      price: 4500000,
-      fuelType: "Electric",
-      transmission: "Automatic",
-      engineCC: 0,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 450,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Volkswagen Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 4500000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Honda Civic
-export const honda_civic_2026: Vehicle = {
-  id: "honda-civic-2026",
-  slug: "honda-civic",
-  category: "car",
-  brand: "Honda",
-  model: "Civic",
-  year: 2026,
-  startingPrice: 2100000,
-  emiFrom: 38182,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Honda Civic offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "honda-civic-v1",
-      name: "Luxury 2026",
-      price: 2100000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Honda Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 2100000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Maruti Suzuki Ciaz
-export const maruti_ciaz_2026: Vehicle = {
-  id: "maruti-ciaz-2026",
-  slug: "maruti-ciaz",
-  category: "car",
-  brand: "Maruti Suzuki",
-  model: "Ciaz",
-  year: 2026,
-  startingPrice: 940000,
-  emiFrom: 17091,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Maruti Suzuki Ciaz offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "maruti-ciaz-v1",
-      name: "Luxury 2026",
-      price: 940000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Maruti Suzuki Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 940000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Renault Kwid
-export const renault_kwid_2026: Vehicle = {
-  id: "renault-kwid-2026",
-  slug: "renault-kwid",
-  category: "car",
-  brand: "Renault",
-  model: "Kwid",
-  year: 2026,
-  startingPrice: 470000,
-  emiFrom: 8545,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/renault/kwid/renault-kwid-0-1784291216.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/kwid/renault-kwid-7-1784291253.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/kwid/renault-kwid-3-1784291232.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/kwid/renault-kwid-5-1784291242.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/kwid/renault-kwid-1-1784291221.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/kwid/renault-kwid-6-1784291248.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/kwid/renault-kwid-4-1784291237.png",
-    "https://images.91wheels.com/assets/c_images/gallery/renault/kwid/renault-kwid-2-1784291227.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/renault/kwid/renault-kwid-0-1784291216.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Renault Kwid offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "renault-kwid-v1",
-      name: "Luxury 2026",
-      price: 470000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Renault Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 470000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Ford EcoSport
-export const ford_ecosport_2026: Vehicle = {
-  id: "ford-ecosport-2026",
-  slug: "ford-ecosport",
-  category: "car",
-  brand: "Ford",
-  model: "EcoSport",
-  year: 2026,
-  startingPrice: 1100000,
-  emiFrom: 20000,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-    "https://images.91wheels.com/assets/c_images/gallery/tata/punch/tata-punch-0-1769487768.png"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/tata/sierra/tata-sierra-0-1768365444.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Ford EcoSport offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "ford-ecosport-v1",
-      name: "Luxury 2026",
-      price: 1100000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Ford Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 1100000,
-      discount: 25000,
-      rating: 4.8
-    }
-  ]
-};
-
-// Ford Endeavour
-export const ford_endeavour_2026: Vehicle = {
-  id: "ford-endeavour-2026",
-  slug: "ford-endeavour",
-  category: "car",
-  brand: "Ford",
-  model: "Endeavour",
-  year: 2026,
-  startingPrice: 3600000,
-  emiFrom: 65455,
-  images: [
-    "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-0-1769505896.png",
-    "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-6-1774868212.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-2-1774868209.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-4-1774868210.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-5-1774868211.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-3-1774868209.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-1-1774868208.jpg",
-    "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-3-1774868413.jpg"
-  ],
-  thumbnailUrl: "https://images.91wheels.com/assets/c_images/gallery/ford/endeavour/ford-endeavour-0-1769505896.png",
-  fuelTypes: ["Petrol", "Diesel"],
-  transmissions: ["Manual", "Automatic"],
-  mileage: "16.5 kmpl",
-  engineCC: 1998,
-  powerBHP: 180,
-  torqueNm: 320,
-  bootSpaceL: 450,
-  groundClearance: 180,
-  safetyRating: 5,
-  seatingCapacity: 5,
-  rating: 4.8,
-  reviewCount: 380,
-  isNew: true,
-  isEV: false,
-  description: "Ford Endeavour offering premium engineering, rich interior space, dynamic performance, and live 91wheels gallery CDN assets.",
-  features: ["Panoramic Sunroof", "Advanced Driver Assistance System (ADAS)", "Premium Surround Sound System", "Wireless Apple CarPlay & Android Auto", "360-Degree Camera"],
-  colors: ["Glacier White", "Phantom Black", "Cosmic Blue", "Graphite Grey"],
-  pros: ["Exceptional build quality", "Feature-rich interior", "High performance"],
-  cons: ["Premium price point"],
-  variants: [
-    {
-      id: "ford-endeavour-v1",
-      name: "Luxury 2026",
-      price: 3600000,
-      fuelType: "Petrol",
-      transmission: "Manual",
-      engineCC: 1998,
-      powerBHP: 180,
-      torqueNm: 320,
-      mileageKmpl: 16.5,
-      features: ["Dual Airbags", "Power Windows"]
-    }
-  ],
-  dealerPrices: [
-    {
-      dealerId: "d_ranchi_dealer",
-      dealerName: "Ford Showroom Ranchi",
-      location: "Ranchi, Jharkhand",
-      price: 3600000,
-      discount: 25000,
-      rating: 4.8
+      dealerId: "mahindra_d2_jamshedpur",
+      dealerName: "Karni Mahindra Jamshedpur",
+      location: "Adityapur, Jamshedpur, Jharkhand",
+      price: 1890000,
+      discount: 30000,
+      rating: 4.7
     }
   ]
 };
 
 
-export const vehicles: Vehicle[] = [
-  ...kiaVehicles,
-  ...allOtherVehicles
-,
+const rawVehiclesList: Vehicle[] = [
+  kiaSeltos,
+  kiaSonet,
+  kiaCarens,
+  kiaEv6,
+  kiaCarnival,
+  kiaSyros,
+  tataSierra,
+  hyundaiCreta,
+  tataNexon,
+  mahindraScorpioN,
+  tataPunch,
+  mahindraThar,
+  marutiSwift,
+  marutiBrezza,
+  mahindraXuv700,
+  tataHarrier,
+  tataSafari,
+  tataAltroz,
+  tataTiago,
+  tataCurvv,
+  mahindraTharRoxx,
+  mahindraXuv3xo,
+  mahindraBoleroNeo,
+  mahindraScorpioClassic,
+  marutiGrandVitara,
+  toyotaFortuner,
+  toyotaInnovaHycross,
+  hyundaiVerna,
+  hyundaiVenue,
+  marutiFronx,
+  marutiErtiga,
+  skodaSlavia,
+  volkswagenVirtus,
+  hondaCity,
+  mgHector,
   marutiBaleno,
   marutiDzire,
   marutiWagonR,
@@ -10105,6 +8513,7 @@ export const vehicles: Vehicle[] = [
   toyotaHilux,
   toyotaCamry,
   kiaEv9,
+  kiaClavis,
   skodaKushaq,
   skodaKylaq,
   volkswagenTaigun,
@@ -10113,8 +8522,7 @@ export const vehicles: Vehicle[] = [
   mgWindsorEv,
   mgCometEv,
   nissanMagnite,
-  renaultKiger
-,
+  renaultKiger,
   toyota_innova_crysta_2026,
   toyota_land_cruiser_300_2026,
   toyota_vellfire_2026,
@@ -10158,37 +8566,15 @@ export const vehicles: Vehicle[] = [
   toyota_urban_cruiser_hyryder_2026,
   citroen_c3_2026,
   maruti_s_presso_2026,
-  mahindra_be_6e_2026,
-  mahindra_xev_9e_2026,
-  renault_triber_2026,
-  renault_duster_2026,
-  nissan_x_trail_2026,
-  skoda_superb_2026,
-  volkswagen_golf_gti_2026,
-  byd_sealion_7_2026,
-  audi_q7_2026,
-  bmw_x3_2026,
-  mercedes_benz_e_class_2026,
-  lexus_nx_2026,
-  mini_countryman_2026,
-  isuzu_d_max_v_cross_2026,
-  citroen_c5_aircross_2026,
-  byd_dolphin_2026,
-  byd_emax_7_2026,
-  mg_cyberster_2026,
-  mahindra_xuv_e8_2026,
-  maruti_suzuki_e_vitara_2026,
-  jeep_grand_cherokee_2026,
-  nissan_patrol_2026,
-  volkswagen_id4_2026,
-  honda_civic_2026,
-  maruti_ciaz_2026,
-  renault_kwid_2026,
-  ford_ecosport_2026,
-  ford_endeavour_2026];
+  mahindraBe6e2026
+];
+
+const seenVehicleIds = new Set<string>();
+export const vehicles: Vehicle[] = rawVehiclesList.filter(v => {
+  if (!v || !v.id) return false;
+  if (seenVehicleIds.has(v.id)) return false;
+  seenVehicleIds.add(v.id);
+  return true;
+});
 
 export default vehicles;
-
-
-
-

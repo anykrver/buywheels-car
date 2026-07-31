@@ -1,8 +1,8 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Plus, X, Check, Minus, ArrowRight } from 'lucide-react';
-import { formatPriceShort } from '../utils/data';
-import { fetchVehicles } from '../utils/supabaseService';
+import { formatPriceShort, vehicles as localVehicles } from '../utils/data';
+;
 import type { Vehicle } from '../types';
 
 function VehicleSelector({
@@ -142,15 +142,8 @@ const POPULAR_COMPARISONS_RAW = [
 
 export default function Compare() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchVehicles().then(data => {
-      setVehiclesList(data);
-      setLoading(false);
-    });
-  }, []);
+  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>(localVehicles);
+  const [loading, setLoading] = useState(false);
 
   const selected = useMemo(() => {
     const ids = searchParams.get('ids')?.split(',') || [];

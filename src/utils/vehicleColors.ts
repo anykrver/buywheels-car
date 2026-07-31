@@ -6,6 +6,130 @@ export interface VehicleColor {
 }
 
 export const vehicleColorsData: Record<string, VehicleColor[]> = {
+  "mahindra-be-6e": [
+    {
+      "name": "Desert Myst Satin",
+      "hex": "#C2B280",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMystSatin1777965078.jpg"
+    },
+    {
+      "name": "Desert Myst",
+      "hex": "#D4C49B",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMyst1777965058.jpg"
+    },
+    {
+      "name": "Tango Red",
+      "hex": "#E60000",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_TangoRed1777965107.jpg"
+    },
+    {
+      "name": "Everest White",
+      "hex": "#FFFFFF",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhite1777965141.jpg"
+    },
+    {
+      "name": "Everest White Satin",
+      "hex": "#F5F5F5",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhiteSatin1777965161.jpg"
+    },
+    {
+      "name": "Stealth Black",
+      "hex": "#1C1C1C",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_StealthBlack1777965182.jpg"
+    },
+    {
+      "name": "Firestorm Orange",
+      "hex": "#FF4500",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FirestormOrange1777965201.jpg"
+    },
+    {
+      "name": "Deep Forest",
+      "hex": "#224330",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DeepForest1777965003.jpg"
+    },
+    {
+      "name": "Formula E Black",
+      "hex": "#0A0A0A",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEBlack1777965221.jpg"
+    },
+    {
+      "name": "Formula E Orange",
+      "hex": "#FF5722",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEOrange1777965240.jpg"
+    },
+    {
+      "name": "Formula E Red",
+      "hex": "#D32F2F",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaERed1777965267.jpg"
+    },
+    {
+      "name": "Formula E White",
+      "hex": "#FAFAFA",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEWhite1777965309.jpg"
+    }
+  ],
+  "mahindra-be-6e-2026": [
+    {
+      "name": "Desert Myst Satin",
+      "hex": "#C2B280",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMystSatin1777965078.jpg"
+    },
+    {
+      "name": "Desert Myst",
+      "hex": "#D4C49B",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMyst1777965058.jpg"
+    },
+    {
+      "name": "Tango Red",
+      "hex": "#E60000",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_TangoRed1777965107.jpg"
+    },
+    {
+      "name": "Everest White",
+      "hex": "#FFFFFF",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhite1777965141.jpg"
+    },
+    {
+      "name": "Everest White Satin",
+      "hex": "#F5F5F5",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhiteSatin1777965161.jpg"
+    },
+    {
+      "name": "Stealth Black",
+      "hex": "#1C1C1C",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_StealthBlack1777965182.jpg"
+    },
+    {
+      "name": "Firestorm Orange",
+      "hex": "#FF4500",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FirestormOrange1777965201.jpg"
+    },
+    {
+      "name": "Deep Forest",
+      "hex": "#224330",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DeepForest1777965003.jpg"
+    },
+    {
+      "name": "Formula E Black",
+      "hex": "#0A0A0A",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEBlack1777965221.jpg"
+    },
+    {
+      "name": "Formula E Orange",
+      "hex": "#FF5722",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEOrange1777965240.jpg"
+    },
+    {
+      "name": "Formula E Red",
+      "hex": "#D32F2F",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaERed1777965267.jpg"
+    },
+    {
+      "name": "Formula E White",
+      "hex": "#FAFAFA",
+      "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEWhite1777965309.jpg"
+    }
+  ],
   "tata-tigor-ev": [
     {
         "name": "Signature Teal Blue",
@@ -7215,130 +7339,6 @@ export const vehicleColorsData: Record<string, VehicleColor[]> = {
         "name": "Bluish Black",
         "hex": "#141414",
         "image": "https://images.91wheels.com/assets/uploads/swatchs/S-Presso_PearlMidnightBlack1719648496.jpg"
-    }
-],
-  "mahindra-be-6e": [
-    {
-        "name": "Desert Myst Satin",
-        "hex": "#b2a696",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMystSatin1777965078.jpg"
-    },
-    {
-        "name": "Desert Myst",
-        "hex": "#cec2ac",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMyst1777965058.jpg"
-    },
-    {
-        "name": "Tango Red",
-        "hex": "#bd4247",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_TangoRed1777965107.jpg"
-    },
-    {
-        "name": "Everest White",
-        "hex": "#fffff7",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhite1777965141.jpg"
-    },
-    {
-        "name": "Everest White Satin",
-        "hex": "#fefffa",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhiteSatin1777965161.jpg"
-    },
-    {
-        "name": "Stealth Black",
-        "hex": "#21272f",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_StealthBlack1777965182.jpg"
-    },
-    {
-        "name": "Firestorm Orange",
-        "hex": "#ff7b70",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FirestormOrange1777965201.jpg"
-    },
-    {
-        "name": "Deep Forest",
-        "hex": "#6f7163",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DeepForest1777965003.jpg"
-    },
-    {
-        "name": "Formula E Black",
-        "hex": "#111314",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEBlack1777965221.jpg"
-    },
-    {
-        "name": "Formula E Orange",
-        "hex": "#ff5409",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEOrange1777965240.jpg"
-    },
-    {
-        "name": "Formula E Red",
-        "hex": "#cd1730",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaERed1777965267.jpg"
-    },
-    {
-        "name": "Formula E White",
-        "hex": "#fffffd",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEWhite1777965309.jpg"
-    }
-],
-  "mahindra-be-6e-2026": [
-    {
-        "name": "Desert Myst Satin",
-        "hex": "#b2a696",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMystSatin1777965078.jpg"
-    },
-    {
-        "name": "Desert Myst",
-        "hex": "#cec2ac",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DesertMyst1777965058.jpg"
-    },
-    {
-        "name": "Tango Red",
-        "hex": "#bd4247",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_TangoRed1777965107.jpg"
-    },
-    {
-        "name": "Everest White",
-        "hex": "#fffff7",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhite1777965141.jpg"
-    },
-    {
-        "name": "Everest White Satin",
-        "hex": "#fefffa",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_EverestWhiteSatin1777965161.jpg"
-    },
-    {
-        "name": "Stealth Black",
-        "hex": "#21272f",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_StealthBlack1777965182.jpg"
-    },
-    {
-        "name": "Firestorm Orange",
-        "hex": "#ff7b70",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FirestormOrange1777965201.jpg"
-    },
-    {
-        "name": "Deep Forest",
-        "hex": "#6f7163",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_DeepForest1777965003.jpg"
-    },
-    {
-        "name": "Formula E Black",
-        "hex": "#111314",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEBlack1777965221.jpg"
-    },
-    {
-        "name": "Formula E Orange",
-        "hex": "#ff5409",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEOrange1777965240.jpg"
-    },
-    {
-        "name": "Formula E Red",
-        "hex": "#cd1730",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaERed1777965267.jpg"
-    },
-    {
-        "name": "Formula E White",
-        "hex": "#fffffd",
-        "image": "https://images.91wheels.com/assets/uploads/swatchs/BE_6_FormulaEWhite1777965309.jpg"
     }
 ],
   "mahindra-xev-9e": [

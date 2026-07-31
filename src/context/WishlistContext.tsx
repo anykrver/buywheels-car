@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { fetchVehicles } from '../utils/supabaseService';
+;
+import { vehicles as localVehicles } from '../utils/data';
 import type { Vehicle } from '../types';
 
 interface WishlistContextType {
@@ -14,12 +15,9 @@ const WishlistContext = createContext<WishlistContextType | undefined>(undefined
 
 export function WishlistProvider({ children }: { children: React.ReactNode }) {
   const [wishlistedIds, setWishlistedIds] = useState<string[]>([]);
-  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+  const [vehicles, setVehicles] = useState<Vehicle[]>(localVehicles);
 
-  // Load vehicles from Supabase
-  useEffect(() => {
-    fetchVehicles().then(setVehicles);
-  }, []);
+  // Load vehicles from Supabase (update in background)
 
   // Load from localStorage on mount
   useEffect(() => {

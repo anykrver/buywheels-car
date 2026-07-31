@@ -4,6 +4,7 @@ import CategorySection from '../components/home/CategorySection';
 import BrandSection from '../components/home/BrandSection';
 import FeaturedVehicles from '../components/home/FeaturedVehicles';
 import RecentlyLaunchedSection from '../components/home/RecentlyLaunchedSection';
+import RecentlyLaunchedEvSection from '../components/home/RecentlyLaunchedEvSection';
 import ReviewsSection from '../components/home/ReviewsSection';
 import FAQSection from '../components/home/FAQSection';
 import BlogSection from '../components/home/BlogSection';
@@ -17,6 +18,7 @@ export default function Home() {
       <BrandSection />
       <FeaturedVehicles />
       <RecentlyLaunchedSection />
+      <RecentlyLaunchedEvSection />
       <MyProfileStates />
       <ReviewsSection />
       <FAQSection />

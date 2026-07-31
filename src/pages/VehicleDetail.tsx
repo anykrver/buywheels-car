@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
 import { useLocationContext } from '../context/LocationContext';
@@ -6,29 +6,28 @@ import {
   Star, Heart, GitCompare, Share2, MapPin, Fuel, Gauge, Users, Shield,
   ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Check, Info, Calculator, ArrowRight, Phone, Plus, MessageSquare, X, Download, Minus, Gift, User
 } from 'lucide-react';
-import { formatPriceShort, formatPrice } from '../utils/data';
-import { fetchVehicles, fetchReviews, BRAND_LOGOS_OVERRIDE } from '../utils/supabaseService';
+import { formatPriceShort, formatPrice, vehicles as localVehicles } from '../utils/data';
+import { fetchReviews, BRAND_LOGOS_OVERRIDE } from '../utils/supabaseService';
 import type { Vehicle, Review } from '../types';
 import VehicleCard from '../components/VehicleCard';
 import VehicleDetailSEO from '../components/VehicleDetailSEO';
 import { supabase } from '../utils/supabaseClient';
 import { vehicleColorsData } from '../utils/vehicleColors';
 import { downloadVehicleBrochure } from '../utils/brochureService';
+import { ModelBrochure } from '../components/ModelBrochure';
 
 export default function VehicleDetail() {
   const { slug } = useParams<{ slug: string }>();
   const { selectedCity, selectedPincode, selectedArea, multiplier, openPincodeModal, pincodeModalOpen } = useLocationContext();
-  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>([]);
+  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>(localVehicles);
   const [reviewsList, setReviewsList] = useState<Review[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [pendingOfferAfterPincode, setPendingOfferAfterPincode] = useState(false);
   const tabsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    Promise.all([fetchVehicles(), fetchReviews()]).then(([vehiclesData, reviewsData]) => {
-      setVehiclesList(vehiclesData);
+    fetchReviews().then(reviewsData => {
       setReviewsList(reviewsData);
-      setLoading(false);
     });
   }, []);
 
@@ -173,6 +172,34 @@ export default function VehicleDetail() {
     }
   }, [activeTab]);
 
+  // Scroll-spy: update activeTab as user scrolls through sections
+  useEffect(() => {
+    const sectionIds = ['overview', 'specs', 'variants', 'colors', 'reviews'];
+    const navbarHeight = window.innerWidth >= 1024 ? 140 : 100;
+
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach(id => {
+      const el = document.getElementById(`${id}-section`);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveTab(id);
+          }
+        },
+        {
+          rootMargin: `-${navbarHeight}px 0px -50% 0px`,
+          threshold: 0
+        }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach(o => o.disconnect());
+  }, [vehicle]);
+
   const handleAddReview = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!vehicle || !newReviewName.trim() || !newReviewComment.trim()) return;
@@ -283,7 +310,7 @@ export default function VehicleDetail() {
     }
   }));
 
-  const tabs = ['overview', 'specs', 'variants', 'colors', 'dealers', 'reviews'];
+  const tabs = ['overview', 'specs', 'variants', 'colors', 'reviews'];
 
   const getColorHex = (name: string): string => {
     const nameLower = name.toLowerCase();
@@ -376,14 +403,27 @@ export default function VehicleDetail() {
 
   const emi = (variant.price * 0.009).toFixed(0);
   const categoryPath = vehicle.category === 'ev' ? '/ev' : `/${vehicle.category}s`;
+  const isElectric = Boolean(
+    vehicle && (
+      vehicle.isEV ||
+      vehicle.category === 'ev' ||
+      vehicle.fuelTypes?.some(f => f.toLowerCase() === 'electric')
+    )
+  );
+
+  const themeBgLight = isElectric ? 'bg-[#03B94C]/10' : 'bg-primary-50';
+  const themeBorderLight = isElectric ? 'border-[#03B94C]/20' : 'border-primary/20';
+  const themeText = isElectric ? 'text-[#03B94C]' : 'text-primary';
+  const themeBg = isElectric ? 'bg-[#03B94C]' : 'bg-primary';
+  const themeBtnClass = isElectric ? 'bg-[#03B94C] hover:bg-[#02963d] text-white font-bold transition-all shadow-md' : 'btn-primary';
 
   return (
     <div className="min-h-screen bg-surface pt-24 md:pt-32 pb-24 md:pb-12">
       <div className="container-fluid py-4">
         <div className="flex items-center gap-2 text-sm text-muted">
-          <Link to="/" className="hover:text-primary">Home</Link>
+          <Link to="/" className={isElectric ? 'hover:text-[#03B94C]' : 'hover:text-primary'}>Home</Link>
           <span>/</span>
-          <Link to={categoryPath} className="hover:text-primary capitalize">{vehicle.category === 'ev' ? 'EV' : `${vehicle.category}s`}</Link>
+          <Link to={categoryPath} className={`${isElectric ? 'hover:text-[#03B94C]' : 'hover:text-primary'} capitalize`}>{vehicle.category === 'ev' ? 'EV' : `${vehicle.category}s`}</Link>
           <span>/</span>
           <span className="text-dark">{vehicle.brand} {vehicle.model}</span>
         </div>
@@ -399,7 +439,7 @@ export default function VehicleDetail() {
                 className="h-6 w-auto object-contain bg-white rounded-md p-0.5 border border-border shadow-2xs"
               />
             )}
-            <p className="text-xs font-bold text-primary uppercase tracking-wider">{vehicle.brand}</p>
+            <p className={`text-xs font-bold ${themeText} uppercase tracking-wider`}>{vehicle.brand}</p>
           </div>
           <h1 className="font-heading font-bold text-dark text-xl mb-1">{vehicle.model}</h1>
           <div className="flex items-center justify-between">
@@ -463,7 +503,7 @@ export default function VehicleDetail() {
                       key={i}
                       onClick={() => setActiveImage(i)}
                       className={`w-14 h-10 sm:w-20 sm:h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                        activeImage === i ? 'border-primary' : 'border-transparent opacity-60 hover:opacity-100'
+                        activeImage === i ? (isElectric ? 'border-[#03B94C]' : 'border-primary') : 'border-transparent opacity-60 hover:opacity-100'
                       }`}
                     >
                       <img
@@ -499,8 +539,8 @@ export default function VehicleDetail() {
                     }}
                     className={`shrink-0 whitespace-nowrap px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-bold capitalize transition-all rounded-xl ${
                       activeTab === tab
-                        ? 'bg-primary text-white shadow-sm'
-                        : 'text-dark-600 hover:text-primary hover:bg-primary-50/50'
+                        ? `${themeBg} text-white shadow-sm`
+                        : `text-dark-600 ${isElectric ? 'hover:text-[#03B94C] hover:bg-[#03B94C]/10' : 'hover:text-primary hover:bg-primary-50/50'}`
                     }`}
                   >
                     {tab}
@@ -526,8 +566,8 @@ export default function VehicleDetail() {
                   ...(vehicle.safetyRating ? [{ icon: Shield, label: 'Safety Rating', value: `${vehicle.safetyRating}★ (GNCAP)` }] : []),
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-center gap-3 p-3 bg-surface rounded-xl">
-                    <div className="w-8 h-8 bg-primary-50 rounded-lg flex items-center justify-center">
-                      <Icon size={16} className="text-primary" />
+                    <div className={`w-8 h-8 ${themeBgLight} rounded-lg flex items-center justify-center`}>
+                      <Icon size={16} className={themeText} />
                     </div>
                     <div>
                       <p className="text-xs text-muted">{label}</p>
@@ -634,8 +674,8 @@ export default function VehicleDetail() {
                             onClick={() => setSelectedFuelFilter(fuel)}
                             className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
                               selectedFuelFilter === fuel
-                                ? 'bg-primary border-primary text-white shadow-sm'
-                                : 'bg-white border-border text-dark hover:border-primary/50'
+                                ? `${themeBg} border-transparent text-white shadow-sm`
+                                : `bg-white border-border text-dark ${isElectric ? 'hover:border-[#03B94C]/50' : 'hover:border-primary/50'}`
                             }`}
                           >
                             {fuel} {fuelCounts[fuel] !== undefined ? `(${fuelCounts[fuel]})` : ''}
@@ -654,8 +694,8 @@ export default function VehicleDetail() {
                             onClick={() => setSelectedTransFilter(trans)}
                             className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
                               selectedTransFilter === trans
-                                ? 'bg-primary border-primary text-white shadow-sm'
-                                : 'bg-white border-border text-dark hover:border-primary/50'
+                                ? `${themeBg} border-transparent text-white shadow-sm`
+                                : `bg-white border-border text-dark ${isElectric ? 'hover:border-[#03B94C]/50' : 'hover:border-primary/50'}`
                             }`}
                           >
                             {trans} {transmissionCounts[trans] !== undefined ? `(${transmissionCounts[trans]})` : ''}
@@ -716,7 +756,7 @@ export default function VehicleDetail() {
                               <div className="flex items-center gap-2" onClick={e => e.stopPropagation()}>
                                 <button
                                   type="button"
-                                  className="flex items-center gap-1 text-xs font-semibold text-primary px-3 py-2 rounded-lg bg-primary-50/50 hover:bg-primary-50 transition-colors"
+                                  className={`flex items-center gap-1 text-xs font-semibold ${themeText} px-3 py-2 rounded-lg ${themeBgLight} transition-colors`}
                                   onClick={() => setExpandedGroups(prev => ({ ...prev, [groupKey]: !prev[groupKey] }))}
                                 >
                                   <span>View {groupVariants.length} Variants</span>
@@ -728,7 +768,7 @@ export default function VehicleDetail() {
                                     setOfferPurpose(`View Offers for ${groupKey}`);
                                     setOfferModalOpen(true);
                                   }}
-                                  className="hidden sm:block text-xs font-semibold bg-white border border-primary text-primary hover:bg-primary-50 px-3 py-2 rounded-lg transition-colors"
+                                  className={`hidden sm:block text-xs font-semibold bg-white border ${isElectric ? 'border-[#03B94C] text-[#03B94C] hover:bg-[#03B94C]/10' : 'border-primary text-primary hover:bg-primary-50'} px-3 py-2 rounded-lg transition-colors`}
                                 >
                                   View Offers
                                 </button>
@@ -749,7 +789,7 @@ export default function VehicleDetail() {
                                     key={v.id}
                                     onClick={() => handleVariantClick(v.id)}
                                     className={`p-4 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-surface/30 ${
-                                      isSelected ? 'bg-primary-50/20' : ''
+                                      isSelected ? themeBgLight : ''
                                     }`}
                                   >
                                     <div className="space-y-2 flex-1">
@@ -760,7 +800,7 @@ export default function VehicleDetail() {
                                         {isTop && (
                                           <span className="text-[9px] font-bold bg-dark text-white px-2 py-0.5 rounded leading-snug">Top Variant</span>
                                         )}
-                                        <span className="text-sm font-semibold text-dark hover:text-primary transition-colors underline decoration-dotted underline-offset-4">
+                                        <span className={`text-sm font-semibold text-dark ${isElectric ? 'hover:text-[#03B94C]' : 'hover:text-primary'} transition-colors underline decoration-dotted underline-offset-4`}>
                                           {v.name}
                                         </span>
                                       </div>
@@ -793,7 +833,7 @@ export default function VehicleDetail() {
                                               e.stopPropagation();
                                               openPincodeModal();
                                             }}
-                                            className="underline hover:text-primary font-semibold"
+                                            className={`underline ${isElectric ? 'hover:text-[#03B94C]' : 'hover:text-primary'} font-semibold`}
                                           >
                                             {selectedCity}
                                           </button>
@@ -806,7 +846,7 @@ export default function VehicleDetail() {
                                             type="checkbox"
                                             checked={selectedCompareVariantIds.includes(v.id)}
                                             onChange={() => toggleCompareVariant(v.id)}
-                                            className="w-4 h-4 rounded text-primary focus:ring-primary border-border cursor-pointer animate-none"
+                                            className={`w-4 h-4 rounded ${isElectric ? 'text-[#03B94C] focus:ring-[#03B94C]' : 'text-primary focus:ring-primary'} border-border cursor-pointer animate-none`}
                                           />
                                           <span className="text-xs text-muted font-medium">Compare</span>
                                         </label>
@@ -816,7 +856,7 @@ export default function VehicleDetail() {
                                             setOfferPurpose(`View Offers for ${v.name}`);
                                             setOfferModalOpen(true);
                                           }}
-                                          className="text-xs font-semibold text-primary underline decoration-dotted hover:text-primary/80"
+                                          className={`text-xs font-semibold ${themeText} underline decoration-dotted hover:opacity-80`}
                                         >
                                           View Offers
                                         </button>
@@ -847,7 +887,7 @@ export default function VehicleDetail() {
                       <button 
                         type="button" 
                         onClick={() => setSelectedColorIdx(prev => (prev === 0 ? vehicleColors.length - 1 : prev - 1))}
-                        className="w-8 h-10 rounded-full flex items-center justify-center transition-all border backdrop-blur-sm bg-white/70 border-primary/20 text-gray-800 hover:bg-white cursor-pointer shadow-sm animate-fade-in" 
+                        className={`w-8 h-10 rounded-full flex items-center justify-center transition-all border backdrop-blur-sm bg-white/70 ${themeBorderLight} text-gray-800 hover:bg-white cursor-pointer shadow-sm animate-fade-in`} 
                         aria-label="Previous"
                       >
                         <ChevronLeft size={20} />
@@ -860,11 +900,11 @@ export default function VehicleDetail() {
                         style={{ transform: `translateX(-${selectedColorIdx * 100}%)` }}
                       >
                         {vehicleColors.map((color, idx) => (
-                          <div key={idx} className="w-full h-full flex-shrink-0 flex items-center justify-center p-2 sm:p-4 bg-gray-100">
+                          <div key={idx} className="w-full h-full flex-shrink-0 flex items-center justify-center p-2 sm:p-4 bg-transparent">
                             <img 
                               src={color.image} 
                               alt={`${vehicle.brand} ${vehicle.model} in ${color.name}`}
-                              className="pointer-events-none select-none max-w-full max-h-full object-contain scale-125 transition-transform duration-300"
+                              className="pointer-events-none select-none max-w-full max-h-full w-auto h-auto object-contain transition-all duration-300 p-1 sm:p-3"
                               onError={(e) => {
                                 e.currentTarget.src = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
                               }}
@@ -878,7 +918,7 @@ export default function VehicleDetail() {
                       <button 
                         type="button" 
                         onClick={() => setSelectedColorIdx(prev => (prev === vehicleColors.length - 1 ? 0 : prev + 1))}
-                        className="w-8 h-10 rounded-full flex items-center justify-center transition-all border backdrop-blur-sm bg-white/70 border-primary/20 text-gray-800 hover:bg-white cursor-pointer shadow-sm animate-fade-in" 
+                        className={`w-8 h-10 rounded-full flex items-center justify-center transition-all border backdrop-blur-sm bg-white/70 ${themeBorderLight} text-gray-800 hover:bg-white cursor-pointer shadow-sm animate-fade-in`} 
                         aria-label="Next"
                       >
                         <ChevronRight size={20} />
@@ -895,7 +935,7 @@ export default function VehicleDetail() {
                             onClick={() => setSelectedColorIdx(idx)}
                             className={`w-7 h-7 rounded-full shrink-0 transition-all border-2 ${
                               selectedColorIdx === idx 
-                                ? 'border-white shadow-lg scale-110 ring-2 ring-primary' 
+                                ? `border-white shadow-lg scale-110 ring-2 ${isElectric ? 'ring-[#03B94C]' : 'ring-primary'}`
                                 : 'border-gray-200 hover:scale-105'
                             }`} 
                             aria-label={color.name}
@@ -913,52 +953,6 @@ export default function VehicleDetail() {
               </div>
             )}
 
-            {/* Standalone Dealers Section */}
-            <div id="dealers-section" className="bg-white rounded-2xl border border-border p-4 sm:p-6 shadow-sm mb-6 mt-6">
-              <h2 className="text-dark text-xl lg:text-2xl font-bold mb-2">
-                {vehicle.brand} {vehicle.model} Authorized Dealers
-              </h2>
-              <p className="text-sm text-muted mb-4">Comparing prices from authorized dealerships near you</p>
-              <div className="space-y-4">
-                {vehicle.dealerPrices.map((dp, i) => (
-                  <div
-                    key={dp.dealerId}
-                    className={`p-4 rounded-xl border ${i === 0 ? 'border-primary bg-primary-50' : 'border-border'}`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          {i === 0 && <span className="bg-primary text-white text-xs font-bold px-2 py-0.5 rounded-full">BEST DEAL</span>}
-                          <p className="font-semibold text-dark">{dp.dealerName}</p>
-                        </div>
-                        <p className="text-sm text-muted flex items-center gap-1">
-                          <MapPin size={12} /> {dp.location}
-                          <Star size={12} className="ml-1 text-warning fill-warning" /> {dp.rating}
-                        </p>
-                      </div>
-                      <div className="text-right">
-                         <p className="font-heading font-bold text-base sm:text-xl text-dark">{formatPriceShort(dp.price)}</p>
-                        <p className="text-sm text-success font-medium">Save {formatPriceShort(dp.discount)}</p>
-                      </div>
-                    </div>
-                    <div className="mt-3 flex gap-2">
-                      <button
-                        onClick={handleJulyOfferClick}
-                        className="flex-1 h-9 bg-white border border-border rounded-lg text-sm font-medium text-dark hover:border-primary hover:text-primary transition-colors"
-                      >
-                        Get Best Quote
-                      </button>
-                      <Link
-                        to={`/test-drive?vehicle=${vehicle?.id}`}
-                        className="flex-1 h-9 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary-600 transition-colors flex items-center justify-center"
-                      >
-                        Book Test Drive
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* Standalone Reviews Section */}
             <div id="reviews-section" className="bg-white rounded-2xl border border-border p-4 sm:p-6 shadow-sm mb-6 mt-6">
@@ -986,7 +980,7 @@ export default function VehicleDetail() {
                                   <div key={index} className="relative inline-block w-[18px] h-[18px] shrink-0">
                                     <Star size={18} className="text-gray-300 fill-gray-300 leading-none shrink-0" />
                                     <div className="absolute top-0 left-0 overflow-hidden h-full" style={{ width: `${fillPercentage}%` }}>
-                                      <Star size={18} className="text-primary fill-primary leading-none shrink-0" />
+                                      <Star size={18} className={`${themeText} ${isElectric ? 'fill-[#03B94C]' : 'fill-primary'} leading-none shrink-0`} />
                                     </div>
                                   </div>
                                 );
@@ -1014,10 +1008,10 @@ export default function VehicleDetail() {
                           <div key={ratingVal} className="flex items-center gap-2">
                             <div className="flex items-center justify-end gap-1 w-7 flex-shrink-0">
                               <span className="text-xs text-right text-dark font-medium">{ratingVal}</span>
-                              <Star size={12} className="text-primary fill-primary leading-none shrink-0" />
+                              <Star size={12} className={`${themeText} ${isElectric ? 'fill-[#03B94C]' : 'fill-primary'} leading-none shrink-0`} />
                             </div>
-                            <div className="flex-1 h-1 bg-primary/10 rounded-full overflow-hidden min-w-0">
-                              <div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }}></div>
+                            <div className={`flex-1 h-1 ${themeBgLight} rounded-full overflow-hidden min-w-0`}>
+                              <div className={`h-full rounded-full ${themeBg}`} style={{ width: `${pct}%` }}></div>
                             </div>
                             <span className="text-xs text-muted text-right w-8 flex-shrink-0">{countVal}</span>
                           </div>
@@ -1047,7 +1041,11 @@ export default function VehicleDetail() {
                           return repeatedMetrics.map((metric, idx) => {
                             const targetK = 6 + activeMetric;
                             const distance = Math.abs(idx - targetK);
-                            const opacity = distance === 0 ? 1 : distance === 1 ? 0.7 : 0.5;
+                            const isCenter = distance === 0;
+                            const heightScale = isCenter ? 1.0 : distance === 1 ? 0.58 : 0.38;
+                            const opacity = isCenter ? 1 : distance === 1 ? 0.75 : 0.45;
+                            const scaledHeightPct = Math.round(metric.pct * heightScale);
+
                             return (
                               <div 
                                 key={idx} 
@@ -1056,18 +1054,22 @@ export default function VehicleDetail() {
                               >
                                 <div className="w-full flex items-end h-32">
                                   <div 
-                                    className="w-full bg-secondary/85 rounded-t-lg flex flex-col items-center justify-start pt-2 border-t-2 border-primary/20" 
+                                    className={`w-full rounded-t-xl flex flex-col items-center justify-start pt-2 transition-all duration-500 ${
+                                      isCenter 
+                                        ? (isElectric ? 'bg-gradient-to-t from-[#03B94C] to-[#22c55e] text-white shadow-lg border-t-3 border-[#03B94C] scale-105 z-10' : 'bg-gradient-to-t from-primary to-primary-400 text-white shadow-lg border-t-3 border-primary scale-105 z-10') 
+                                        : (isElectric ? 'bg-[#03B94C]/15 hover:bg-[#03B94C]/25 border-t border-[#03B94C]/20 text-dark-600' : 'bg-primary/15 hover:bg-primary/25 border-t border-primary/20 text-dark-600')
+                                    }`} 
                                     style={{ 
-                                      height: `${metric.pct}%`, 
+                                      height: `${scaledHeightPct}%`, 
                                       opacity: opacity, 
-                                      transition: 'all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)' 
+                                      transition: 'all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1)' 
                                     }}
                                   >
                                     <div className="flex items-center gap-1">
-                                      <Star size={12} className="text-dark fill-dark leading-none shrink-0" />
-                                      <span className="text-xs font-semibold text-dark">{metric.val}</span>
+                                      <Star size={isCenter ? 13 : 11} className={isCenter ? "text-white fill-white leading-none shrink-0" : "text-dark fill-dark leading-none shrink-0"} />
+                                      <span className={`font-bold ${isCenter ? 'text-white text-xs' : 'text-dark text-[11px]'}`}>{metric.val}</span>
                                     </div>
-                                    <span className="text-[9px] font-medium text-dark mt-1 text-center px-1 leading-tight">
+                                    <span className={`text-[9px] font-semibold mt-1 text-center px-1 leading-tight ${isCenter ? 'text-white font-bold' : 'text-dark-600'}`}>
                                       {metric.name}
                                     </span>
                                   </div>
@@ -1086,7 +1088,7 @@ export default function VehicleDetail() {
 
               <div className="flex items-center justify-between border-b border-border pb-4">
                 <h4 className="font-heading font-semibold text-dark text-base flex items-center gap-2">
-                  <MessageSquare size={18} className="text-primary" />
+                  <MessageSquare size={18} className={themeText} />
                   Reviews ({localReviews.length})
                 </h4>
                 <button
@@ -1099,7 +1101,7 @@ export default function VehicleDetail() {
               </div>
 
               {showAddForm && (
-                <form onSubmit={handleAddReview} className="p-5 bg-surface rounded-2xl border border-primary/20 space-y-4 animate-scale-in">
+                <form onSubmit={handleAddReview} className={`p-5 bg-surface rounded-2xl border ${themeBorderLight} space-y-4 animate-scale-in`}>
                   <h4 className="font-heading font-semibold text-dark text-sm">Share your experience with {vehicle.brand} {vehicle.model}</h4>
                   
                   <div className="flex items-center gap-2">
@@ -1175,7 +1177,7 @@ export default function VehicleDetail() {
                       </button>
                       <button
                         type="submit"
-                        className="btn-primary h-10 px-5 text-sm"
+                        className={`h-10 px-5 text-sm rounded-xl font-bold text-white transition-all ${isElectric ? 'bg-[#03B94C] hover:bg-[#02963d]' : 'btn-primary'}`}
                       >
                         Submit Review
                       </button>
@@ -1222,45 +1224,22 @@ export default function VehicleDetail() {
               </div>
             </div>
             {/* Official Brochure Section */}
-            <div className="bg-white rounded-2xl border border-border p-5 sm:p-6 mb-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-3.5">
-                <div className="w-12 h-12 rounded-2xl bg-primary-50 text-primary flex items-center justify-center shrink-0">
-                  <Download size={22} />
-                </div>
-                <div>
-                  <h4 className="font-heading font-bold text-dark text-base sm:text-lg">Official {vehicle.brand} {vehicle.model} Brochure</h4>
-                  <p className="text-xs sm:text-sm text-muted">Download full technical specifications & feature brochure PDF</p>
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={async () => {
-                  if (!vehicle) return;
-                  setBrochureDownloading(true);
-                  try {
-                    await downloadVehicleBrochure(vehicle);
-                  } catch (err) {
-                    console.error('Failed to download brochure:', err);
-                  } finally {
-                    setBrochureDownloading(false);
-                  }
-                }}
-                disabled={brochureDownloading}
-                className="btn-primary shrink-0 px-6 py-3 text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-primary transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
-              >
-                {brochureDownloading ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Downloading PDF...</span>
-                  </>
-                ) : (
-                  <>
-                    <Download size={16} />
-                    <span>Download Brochure</span>
-                  </>
-                )}
-              </button>
-            </div>
+            <ModelBrochure
+              vehicle={vehicle}
+              isDownloading={brochureDownloading}
+              onDownload={async () => {
+                if (!vehicle) return;
+                setBrochureDownloading(true);
+                try {
+                  await downloadVehicleBrochure(vehicle);
+                } catch (err) {
+                  console.error('Failed to download brochure:', err);
+                } finally {
+                  setBrochureDownloading(false);
+                }
+              }}
+              className="mb-6"
+            />
           </div>
 
           <div className="md:col-span-1">
@@ -1305,7 +1284,7 @@ export default function VehicleDetail() {
                 <div className="space-y-3">
                   <button
                     onClick={handleJulyOfferClick}
-                    className="btn-primary w-full justify-center text-base h-13"
+                    className={`${themeBtnClass} w-full justify-center text-base rounded-xl`}
                     style={{ height: '52px' }}
                   >
                     Get Best Price
@@ -1323,7 +1302,9 @@ export default function VehicleDetail() {
                   <button
                     onClick={() => toggleWishlist(vehicle.id)}
                     className={`flex-1 flex items-center justify-center gap-2 h-10 rounded-xl border text-sm font-medium transition-all ${
-                      wishlisted ? 'bg-primary-50 text-primary border-primary' : 'border-border text-dark-600 hover:border-primary hover:text-primary'
+                      wishlisted
+                        ? `${themeBgLight} ${themeText} ${themeBorderLight}`
+                        : `border-border text-dark-600 ${isElectric ? 'hover:border-[#03B94C] hover:text-[#03B94C]' : 'hover:border-primary hover:text-primary'}`
                     }`}
                   >
                     <Heart size={16} fill={wishlisted ? 'currentColor' : 'none'} />
@@ -1331,57 +1312,18 @@ export default function VehicleDetail() {
                   </button>
                   <Link
                     to={`/compare?ids=${vehicle.id}`}
-                    className="flex-1 flex items-center justify-center gap-2 h-10 rounded-xl border border-border text-sm font-medium text-dark-600 hover:border-primary hover:text-primary transition-all"
+                    className={`flex-1 flex items-center justify-center gap-2 h-10 rounded-xl border border-border text-sm font-medium text-dark-600 ${isElectric ? 'hover:border-[#03B94C] hover:text-[#03B94C]' : 'hover:border-primary hover:text-primary'} transition-all`}
                   >
                     <GitCompare size={16} />
                     Compare
                   </Link>
-                  <button className="flex items-center justify-center gap-2 w-10 h-10 rounded-xl border border-border text-muted hover:border-primary hover:text-primary transition-all">
+                  <button className={`flex items-center justify-center gap-2 w-10 h-10 rounded-xl border border-border text-muted ${isElectric ? 'hover:border-[#03B94C] hover:text-[#03B94C]' : 'hover:border-primary hover:text-primary'} transition-all`}>
                     <Share2 size={16} />
                   </button>
                 </div>
               </div>
 
-              {/* Download Brochure Box */}
-              <div className="bg-white rounded-2xl border border-border p-4 sm:p-5 flex flex-col gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-primary-50 rounded-xl flex items-center justify-center text-primary">
-                    <Download size={18} />
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-dark text-sm">Official Brochure</h5>
-                    <p className="text-xs text-muted">Get all technical specifications</p>
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  onClick={async () => {
-                    if (!vehicle) return;
-                    setBrochureDownloading(true);
-                    try {
-                      await downloadVehicleBrochure(vehicle);
-                    } catch (err) {
-                      console.error('Failed to download brochure:', err);
-                    } finally {
-                      setBrochureDownloading(false);
-                    }
-                  }}
-                  disabled={brochureDownloading}
-                  className="w-full h-10 bg-primary hover:bg-primary/95 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5"
-                >
-                  {brochureDownloading ? (
-                    <>
-                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Downloading Brochure...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Download size={14} />
-                      <span>Download Brochure</span>
-                    </>
-                  )}
-                </button>
-              </div>
+
 
               {/* Quick info */}
               <div className="bg-white rounded-2xl border border-border p-4 sm:p-5">
@@ -1402,9 +1344,9 @@ export default function VehicleDetail() {
               </div>
 
               {/* EMI calculator link */}
-              <div className="bg-primary-50 rounded-2xl border border-primary/20 p-4 sm:p-5">
+              <div className={`${isElectric ? 'bg-[#03B94C]/10 border-[#03B94C]/20' : 'bg-primary-50 border-primary/20'} rounded-2xl border p-4 sm:p-5 transition-colors`}>
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center">
+                  <div className={`w-9 h-9 ${isElectric ? 'bg-[#03B94C]' : 'bg-primary'} rounded-xl flex items-center justify-center transition-colors`}>
                     <Calculator size={18} className="text-white" />
                   </div>
                   <div>
@@ -1412,7 +1354,7 @@ export default function VehicleDetail() {
                     <p className="text-xs text-muted">Plan your monthly payments</p>
                   </div>
                 </div>
-                <Link to="/finance" className="flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all">
+                <Link to="/finance" className={`flex items-center gap-2 ${isElectric ? 'text-[#03B94C]' : 'text-primary'} font-semibold text-sm hover:gap-3 transition-all`}>
                   Calculate EMI <ArrowRight size={14} />
                 </Link>
               </div>
@@ -1420,9 +1362,9 @@ export default function VehicleDetail() {
               {/* Contact */}
               <div className="bg-white rounded-2xl border border-border p-4 sm:p-5">
                 <p className="font-semibold text-dark text-sm mb-3">Need Help?</p>
-                <a href="tel:+919296961232" className="flex items-center gap-3 text-sm text-dark-600 hover:text-primary transition-colors">
-                  <div className="w-9 h-9 bg-primary-50 rounded-xl flex items-center justify-center">
-                    <Phone size={16} className="text-primary" />
+                <a href="tel:+919296961232" className={`flex items-center gap-3 text-sm text-dark-600 ${isElectric ? 'hover:text-[#03B94C]' : 'hover:text-primary'} transition-colors`}>
+                  <div className={`w-9 h-9 ${themeBgLight} rounded-xl flex items-center justify-center`}>
+                    <Phone size={16} className={themeText} />
                   </div>
                   <div>
                     <p className="font-medium">Call Our Experts</p>
@@ -1487,8 +1429,8 @@ export default function VehicleDetail() {
                           />
                           <div className="relative z-10 px-3 w-[154px] lg:w-[162px]">
                             <div className="mb-1 text-nickel text-sm font-medium leading-none text-ellipsis">{comp.car1.brand}</div>
-                            <div className="mb-2 text-primary text-sm font-medium leading-none text-ellipsis line-clamp-1" title={comp.car1.model}>{comp.car1.model}</div>
-                            <div className="text-primary text-sm font-semibold leading-none relative flex">
+                            <div className={`mb-2 ${themeText} text-sm font-medium leading-none text-ellipsis line-clamp-1`} title={comp.car1.model}>{comp.car1.model}</div>
+                            <div className={`${themeText} text-sm font-semibold leading-none relative flex`}>
                               {comp.car1.price}<div>*</div>
                             </div>
                           </div>
@@ -1510,8 +1452,8 @@ export default function VehicleDetail() {
                           />
                           <div className="relative z-10 px-3 w-[154px] lg:w-[162px]">
                             <div className="mb-1 text-nickel text-sm font-medium leading-none text-ellipsis">{comp.car2.brand}</div>
-                            <div className="mb-2 text-primary text-sm font-medium leading-none text-ellipsis line-clamp-1" title={comp.car2.model}>{comp.car2.model}</div>
-                            <div className="text-primary text-sm font-semibold leading-none relative flex">
+                            <div className={`mb-2 ${themeText} text-sm font-medium leading-none text-ellipsis line-clamp-1`} title={comp.car2.model}>{comp.car2.model}</div>
+                            <div className={`${themeText} text-sm font-semibold leading-none relative flex`}>
                               {comp.car2.price}<div>*</div>
                             </div>
                           </div>
@@ -1519,8 +1461,8 @@ export default function VehicleDetail() {
                         </div>
                       </div>
 
-                      <button className="font-semibold md:leading-tight min-w-[148px] px-4 text-base text-primary md:hover:bg-mercury h-10 pl-3 pr-2.5 py-3 bg-secondary rounded-lg justify-center items-center gap-1.5 flex w-full pointer-events-none transition-colors duration-200">
-                        <span className="text-center text-primary text-sm font-semibold leading-none">{comp.title}</span>
+                      <button className={`font-semibold md:leading-tight min-w-[148px] px-4 text-base ${themeText} md:hover:bg-mercury h-10 pl-3 pr-2.5 py-3 ${isElectric ? 'bg-[#03B94C]/10' : 'bg-secondary'} rounded-lg justify-center items-center gap-1.5 flex w-full pointer-events-none transition-colors duration-200`}>
+                        <span className={`text-center ${themeText} text-sm font-semibold leading-none`}>{comp.title}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 14 14" className="w-4 h-4 -rotate-45">
                           <g>
                             <path fill="currentColor" d="M12.122 7.31l-3.937 3.937a.438.438 0 11-.62-.619l3.192-3.19h-8.57a.437.437 0 110-.875h8.57l-3.192-3.19a.438.438 0 01.62-.62l3.937 3.938a.437.437 0 010 .619z"></path>
@@ -1557,7 +1499,7 @@ export default function VehicleDetail() {
             {/* Header */}
             <div className="px-5 pt-5 pb-4 flex items-center justify-between border-b border-gray-100 bg-surface/50">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+                <div className={`w-9 h-9 rounded-xl ${themeBgLight} ${themeText} flex items-center justify-center font-bold`}>
                   <Gift size={20} />
                 </div>
                 <div>
@@ -1585,9 +1527,9 @@ export default function VehicleDetail() {
             {/* Body */}
             <div className="p-5 overflow-y-auto flex-1">
               {/* Selected Area / Pincode pill */}
-              <div className="mb-4 p-3 bg-primary-50/70 border border-primary-100 rounded-xl flex items-center justify-between">
+              <div className={`mb-4 p-3 ${themeBgLight} border ${themeBorderLight} rounded-xl flex items-center justify-between`}>
                 <div className="flex items-center gap-2 text-xs font-semibold text-dark">
-                  <MapPin size={16} className="text-primary shrink-0" />
+                  <MapPin size={16} className={`${themeText} shrink-0`} />
                   <span>
                     {selectedCity} ({selectedPincode})
                   </span>
@@ -1599,7 +1541,7 @@ export default function VehicleDetail() {
                     setPendingOfferAfterPincode(true);
                     openPincodeModal();
                   }}
-                  className="text-[11px] font-bold text-primary hover:underline"
+                  className={`text-[11px] font-bold ${themeText} hover:underline`}
                 >
                   Change Pincode
                 </button>
@@ -1621,7 +1563,7 @@ export default function VehicleDetail() {
                       setBookingSuccess(false);
                       setBookingOpen(false);
                     }}
-                    className="btn-primary w-full justify-center py-3 rounded-xl font-bold"
+                    className={`${themeBtnClass} w-full justify-center py-3 rounded-xl font-bold`}
                   >
                     Close
                   </button>
@@ -1630,7 +1572,7 @@ export default function VehicleDetail() {
                 <form onSubmit={handleConfirmBooking} className="space-y-4">
                   <div>
                     <label className="block text-xs font-bold text-dark mb-1 flex items-center gap-1">
-                      <User size={14} className="text-primary" /> Full Name *
+                      <User size={14} className={themeText} /> Full Name *
                     </label>
                     <input
                       type="text"
@@ -1638,13 +1580,13 @@ export default function VehicleDetail() {
                       value={bookingForm.name}
                       onChange={e => setBookingForm({ ...bookingForm, name: e.target.value })}
                       placeholder="e.g. Rahul Kumar"
-                      className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-border bg-white outline-none focus:border-primary text-dark"
+                      className={`w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-border bg-white outline-none ${isElectric ? 'focus:border-[#03B94C]' : 'focus:border-primary'} text-dark`}
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold text-dark mb-1 flex items-center gap-1">
-                      <Phone size={14} className="text-primary" /> Mobile Number *
+                      <Phone size={14} className={themeText} /> Mobile Number *
                     </label>
                     <input
                       type="tel"
@@ -1653,14 +1595,14 @@ export default function VehicleDetail() {
                       value={bookingForm.phone}
                       onChange={e => setBookingForm({ ...bookingForm, phone: e.target.value.replace(/\D/g, '') })}
                       placeholder="10-digit mobile number"
-                      className="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-border bg-white outline-none focus:border-primary text-dark"
+                      className={`w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-border bg-white outline-none ${isElectric ? 'focus:border-[#03B94C]' : 'focus:border-primary'} text-dark`}
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={isBookingSubmitting || !bookingForm.name.trim() || bookingForm.phone.length !== 10}
-                    className="btn-primary w-full justify-center py-3 rounded-xl text-sm font-bold shadow-md hover:shadow-primary transition-all disabled:opacity-50 mt-2"
+                    className={`${themeBtnClass} w-full justify-center py-3 rounded-xl text-sm font-bold shadow-md transition-all disabled:opacity-50 mt-2`}
                   >
                     {isBookingSubmitting ? 'Unlocking Best July Offer...' : 'Get Exclusive July Offer 🚀'}
                   </button>
@@ -1680,7 +1622,7 @@ export default function VehicleDetail() {
         <div className="flex gap-3">
           <button
             onClick={handleJulyOfferClick}
-            className="btn-primary flex-1 text-xs sm:text-sm font-bold px-3 rounded-xl shadow-md flex items-center justify-center gap-1"
+            className={`${themeBtnClass} flex-1 text-xs sm:text-sm font-bold px-3 rounded-xl shadow-md flex items-center justify-center gap-1`}
             style={{ height: '44px' }}
           >
             View July Offer <ChevronRight size={16} />
@@ -1700,7 +1642,7 @@ export default function VehicleDetail() {
         <div data-compare-bar="true" className="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-2xl bg-dark/95 backdrop-blur-md text-white rounded-2xl p-4 shadow-2xl flex items-center justify-between gap-4 border border-white/10 animate-fade-in">
           <div className="flex items-center gap-4 overflow-x-auto no-scrollbar py-1">
             <div className="hidden sm:flex flex-col">
-              <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Compare</span>
+              <span className={`text-[10px] font-bold ${themeText} uppercase tracking-wider`}>Compare</span>
               <span className="text-xs font-semibold text-white/80">{selectedCompareVariantIds.length} Selected</span>
             </div>
             <div className="flex gap-2">
@@ -1734,7 +1676,7 @@ export default function VehicleDetail() {
             </button>
             <button
               onClick={() => setIsCompareModalOpen(true)}
-              className="bg-primary hover:bg-primary/90 text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-md"
+              className={`${themeBg} hover:opacity-90 text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-md`}
             >
               <GitCompare size={14} />
               <span>Compare</span>
@@ -1750,7 +1692,7 @@ export default function VehicleDetail() {
             {/* Modal Header */}
             <div className="p-5 border-b border-border flex items-center justify-between bg-surface/30">
               <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                <div className={`w-10 h-10 ${themeBgLight} rounded-xl flex items-center justify-center ${themeText}`}>
                   <GitCompare size={20} />
                 </div>
                 <div>
@@ -1782,7 +1724,7 @@ export default function VehicleDetail() {
                         if (!v) return null;
                         return (
                           <th key={id} className="p-4 w-[26%]">
-                            <p className="text-[10px] font-bold text-primary uppercase tracking-wider">{vehicle.brand} {vehicle.model}</p>
+                            <p className={`text-[10px] font-bold ${themeText} uppercase tracking-wider`}>{vehicle.brand} {vehicle.model}</p>
                             <p className="font-heading font-bold text-dark text-sm sm:text-base mt-0.5">{v.name.split(' ').slice(0, 3).join(' ')}</p>
                             <p className="text-xs text-muted truncate mt-0.5" title={v.name}>{v.name}</p>
                           </th>

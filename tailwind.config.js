@@ -41,6 +41,8 @@ export default {
         'silverFoil': '#AFB1B6',
         'secondary': '#FFF3EB',
         'mercury': '#E5E7EB',
+        'customgreen': '#03B94C',
+        'darkblack': '#111111',
       },
       fontFamily: {
         heading: ['Poppins', 'sans-serif'],
