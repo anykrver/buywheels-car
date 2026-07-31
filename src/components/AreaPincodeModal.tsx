@@ -20,10 +20,12 @@ export const POPULAR_AREAS: AreaItem[] = [
 ];
 
 export const ALL_AREAS: AreaItem[] = [
-  // Ranchi Key Locations
+  // Ranchi Key Locations (including 834001 areas: Main Road, Lalpur, Kokar, Upper Bazaar, Kantatoli)
   { pincode: '834001', area: 'Main Road', city: 'Ranchi' },
   { pincode: '834001', area: 'Lalpur', city: 'Ranchi' },
   { pincode: '834001', area: 'Kokar', city: 'Ranchi' },
+  { pincode: '834001', area: 'Upper Bazaar', city: 'Ranchi' },
+  { pincode: '834001', area: 'Kantatoli', city: 'Ranchi' },
   { pincode: '834002', area: 'Doranda', city: 'Ranchi' },
   { pincode: '834002', area: 'Hinoo', city: 'Ranchi' },
   { pincode: '834002', area: 'Harmu Housing Colony', city: 'Ranchi' },
@@ -82,6 +84,30 @@ export const ALL_AREAS: AreaItem[] = [
   { pincode: '829119', area: 'Patratu', city: 'Ramgarh' },
   { pincode: '825314', area: 'Ghato', city: 'Ramgarh' },
   { pincode: '825316', area: 'Kuju', city: 'Ramgarh' },
+
+  // Deoghar Key Locations
+  { pincode: '814112', area: 'Castairs Town', city: 'Deoghar' },
+  { pincode: '814112', area: 'VIP Road / Tower Chowk', city: 'Deoghar' },
+  { pincode: '814113', area: 'Jasidih', city: 'Deoghar' },
+
+  // Giridih Key Locations
+  { pincode: '815301', area: 'Main Town', city: 'Giridih' },
+  { pincode: '815301', area: 'Pachamba', city: 'Giridih' },
+
+  // Dumka Key Locations
+  { pincode: '814101', area: 'Main Market / Rasikpur', city: 'Dumka' },
+
+  // Daltonganj / Medininagar Key Locations
+  { pincode: '822101', area: 'Main Town / Six Mule', city: 'Daltonganj' },
+
+  // Chaibasa Key Locations
+  { pincode: '833201', area: 'Main Market / Sadar', city: 'Chaibasa' },
+
+  // Koderma / Jhumri Telaiya
+  { pincode: '825409', area: 'Jhumri Telaiya', city: 'Koderma' },
+
+  // Gumla Key Locations
+  { pincode: '835207', area: 'Main Town', city: 'Gumla' },
 ];
 
 interface AreaPincodeModalProps {
