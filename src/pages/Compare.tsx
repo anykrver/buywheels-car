@@ -132,11 +132,13 @@ const specs = [
 ];
 
 const POPULAR_COMPARISONS_RAW = [
-  { id: 'comp1', v1: 'c-brezza', v2: 'c-bolero', title: 'Brezza vs Bolero' },
-  { id: 'comp2', v1: 'c-brezza', v2: 'c-kylaq', title: 'Brezza vs Kylaq' },
-  { id: 'comp3', v1: 'c-brezza', v2: 'c-taisor', title: 'Brezza vs Urban Cruiser Taisor' },
-  { id: 'comp4', v1: 'c-brezza', v2: 'c-aircross', title: 'Brezza vs Aircross' },
-  { id: 'comp5', v1: 'c-brezza', v2: 'c-basalt', title: 'Brezza vs Basalt' }
+  { id: 'comp1', v1: 'c2', v2: 'kia-seltos-2026', title: 'Creta vs Seltos' },
+  { id: 'comp2', v1: 'c-brezza', v2: 'c3', title: 'Brezza vs Nexon EV' },
+  { id: 'comp3', v1: 'c4', v2: 'c-xuv700', title: 'Scorpio N vs XUV700' },
+  { id: 'comp4', v1: 'c1', v2: 'c-i20', title: 'Swift vs i20' },
+  { id: 'comp5', v1: 'c-thar', v2: 'c-jimny', title: 'Thar vs Jimny' },
+  { id: 'comp6', v1: 'c-virtus', v2: 'c-slavia', title: 'Virtus vs Slavia' },
+  { id: 'comp7', v1: 'c-punch', v2: 'c-brezza', title: 'Punch vs Brezza' },
 ];
 
 export default function Compare() {
@@ -160,10 +162,12 @@ export default function Compare() {
 
   const popularComparisons = useMemo(() => {
     return POPULAR_COMPARISONS_RAW.map(comp => {
-      const car1 = vehiclesList.find(v => v.id === comp.v1);
-      const car2 = vehiclesList.find(v => v.id === comp.v2);
+      const car1 = vehiclesList.find(v => v.id === comp.v1 || v.slug === comp.v1 || v.model.toLowerCase().includes(comp.v1.toLowerCase()));
+      const car2 = vehiclesList.find(v => v.id === comp.v2 || v.slug === comp.v2 || v.model.toLowerCase().includes(comp.v2.toLowerCase()));
       return {
         ...comp,
+        v1Id: car1?.id || comp.v1,
+        v2Id: car2?.id || comp.v2,
         car1: car1 ? {
           brand: car1.brand,
           model: car1.model,
@@ -326,8 +330,8 @@ export default function Compare() {
               {popularComparisons.map((comp) => (
                 <li key={comp.id} className="flex-none">
                   <div
-                    onClick={() => handleSelectComparison(comp.v1, comp.v2)}
-                    className="min-w-[308px] lg:min-w-[320px] lg:h-[294px] h-[270px] flex flex-col gap-3 lg:gap-4 relative transition duration-1000 md:hover:scale-[1.03] ease-in-out mb-1 group will-change-transform cursor-pointer"
+                    onClick={() => handleSelectComparison(comp.v1Id, comp.v2Id)}
+                    className="min-w-[308px] lg:min-w-[320px] lg:h-[294px] h-[270px] flex flex-col gap-3 lg:gap-4 relative transition duration-300 md:hover:scale-[1.02] ease-in-out mb-1 group will-change-transform cursor-pointer"
                   >
                     <div className="h-[218px] lg:h-[238px] pt-8 lg:pt-10 rounded-xl lg:rounded-2xl flex pointer-events-none">
                       {/* Car 1 */}
@@ -393,47 +397,18 @@ export default function Compare() {
               <li className="flex-none">
                 <div
                   onClick={handleAddCarCardClick}
-                  className="min-w-[308px] lg:min-w-[320px] lg:h-[294px] h-[270px] flex flex-col gap-3 lg:gap-4 relative transition duration-1000 md:hover:scale-[1.03] ease-in-out mb-1 group cursor-pointer"
+                  className="min-w-[308px] lg:min-w-[320px] lg:h-[294px] h-[270px] flex flex-col gap-3 lg:gap-4 relative transition duration-300 md:hover:scale-[1.02] ease-in-out mb-1 group cursor-pointer"
                 >
-                  <div className="h-[218px] lg:h-[238px] pt-8 lg:pt-10 rounded-xl lg:rounded-2xl flex">
-                    <div className="flex-1 flex flex-col min-w-fit py-4 gap-4 relative h-[186px] lg:h-[198px] ">
-                      <img
-                        alt="Brezza"
-                        loading="lazy"
-                        width="146"
-                        height="78"
-                        className="relative z-10 object-contain h-[78px] w-[146px] lg:w-[144px] lg:h-[90px]"
-                        src="https://static-cdn.cars24.com/prod/new-car-cms/root/2024/10/21/4aa102d0-96fb-4ee8-aad2-68f1425ec263-Brezza.png?w=146&dpr=2&optimize=low&format=auto&quality=50"
-                        onError={(e) => {
-                          e.currentTarget.src = 'https://images.pexels.com/photos/1164778/pexels-photo-1164778.jpeg?auto=compress&cs=tinysrgb&w=600';
-                        }}
-                      />
-                      <div className="relative z-10 px-3 w-[154px] lg:w-[162px]">
-                        <div className="mb-1 text-nickel text-sm font-medium leading-none text-ellipsis">Maruti Suzuki</div>
-                        <div className="mb-2 text-primary text-sm font-medium leading-none text-ellipsis line-clamp-1" title="Brezza">Brezza</div>
-                        <div className="text-primary text-sm font-semibold leading-none relative flex">
-                          ₹8.26L - 13.01L<div>*</div>
-                        </div>
-                      </div>
-                      <div className="absolute w-[308px] lg:w-[320px] h-[120px] bottom-0 rounded-xl rounded-bl-xl bg-partner-secondary"></div>
+                  <div className="h-[218px] lg:h-[238px] rounded-xl lg:rounded-2xl flex flex-col items-center justify-center p-6 bg-white border-2 border-dashed border-border hover:border-primary hover:bg-primary-50/20 transition-colors text-center">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                      <Plus size={24} />
                     </div>
-                    
-                    <div className="flex flex-col justify-center items-center p-4 pb-8 gap-4 w-40 h-[198px] flex-none order-1 self-stretch flex-grow z-50">
-                      <div className="flex flex-row justify-center items-center p-3 gap-2 w-12 h-12 bg-[#F5F5F5] border-4 border-[#FFFFFF] rounded-full flex-none order-0 flex-grow-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:w-5 md:h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4"></path>
-                        </svg>
-                      </div>
-                      <span className="w-[59px] h-4 font-medium text-[14px] leading-4 text-[#0F0F10] flex-none order-1 flex-grow-0">Add car</span>
-                    </div>
+                    <p className="font-heading font-bold text-dark text-base">Custom Comparison</p>
+                    <p className="text-xs text-muted mt-1">Select any 2 or 3 vehicles to compare</p>
                   </div>
-                  <button className="font-semibold md:leading-tight min-w-[148px] px-4 text-base text-primary md:hover:bg-mercury h-10 pl-3 pr-2.5 py-3 bg-secondary rounded-lg justify-center items-center gap-1.5 flex w-full pointer-events-auto transition-colors duration-200">
-                    <span className="text-center text-primary text-sm font-semibold leading-none">Compare cars</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 14 14" className="w-4 h-4 -rotate-45 ">
-                      <g>
-                        <path fill="currentColor" d="M12.122 7.31l-3.937 3.937a.438.438 0 11-.62-.619l3.192-3.19h-8.57a.437.437 0 110-.875h8.57l-3.192-3.19a.438.438 0 01.62-.62l3.937 3.938a.437.437 0 010 .619z"></path>
-                      </g>
-                    </svg>
+                  <button className="font-semibold text-sm text-primary bg-surface hover:bg-primary-50 rounded-xl h-10 flex items-center justify-center gap-1.5 w-full transition-colors border border-border">
+                    <span>Compare Any Vehicles</span>
+                    <ArrowRight size={15} />
                   </button>
                 </div>
               </li>

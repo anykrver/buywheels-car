@@ -73,7 +73,7 @@ export default function TestDrive() {
       setIsSuccess(true);
     } else {
       console.error('Error booking test drive:', error);
-      alert('Failed to submit booking request. Please check your connection and try again.');
+      alert(`Test Drive Booking Error: ${error.message || 'Check your database connection'}`);
     }
   };
 

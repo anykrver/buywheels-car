@@ -1,43 +1,25 @@
 import { useState, useEffect } from 'react';
 import {
   Tag, Clock, Copy, Check, ArrowRight, X, Sparkles, AlertCircle,
-  Heart, ChevronRight, ShieldCheck, Fuel, Zap, Users, Gauge, BadgePercent
+  Heart, ShieldCheck, Zap, Building2, Landmark, RefreshCw, Percent, Search, Gift
 } from 'lucide-react';
 import { fetchOffers } from '../utils/supabaseService';
 import { supabase } from '../utils/supabaseClient';
 import type { Offer } from '../types';
 
-// AI-generated car images pool (cycles through for offer cards)
-const AI_CAR_IMAGES = [
-  '/images/offer_card_nexon.jpg',
-  '/images/offer_card_creta.jpg',
-  '/images/offer_card_hector.jpg',
-  '/images/offer_card_seltos.jpg',
-  '/images/offer_card_sedan.jpg',
-];
-
 // ──────────────────────────────────────────────────
-// Filter category tabs (icon + label) matching the app
+// Category Filter tabs matching Buywheels design system
 // ──────────────────────────────────────────────────
 const filterTabs = [
-  { id: 'All',       label: 'All Offers',     emoji: '🚗' },
-  { id: 'Cashback',  label: 'Cashback',        emoji: '💰' },
-  { id: 'Exchange',  label: 'Exchange',        emoji: '🔄' },
-  { id: 'Corporate', label: 'Corporate',       emoji: '🏢' },
-  { id: 'Bank',      label: 'Bank Offers',     emoji: '🏦' },
-  { id: 'Festival',  label: 'Festival Offers', emoji: '🎉' },
+  { id: 'All',       label: 'All Offers',     icon: Sparkles },
+  { id: 'Exchange',  label: 'Exchange Bonus', icon: RefreshCw },
+  { id: 'Cashback',  label: 'Cashback',        icon: Percent },
+  { id: 'Bank',      label: 'Bank Offers',     icon: Landmark },
+  { id: 'Corporate', label: 'Corporate',       icon: Building2 },
+  { id: 'EV',        label: 'EV Specials',     icon: Zap },
 ];
 
-// Offer type → badge colour mapping
-const badgeColour: Record<string, string> = {
-  'BEST OFFER':     'bg-green-500',
-  'CASHBACK':       'bg-purple-500',
-  'EXCHANGE BONUS': 'bg-blue-500',
-  'FESTIVAL OFFER': 'bg-pink-500',
-  'EV OFFER':       'bg-emerald-500',
-  'BANK OFFER':     'bg-indigo-500',
-};
-
+// Badge label helper
 function getBadgeLabel(offer: Offer): string {
   const cat = (offer.category || '').toUpperCase();
   const type = (offer.type || '').toUpperCase();
@@ -45,25 +27,14 @@ function getBadgeLabel(offer: Offer): string {
   if (cat.includes('EXCHANGE') || type.includes('EXCHANGE')) return 'EXCHANGE BONUS';
   if (cat.includes('FESTIVAL') || type.includes('FESTIVAL')) return 'FESTIVAL OFFER';
   if (cat.includes('BANK') || type.includes('BANK')) return 'BANK OFFER';
-  if (cat.includes('EV') || type.includes('EV')) return 'EV OFFER';
+  if (cat.includes('EV') || type.includes('EV')) return 'EV SPECIAL';
   if (cat.includes('CORPORATE') || type.includes('CORPORATE')) return 'CORPORATE';
-  return 'BEST OFFER';
+  if (cat.includes('EMI') || type.includes('EMI')) return 'LOW EMI';
+  return 'EXCLUSIVE';
 }
 
 // ──────────────────────────────────────────────────
-// Pill badge colour by label
-// ──────────────────────────────────────────────────
-function BadgePill({ label }: { label: string }) {
-  const colour = badgeColour[label] || 'bg-primary';
-  return (
-    <span className={`${colour} text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide`}>
-      {label}
-    </span>
-  );
-}
-
-// ──────────────────────────────────────────────────
-// Offer Card — styled like the app screenshot
+// Offer Card — Clean, simple & uncluttered
 // ──────────────────────────────────────────────────
 function OfferCard({
   offer,
@@ -72,7 +43,6 @@ function OfferCard({
   onClaim,
   onWishlist,
   wishlisted,
-  imageIndex,
 }: {
   offer: Offer;
   copiedCode: string | null;
@@ -80,105 +50,110 @@ function OfferCard({
   onClaim: (offer: Offer) => void;
   onWishlist: (id: string) => void;
   wishlisted: boolean;
-  imageIndex: number;
 }) {
   const badgeLabel = getBadgeLabel(offer);
-  const aiImage = AI_CAR_IMAGES[imageIndex % AI_CAR_IMAGES.length];
 
   return (
-    <div className="bg-white rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5 overflow-hidden flex flex-col">
-      {/* Car image + badge */}
-      <div className="relative">
+    <div className="group bg-white rounded-2xl border border-border shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full">
+      {/* Banner / Image Area */}
+      <div className="relative h-48 bg-dark-900 overflow-hidden">
         <img
-          src={offer.image || aiImage}
+          src={offer.image || '/images/offers_hero_car.jpg'}
           alt={offer.title}
-          className="w-full h-44 object-cover"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = aiImage;
+            (e.target as HTMLImageElement).src = '/images/offers_hero_car.jpg';
           }}
         />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-black/20" />
 
         {/* Badge top-left */}
         <div className="absolute top-3 left-3">
-          <BadgePill label={badgeLabel} />
+          <span className="bg-dark/80 backdrop-blur-md text-white text-[11px] font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20 shadow-sm flex items-center gap-1.5">
+            <Tag size={12} className="text-primary" />
+            {badgeLabel}
+          </span>
         </div>
 
         {/* Wishlist top-right */}
         <button
-          onClick={() => onWishlist(offer.id)}
-          className="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow transition-transform hover:scale-110 active:scale-95"
+          onClick={(e) => {
+            e.stopPropagation();
+            onWishlist(offer.id);
+          }}
+          className={`absolute top-3 right-3 w-9 h-9 rounded-xl flex items-center justify-center backdrop-blur-md shadow-card transition-all duration-200 ${
+            wishlisted ? 'bg-primary text-white' : 'bg-white/90 text-dark-500 hover:text-primary hover:bg-white'
+          }`}
+          aria-label="Wishlist offer"
         >
-          <Heart
-            size={15}
-            className={wishlisted ? 'fill-red-500 text-red-500' : 'text-dark-400'}
-            strokeWidth={wishlisted ? 0 : 2}
-          />
+          <Heart size={16} fill={wishlisted ? 'currentColor' : 'none'} />
         </button>
+
+        {/* Brand tag bottom-left of image */}
+        {offer.brand && (
+          <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md text-dark font-semibold text-xs px-2.5 py-1 rounded-md border border-border/50">
+            {offer.brand}
+          </div>
+        )}
       </div>
 
-      {/* Content */}
-      <div className="p-4 flex flex-col flex-1 gap-3">
-        {/* Title row */}
-        <div>
-          <h3 className="font-heading font-semibold text-dark text-sm leading-snug mb-0.5">
+      {/* Card Content Body */}
+      <div className="p-5 flex flex-col flex-1">
+        {/* Title & Description */}
+        <div className="mb-4">
+          <h3 className="font-heading font-semibold text-dark text-base md:text-lg leading-snug group-hover:text-primary transition-colors mb-1.5">
             {offer.title}
           </h3>
-          {offer.description && (
-            <p className="text-muted text-xs leading-relaxed line-clamp-1">{offer.description}</p>
-          )}
+          <p className="text-muted text-xs md:text-sm leading-relaxed line-clamp-2">
+            {offer.description}
+          </p>
         </div>
 
-        {/* Specs pills */}
-        <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-dark-500">
-          {offer.description?.toLowerCase().includes('electric') ? (
-            <span className="flex items-center gap-1"><Zap size={11} className="text-primary" /> Electric</span>
-          ) : (
-            <span className="flex items-center gap-1"><Fuel size={11} className="text-primary" /> Petrol</span>
-          )}
-          <span className="flex items-center gap-1"><Gauge size={11} className="text-primary" /> Automatic</span>
-          <span className="flex items-center gap-1"><Users size={11} className="text-primary" /> 5 Seater</span>
-        </div>
-
-        {/* Savings block */}
-        <div className="bg-primary-50 border border-primary/20 rounded-xl px-3 py-2.5 flex items-center justify-between">
+        {/* Highlighted Savings Box */}
+        <div className="bg-primary-50/70 border border-primary/20 rounded-xl p-3 flex items-center justify-between mb-4">
           <div>
-            <p className="text-[10px] text-muted font-medium">Save Up To</p>
-            <p className="font-heading font-bold text-primary text-base leading-tight">{offer.discount}</p>
-            <p className="text-[10px] text-muted mt-0.5 line-clamp-1">{offer.description || 'On select variants'}</p>
+            <span className="text-[10px] text-muted font-medium uppercase tracking-wider block">Offer Benefit</span>
+            <span className="font-heading font-extrabold text-primary text-lg md:text-xl leading-tight">
+              {offer.discount}
+            </span>
           </div>
-          <BadgePercent size={28} className="text-primary/30 shrink-0" />
+          <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+            <Gift size={20} />
+          </div>
         </div>
 
-        {/* Valid till */}
-        <div className="flex items-center gap-1.5 text-[11px] text-muted">
-          <Clock size={11} />
-          <span>Valid till {offer.validTill}</span>
-        </div>
-
-        {/* Promo code */}
+        {/* Promo code pill (if applicable) */}
         {offer.code && (
-          <div className="flex items-center justify-between bg-surface border border-dashed border-border rounded-xl px-3 py-2">
-            <span className="font-mono font-bold text-dark text-xs tracking-wider">{offer.code}</span>
+          <div className="flex items-center justify-between bg-surface border border-dashed border-border rounded-xl px-3 py-2 mb-4">
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] text-muted uppercase font-semibold">Code:</span>
+              <span className="font-mono font-bold text-dark text-xs tracking-wider">{offer.code}</span>
+            </div>
             <button
               onClick={() => onCopy(offer.code!)}
               className={`flex items-center gap-1 text-xs font-semibold transition-colors ${
-                copiedCode === offer.code ? 'text-success' : 'text-primary hover:text-primary-600'
+                copiedCode === offer.code ? 'text-green-600' : 'text-primary hover:text-primary-600'
               }`}
             >
-              {copiedCode === offer.code ? <Check size={12} /> : <Copy size={12} />}
-              {copiedCode === offer.code ? 'Copied!' : 'Copy Code'}
+              {copiedCode === offer.code ? <Check size={13} /> : <Copy size={13} />}
+              {copiedCode === offer.code ? 'Copied' : 'Copy'}
             </button>
           </div>
         )}
 
-        {/* CTA */}
+        {/* Validity */}
+        <div className="flex items-center gap-1.5 text-xs text-muted mb-5 mt-auto pt-1">
+          <Clock size={13} className="text-dark-400" />
+          <span>Valid till <span className="font-medium text-dark-600">{offer.validTill}</span></span>
+        </div>
+
+        {/* Claim CTA */}
         <button
           onClick={() => onClaim(offer)}
-          className="mt-auto w-full flex items-center justify-center gap-1.5 h-10 rounded-xl border-2 border-primary text-primary font-heading font-semibold text-sm hover:bg-primary hover:text-white transition-all duration-200"
+          className="btn-primary w-full h-11 text-sm font-semibold rounded-xl flex items-center justify-center gap-2"
         >
-          View Offer <ChevronRight size={14} />
+          Claim Offer <ArrowRight size={15} />
         </button>
       </div>
     </div>
@@ -192,10 +167,11 @@ export default function Offers() {
   const [offersList, setOffersList] = useState<Offer[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [wishlistedIds, setWishlistedIds] = useState<Set<string>>(new Set());
 
-  // Claim modal
+  // Claim modal state
   const [isClaimModalOpen, setIsClaimModalOpen] = useState(false);
   const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null);
   const [formData, setFormData] = useState({
@@ -215,11 +191,32 @@ export default function Offers() {
     });
   }, []);
 
+  // Filtered logic
   const filtered = offersList.filter(o => {
+    // Search query filter
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      const matchesSearch =
+        o.title.toLowerCase().includes(q) ||
+        o.description.toLowerCase().includes(q) ||
+        (o.code && o.code.toLowerCase().includes(q)) ||
+        (o.brand && o.brand.toLowerCase().includes(q)) ||
+        o.discount.toLowerCase().includes(q);
+      if (!matchesSearch) return false;
+    }
+
+    // Category tab filter
     if (activeTab === 'All') return true;
     const tabLower = activeTab.toLowerCase();
     const typeLower = (o.type || '').toLowerCase();
     const catLower = (o.category || '').toLowerCase();
+
+    if (activeTab === 'Exchange') return typeLower.includes('exchange') || catLower.includes('exchange');
+    if (activeTab === 'Cashback') return typeLower.includes('cashback') || catLower.includes('cashback');
+    if (activeTab === 'Bank') return typeLower.includes('bank') || typeLower.includes('emi') || catLower.includes('bank') || catLower.includes('finance');
+    if (activeTab === 'Corporate') return typeLower.includes('corporate') || catLower.includes('corporate');
+    if (activeTab === 'EV') return catLower.includes('ev') || typeLower.includes('ev') || o.title.toLowerCase().includes('ev') || o.description.toLowerCase().includes('electric');
+
     return typeLower.includes(tabLower) || catLower.includes(tabLower);
   });
 
@@ -285,157 +282,169 @@ export default function Offers() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center pt-24">
+      <div className="min-h-screen flex items-center justify-center pt-24 bg-surface">
         <div className="text-center text-muted">
           <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-4" />
-          Loading offers...
+          <p className="font-heading font-medium text-dark">Loading car offers...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-surface pt-24 pb-24 lg:pb-12">
+    <div className="min-h-screen bg-surface pt-20 pb-20 lg:pb-12">
 
-      {/* ── Page Header ── */}
-      <div className="container-fluid mb-6 mt-2">
-        <h1 className="font-heading font-bold text-dark text-2xl md:text-3xl">Offers</h1>
-        <p className="text-muted text-sm mt-0.5">Best deals. Bigger savings.</p>
-      </div>
+      {/* ── Sleek Modern Hero Header ── */}
+      <div className="container-fluid mb-8 pt-4">
+        <div className="bg-gradient-to-br from-dark-900 via-dark to-dark-800 text-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl relative overflow-hidden border border-dark-700/50">
+          {/* Subtle Background Glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* ── Hero Banner ── */}
-      <div className="container-fluid mb-8">
-        <div className="relative rounded-3xl overflow-hidden min-h-[200px] md:min-h-[240px]"
-          style={{ background: 'linear-gradient(135deg, #fff8f3 0%, #fff0e6 60%, #ffe0c2 100%)' }}>
-
-          {/* Decorative dots */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[...Array(12)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full bg-primary/10"
-                style={{
-                  width: `${Math.random() * 20 + 6}px`,
-                  height: `${Math.random() * 20 + 6}px`,
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                }}
-              />
-            ))}
-          </div>
-
-          <div className="relative z-10 flex items-center justify-between p-6 md:p-8 gap-4">
-            {/* Text */}
-            <div className="flex-1 min-w-0">
-              <p className="font-heading font-bold text-dark text-xl md:text-2xl leading-tight mb-1">
-                Amazing Offers
+          <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
+            {/* Left Content */}
+            <div className="md:col-span-7">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
+                <Sparkles size={13} /> Exclusive Car Deals & Promotions
+              </div>
+              <h1 className="font-heading font-bold text-white text-2xl sm:text-3xl md:text-4xl leading-tight mb-3">
+                Maximize Savings On Your Dream Car
+              </h1>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 max-w-xl">
+                Explore verified bank cashbacks, exchange bonuses, low-EMI schemes, and dealership discounts across Jharkhand.
               </p>
-              <p className="font-heading font-bold text-primary text-lg md:text-xl leading-tight mb-3">
-                On Your Dream Car!
-              </p>
-              <p className="text-dark-500 text-xs md:text-sm mb-4 max-w-xs leading-relaxed">
-                Limited time offers on top cars. Save more, drive more!
-              </p>
-              <button
-                onClick={() => setActiveTab('All')}
-                className="btn-primary h-10 px-5 text-sm rounded-xl"
-              >
-                Explore Offers
-              </button>
-            </div>
 
-            {/* Price tag */}
-            <div className="shrink-0 flex flex-col items-center">
-              <div className="relative">
-                <img
-                  src="/images/offers_hero_car.jpg"
-                  alt="Dream Car"
-                  className="w-32 md:w-44 h-20 md:h-28 object-cover rounded-2xl shadow-lg"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = AI_CAR_IMAGES[0];
-                  }}
-                />
-                {/* Price badge */}
-                <div className="absolute -top-3 -right-3 bg-primary text-white rounded-xl px-2.5 py-1.5 shadow-primary text-center rotate-6">
-                  <p className="text-[9px] font-semibold leading-none mb-0.5">UP TO</p>
-                  <p className="font-heading font-black text-sm leading-none">₹1,50,000*</p>
-                  <p className="text-[9px] font-bold leading-none mt-0.5">OFF</p>
+              {/* Key Highlights */}
+              <div className="grid grid-cols-3 gap-3 border-t border-white/10 pt-5">
+                <div>
+                  <p className="font-heading font-bold text-primary text-lg sm:text-xl">Up to ₹1.5L</p>
+                  <p className="text-[11px] text-gray-400 font-medium">Max Savings</p>
+                </div>
+                <div>
+                  <p className="font-heading font-bold text-white text-lg sm:text-xl">100%</p>
+                  <p className="text-[11px] text-gray-400 font-medium">Verified Offers</p>
+                </div>
+                <div>
+                  <p className="font-heading font-bold text-white text-lg sm:text-xl">Instant</p>
+                  <p className="text-[11px] text-gray-400 font-medium">Dealer Claim</p>
                 </div>
               </div>
-              <p className="text-[10px] text-muted mt-2">*T&C Apply</p>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* ── Category Filter Tabs ── */}
-      <div className="container-fluid mb-6">
-        <div className="flex gap-4 overflow-x-auto no-scrollbar pb-1">
-          {filterTabs.map(tab => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className="flex-shrink-0 flex flex-col items-center gap-1.5 group"
-            >
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl transition-all duration-200 ${
-                activeTab === tab.id
-                  ? 'bg-primary shadow-primary scale-105'
-                  : 'bg-white border border-border shadow-card hover:border-primary/50'
-              }`}>
-                {tab.emoji}
+            {/* Right Car Graphic */}
+            <div className="md:col-span-5 flex justify-center md:justify-end">
+              <div className="relative w-full max-w-sm">
+                <img
+                  src="/images/offers_hero_car.jpg"
+                  alt="Car Offers"
+                  className="w-full h-44 sm:h-52 object-cover rounded-2xl shadow-2xl border border-white/10"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/offer_card_creta.jpg';
+                  }}
+                />
+                <div className="absolute -bottom-4 -left-4 bg-white text-dark rounded-xl p-3 shadow-xl border border-border hidden sm:flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-green-100 text-green-700 flex items-center justify-center">
+                    <ShieldCheck size={20} />
+                  </div>
+                  <div>
+                    <p className="font-heading font-bold text-xs">Best Price Guarantee</p>
+                    <p className="text-[10px] text-muted">Authorized Jharkhand Showrooms</p>
+                  </div>
+                </div>
               </div>
-              <span className={`text-[11px] font-medium text-center leading-tight max-w-[60px] ${
-                activeTab === tab.id ? 'text-primary font-semibold' : 'text-dark-500'
-              }`}>
-                {tab.label}
-              </span>
-              {activeTab === tab.id && (
-                <div className="h-0.5 w-6 bg-primary rounded-full" />
-              )}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Best Price Promise Banner ── */}
-      <div className="container-fluid mb-8">
-        <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-2xl px-4 py-3">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-green-100 rounded-xl flex items-center justify-center shrink-0">
-              <ShieldCheck size={18} className="text-green-600" />
-            </div>
-            <div>
-              <p className="font-heading font-semibold text-green-800 text-sm">Best Price Promise</p>
-              <p className="text-green-600 text-xs">Found a better offer? We'll match it!</p>
             </div>
           </div>
-          <button className="shrink-0 bg-green-600 hover:bg-green-700 text-white text-xs font-semibold px-4 py-2 rounded-xl transition-colors">
-            Know More
-          </button>
         </div>
       </div>
 
-      {/* ── Offers Grid ── */}
+      {/* ── Search & Filter Controls ── */}
+      <div className="container-fluid mb-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-border shadow-card">
+          
+          {/* Category Tabs */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 md:pb-0">
+            {filterTabs.map(tab => {
+              const Icon = tab.icon;
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all shrink-0 ${
+                    isActive
+                      ? 'bg-primary text-white shadow-md shadow-primary/20'
+                      : 'bg-surface text-dark-600 border border-border hover:bg-gray-100 hover:text-dark'
+                  }`}
+                >
+                  <Icon size={15} />
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Search Box */}
+          <div className="relative w-full md:w-72 shrink-0">
+            <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search offers or code..."
+              className="w-full h-10 pl-9 pr-8 bg-surface border border-border rounded-xl text-xs md:text-sm text-dark placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted hover:text-dark"
+              >
+                <X size={14} />
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Grid Section ── */}
       <div className="container-fluid">
-        {/* Section header */}
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="font-heading font-bold text-dark text-lg md:text-xl">
-            Exclusive Car Offers
-          </h2>
-          <button className="flex items-center gap-1 text-primary text-sm font-semibold hover:gap-2 transition-all">
-            View All <ArrowRight size={15} />
-          </button>
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="font-heading font-bold text-dark text-xl md:text-2xl">
+              {activeTab === 'All' ? 'Available Offers' : `${activeTab} Offers`}
+            </h2>
+            <p className="text-muted text-xs md:text-sm mt-0.5">
+              Showing {filtered.length} active deals for you
+            </p>
+          </div>
+
+          {activeTab !== 'All' || searchQuery ? (
+            <button
+              onClick={() => { setActiveTab('All'); setSearchQuery(''); }}
+              className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
+            >
+              Reset Filters
+            </button>
+          ) : null}
         </div>
 
         {filtered.length === 0 ? (
-          <div className="text-center py-16 text-muted">
-            <Tag size={40} className="mx-auto mb-3 opacity-30" />
-            <p className="font-heading font-semibold text-dark mb-1">No offers found</p>
-            <p className="text-sm">Try selecting a different category above.</p>
+          <div className="bg-white rounded-2xl border border-border p-12 text-center max-w-lg mx-auto my-8">
+            <div className="w-14 h-14 bg-surface rounded-full flex items-center justify-center mx-auto mb-4 text-muted">
+              <Tag size={28} />
+            </div>
+            <h3 className="font-heading font-bold text-dark text-lg mb-1">No matching offers found</h3>
+            <p className="text-muted text-xs md:text-sm mb-6">
+              We couldn't find any offers matching "{searchQuery || activeTab}". Try clearing your search or switching categories.
+            </p>
+            <button
+              onClick={() => { setActiveTab('All'); setSearchQuery(''); }}
+              className="btn-primary h-10 px-6 text-xs rounded-xl"
+            >
+              View All Offers
+            </button>
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((offer, idx) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filtered.map(offer => (
               <OfferCard
                 key={offer.id}
                 offer={offer}
@@ -444,32 +453,10 @@ export default function Offers() {
                 onClaim={handleClaimClick}
                 onWishlist={toggleWishlist}
                 wishlisted={wishlistedIds.has(offer.id)}
-                imageIndex={idx}
               />
             ))}
           </div>
         )}
-      </div>
-
-      {/* ── Don't Miss Out Banner ── */}
-      <div className="container-fluid mt-10">
-        <div className="flex items-center justify-between bg-white border border-border rounded-2xl shadow-card px-5 py-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center shrink-0">
-              <BadgePercent size={20} className="text-primary" />
-            </div>
-            <div>
-              <p className="font-heading font-semibold text-dark text-sm">Don't miss out!</p>
-              <p className="text-muted text-xs">New offers added every week.</p>
-            </div>
-          </div>
-          <button
-            onClick={() => setActiveTab('All')}
-            className="btn-primary h-10 px-4 text-sm rounded-xl shrink-0"
-          >
-            Explore All Offers
-          </button>
-        </div>
       </div>
 
       {/* ══════════════════════════════════════════════ */}
@@ -481,7 +468,7 @@ export default function Offers() {
           onClick={() => setIsClaimModalOpen(false)}
         >
           <div
-            className="bg-white rounded-2xl shadow-card-hover border border-border max-w-md w-full p-6 relative animate-scale-in my-8"
+            className="bg-white rounded-2xl shadow-2xl border border-border max-w-md w-full p-6 relative animate-scale-in my-8"
             onClick={e => e.stopPropagation()}
           >
             <button
@@ -494,34 +481,36 @@ export default function Offers() {
             {!isSuccess ? (
               <>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                     <Sparkles size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-bold text-dark text-lg leading-tight">Claim Offer</h3>
-                    <p className="text-muted text-xs">Unlock your exclusive benefits</p>
+                    <h3 className="font-heading font-bold text-dark text-lg leading-tight">Claim Exclusive Offer</h3>
+                    <p className="text-muted text-xs">Unlock dealer discounts and instant vouchers</p>
                   </div>
                 </div>
 
                 {/* Offer preview */}
                 <div className="bg-surface rounded-xl p-4 border border-border mb-6">
                   <div className="flex justify-between items-start gap-2 mb-2">
-                    <BadgePill label={getBadgeLabel(selectedOffer)} />
-                    <span className="text-[10px] text-muted font-medium bg-white px-2 py-1 rounded-md border border-border">
-                      {selectedOffer.category}
+                    <span className="bg-dark text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">
+                      {getBadgeLabel(selectedOffer)}
+                    </span>
+                    <span className="text-[11px] font-bold text-primary">
+                      {selectedOffer.discount}
                     </span>
                   </div>
                   <h4 className="font-heading font-semibold text-dark text-sm mb-1">{selectedOffer.title}</h4>
                   <p className="text-muted text-xs leading-relaxed">{selectedOffer.description}</p>
-                  <div className="flex items-center gap-1 mt-3 text-[10px] text-muted">
-                    <Clock size={10} />
+                  <div className="flex items-center gap-1 mt-3 text-[11px] text-muted">
+                    <Clock size={12} />
                     <span>Valid till {selectedOffer.validTill}</span>
                   </div>
                 </div>
 
                 <form onSubmit={handleFormSubmit} className="space-y-4">
                   {formError && (
-                    <div className="bg-error/10 border border-error/20 text-error rounded-xl p-3 flex items-start gap-2 text-xs">
+                    <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl p-3 flex items-start gap-2 text-xs">
                       <AlertCircle size={16} className="shrink-0 mt-0.5" />
                       <span>{formError}</span>
                     </div>
@@ -562,19 +551,19 @@ export default function Offers() {
                         <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                         Processing...
                       </span>
-                    ) : 'Claim This Offer'}
+                    ) : 'Claim Offer Now'}
                   </button>
                 </form>
               </>
             ) : (
               <div className="text-center py-6">
-                <div className="w-16 h-16 bg-success/10 text-success rounded-full flex items-center justify-center mx-auto mb-4 animate-scale-in">
+                <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Check size={36} strokeWidth={3} />
                 </div>
-                <h3 className="font-heading font-bold text-dark text-xl mb-2">Offer Claimed!</h3>
+                <h3 className="font-heading font-bold text-dark text-xl mb-2">Offer Claim Registered!</h3>
                 <p className="text-dark-600 text-sm max-w-sm mx-auto mb-6">
-                  Congratulations, <span className="font-semibold">{formData.name}</span>! Your request for{' '}
-                  <span className="font-semibold">{selectedOffer.title}</span> has been registered.
+                  Congratulations, <span className="font-semibold">{formData.name}</span>! Your offer request for{' '}
+                  <span className="font-semibold">{selectedOffer.title}</span> has been locked in.
                 </p>
                 <div className="bg-surface rounded-xl p-4 border border-border text-left mb-6 max-w-xs mx-auto text-xs space-y-2">
                   <div className="flex justify-between">
@@ -591,7 +580,7 @@ export default function Offers() {
                   </div>
                 </div>
                 <p className="text-xs text-muted mb-6">
-                  A Buywheels executive will call you within 2 hours to activate your offer.
+                  A Buywheels advisor will contact you within 2 hours to help redeem your offer at the nearest dealership in {formData.city}.
                 </p>
                 <button onClick={() => setIsClaimModalOpen(false)} className="w-full btn-secondary h-11 text-sm justify-center">
                   Back to Offers

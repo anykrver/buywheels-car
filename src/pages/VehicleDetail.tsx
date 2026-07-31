@@ -15,6 +15,12 @@ import { supabase } from '../utils/supabaseClient';
 import { vehicleColorsData } from '../utils/vehicleColors';
 import { downloadVehicleBrochure } from '../utils/brochureService';
 import { ModelBrochure } from '../components/ModelBrochure';
+import PriceHistorySection from '../components/PriceHistorySection';
+import ServiceCostSection from '../components/ServiceCostSection';
+import { getVehiclePriceHistory } from '../utils/priceHistoryService';
+import { TrendingDown, TrendingUp } from 'lucide-react';
+
+
 
 export default function VehicleDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -84,18 +90,40 @@ export default function VehicleDetail() {
       return;
     }
     setIsBookingSubmitting(true);
-    const { error } = await supabase
+
+    const vehicleTitle = vehicle ? `${vehicle.brand} ${vehicle.model}` : 'Unknown Vehicle';
+    
+    // Attempt insert into vehicle_bookings
+    let { error } = await supabase
       .from('vehicle_bookings')
       .insert([
         {
-          vehicle_id: vehicle?.id,
+          vehicle_id: vehicle?.id || null,
           name: bookingForm.name,
           phone: bookingForm.phone,
           email: bookingForm.email || null,
           city: bookingForm.city,
-          purpose: bookingForm.purpose || null
+          purpose: bookingForm.purpose ? `${bookingForm.purpose} (${vehicleTitle})` : `Vehicle Booking (${vehicleTitle})`
         }
       ]);
+
+    // Fallback to leads table if foreign key or vehicle_bookings table error occurs
+    if (error) {
+      console.warn('vehicle_bookings insert failed, trying leads fallback...', error.message);
+      const leadRes = await supabase.from('leads').insert([
+        {
+          name: bookingForm.name,
+          phone: bookingForm.phone,
+          email: bookingForm.email || null,
+          source: 'Vehicle Booking Modal',
+          vehicle_interest: vehicleTitle,
+          notes: `City: ${bookingForm.city}. Purpose: ${bookingForm.purpose || 'Direct Booking'}`,
+          stage: 'New'
+        }
+      ]);
+      error = leadRes.error;
+    }
+
     setIsBookingSubmitting(false);
     if (!error) {
       localStorage.setItem('niaa_user_name', bookingForm.name);
@@ -103,7 +131,7 @@ export default function VehicleDetail() {
       setBookingSuccess(true);
     } else {
       console.error('Error confirming booking:', error);
-      alert('Failed to submit booking request. Please check your connection and try again.');
+      alert(`Booking Submission Error: ${error.message}`);
     }
   };
 
@@ -117,6 +145,8 @@ export default function VehicleDetail() {
   const [offerModalOpen, setOfferModalOpen] = useState(false);
   const [offerPurpose, setOfferPurpose] = useState('');
   const [localReviews, setLocalReviews] = useState<any[]>([]);
+
+
 
   useEffect(() => {
     if (vehicle) {
@@ -301,7 +331,9 @@ export default function VehicleDetail() {
     }
   }));
 
-  const tabs = ['overview', 'specs', 'variants', 'colors', 'reviews'];
+  const tabs = ['overview', 'specs', 'variants', 'colors', 'service-cost', 'price-history', 'reviews'];
+  const priceHistorySummary = vehicle ? getVehiclePriceHistory(vehicle, variant) : null;
+
 
   const getColorHex = (name: string): string => {
     const nameLower = name.toLowerCase();
@@ -944,9 +976,25 @@ export default function VehicleDetail() {
               </div>
             )}
 
+            {/* Service Cost Section */}
+            <ServiceCostSection
+              vehicle={vehicle}
+              selectedVariantFuel={variant?.fuelType}
+              isElectric={isElectric}
+            />
+
+            {/* Price History Section */}
+            <PriceHistorySection
+              vehicle={vehicle}
+              selectedVariant={variant}
+              onSelectVariant={(vId) => handleVariantClick(vId)}
+              isElectric={isElectric}
+            />
 
             {/* Standalone Reviews Section */}
             <div id="reviews-section" className="bg-white rounded-2xl border border-border p-4 sm:p-6 shadow-sm mb-6 mt-6">
+
+
               <div className="flex flex-col w-full items-start gap-4 mb-6">
                 <h2 className="text-dark text-xl lg:text-2xl font-bold">
                   {vehicle?.brand} {vehicle?.model} Owner Reviews
@@ -1264,7 +1312,36 @@ export default function VehicleDetail() {
                     </button>
                   </div>
                   <p className="text-xs text-muted mt-1">EMI from {formatPriceShort(Number(emi))}/month</p>
+                  
+                  {priceHistorySummary && (
+                    <button
+                      onClick={() => {
+                        setActiveTab('price-history');
+                        const targetEl = document.getElementById('price-history-section');
+                        if (targetEl) {
+                          const navbarHeight = window.innerWidth >= 1024 ? 130 : 90;
+                          const y = targetEl.getBoundingClientRect().top + window.scrollY - navbarHeight;
+                          window.scrollTo({ top: y, behavior: 'smooth' });
+                        }
+                      }}
+                      className={`mt-3 w-full ${isElectric ? 'bg-[#03B94C]/10 border-[#03B94C]/30 hover:bg-[#03B94C]/20' : 'bg-primary-50 border-primary/20 hover:bg-primary-100/60'} border rounded-xl p-2.5 flex items-center justify-between text-left transition-all group cursor-pointer shadow-2xs`}
+                    >
+                      <div className="flex items-center gap-2 text-xs font-heading font-bold">
+                        {priceHistorySummary.lastChange.changeType === 'drop' || priceHistorySummary.lastChange.changeType === 'festival_offer' ? (
+                          <TrendingDown size={15} className="text-emerald-600 shrink-0" />
+                        ) : (
+                          <TrendingUp size={15} className="text-amber-600 shrink-0" />
+                        )}
+                        <span className="line-clamp-1 text-dark">{priceHistorySummary.lastChange.badgeText}</span>
+                      </div>
+                      <span className={`text-[10px] font-heading font-extrabold ${themeText} uppercase tracking-wider underline shrink-0 group-hover:translate-x-0.5 transition-transform`}>
+                        History &rarr;
+                      </span>
+                    </button>
+                  )}
+
                 </div>
+
 
                 <div className="flex items-center gap-2 mb-5">
                   <Star size={16} className="text-warning fill-warning" />
@@ -1473,16 +1550,18 @@ export default function VehicleDetail() {
       <VehicleDetailSEO vehicle={vehicle} />
 
       {/* July Offer Lead Modal - Styled like Pincode Modal */}
-      {bookingOpen && (
+      {(bookingOpen || offerModalOpen) && (
         <div
           className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-end md:items-center justify-center animate-fade-in"
           onClick={() => {
             if (!isBookingSubmitting) {
               setBookingOpen(false);
+              setOfferModalOpen(false);
               setBookingSuccess(false);
             }
           }}
         >
+
           <div
             className="w-full max-w-lg bg-white rounded-t-3xl md:rounded-3xl shadow-2xl overflow-hidden animate-scale-in border border-border relative max-h-[90vh] flex flex-col"
             onClick={e => e.stopPropagation()}
@@ -1495,7 +1574,7 @@ export default function VehicleDetail() {
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-dark text-lg leading-tight">
-                    Get July Offer & Best Quote
+                    {offerPurpose || 'Get July Offer & Best Quote'}
                   </h3>
                   <p className="text-xs text-muted">
                     {vehicle?.brand} {vehicle?.model}
@@ -1506,11 +1585,13 @@ export default function VehicleDetail() {
                 onClick={() => {
                   if (!isBookingSubmitting) {
                     setBookingOpen(false);
+                    setOfferModalOpen(false);
                     setBookingSuccess(false);
                   }
                 }}
                 className="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-dark transition-colors outline-none"
               >
+
                 <X size={20} />
               </button>
             </div>

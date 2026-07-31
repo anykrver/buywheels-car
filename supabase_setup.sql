@@ -695,3 +695,196 @@ CREATE POLICY "Allow public full access" ON public.dealer_prices FOR ALL USING (
 CREATE POLICY "Allow public full access" ON public.offers FOR ALL USING (true) WITH CHECK (true);
 CREATE POLICY "Allow public full access" ON public.faqs FOR ALL USING (true) WITH CHECK (true);
 CREATE POLICY "Allow public full access" ON public.blog_posts FOR ALL USING (true) WITH CHECK (true);
+
+-- ========================================================
+-- USER PROFILES & PINCODES SETUP
+-- ========================================================
+
+-- Pincodes Lookup Table
+CREATE TABLE IF NOT EXISTS public.pincodes (
+  pincode TEXT PRIMARY KEY,
+  city TEXT NOT NULL,
+  state TEXT NOT NULL,
+  area TEXT,
+  multiplier NUMERIC DEFAULT 1.12,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- User Profiles Table (linked to Supabase Auth)
+CREATE TABLE IF NOT EXISTS public.profiles (
+  id UUID REFERENCES auth.users(id) ON DELETE CASCADE PRIMARY KEY,
+  email TEXT,
+  full_name TEXT,
+  phone TEXT,
+  pincode TEXT REFERENCES public.pincodes(pincode) ON DELETE SET NULL,
+  city TEXT,
+  area TEXT,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- Enable RLS for Profiles and Pincodes
+ALTER TABLE public.pincodes ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Allow public read pincodes" ON public.pincodes;
+CREATE POLICY "Allow public read pincodes" ON public.pincodes FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Users can read own profile" ON public.profiles;
+CREATE POLICY "Users can read own profile" ON public.profiles FOR SELECT USING (auth.uid() = id);
+
+DROP POLICY IF EXISTS "Users can insert own profile" ON public.profiles;
+CREATE POLICY "Users can insert own profile" ON public.profiles FOR INSERT WITH CHECK (auth.uid() = id);
+
+DROP POLICY IF EXISTS "Users can update own profile" ON public.profiles;
+CREATE POLICY "Users can update own profile" ON public.profiles FOR UPDATE USING (auth.uid() = id);
+
+-- Seed Pincodes Data
+INSERT INTO public.pincodes (pincode, city, state, area, multiplier) VALUES
+  ('834001', 'Ranchi', 'Jharkhand', 'Main Road / Lalpur / Kokar', 1.12),
+  ('834002', 'Ranchi', 'Jharkhand', 'Doranda / Hinoo / Harmu', 1.12),
+  ('834004', 'Ranchi', 'Jharkhand', 'Kanke Road / Morabadi / Dhurwa', 1.12),
+  ('831001', 'Jamshedpur', 'Jharkhand', 'Bistupur / Sakchi', 1.12),
+  ('831004', 'Jamshedpur', 'Jharkhand', 'Telco Colony', 1.12),
+  ('826001', 'Dhanbad', 'Jharkhand', 'Bank More / Hirapur', 1.12),
+  ('826004', 'Dhanbad', 'Jharkhand', 'Saraidhela / Steel Gate', 1.12),
+  ('827004', 'Bokaro', 'Jharkhand', 'Sector 4 / City Centre', 1.12),
+  ('825301', 'Hazaribagh', 'Jharkhand', 'Main Town / Korrah', 1.12),
+  ('829122', 'Ramgarh', 'Jharkhand', 'Ramgarh Cantonment', 1.12)
+ON CONFLICT (pincode) DO UPDATE 
+SET city = EXCLUDED.city, area = EXCLUDED.area, multiplier = EXCLUDED.multiplier;
+
+-- ========================================================
+-- BOOKING & FORM SUBMISSION TABLES SETUP
+-- ========================================================
+
+-- 1. Vehicle Bookings Table
+CREATE TABLE IF NOT EXISTS public.vehicle_bookings (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  vehicle_id TEXT,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  email TEXT,
+  city TEXT,
+  purpose TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- Drop Foreign Key constraints if present from earlier migrations so bookings work for all vehicles
+ALTER TABLE public.vehicle_bookings DROP CONSTRAINT IF EXISTS vehicle_bookings_vehicle_id_fkey;
+
+
+-- 2. Leads Table (Test Drive & Contact Form Submissions)
+CREATE TABLE IF NOT EXISTS public.leads (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  email TEXT,
+  source TEXT,
+  vehicle_interest TEXT,
+  notes TEXT,
+  stage TEXT DEFAULT 'New',
+  dealer TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- 3. Insurance Queries Table
+CREATE TABLE IF NOT EXISTS public.insurance_queries (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  vehicle_id TEXT,
+  registration_year INTEGER,
+  claims_past_year TEXT,
+  comprehensive_premium NUMERIC,
+  third_party_premium NUMERIC,
+  idv NUMERIC,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- 4. Loan Applications Table
+CREATE TABLE IF NOT EXISTS public.loan_applications (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  first_name TEXT NOT NULL,
+  last_name TEXT,
+  phone TEXT NOT NULL,
+  email TEXT,
+  employment TEXT,
+  monthly_income NUMERIC,
+  vehicle_type TEXT,
+  preferred_bank TEXT,
+  loan_amount NUMERIC,
+  estimated_emi NUMERIC,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- 5. Job Applications Table
+CREATE TABLE IF NOT EXISTS public.job_applications (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  position TEXT NOT NULL,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  note TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- 6. Offer Claims Table
+CREATE TABLE IF NOT EXISTS public.offer_claims (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  offer_id TEXT,
+  offer_title TEXT,
+  offer_code TEXT,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  email TEXT,
+  city TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- Enable RLS on all submission tables
+ALTER TABLE public.vehicle_bookings ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.insurance_queries ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.loan_applications ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.job_applications ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.offer_claims ENABLE ROW LEVEL SECURITY;
+
+-- Allow Public / Anonymous INSERT access on all booking and lead tables
+DROP POLICY IF EXISTS "Allow public insert vehicle_bookings" ON public.vehicle_bookings;
+CREATE POLICY "Allow public insert vehicle_bookings" ON public.vehicle_bookings FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow public insert leads" ON public.leads;
+CREATE POLICY "Allow public insert leads" ON public.leads FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow public insert insurance_queries" ON public.insurance_queries;
+CREATE POLICY "Allow public insert insurance_queries" ON public.insurance_queries FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow public insert loan_applications" ON public.loan_applications;
+CREATE POLICY "Allow public insert loan_applications" ON public.loan_applications FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow public insert job_applications" ON public.job_applications;
+CREATE POLICY "Allow public insert job_applications" ON public.job_applications FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow public insert offer_claims" ON public.offer_claims;
+CREATE POLICY "Allow public insert offer_claims" ON public.offer_claims FOR INSERT WITH CHECK (true);
+
+-- Allow Public / Anonymous SELECT access for verification
+DROP POLICY IF EXISTS "Allow public select vehicle_bookings" ON public.vehicle_bookings;
+CREATE POLICY "Allow public select vehicle_bookings" ON public.vehicle_bookings FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Allow public select leads" ON public.leads;
+CREATE POLICY "Allow public select leads" ON public.leads FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Allow public select insurance_queries" ON public.insurance_queries;
+CREATE POLICY "Allow public select insurance_queries" ON public.insurance_queries FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Allow public select loan_applications" ON public.loan_applications;
+CREATE POLICY "Allow public select loan_applications" ON public.loan_applications FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Allow public select job_applications" ON public.job_applications;
+CREATE POLICY "Allow public select job_applications" ON public.job_applications FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Allow public select offer_claims" ON public.offer_claims;
+CREATE POLICY "Allow public select offer_claims" ON public.offer_claims FOR SELECT USING (true);
+
+

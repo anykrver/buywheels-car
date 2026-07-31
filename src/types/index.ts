@@ -140,3 +140,48 @@ export interface FAQItem {
   answer: string;
   category?: string;
 }
+
+export type PriceChangeType = 'increase' | 'drop' | 'festival_offer' | 'launch';
+
+export interface PriceFestivalDetails {
+  offerName: string;
+  discountAmount: number;
+  exchangeBonus?: number;
+  corporateDiscount?: number;
+  validTill?: string;
+  offerCode?: string;
+}
+
+export interface PriceHistoryPoint {
+  id: string;
+  date: string; // e.g. "Oct 2025"
+  timestamp: string; // ISO date string e.g. "2025-10-15"
+  price: number; // Ex-showroom price at this date
+  changeType: PriceChangeType;
+  changeAmount: number; // +ve for increase, -ve for drop/festival
+  title: string;
+  description: string;
+  badgeText: string;
+  festivalDetails?: PriceFestivalDetails;
+}
+
+export interface PriceHistorySummary {
+  currentPrice: number;
+  lowestPrice: {
+    price: number;
+    date: string;
+    label: string;
+  };
+  highestPrice: {
+    price: number;
+    date: string;
+    label: string;
+  };
+  overallChange: number;
+  overallChangePercent: number;
+  lastChange: PriceHistoryPoint;
+  hasActiveFestivalOffer: boolean;
+  activeFestivalDetail?: PriceFestivalDetails & { title: string; date: string };
+  history: PriceHistoryPoint[];
+}
+
