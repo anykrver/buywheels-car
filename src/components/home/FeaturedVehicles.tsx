@@ -1,8 +1,7 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, RefreshCw, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import VehicleCard from '../VehicleCard';
-;
 import { vehicles as localVehicles } from '../../utils/data';
 import type { Vehicle } from '../../types';
 
@@ -16,7 +15,7 @@ const TABS = [
 ];
 
 export default function FeaturedVehicles() {
-  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>(localVehicles);
+  const [vehiclesList] = useState<Vehicle[]>(localVehicles);
   const [activeTab, setActiveTab] = useState('All Picks');
   const [compareList, setCompareList] = useState<Vehicle[]>([]);
   const [pageIndex, setPageIndex] = useState(0);

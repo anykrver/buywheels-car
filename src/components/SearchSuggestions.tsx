@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, Car, Zap, TrendingUp, ChevronRight, ArrowUpRight, Sparkles } from 'lucide-react';
 import { vehicles as mockVehicles, formatPriceShort } from '../utils/data';

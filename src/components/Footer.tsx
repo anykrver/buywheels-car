@@ -83,6 +83,9 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
+                  onClick={(e) => {
+                    if (href === '#') e.preventDefault();
+                  }}
                   className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-200"
                 >
                   <Icon size={16} />

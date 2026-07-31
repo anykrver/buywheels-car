@@ -1,8 +1,7 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Plus, X, Check, Minus, ArrowRight } from 'lucide-react';
 import { formatPriceShort, vehicles as localVehicles } from '../utils/data';
-;
 import type { Vehicle } from '../types';
 
 function VehicleSelector({
@@ -142,8 +141,7 @@ const POPULAR_COMPARISONS_RAW = [
 
 export default function Compare() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>(localVehicles);
-  const [loading, setLoading] = useState(false);
+  const [vehiclesList] = useState<Vehicle[]>(localVehicles);
 
   const selected = useMemo(() => {
     const ids = searchParams.get('ids')?.split(',') || [];
@@ -208,16 +206,7 @@ export default function Compare() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center pt-24">
-        <div className="text-center text-muted">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-4"></div>
-          Loading comparison data...
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <div className="min-h-screen bg-surface pt-24 pb-24 lg:pb-12">

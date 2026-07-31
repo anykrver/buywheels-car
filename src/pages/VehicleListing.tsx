@@ -5,7 +5,7 @@ import VehicleCard from '../components/VehicleCard';
 import VehicleFilters, { Filters } from '../components/VehicleFilters';
 import SearchSuggestions from '../components/SearchSuggestions';
 import { getBodyType, vehicles as localVehicles } from '../utils/data';
-;
+import { fetchVehicles } from '../utils/supabaseService';
 import type { Vehicle, VehicleCategory } from '../types';
 
 interface VehicleListingProps {

@@ -15,7 +15,7 @@ const WishlistContext = createContext<WishlistContextType | undefined>(undefined
 
 export function WishlistProvider({ children }: { children: React.ReactNode }) {
   const [wishlistedIds, setWishlistedIds] = useState<string[]>([]);
-  const [vehicles, setVehicles] = useState<Vehicle[]>(localVehicles);
+  const [vehicles] = useState<Vehicle[]>(localVehicles);
 
   // Load vehicles from Supabase (update in background)
 

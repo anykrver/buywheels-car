@@ -28,10 +28,19 @@ import { WishlistProvider } from './context/WishlistContext';
 import { LocationProvider } from './context/LocationContext';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'auto';
     window.scrollTo(0, 0);
-  }, [pathname]);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+
+    const timer = setTimeout(() => {
+      document.documentElement.style.scrollBehavior = '';
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, [pathname, search]);
   return null;
 }
 

@@ -1,6 +1,6 @@
 export type VehicleCategory = 'car' | 'ev';
 export type FuelType = 'Petrol' | 'Diesel' | 'Electric' | 'CNG' | 'Hybrid';
-export type TransmissionType = 'Manual' | 'Automatic' | 'CVT' | 'e-CVT' | 'IVT' | 'AMT' | 'iMT' | 'DCT' | 'DSG' | 'Single Speed' | 'Direct Drive';
+export type TransmissionType = 'Manual' | 'Automatic' | 'CVT' | 'e-CVT' | 'IVT' | 'AMT' | 'iMT' | 'DCT' | 'DSG' | 'PDK' | 'Single Speed' | 'Direct Drive';
 
 export interface Variant {
   id: string;

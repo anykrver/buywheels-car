@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
 import { useLocationContext } from '../context/LocationContext';
 import {
   Star, Heart, GitCompare, Share2, MapPin, Fuel, Gauge, Users, Shield,
-  ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Check, Info, Calculator, ArrowRight, Phone, Plus, MessageSquare, X, Download, Minus, Gift, User
+  ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Check, Info, Calculator, ArrowRight, Phone, Plus, MessageSquare, X, Minus, Gift, User
 } from 'lucide-react';
 import { formatPriceShort, formatPrice, vehicles as localVehicles } from '../utils/data';
 import { fetchReviews, BRAND_LOGOS_OVERRIDE } from '../utils/supabaseService';
@@ -18,10 +18,9 @@ import { ModelBrochure } from '../components/ModelBrochure';
 
 export default function VehicleDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const { selectedCity, selectedPincode, selectedArea, multiplier, openPincodeModal, pincodeModalOpen } = useLocationContext();
-  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>(localVehicles);
+  const { selectedCity, selectedPincode, multiplier, openPincodeModal, pincodeModalOpen } = useLocationContext();
+  const [vehiclesList] = useState<Vehicle[]>(localVehicles);
   const [reviewsList, setReviewsList] = useState<Review[]>([]);
-  const [loading, setLoading] = useState(false);
   const [pendingOfferAfterPincode, setPendingOfferAfterPincode] = useState(false);
   const tabsRef = useRef<HTMLDivElement>(null);
 
@@ -31,7 +30,9 @@ export default function VehicleDetail() {
     });
   }, []);
 
-  const vehicle = vehiclesList.find(v => v.slug === slug);
+  const vehicle = vehiclesList.find(
+    v => v.slug === slug || v.slug.toLowerCase() === slug?.toLowerCase()
+  );
 
   const [bookingForm, setBookingForm] = useState({
     name: localStorage.getItem('niaa_user_name') || '',
@@ -116,7 +117,6 @@ export default function VehicleDetail() {
   const [offerModalOpen, setOfferModalOpen] = useState(false);
   const [offerPurpose, setOfferPurpose] = useState('');
   const [localReviews, setLocalReviews] = useState<any[]>([]);
-  const [showVariantDropdown, setShowVariantDropdown] = useState(false);
 
   useEffect(() => {
     if (vehicle) {
@@ -134,7 +134,7 @@ export default function VehicleDetail() {
             avatar: 'RS',
             rating: 5,
             vehicle: `${vehicle.brand} ${vehicle.model}`,
-            comment: `The new ${vehicle.model} is an amazing offering from ${vehicle.brand}. The ride quality is superb and it feels very stable at high speeds. I especially love the features like the ${vehicle.features[0] || 'touchscreen'} and the ${vehicle.features[1] || 'safety package'}. Truly worth the price!`,
+            comment: `The new ${vehicle.model} is an amazing offering from ${vehicle.brand}. The ride quality is superb and it feels very stable at high speeds. I especially love the features like the ${vehicle.features?.[0] || 'touchscreen'} and the ${vehicle.features?.[1] || 'safety package'}. Truly worth the price!`,
             location: 'Ranchi',
             date: 'May 2024',
             verified: true
@@ -258,16 +258,7 @@ export default function VehicleDetail() {
     });
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center pt-24">
-        <div className="text-center text-muted">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-4"></div>
-          Loading vehicle details...
-        </div>
-      </div>
-    );
-  }
+
 
   if (!vehicle) {
     return (

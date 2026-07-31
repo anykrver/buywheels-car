@@ -41,7 +41,7 @@ type ActiveDropdown = 'budget' | 'body' | 'fuel' | 'transmission' | 'allFilters'
 
 export default function HeroSection() {
   const navigate = useNavigate();
-  const { selectedCity, selectedArea, openPincodeModal, setSelectedLocation } = useLocationContext();
+  const { selectedCity, openPincodeModal, setSelectedLocation } = useLocationContext();
 
   // Search state
   const [query, setQuery] = useState('');

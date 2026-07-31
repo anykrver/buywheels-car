@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { vehicles } from '../utils/data';
 import { Vehicle } from '../types';
 import {
-  MessageSquare, X, RefreshCw, ChevronRight,
+  X, RefreshCw, ChevronRight,
   Sparkles, User, Phone, Send
 } from 'lucide-react';
 import './ChatAssistant.css';
@@ -42,6 +42,7 @@ export default function ChatAssistant() {
   const [currentStep, setCurrentStep] = useState<'greeting' | 'lead-info' | 'budget' | 'fuel' | 'freeform'>('greeting');
   const [selectedBudget, setSelectedBudget] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
   const [hasCompareBar, setHasCompareBar] = useState(false);
 
   useEffect(() => {
@@ -72,10 +73,13 @@ export default function ChatAssistant() {
     }
   }, [isOpen]);
 
-  // Scroll to bottom helper
+  // Scroll to bottom helper (inside chat body only)
   const scrollToBottom = () => {
-    if (chatEndRef.current) {
-      chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTo({
+        top: chatBodyRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -318,30 +322,27 @@ export default function ChatAssistant() {
     }
 
     if (lower === 'compare') {
-      window.location.href = '/compare';
+      setIsOpen(false);
+      navigate('/compare');
       return;
     }
     if (lower === 'test drive' || lower === 'book') {
-      window.location.href = '/test-drive';
+      setIsOpen(false);
+      navigate('/test-drive');
       return;
     }
 
     let budgetLimit = 0;
-    let budgetQuery = 'Any';
     let fuelQuery = 'Any';
 
     if (lower.includes('under 8') || lower.includes('below 8') || lower.includes('cheap')) {
       budgetLimit = 800000;
-      budgetQuery = '<8L';
     } else if (lower.includes('under 12') || lower.includes('below 12')) {
       budgetLimit = 1200000;
-      budgetQuery = '8-12L';
     } else if (lower.includes('under 15') || lower.includes('below 15') || lower.includes('under 18')) {
       budgetLimit = 1800000;
-      budgetQuery = '12-18L';
     } else if (lower.includes('under 20') || lower.includes('under 25') || lower.includes('under 30')) {
       budgetLimit = 3000000;
-      budgetQuery = '18-30L';
     }
 
     if (lower.includes('ev') || lower.includes('electric')) {
@@ -508,13 +509,17 @@ export default function ChatAssistant() {
     } else if (stepTarget === 'restart') {
       initChat();
     } else if (stepTarget === 'redirect-compare') {
-      window.location.href = '/compare';
+      setIsOpen(false);
+      navigate('/compare');
     } else if (stepTarget === 'redirect-testdrive') {
-      window.location.href = '/test-drive';
+      setIsOpen(false);
+      navigate('/test-drive');
     } else if (stepTarget === 'redirect-finance') {
-      window.location.href = '/offers';
+      setIsOpen(false);
+      navigate('/offers');
     } else if (stepTarget === 'redirect-dealers') {
-      window.location.href = '/cars';
+      setIsOpen(false);
+      navigate('/cars');
     } else if (stepTarget === 'query-safety') {
       parseFreeformText('5 star safety');
     } else if (stepTarget === 'query-mileage') {

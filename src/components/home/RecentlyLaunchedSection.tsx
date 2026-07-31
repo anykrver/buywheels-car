@@ -1,8 +1,7 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Tag } from 'lucide-react';
 import { formatPriceShort, vehicles as localVehicles } from '../../utils/data';
-;
 import type { Vehicle } from '../../types';
 
 const fallbackImg = 'https://imgd.aeplcdn.com/664x374/n/cw/ec/141879/nexon-ev-exterior-right-front-three-quarter-7.jpeg';
@@ -28,7 +27,7 @@ function ArrowIcon({ className }: { className?: string }) {
 
 export default function RecentlyLaunchedSection() {
   const scrollRef = useRef<HTMLUListElement>(null);
-  const [vehiclesList, setVehiclesList] = useState<Vehicle[]>(localVehicles);
+  const [vehiclesList] = useState<Vehicle[]>(localVehicles);
 
   // Deduplicate and filter new vehicles
   const seen = new Set();

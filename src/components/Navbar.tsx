@@ -3,14 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
 import {
   Car, Zap, GitCompare, Tag, Shield, Building2, BookOpen,
-  Search, Heart, MapPin, ChevronDown, Menu, X, User, Phone, Check,
+  Search, Heart, MapPin, ChevronDown, Menu, X, User, Phone,
 } from 'lucide-react';
 import SearchSuggestions from './SearchSuggestions';
 import AreaPincodeModal, { AreaItem } from './AreaPincodeModal';
 
 import { useLocationContext } from '../context/LocationContext';
-
-const CITIES = ['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh', 'Deoghar'];
 
 const Logo = ({ className = '' }: { className?: string }) => (
   <img
@@ -40,7 +38,6 @@ export default function Navbar() {
   const {
     selectedCity,
     selectedPincode,
-    selectedArea,
     pincodeModalOpen,
     openPincodeModal,
     closePincodeModal,

@@ -1,4 +1,4 @@
-import type { Vehicle, Brand, Dealer, Review, Offer, FAQItem } from '../types';
+import type { Brand, Dealer, Review, Offer, FAQItem } from '../types';
 import { vehicles } from './vehicle';
 
 export { vehicles };
