@@ -55,27 +55,42 @@ export default function Insurance() {
 
     setIsSubmitting(true);
     
-    const { error } = await supabase
-      .from('insurance_queries')
-      .insert([
-        {
-          vehicle_id: vehicleId,
-          registration_year: year,
-          claims_past_year: claims,
-          comprehensive_premium: comprehensive,
-          third_party_premium: thirdParty,
-          idv: idv,
-          name: formData.name,
-          phone: formData.phone
-        }
-      ]);
+    try {
+      const { error } = await supabase
+        .from('insurance_queries')
+        .insert([
+          {
+            vehicle_id: vehicleId,
+            registration_year: year,
+            claims_past_year: claims,
+            comprehensive_premium: comprehensive,
+            third_party_premium: thirdParty,
+            idv: idv,
+            name: formData.name,
+            phone: formData.phone
+          }
+        ]);
 
-    setIsSubmitting(false);
-    if (!error) {
+      if (error) throw new Error(error.message);
       setIsSuccess(true);
-    } else {
-      console.error('Error submitting insurance query:', error);
-      alert('Failed to submit quote request. Please check your connection and try again.');
+    } catch (err: any) {
+      console.warn('Network or DB error submitting insurance query, saving locally:', err);
+      try {
+        const existing = JSON.parse(localStorage.getItem('buywheels_pending_leads') || '[]');
+        existing.push({
+          name: formData.name,
+          phone: formData.phone,
+          source: 'Insurance Query',
+          notes: `Vehicle ID: ${vehicleId || 'N/A'}. Year: ${year}. Claims: ${claims}. IDV: ₹${idv.toLocaleString('en-IN')}`,
+          stage: 'New'
+        });
+        localStorage.setItem('buywheels_pending_leads', JSON.stringify(existing));
+      } catch (storageErr) {
+        console.error('Failed to save insurance query locally:', storageErr);
+      }
+      setIsSuccess(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

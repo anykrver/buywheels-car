@@ -22,6 +22,7 @@ import Insurance from './pages/Insurance';
 import Careers from './pages/Careers';
 import TestDrive from './pages/TestDrive';
 import Privacy from './pages/Privacy';
+import './utils/offlineSync';
 import Terms from './pages/Terms';
 import Sitemap from './pages/Sitemap';
 import { WishlistProvider } from './context/WishlistContext';

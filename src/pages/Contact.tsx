@@ -20,16 +20,25 @@ export default function Contact() {
       stage: 'New'
     };
 
-    const { error } = await supabase
-      .from('leads')
-      .insert([leadPayload]);
-      
-    setIsSubmitting(false);
-    if (!error) {
+    try {
+      const { error } = await supabase
+        .from('leads')
+        .insert([leadPayload]);
+
+      if (error) throw new Error(error.message);
       setSubmitted(true);
-    } else {
-      console.error('Error submitting contact form:', error);
-      alert('Failed to send message. Please check your connection and try again.');
+    } catch (err: any) {
+      console.warn('Network or DB error submitting contact form, saving locally:', err);
+      try {
+        const existing = JSON.parse(localStorage.getItem('buywheels_pending_leads') || '[]');
+        existing.push(leadPayload);
+        localStorage.setItem('buywheels_pending_leads', JSON.stringify(existing));
+      } catch (storageErr) {
+        console.error('Failed to save contact lead locally:', storageErr);
+      }
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

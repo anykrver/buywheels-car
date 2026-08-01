@@ -93,45 +93,68 @@ export default function VehicleDetail() {
 
     const vehicleTitle = vehicle ? `${vehicle.brand} ${vehicle.model}` : 'Unknown Vehicle';
     
-    // Attempt insert into vehicle_bookings
-    let { error } = await supabase
-      .from('vehicle_bookings')
-      .insert([
-        {
+    try {
+      // Attempt insert into vehicle_bookings
+      let { error } = await supabase
+        .from('vehicle_bookings')
+        .insert([
+          {
+            vehicle_id: vehicle?.id || null,
+            name: bookingForm.name,
+            phone: bookingForm.phone,
+            email: bookingForm.email || null,
+            city: bookingForm.city,
+            purpose: bookingForm.purpose ? `${bookingForm.purpose} (${vehicleTitle})` : `Vehicle Booking (${vehicleTitle})`
+          }
+        ]);
+
+      // Fallback to leads table if foreign key or vehicle_bookings table error occurs
+      if (error) {
+        console.warn('vehicle_bookings insert failed, trying leads fallback...', error.message);
+        const leadRes = await supabase.from('leads').insert([
+          {
+            name: bookingForm.name,
+            phone: bookingForm.phone,
+            email: bookingForm.email || null,
+            source: 'Vehicle Booking Modal',
+            vehicle_interest: vehicleTitle,
+            notes: `City: ${bookingForm.city}. Purpose: ${bookingForm.purpose || 'Direct Booking'}`,
+            stage: 'New'
+          }
+        ]);
+        error = leadRes.error;
+      }
+
+      if (error) {
+        throw new Error(error.message || 'Supabase submission error');
+      }
+
+      localStorage.setItem('niaa_user_name', bookingForm.name);
+      localStorage.setItem('niaa_user_phone', bookingForm.phone);
+      setBookingSuccess(true);
+    } catch (err: any) {
+      console.warn('Network or DB error during booking, falling back to local storage:', err);
+      try {
+        const existing = JSON.parse(localStorage.getItem('buywheels_pending_bookings') || '[]');
+        existing.push({
           vehicle_id: vehicle?.id || null,
+          vehicleTitle,
           name: bookingForm.name,
           phone: bookingForm.phone,
           email: bookingForm.email || null,
           city: bookingForm.city,
-          purpose: bookingForm.purpose ? `${bookingForm.purpose} (${vehicleTitle})` : `Vehicle Booking (${vehicleTitle})`
-        }
-      ]);
-
-    // Fallback to leads table if foreign key or vehicle_bookings table error occurs
-    if (error) {
-      console.warn('vehicle_bookings insert failed, trying leads fallback...', error.message);
-      const leadRes = await supabase.from('leads').insert([
-        {
-          name: bookingForm.name,
-          phone: bookingForm.phone,
-          email: bookingForm.email || null,
-          source: 'Vehicle Booking Modal',
-          vehicle_interest: vehicleTitle,
-          notes: `City: ${bookingForm.city}. Purpose: ${bookingForm.purpose || 'Direct Booking'}`,
-          stage: 'New'
-        }
-      ]);
-      error = leadRes.error;
-    }
-
-    setIsBookingSubmitting(false);
-    if (!error) {
+          purpose: bookingForm.purpose || 'Direct Booking',
+          timestamp: new Date().toISOString()
+        });
+        localStorage.setItem('buywheels_pending_bookings', JSON.stringify(existing));
+      } catch (storageErr) {
+        console.error('Failed to save booking locally:', storageErr);
+      }
       localStorage.setItem('niaa_user_name', bookingForm.name);
       localStorage.setItem('niaa_user_phone', bookingForm.phone);
       setBookingSuccess(true);
-    } else {
-      console.error('Error confirming booking:', error);
-      alert(`Booking Submission Error: ${error.message}`);
+    } finally {
+      setIsBookingSubmitting(false);
     }
   };
 

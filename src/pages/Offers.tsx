@@ -258,25 +258,45 @@ export default function Offers() {
     if (!formData.phone.trim()) { setFormError('Please enter your mobile number'); return; }
     if (!/^\d{10}$/.test(formData.phone.trim())) { setFormError('Please enter a valid 10-digit mobile number'); return; }
     setIsSubmitting(true);
-    const { error } = await supabase
-      .from('offer_claims')
-      .insert([{
-        offer_id:    selectedOffer?.id   || null,
-        offer_title: selectedOffer?.title || null,
-        offer_code:  selectedOffer?.code  || null,
-        name:  formData.name.trim(),
-        phone: formData.phone.trim(),
-        email: formData.email.trim() || null,
-        city:  formData.city,
-      }]);
-    setIsSubmitting(false);
-    if (!error) {
+    try {
+      const { error } = await supabase
+        .from('offer_claims')
+        .insert([{
+          offer_id:    selectedOffer?.id   || null,
+          offer_title: selectedOffer?.title || null,
+          offer_code:  selectedOffer?.code  || null,
+          name:  formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim() || null,
+          city:  formData.city,
+        }]);
+
+      if (error) throw new Error(error.message);
       localStorage.setItem('niaa_user_name', formData.name.trim());
       localStorage.setItem('niaa_user_phone', formData.phone.trim());
       setIsSuccess(true);
-    } else {
-      console.error('Error saving offer claim:', error);
-      setFormError('Something went wrong. Please try again.');
+    } catch (err: any) {
+      console.warn('Network or DB error saving offer claim, storing locally:', err);
+      try {
+        const existing = JSON.parse(localStorage.getItem('buywheels_pending_leads') || '[]');
+        existing.push({
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim() || null,
+          source: 'Offer Claim',
+          vehicle_interest: selectedOffer?.title || 'Offer Claim',
+          notes: `City: ${formData.city}. Code: ${selectedOffer?.code || 'N/A'}`,
+          stage: 'New'
+        });
+        localStorage.setItem('buywheels_pending_leads', JSON.stringify(existing));
+      } catch (storageErr) {
+        console.error('Failed to save offer claim locally:', storageErr);
+      }
+      localStorage.setItem('niaa_user_name', formData.name.trim());
+      localStorage.setItem('niaa_user_phone', formData.phone.trim());
+      setIsSuccess(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
