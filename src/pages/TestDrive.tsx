@@ -64,25 +64,50 @@ export default function TestDrive() {
       dealer: formData.city + ' Authorized'
     };
 
+    let dbError: any = null;
+    let isNetworkIssue = false;
+
     try {
-      const { error } = await supabase
+      const res = await supabase
         .from('leads')
         .insert([leadPayload]);
-
-      if (error) throw new Error(error.message);
-      setIsSuccess(true);
+      dbError = res.error;
     } catch (err: any) {
-      console.warn('Network or DB error booking test drive, saving locally:', err);
-      try {
-        const existing = JSON.parse(localStorage.getItem('buywheels_pending_leads') || '[]');
-        existing.push(leadPayload);
-        localStorage.setItem('buywheels_pending_leads', JSON.stringify(existing));
-      } catch (storageErr) {
-        console.error('Failed to save lead locally:', storageErr);
-      }
+      console.warn('Network exception during test drive submit:', err);
+      dbError = err;
+      isNetworkIssue = true;
+    }
+
+    if (dbError?.message?.toLowerCase().includes('failed to fetch')) {
+      isNetworkIssue = true;
+    }
+
+    setIsSubmitting(false);
+
+    // Save locally
+    try {
+      const existingBookings = JSON.parse(localStorage.getItem('niaa_user_bookings') || '[]');
+      existingBookings.push({
+        type: 'Test Drive',
+        vehicle: leadPayload.vehicle_interest,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        date: formData.date,
+        slot: formData.timeSlot,
+        city: formData.city,
+        createdAt: new Date().toISOString()
+      });
+      localStorage.setItem('niaa_user_bookings', JSON.stringify(existingBookings));
+    } catch (e) {
+      console.error('LocalStorage write error:', e);
+    }
+
+    if (!dbError || isNetworkIssue) {
       setIsSuccess(true);
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      console.error('Error booking test drive:', dbError);
+      alert('Unable to submit test drive request. Please check your internet connection or try again later.');
     }
   };
 

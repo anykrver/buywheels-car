@@ -93,9 +93,12 @@ export default function VehicleDetail() {
 
     const vehicleTitle = vehicle ? `${vehicle.brand} ${vehicle.model}` : 'Unknown Vehicle';
     
+    let dbError: any = null;
+    let isNetworkIssue = false;
+
     try {
       // Attempt insert into vehicle_bookings
-      let { error } = await supabase
+      const res = await supabase
         .from('vehicle_bookings')
         .insert([
           {
@@ -107,10 +110,11 @@ export default function VehicleDetail() {
             purpose: bookingForm.purpose ? `${bookingForm.purpose} (${vehicleTitle})` : `Vehicle Booking (${vehicleTitle})`
           }
         ]);
+      dbError = res.error;
 
-      // Fallback to leads table if foreign key or vehicle_bookings table error occurs
-      if (error) {
-        console.warn('vehicle_bookings insert failed, trying leads fallback...', error.message);
+      // Fallback to leads table if foreign key or vehicle_bookings table error occurs (non-network)
+      if (dbError && !dbError.message?.toLowerCase().includes('failed to fetch')) {
+        console.warn('vehicle_bookings insert failed, trying leads fallback...', dbError.message);
         const leadRes = await supabase.from('leads').insert([
           {
             name: bookingForm.name,
@@ -122,39 +126,44 @@ export default function VehicleDetail() {
             stage: 'New'
           }
         ]);
-        error = leadRes.error;
+        dbError = leadRes.error;
       }
-
-      if (error) {
-        throw new Error(error.message || 'Supabase submission error');
-      }
-
-      localStorage.setItem('niaa_user_name', bookingForm.name);
-      localStorage.setItem('niaa_user_phone', bookingForm.phone);
-      setBookingSuccess(true);
     } catch (err: any) {
-      console.warn('Network or DB error during booking, falling back to local storage:', err);
-      try {
-        const existing = JSON.parse(localStorage.getItem('buywheels_pending_bookings') || '[]');
-        existing.push({
-          vehicle_id: vehicle?.id || null,
-          vehicleTitle,
-          name: bookingForm.name,
-          phone: bookingForm.phone,
-          email: bookingForm.email || null,
-          city: bookingForm.city,
-          purpose: bookingForm.purpose || 'Direct Booking',
-          timestamp: new Date().toISOString()
-        });
-        localStorage.setItem('buywheels_pending_bookings', JSON.stringify(existing));
-      } catch (storageErr) {
-        console.error('Failed to save booking locally:', storageErr);
-      }
-      localStorage.setItem('niaa_user_name', bookingForm.name);
-      localStorage.setItem('niaa_user_phone', bookingForm.phone);
+      console.warn('Network exception during booking submit:', err);
+      dbError = err;
+      isNetworkIssue = true;
+    }
+
+    if (dbError?.message?.toLowerCase().includes('failed to fetch')) {
+      isNetworkIssue = true;
+    }
+
+    setIsBookingSubmitting(false);
+
+    // Save locally to ensure user booking is never lost
+    try {
+      const existingBookings = JSON.parse(localStorage.getItem('niaa_user_bookings') || '[]');
+      existingBookings.push({
+        vehicle: vehicleTitle,
+        name: bookingForm.name,
+        phone: bookingForm.phone,
+        email: bookingForm.email,
+        city: bookingForm.city,
+        date: new Date().toISOString()
+      });
+      localStorage.setItem('niaa_user_bookings', JSON.stringify(existingBookings));
+    } catch (e) {
+      console.error('LocalStorage write error:', e);
+    }
+
+    localStorage.setItem('niaa_user_name', bookingForm.name);
+    localStorage.setItem('niaa_user_phone', bookingForm.phone);
+
+    if (!dbError || isNetworkIssue) {
       setBookingSuccess(true);
-    } finally {
-      setIsBookingSubmitting(false);
+    } else {
+      console.error('Error confirming booking:', dbError);
+      alert('Unable to submit booking right now. Please check your connection or contact support.');
     }
   };
 

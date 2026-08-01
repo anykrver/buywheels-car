@@ -45,40 +45,24 @@ export default function Careers() {
 
     setIsSubmitting(true);
     
-    try {
-      const { error } = await supabase
-        .from('job_applications')
-        .insert([
-          {
-            position: selectedJob,
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            note: formData.note || null
-          }
-        ]);
-
-      if (error) throw new Error(error.message);
-      setIsSuccess(true);
-    } catch (err: any) {
-      console.warn('Network or DB error submitting job application, saving locally:', err);
-      try {
-        const existing = JSON.parse(localStorage.getItem('buywheels_pending_leads') || '[]');
-        existing.push({
+    const { error } = await supabase
+      .from('job_applications')
+      .insert([
+        {
+          position: selectedJob,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          source: 'Job Application',
-          notes: `Position: ${selectedJob}. Note: ${formData.note || 'N/A'}`,
-          stage: 'Careers'
-        });
-        localStorage.setItem('buywheels_pending_leads', JSON.stringify(existing));
-      } catch (storageErr) {
-        console.error('Failed to save job application locally:', storageErr);
-      }
+          note: formData.note || null
+        }
+      ]);
+
+    setIsSubmitting(false);
+    if (!error) {
       setIsSuccess(true);
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      console.error('Error submitting job application:', error);
+      alert('Failed to submit application. Please check your connection and try again.');
     }
   };
 
