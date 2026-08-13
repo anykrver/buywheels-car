@@ -1,0 +1,7 @@
+# robots.txt for BuyWheels (buywheels.in)
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /wishlist
+
+Sitemap: https://buywheels.in/sitemap.xml
